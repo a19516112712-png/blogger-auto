@@ -1,18 +1,22 @@
 name: Publish to Blogger
 
 on:
-  push:
-    paths:
-      - "posts/*.md"
+  workflow_run:
+    workflows: ["Generate Baby Name Articles"]
+    types:
+      - completed
   workflow_dispatch:
 
 jobs:
   publish:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.ref }}
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
