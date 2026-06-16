@@ -36,6 +36,7 @@ POSTS_DIR = Path(__file__).resolve().parent / "posts"
 REQUIRED_FRONTMATTER_FIELDS = {"title", "date", "labels"}
 
 DEFAULT_LABELS = ["Baby Names"]
+# Excludes "SEO" — labels describe content theme, not publishing strategy
 
 
 # ---------------------------------------------------------------------------
@@ -101,7 +102,17 @@ def extract_title_from_body(body: str, fallback: str) -> str:
     """
     match = re.search(r"^#\s+(.+?)$", body, re.MULTILINE)
     if match:
-        return match.group(1).strip()
+        title = match.group(1).strip()
+        # Sanitize: strip any YAML key prefixes that leaked into the title
+        for prefix in ("title:", "date:", "labels:", "meta_description:", "---"):
+            if title.lower().startswith(prefix):
+                if prefix in ("date:", "labels:", "meta_description:", "---"):
+                    log.warning("Title begins with '%s' in %s — skipping H1 extraction.", prefix.rstrip(":"), filepath.name if 'filepath' in dir() else 'unknown')
+                    break
+                title = title.split(":", 1)[1].strip()
+                log.info("Stripped '%s' prefix from extracted title.", prefix.rstrip(":"))
+                break
+        return title
     # Try first non-empty, non-delimiter line
     for line in body.split("\n"):
         stripped = line.strip()

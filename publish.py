@@ -113,13 +113,13 @@ def sanitize_title(raw_title: str | None, filename: str) -> str | None:
     title = raw_title.strip()
 
     # Guard: reject titles that are raw YAML key-value lines
-    YAML_KEY_PREFIXES = ("title:", "date:", "labels:", "meta_description:", "---")
+    YAML_KEY_PREFIXES = ("title:", "date:", "labels:", "meta_description:", "---", "# ")
     for prefix in YAML_KEY_PREFIXES:
         if title.lower().startswith(prefix):
-            if prefix in ("date:", "labels:", "meta_description:", "---"):
+            if prefix in ("date:", "labels:", "meta_description:", "---", "# "):
                 log.warning(
                     "Title extraction failed for %s: title begins with '%s' — skipping.",
-                    filename, prefix.rstrip(":"),
+                    filename, prefix.rstrip(": "),
                 )
                 return None
             # "title:" prefix — strip it and re-trim
@@ -327,14 +327,14 @@ def main():
     total_skipped = invalid_count + skipped_duplicate + publish_failed
     log.info("=" * 50)
     log.info("PUBLISH SUMMARY")
-    log.info("  Total files scanned:   %d", total_files)
+    log.info("===============")
+    log.info("  Files scanned:         %d", total_files)
     log.info("  Valid posts:           %d", valid_count)
-    log.info("  Invalid (bad frontmatter): %d", invalid_count)
+    log.info("  Invalid posts:         %d", invalid_count)
     log.info("  Published:             %d", published_count)
-    log.info("  Skipped (duplicate):   %d", skipped_duplicate)
-    log.info("  Failed (API error):    %d", publish_failed)
-    log.info("  Total skipped:         %d", total_skipped)
-    log.info("=" * 50)
+    log.info("  Skipped duplicates:    %d", skipped_duplicate)
+    log.info("  Failed:                %d", publish_failed)
+    log.info("=======")
 
 
 if __name__ == "__main__":
