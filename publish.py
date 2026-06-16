@@ -93,6 +93,53 @@ def get_authenticated_service():
 # ---------------------------------------------------------------------------
 # Markdown helpers
 # ---------------------------------------------------------------------------
+def sanitize_title(raw_title: str | None, filename: str) -> str | None:
+    """Clean and validate a title extracted from frontmatter.
+
+    Strips leading YAML key prefixes (e.g. 'title:'), trims whitespace,
+    and rejects titles that look like raw YAML keys.
+
+    Args:
+        raw_title: The title value from frontmatter (may be None or prefixed).
+        filename: The source filename (for logging).
+
+    Returns:
+        Cleaned title string, or None if the title is invalid.
+    """
+    if not raw_title:
+        log.warning("Title extraction failed for %s: empty or None.", filename)
+        return None
+
+    title = raw_title.strip()
+
+    # Guard: reject titles that are raw YAML key-value lines
+    YAML_KEY_PREFIXES = ("title:", "date:", "labels:", "meta_description:", "---")
+    for prefix in YAML_KEY_PREFIXES:
+        if title.lower().startswith(prefix):
+            if prefix in ("date:", "labels:", "meta_description:", "---"):
+                log.warning(
+                    "Title extraction failed for %s: title begins with '%s' — skipping.",
+                    filename, prefix.rstrip(":"),
+                )
+                return None
+            # "title:" prefix — strip it and re-trim
+            title = title.split(":", 1)[1].strip()
+            log.info(
+                "Stripped 'title:' prefix from %s → '%s'",
+                filename, title,
+            )
+            break
+
+    # Final whitespace/normalization check
+    title = title.strip()
+    if not title:
+        log.warning("Title extraction failed for %s: empty after sanitization.", filename)
+        return None
+
+    log.info("[INFO] Final title: %s", title)
+    return title
+
+
 def parse_frontmatter_and_body(filepath: Path):
     """Parse a markdown file, splitting frontmatter YAML from markdown body.
 
@@ -215,11 +262,15 @@ def main():
 
     for md_file in md_files:
         frontmatter, md_body = parse_frontmatter_and_body(md_file)
-        title = frontmatter.get("title") if frontmatter else None
+        raw_title = frontmatter.get("title") if frontmatter else None
+        title = sanitize_title(raw_title, md_file.name)
+
         if not title or not md_body.strip():
             log.warning("INVALID — %s (no title or empty body)", md_file.name)
             invalid_count += 1
         else:
+            # Persist the sanitized title back into the frontmatter dict
+            frontmatter["title"] = title
             valid_files.append((md_file, frontmatter, md_body))
 
     valid_count = len(valid_files)
