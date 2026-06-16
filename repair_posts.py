@@ -35,7 +35,7 @@ POSTS_DIR = Path(__file__).resolve().parent / "posts"
 
 REQUIRED_FRONTMATTER_FIELDS = {"title", "date", "labels"}
 
-DEFAULT_LABELS = ["Baby Names", "SEO"]
+DEFAULT_LABELS = ["Baby Names"]
 
 
 # ---------------------------------------------------------------------------

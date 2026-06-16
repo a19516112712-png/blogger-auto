@@ -66,25 +66,35 @@ TOPICS = [
 
 # Map topic keywords → additional labels for each article.
 TOPIC_LABEL_MAP = {
-    "vintage":       "Vintage Names",
-    "nature":        "Nature Names",
-    "gender-neutral": "Gender Neutral",
-    "mythology":     "Mythology Names",
-    "royal":         "Royal Names",
-    "bohemian":      "Bohemian Names",
-    "celestial":     "Celestial Names",
-    "literary":      "Literary Names",
-    "biblical":      "Biblical Names",
-    "ocean":         "Ocean Names",
-    "water":         "Nature Names",
-    "musical":       "Musical Names",
-    "earthy":        "Nature Names",
-    "botanical":     "Nature Names",
-    "scientists":    "STEM Names",
-    "inventors":     "STEM Names",
-    "international": "International Names",
-    "powerful":      "Meaningful Names",
-    "unique":        "Unique Names",
+    "vintage":       ["Vintage Names", "Classic Names", "Old-Fashioned Names", "Timeless Names"],
+    "nature":        ["Nature Names", "Outdoor Names", "Organic Names", "Earthy Names"],
+    "gender-neutral": ["Gender Neutral Names", "Unisex Names", "Modern Names", "Trending Names"],
+    "mythology":     ["Mythology Names", "Legendary Names", "Ancient Names", "Heroic Names"],
+    "one-syllable":  ["Short Names", "One-Syllable Names", "Minimalist Names", "Simple Names"],
+    "royal":         ["Royal Names", "Aristocratic Names", "Regal Names", "Noble Names"],
+    "bohemian":      ["Bohemian Names", "Artistic Names", "Free-Spirited Names", "Creative Names"],
+    "boy":           ["Boy Names", "Masculine Names", "Strong Names", "Traditional Names"],
+    "strong":        ["Strong Names", "Powerful Names", "Bold Names", "Masculine Names"],
+    "girl":          ["Girl Names", "Feminine Names", "Elegant Names", "Beautiful Names"],
+    "beautiful":     ["Girl Names", "Beautiful Names", "Elegant Names", "Charming Names"],
+    "celestial":     ["Celestial Names", "Space Names", "Star Names", "Cosmic Names"],
+    "space":         ["Space Names", "Celestial Names", "Cosmic Names", "Star Names"],
+    "literary":      ["Literary Names", "Book Names", "Classic Novels", "Author Names"],
+    "trending":      ["Trending Names", "Popular Names", "Modern Names", "Hot Names"],
+    "biblical":      ["Biblical Names", "Christian Names", "Hebrew Names", "Religious Names"],
+    "ocean":         ["Ocean Names", "Water Names", "Beach Names", "Coastal Names"],
+    "water":         ["Water Names", "Nature Names", "Ocean Names", "Coastal Names"],
+    "powerful":      ["Meaningful Names", "Powerful Names", "Virtue Names", "Inspirational Names"],
+    "meanings":      ["Meaningful Names", "Virtue Names", "Inspirational Names", "Significant Names"],
+    "unique":        ["Unique Names", "Rare Names", "Uncommon Names", "Distinctive Names"],
+    "musical":       ["Musical Names", "Creative Names", "Arts Names", "Melodic Names"],
+    "earthy":        ["Nature Names", "Botanical Names", "Floral Names", "Earthy Names"],
+    "botanical":     ["Nature Names", "Botanical Names", "Floral Names", "Plant Names"],
+    "scientists":    ["STEM Names", "Inventor Names", "Scientist Names", "Intellectual Names"],
+    "inventors":     ["STEM Names", "Inventor Names", "Scientist Names", "Innovative Names"],
+    "international": ["International Names", "Global Names", "Multicultural Names", "World Names"],
+    "short":         ["Short Names", "One-Syllable Names", "Minimalist Names", "Simple Names"],
+    "sweet":         ["Short Names", "Charming Names", "Sweet Names", "Simple Names"],
 }
 
 
@@ -274,13 +284,39 @@ def strip_existing_frontmatter(text: str) -> str:
 
 
 def generate_labels(topic: str) -> list[str]:
-    """Derive topic-specific labels from the topic string."""
-    labels = ["Baby Names", "SEO"]
+    """Derive topic-specific labels from the topic string.
+
+    Always includes "Baby Names" as the first label, then matches
+    topic keywords against TOPIC_LABEL_MAP to add 3-5 topic-specific
+    labels.  Never includes generic "SEO" — labels describe the
+    content's theme, not publishing strategy.
+
+    Returns 4-6 labels total.
+    """
     topic_lower = topic.lower()
-    for keyword, label in TOPIC_LABEL_MAP.items():
-        if keyword in topic_lower and label not in labels:
-            labels.append(label)
-    return labels
+    seen = {"Baby Names"}
+    topic_labels = ["Baby Names"]
+
+    for keyword, label_list in TOPIC_LABEL_MAP.items():
+        if keyword in topic_lower:
+            for lbl in label_list:
+                if lbl not in seen:
+                    topic_labels.append(lbl)
+                    seen.add(lbl)
+
+    # Ensure we have at least 4 labels by repeating the most distinctive
+    # topic label if needed (shouldn't happen with the current map).
+    if len(topic_labels) < 4:
+        for lbl in topic_labels[1:]:
+            if len(topic_labels) >= 4:
+                break
+            variant = f"Best {lbl}"
+            if variant not in seen:
+                topic_labels.append(variant)
+                seen.add(variant)
+
+    # Cap at 6 labels
+    return topic_labels[:6]
 
 
 def build_frontmatter(title: str, labels: list[str], today: str) -> str:
