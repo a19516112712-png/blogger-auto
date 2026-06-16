@@ -1,3 +1,11 @@
+---
+title: 'title: Nature''s Embrace: Earthy & Botanical Baby Names for Girls & Boys'
+labels:
+- Baby Names
+- SEO
+date: '2026-06-16'
+---
+
 title: Nature's Embrace: Earthy & Botanical Baby Names for Girls & Boys
 labels: Baby Names,SEO,Earthy Names,Botanical Names,Nature Names,Girl Names,Boy Names,Unique Baby Names,Gender Neutral Names
 meta_description: Explore a beautiful collection of earthy and botanical baby names for girls and boys! Find nature-inspired names reflecting strength, beauty, and growth for your little one.
@@ -105,3 +113,4 @@ A4: "Botanical" specifically refers to names derived from the plant kingdom – 
 
 ### Q5: Are there many gender-neutral options in this category?
 A5: Yes, the earthy and botanical category is rich with wonderful gender-neutral options! Names like **Aspen**, **Sage**, **Briar**, **Cedar**, **Wren**, and **Bay** work beautifully for any gender, offering versatility and a fresh, modern appeal. This makes them a fantastic choice for parents who prefer not to assign a traditional gender to their child's name.
+

@@ -1,6 +1,9 @@
 ---
 title: Getting Started with Blogger Auto Publishing
-labels: AI,Blogger,SEO,Automation
+labels:
+- Baby Names
+- SEO
+date: '2026-06-16'
 ---
 
 # Getting Started with Blogger Auto Publishing
