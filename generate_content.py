@@ -167,17 +167,18 @@ def generate_labels(topic: str) -> list[str]:
 
 
 def build_frontmatter(title: str, labels: list[str], today: str) -> str:
-    """Construct a valid YAML frontmatter block."""
-    lines = [
-        "---",
-        f"title: {title}",
-        "labels:",
-    ]
-    for lbl in labels:
-        lines.append(f"  - {lbl}")
-    lines.append(f"date: {today}")
-    lines.append("---")
-    return "\n".join(lines)
+    """Construct a valid YAML frontmatter block using yaml.dump for safe serialization.
+
+    Handles titles with colons, apostrophes, ampersands, and other YAML
+    special characters that would break simple f-string formatting.
+    """
+    data = {
+        "title": title,
+        "labels": labels,
+        "date": today,
+    }
+    yaml_body = yaml.dump(data, default_flow_style=False, allow_unicode=True, sort_keys=False)
+    return "---\n" + yaml_body + "---"
 
 
 # ---------------------------------------------------------------------------
