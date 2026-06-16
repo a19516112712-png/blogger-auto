@@ -1,27 +1,51 @@
 # Blogger Auto Publishing
 
-Automatically publish markdown blog posts to [Blogger](https://www.blogger.com) via GitHub Actions and the Blogger API v3.
+Automatically generate SEO-optimized baby-name articles with Gemini, then publish them to [Blogger](https://www.blogger.com) via GitHub Actions and the Blogger API v3.
 
 ## Features
 
-- Write posts in **markdown** with YAML frontmatter for metadata
-- Automatic markdown-to-HTML conversion with tables, code blocks, and more
-- Duplicate detection — skips posts that already exist on your blog
-- GitHub Actions trigger on push and manual dispatch
-- Automatic OAuth 2.0 access token refresh
+- **AI Content Generation** — Gemini 2.5 Flash writes 5 SEO articles per day about baby names
+- **Markdown with YAML frontmatter** — title, labels, and meta descriptions included
+- **Automatic markdown-to-HTML conversion** — tables, code blocks, headings, and more
+- **Duplicate detection** — skips posts that already exist on your blog
+- **Dual GitHub Actions workflows** — one for daily generation, one for publishing on push
+- **Automatic OAuth 2.0 access token refresh**
 
 ## Project Structure
 
 ```
 blogger-auto/
-├── posts/                    # Drop .md files here
+├── posts/                       # Generated and manual .md files
 │   └── example.md
-├── publish.py                # Main publishing script
-├── requirements.txt          # Python dependencies
+├── generate_content.py          # Gemini-powered article generator
+├── publish.py                   # Blogger API publisher
+├── requirements.txt             # Python dependencies
 ├── README.md
 └── .github/
     └── workflows/
-        └── publish.yml       # GitHub Actions workflow
+        ├── generate.yml          # Daily cron: generate 5 articles, commit
+        └── publish.yml           # On push: publish to Blogger
+```
+
+## How It Works
+
+```
+Daily cron (midnight UTC)
+    │
+    ▼
+generate.yml ──► generate_content.py ──► Gemini API
+                                              │
+                                       5 new .md files in posts/
+                                              │
+                                     auto-commit & push
+                                              │
+                                              ▼
+                                    publish.yml triggered
+                                              │
+                                              ▼
+                                    publish.py ──► Blogger API
+                                                      │
+                                               Posts published
 ```
 
 ## Getting Started
@@ -49,29 +73,33 @@ blogger-auto/
 6. In Step 2, click **Exchange authorization code for tokens**
 7. Copy the **Refresh token** shown
 
-### 3. Find Your Blog ID
+### 3. Get a Gemini API Key
+
+1. Go to [Google AI Studio](https://aistudio.google.com/apikey)
+2. Click **Get API Key** or **Create API Key**
+3. Copy the generated key
+
+### 4. Find Your Blog ID
 
 1. Go to your [Blogger dashboard](https://www.blogger.com/)
 2. Click on the blog you want to publish to
 3. Look at the URL: `https://www.blogger.com/blogger.g?blogID=YOUR_BLOG_ID`
-4. Or go to **Settings** — the Blog ID is displayed there
 
-### 4. Configure GitHub Secrets
+### 5. Configure GitHub Secrets
 
 In your GitHub repository, go to **Settings** > **Secrets and variables** > **Actions** and add these secrets:
 
-| Secret Name     | Description                    |
-|----------------|--------------------------------|
-| `BLOG_ID`      | Your Blogger blog ID           |
-| `CLIENT_ID`    | OAuth 2.0 Client ID            |
-| `CLIENT_SECRET`| OAuth 2.0 Client Secret        |
-| `REFRESH_TOKEN`| OAuth 2.0 refresh token        |
+| Secret Name       | Description                          |
+|-------------------|--------------------------------------|
+| `BLOG_ID`         | Your Blogger blog ID                 |
+| `CLIENT_ID`       | OAuth 2.0 Client ID                  |
+| `CLIENT_SECRET`   | OAuth 2.0 Client Secret              |
+| `REFRESH_TOKEN`   | OAuth 2.0 refresh token              |
+| `GEMINI_API_KEY`  | Gemini API key from AI Studio        |
 
-Click **New repository secret** for each one.
+### 6. Write (or Generate) a Post
 
-### 5. Write a Post
-
-Create a `.md` file in the `posts/` directory with YAML frontmatter:
+**Manual posts** — Create a `.md` file in `posts/`:
 
 ```markdown
 ---
@@ -82,37 +110,41 @@ labels: Technology,Programming,Python
 # My Amazing Blog Post
 
 Write your content here using standard markdown.
-
-## Subheading
-
-- Lists work
-- **Bold text** and *italics*
-
-​```python
-print("Code blocks too!")
-​```
-
-| Tables | Work |
-|---------|------|
-| Yes     | ✅   |
 ```
+
+**Auto-generated posts** — The `generate.yml` workflow runs daily and creates 5 SEO-optimized baby-name articles. Each generated article includes:
+
+- Engaging, SEO-friendly title
+- Meta description for search snippets
+- H2/H3 heading hierarchy
+- Lists, comparisons, and bolded key terms
+- FAQ section with 4-5 detailed Q&A pairs
+- 800-1200 words per article
 
 #### Frontmatter Fields
 
-| Field    | Required | Description                                  |
-|----------|----------|----------------------------------------------|
-| `title`  | Yes      | Post title (used for duplicate detection)     |
-| `labels` | No       | Comma-separated labels/categories             |
+| Field              | Required | Description                                  |
+|--------------------|----------|----------------------------------------------|
+| `title`            | Yes      | Post title (used for duplicate detection)     |
+| `labels`           | No       | Comma-separated labels/categories             |
+| `meta_description` | No       | SEO meta description (auto-generated posts)   |
 
-### 6. Publish
+### 7. Publish
 
-Push your markdown file to the repository. The GitHub Actions workflow triggers automatically and publishes your post to Blogger.
+For manual posts, push your `.md` file to the repository. For generated posts, the daily cron handles everything — generation, commit, and publishing — automatically.
 
-You can also run the workflow manually from the **Actions** tab using **workflow_dispatch**.
+You can also trigger either workflow manually from the **Actions** tab:
+- **Generate Baby Name Articles** — generates 5 new articles
+- **Publish to Blogger** — publishes any un-published posts in `posts/`
+
+## Workflows
+
+| Workflow | Trigger | What It Does |
+|----------|---------|--------------|
+| `generate.yml` | Daily cron (`0 0 * * *`) or manual | Generates 5 articles via Gemini, commits them |
+| `publish.yml` | Push to `posts/*.md` or manual | Publishes new posts to Blogger |
 
 ## Local Testing
-
-To test locally without GitHub Actions:
 
 ```bash
 # Set environment variables
@@ -120,17 +152,23 @@ export BLOG_ID="your_blog_id"
 export CLIENT_ID="your_client_id"
 export CLIENT_SECRET="your_client_secret"
 export REFRESH_TOKEN="your_refresh_token"
+export GEMINI_API_KEY="your_gemini_key"
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Run the publisher
+# Generate articles
+python generate_content.py
+
+# Publish to Blogger
 python publish.py
 ```
 
 ## How Duplicate Detection Works
 
-Before publishing, the script fetches all existing live posts from your blog and compares their titles (case-insensitive). If a title match is found, the post is skipped. This prevents duplicate content when the workflow re-runs.
+Before publishing, `publish.py` fetches all existing live posts from your blog and compares their titles (case-insensitive). If a title match is found, the post is skipped.
+
+Generated articles include a date prefix in the filename (`2026-06-16-slug.md`) to avoid collisions. The script also appends a counter if a filename already exists.
 
 ## License
 
