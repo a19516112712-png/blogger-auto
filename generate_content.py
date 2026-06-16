@@ -228,6 +228,64 @@ def generate_article(client: genai.Client, topic: str) -> str | None:
     return response.text
 
 
+
+
+def validate_saved_file(filepath: Path) -> bool:
+    """Validate that a saved markdown file has correct frontmatter and body.
+
+    Checks:
+        - File starts with ---
+        - YAML is parseable
+        - title, date, labels all present and non-empty
+        - Body exists after frontmatter
+    """
+    try:
+        text = filepath.read_text(encoding="utf-8")
+    except Exception as exc:
+        log.error("Cannot read saved file %s: %s", filepath.name, exc)
+        return False
+
+    if not text.startswith("---"):
+        log.error("Post-save validation FAILED: %s does not start with ---", filepath.name)
+        return False
+
+    parts = text.split("---", 2)
+    if len(parts) < 3:
+        log.error("Post-save validation FAILED: %s has malformed frontmatter delimiters", filepath.name)
+        return False
+
+    try:
+        fm = yaml.safe_load(parts[1].strip())
+    except yaml.YAMLError as exc:
+        log.error("Post-save validation FAILED: %s YAML error — %s", filepath.name, exc)
+        return False
+
+    if not isinstance(fm, dict):
+        log.error("Post-save validation FAILED: %s frontmatter is not a dict", filepath.name)
+        return False
+
+    for field in ("title", "date", "labels"):
+        if field not in fm:
+            log.error("Post-save validation FAILED: %s missing '%s' field", filepath.name, field)
+            return False
+        if fm[field] is None:
+            log.error("Post-save validation FAILED: %s '%s' field is None", filepath.name, field)
+            return False
+
+    if not str(fm["title"]).strip():
+        log.error("Post-save validation FAILED: %s has empty title", filepath.name)
+        return False
+
+    if not isinstance(fm["labels"], list) or len(fm["labels"]) == 0:
+        log.error("Post-save validation FAILED: %s has empty/missing labels", filepath.name)
+        return False
+
+    body_text = parts[2].strip()
+    if not body_text:
+        log.error("Post-save validation FAILED: %s has empty body", filepath.name)
+        return False
+
+    return True
 def save_and_validate(article_text: str, topic: str) -> Path | None:
     """Clean, extract metadata, build frontmatter, validate, and save.
 
@@ -291,7 +349,17 @@ def save_and_validate(article_text: str, topic: str) -> Path | None:
         counter += 1
 
     filepath.write_text(full_doc, encoding="utf-8")
-    log.info("Saved: %s | title='%s' | labels=%s | %d chars",
+
+    # --- Post-save validation: read back and verify ---
+    if not validate_saved_file(filepath):
+        log.error("Post-save validation FAILED for '%s'. Deleting corrupt file.", topic)
+        try:
+            filepath.unlink()
+        except Exception:
+            pass
+        return None
+
+    log.info("Saved + validated: %s | title=%r | labels=%s | %d chars",
              filepath.name, title, labels, len(full_doc))
     return filepath
 

@@ -202,12 +202,36 @@ def main():
         sys.exit(1)
 
     md_files = sorted(POSTS_DIR.glob("*.md"))
+    total_files = len(md_files)
     if not md_files:
         log.info("No markdown files found in %s. Nothing to publish.", POSTS_DIR)
         return
 
-    log.info("Found %d markdown file(s) in %s.", len(md_files), POSTS_DIR)
+    log.info("Scanning %d markdown file(s) in %s…", total_files, POSTS_DIR)
 
+    # --- Phase 1: classify valid vs invalid ---
+    valid_files: list[tuple[Path, dict, str]] = []
+    invalid_count = 0
+
+    for md_file in md_files:
+        frontmatter, md_body = parse_frontmatter_and_body(md_file)
+        title = frontmatter.get("title") if frontmatter else None
+        if not title or not md_body.strip():
+            log.warning("INVALID — %s (no title or empty body)", md_file.name)
+            invalid_count += 1
+        else:
+            valid_files.append((md_file, frontmatter, md_body))
+
+    valid_count = len(valid_files)
+    log.info("Classification complete. Valid: %d, Invalid: %d.", valid_count, invalid_count)
+
+    if valid_count == 0:
+        log.info("No valid posts to publish.")
+        if invalid_count > 0:
+            log.warning("%d invalid post(s) detected — run repair_posts.py to fix.", invalid_count)
+        return
+
+    # --- Phase 2: authenticate ---
     try:
         service = get_authenticated_service()
     except Exception as exc:
@@ -217,23 +241,19 @@ def main():
     existing_titles = get_existing_posts(service, blog_id)
     log.info("Fetched %d existing post title(s) for dedup.", len(existing_titles))
 
+    # --- Phase 3: publish ---
     published_count = 0
-    skipped_count = 0
+    skipped_duplicate = 0
+    publish_failed = 0
 
-    for md_file in md_files:
+    for md_file, frontmatter, md_body in valid_files:
         log.info("Processing: %s", md_file.name)
-        frontmatter, md_body = parse_frontmatter_and_body(md_file)
-
-        title = frontmatter.get("title") if frontmatter else None
-        if not title:
-            log.warning("Skipping %s: no title in frontmatter.", md_file.name)
-            skipped_count += 1
-            continue
+        title = frontmatter["title"]
 
         # Duplicate check
         if title.strip().lower() in existing_titles:
             log.info("Skipping '%s': already published (title match).", title)
-            skipped_count += 1
+            skipped_duplicate += 1
             continue
 
         labels = frontmatter.get("labels", "")
@@ -249,9 +269,21 @@ def main():
             published_count += 1
             existing_titles.add(title.strip().lower())
         else:
+            publish_failed += 1
             log.error("Failed to publish '%s'.", title)
 
-    log.info("Done. Published: %d, Skipped: %d.", published_count, skipped_count)
+    # --- Summary ---
+    total_skipped = invalid_count + skipped_duplicate + publish_failed
+    log.info("=" * 50)
+    log.info("PUBLISH SUMMARY")
+    log.info("  Total files scanned:   %d", total_files)
+    log.info("  Valid posts:           %d", valid_count)
+    log.info("  Invalid (bad frontmatter): %d", invalid_count)
+    log.info("  Published:             %d", published_count)
+    log.info("  Skipped (duplicate):   %d", skipped_duplicate)
+    log.info("  Failed (API error):    %d", publish_failed)
+    log.info("  Total skipped:         %d", total_skipped)
+    log.info("=" * 50)
 
 
 if __name__ == "__main__":

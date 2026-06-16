@@ -33,6 +33,9 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python generate_content.py
 
+      - name: Repair post frontmatter
+        run: python repair_posts.py
+
       - name: Commit and push generated articles
         run: |
           git config user.name "github-actions[bot]"

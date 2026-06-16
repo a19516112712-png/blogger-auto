@@ -28,6 +28,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Repair post frontmatter
+        run: python repair_posts.py
+
       - name: Publish posts to Blogger
         env:
           BLOG_ID: ${{ secrets.BLOG_ID }}
