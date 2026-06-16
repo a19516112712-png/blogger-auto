@@ -5,6 +5,8 @@ Blogger Content Generator
 Uses the Gemini API (gemini-2.5-flash) to generate 5 SEO-optimized
 baby-name articles per day. Articles are written as markdown files
 into the posts/ directory, ready for automatic publishing.
+
+Frontmatter is constructed programmatically — never trusted from the LLM.
 """
 
 import logging
@@ -15,6 +17,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+import yaml
 from google import genai
 
 # ---------------------------------------------------------------------------
@@ -58,27 +61,46 @@ TOPICS = [
     "International baby names that work in any language",
 ]
 
+# Map topic keywords → additional labels for each article.
+TOPIC_LABEL_MAP = {
+    "vintage":       "Vintage Names",
+    "nature":        "Nature Names",
+    "gender-neutral": "Gender Neutral",
+    "mythology":     "Mythology Names",
+    "royal":         "Royal Names",
+    "bohemian":      "Bohemian Names",
+    "celestial":     "Celestial Names",
+    "literary":      "Literary Names",
+    "biblical":      "Biblical Names",
+    "ocean":         "Ocean Names",
+    "water":         "Nature Names",
+    "musical":       "Musical Names",
+    "earthy":        "Nature Names",
+    "botanical":     "Nature Names",
+    "scientists":    "STEM Names",
+    "inventors":     "STEM Names",
+    "international": "International Names",
+    "powerful":      "Meaningful Names",
+    "unique":        "Unique Names",
+}
+
 
 # ---------------------------------------------------------------------------
-# Prompt template
+# Prompt template — NO frontmatter; we build that ourselves.
 # ---------------------------------------------------------------------------
 SYSTEM_PROMPT = """You are a professional SEO content writer specializing in baby names.
 You write engaging, well-researched, and informative blog articles for expectant parents.
 
-Return ONLY valid markdown with YAML frontmatter. No extra commentary.
+Return ONLY the article body in markdown. Do NOT include YAML frontmatter or fenced code blocks.
 
-Frontmatter must include:
-- title: An engaging, SEO-friendly headline (50-65 chars)
-- labels: comma-separated labels (always include "Baby Names,SEO" plus topic-specific labels)
-- meta_description: Compelling meta description (140-155 chars) with primary keyword
-
-Article structure:
-- Start with an engaging introduction (2-3 paragraphs)
+Structure:
+- *First line* must be an H1 heading (# Title) — this becomes the post title
+- Engaging introduction (2-3 paragraphs)
 - Use H2 (##) for major sections and H3 (###) for subsections
 - Include 4-5 H2 sections with substantive content
 - At least one H2 section should be a list or comparison format
 - End with an H2 FAQ section containing 4-5 questions with detailed answers
-- Total article length: 800-1200 words
+- Total length: 800-1200 words
 - Use bullet points and numbered lists where appropriate
 - Bold key terms and baby names for emphasis
 - Write in a warm, helpful tone suitable for parents"""
@@ -100,12 +122,62 @@ def strip_fences(text: str) -> str:
     """Remove outermost ```markdown ... ``` fences if present."""
     text = text.strip()
     if text.startswith("```"):
-        # Remove opening fence line
         text = text.split("\n", 1)[1] if "\n" in text else text
-        # Remove closing fence
         if text.rstrip().endswith("```"):
             text = text.rsplit("\n", 1)[0]
     return text.strip()
+
+
+# ---------------------------------------------------------------------------
+# Frontmatter construction (programmatic — never trusts LLM output)
+# ---------------------------------------------------------------------------
+def extract_title(body: str, topic: str) -> str:
+    """Extract the article title from the first H1 heading in the body.
+
+    Falls back to the topic string if no H1 is found.
+    """
+    match = re.search(r"^#\s+(.+?)$", body, re.MULTILINE)
+    if match:
+        return match.group(1).strip()
+    # Last resort: use first substantive line
+    for line in body.split("\n"):
+        stripped = line.strip()
+        if stripped and not stripped.startswith("---") and not stripped.startswith("```"):
+            return stripped[:150]
+    return topic
+
+
+def strip_existing_frontmatter(text: str) -> str:
+    """Remove any YAML frontmatter block Gemini may have generated."""
+    if text.startswith("---"):
+        parts = text.split("---", 2)
+        if len(parts) >= 3:
+            return parts[2].strip()
+    return text
+
+
+def generate_labels(topic: str) -> list[str]:
+    """Derive topic-specific labels from the topic string."""
+    labels = ["Baby Names", "SEO"]
+    topic_lower = topic.lower()
+    for keyword, label in TOPIC_LABEL_MAP.items():
+        if keyword in topic_lower and label not in labels:
+            labels.append(label)
+    return labels
+
+
+def build_frontmatter(title: str, labels: list[str], today: str) -> str:
+    """Construct a valid YAML frontmatter block."""
+    lines = [
+        "---",
+        f"title: {title}",
+        "labels:",
+    ]
+    for lbl in labels:
+        lines.append(f"  - {lbl}")
+    lines.append(f"date: {today}")
+    lines.append("---")
+    return "\n".join(lines)
 
 
 # ---------------------------------------------------------------------------
@@ -116,7 +188,6 @@ def pick_topics(num: int) -> list[str]:
     available = list(TOPICS)
     random.shuffle(available)
     chosen = available[:num]
-    # If fewer topics than requested (shouldn't happen), repeat some
     while len(chosen) < num:
         chosen.append(random.choice(TOPICS))
     return chosen
@@ -157,38 +228,70 @@ def generate_article(client: genai.Client, topic: str) -> str | None:
 
 
 def save_and_validate(article_text: str, topic: str) -> Path | None:
-    """Clean, validate, and save a generated article to posts/.
+    """Clean, extract metadata, build frontmatter, validate, and save.
 
-    Args:
-        article_text: Raw article markdown from Gemini.
-        topic: The topic string (used if title extraction fails).
+    Frontmatter is always built programmatically — never trusted from Gemini.
+    Validation checks: title exists, body non-empty, YAML is valid.
 
     Returns:
-        Path to the saved file, or None on failure.
+        Path to the saved file, or None if validation fails.
     """
-    cleaned = strip_fences(article_text)
+    today = datetime.now().strftime("%Y-%m-%d")
 
-    # Extract title for slug
-    title_match = re.search(r"^title:\s*(.+?)$", cleaned, re.MULTILINE)
-    if title_match:
-        title = title_match.group(1).strip().strip('"').strip("'")
-    else:
-        title = topic
+    # --- Step 1: clean the raw response ---
+    cleaned = strip_fences(article_text)
+    body = strip_existing_frontmatter(cleaned)
+
+    # --- Step 2: extract title from H1 heading ---
+    title = extract_title(body, topic)
+
+    # --- Step 3: generate labels from topic ---
+    labels = generate_labels(topic)
+
+    # --- Step 4: build frontmatter programmatically ---
+    frontmatter = build_frontmatter(title, labels, today)
+
+    # --- Step 5: validate ---
+    if not body.strip():
+        log.error("Validation FAILED for topic '%s': empty body.", topic)
+        return None
+
+    if title == topic:
+        log.warning("Could not extract H1 title from response for '%s'; using topic as fallback.", topic)
+
+    # Verify frontmatter is parseable YAML with required fields
+    try:
+        parsed = yaml.safe_load(frontmatter.split("---")[1].strip())
+    except yaml.YAMLError as exc:
+        log.error("Validation FAILED for topic '%s': frontmatter YAML error — %s", topic, exc)
+        return None
+
+    if not isinstance(parsed, dict) or "title" not in parsed:
+        log.error("Validation FAILED for topic '%s': frontmatter missing 'title'.", topic)
+        return None
+
+    if not parsed["title"]:
+        log.error("Validation FAILED for topic '%s': title is empty.", topic)
+        return None
+
+    # --- Step 6: assemble and save ---
+    full_doc = f"{frontmatter}\n\n{body}\n"
 
     slug = slugify(title)
-    date_prefix = datetime.now().strftime("%Y-%m-%d")
+    date_prefix = today
     filename = f"{date_prefix}-{slug}.md"
     filepath = POSTS_DIR / filename
 
-    # Avoid overwriting an existing file with the same name
+    # Avoid overwriting existing files
     counter = 1
     while filepath.exists():
         filename = f"{date_prefix}-{slug}-{counter}.md"
         filepath = POSTS_DIR / filename
         counter += 1
 
-    filepath.write_text(cleaned + "\n", encoding="utf-8")
-    log.info("Saved: %s (%d chars)", filepath.name, len(cleaned))
+    filepath.write_text(full_doc, encoding="utf-8")
+    log.info("Saved: %s | title='%s' | labels=%s | %d chars",
+             filepath.name, title, labels, len(full_doc))
     return filepath
 
 
@@ -224,6 +327,8 @@ def main():
         filepath = save_and_validate(article, topic)
         if filepath:
             generated += 1
+        else:
+            log.error("Validation failed for topic '%s'; article discarded.", topic)
 
     log.info("Content generation complete. Generated %d/%d articles.",
              generated, ARTICLES_PER_RUN)
