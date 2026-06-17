@@ -138,6 +138,7 @@ def build_frontmatter(title: str, labels: list[str], date_str: str) -> str:
         "title": title,
         "labels": labels,
         "date": date_str,
+        "slug": title.lower().replace(" ", "-")[:80],
     }
     yaml_body = yaml.dump(data, default_flow_style=False, allow_unicode=True, sort_keys=False)
     return "---\n" + yaml_body + "---"

@@ -59,8 +59,18 @@ RETRY_DELAYS = [5, 15, 30]  # seconds
 RETRYABLE_CODES = (429, 500, 503)
 
 # Validation thresholds
-MIN_TITLE_LENGTH = 20       # characters
-MIN_BODY_WORDS = 200        # words (~1200 chars typical)
+# Banned phrases — titles/descriptions must never contain these
+BANNED_PHRASES = [
+    "the rise of", "timeless choices", "artistic flair", "perfect balance",
+    "modern parents", "creative naming ideas", "for your little one",
+    "beautiful choices", "inspired living", "elegant selections",
+    "meaningful journey", "hidden gems", "naming inspiration",
+    "magical names", "dreamy names", "enchanting names", "whimsical names",
+    "naming ideas", "the rise of", "making a comeback",
+]
+
+MIN_TITLE_LENGTH = 10       # characters (titles now start with '100 ...')
+MIN_BODY_WORDS = 500        # words (targeting 2500-4000 word articles)
 MIN_LABELS = 4
 MAX_LABELS = 6
 
@@ -72,209 +82,111 @@ _quota_exhausted = False
 # Expanded Topic Pool (200+ unique baby-name topics)
 # ---------------------------------------------------------------------------
 TOPICS = [
+    # --- Light, Hope, Love, Peace, Joy, Strength ---
+    "baby names that mean light",
+    "baby names that mean love",
+    "baby names that mean hope",
+    "baby names that mean peace",
+    "baby names that mean joy",
+    "baby names that mean strength",
+    "baby names that mean grace",
+    "baby names that mean wisdom",
+    "baby names that mean miracle",
+    "baby names that mean blessing",
+    "baby names that mean dream",
+    "baby names that mean star",
+    "baby names that mean brave",
     # --- Biblical & Religious ---
-    "Biblical baby names with timeless appeal",
-    "Hebrew baby names and their profound meanings",
-    "Christian baby names inspired by saints and scripture",
-    "Angelic baby names from religious traditions",
-    "Virtue baby names: faith, hope, grace and more",
-    "Names from the Old Testament for modern families",
-    "New Testament baby names for boys and girls",
-    "Spiritual baby names from world religions",
+    "biblical baby names and meanings",
+    "christian baby names from the bible",
+    "hebrew baby names and meanings",
+    "biblical boy names with meaning",
+    "biblical girl names and meanings",
     # --- Vintage & Classic ---
-    "Vintage baby names making a stunning comeback",
-    "Classic baby names that never go out of style",
-    "Old-fashioned baby names with old-world charm",
-    "Retro baby names from the roaring 1920s",
-    "Victorian-era baby names for elegant boys and girls",
-    "Edwardian baby names full of sophistication",
-    "Timeless baby names from the 1950s",
-    "Antique baby names being rediscovered today",
-    # --- Nature-Inspired ---
-    "Nature-inspired baby names for modern parents",
-    "Earthy and botanical baby names for girls and boys",
-    "Floral baby names blooming with beauty and meaning",
-    "Tree and forest baby names rooted in nature",
-    "Mountain-inspired baby names: strong and majestic",
-    "Meadow and field baby names full of serenity",
-    "Desert baby names: unique names with sandy charm",
-    "River and stream baby names flowing with grace",
-    "Garden-inspired baby names fresh and lovely",
-    "Seasonal baby names: spring, summer, autumn, winter",
-    # --- Ocean & Water ---
-    "Ocean and water-inspired baby names for beach lovers",
-    "Beach and coastal baby names from shores worldwide",
-    "Sea creature baby names: unique and playful",
-    "Sailor and nautical baby names with maritime spirit",
-    "Island baby names from tropical paradises",
-    "Lake-inspired baby names calm and reflective",
-    # --- Celestial & Space ---
-    "Celestial and space-inspired baby names",
-    "Star and constellation baby names for starry-eyed parents",
-    "Moon-inspired baby names: lunar and luminous",
-    "Galaxy and cosmic baby names out of this world",
-    "Astronomy baby names from planets and moons",
-    "Sun-inspired baby names bright and radiant",
-    "Zodiac and astrology baby names by star sign",
-    # --- Mythological ---
-    "Baby names inspired by Greek mythology",
-    "Roman mythology baby names of gods and goddesses",
-    "Norse mythology baby names: viking strength",
-    "Egyptian mythology baby names from ancient pharaohs",
-    "Celtic mythology baby names of legends and lore",
-    "Hindu mythology baby names rich in tradition",
-    "Japanese mythological baby names full of spirit",
-    # --- Literary ---
-    "Literary baby names from classic novels",
-    "Shakespearean baby names: dramatic and timeless",
-    "Poetic baby names inspired by famous poets",
-    "Fairy tale baby names from beloved stories",
-    "Jane Austen baby names: regency charm",
-    "Fantasy novel baby names for imaginative parents",
-    "Children book baby names that spark nostalgia",
-    # --- Royal & Aristocratic ---
-    "Royal and aristocratic baby names for little princes and princesses",
-    "British royal family baby names: regal and refined",
-    "European monarchy baby names of kings and queens",
-    "Noble baby names from aristocratic bloodlines",
-    "Regal baby names fit for royalty",
-    "Crown-inspired baby names dripping with elegance",
-    # --- Musical & Arts ---
-    "Musical baby names for creative families",
-    "Opera-inspired baby names for dramatic flair",
-    "Jazz and blues baby names cool and soulful",
-    "Rock and roll baby names with rebellious spirit",
-    "Classical composer baby names harmonious and grand",
-    "Art-inspired baby names from famous painters",
-    "Dance-inspired baby names graceful and rhythmic",
-    # --- International ---
-    "International baby names that work in any language",
-    "French baby names: chic and sophisticated",
-    "Italian baby names: romantic and melodic",
-    "Irish baby names full of Celtic charm",
-    "Scottish baby names: strong and storied",
-    "German baby names: sturdy and meaningful",
-    "Spanish baby names: passionate and vibrant",
-    "Greek baby names: ancient and enduring",
-    "Russian baby names: distinctive and bold",
-    "Scandinavian baby names: nordic and cool",
-    "Japanese baby names: elegant and meaningful",
-    "Korean baby names: modern and graceful",
-    "Chinese baby names rich in symbolism",
-    "Indian baby names: diverse and spiritual",
-    "Arabic baby names: poetic and powerful",
-    "Persian baby names: ancient and regal",
-    "African baby names from diverse cultures",
-    "Hawaiian baby names: island beauty",
-    "Native American baby names: earthy and meaningful",
-    "Australian Aboriginal baby names: unique and ancient",
-    "Brazilian baby names: rhythmic and warm",
-    "Swedish baby names: clean and modern",
-    "Dutch baby names: distinctive and charming",
-    "Polish baby names: strong and traditional",
-    # --- Strong & Powerful ---
-    "Strong baby boy names with deep meanings",
-    "Powerful baby names meaning courage and bravery",
-    "Warrior baby names for fearless little fighters",
-    "Heroic baby names from history and legend",
-    "Names with powerful meanings: strength, honor, wisdom",
-    "Bold baby names that command attention",
-    "Fearless baby names for adventurous spirits",
-    # --- Elegant & Beautiful ---
-    "Beautiful baby girl names from around the world",
-    "Elegant baby girl names: sophisticated and graceful",
-    "Feminine baby names with delicate charm",
-    "Charming baby girl names parents adore",
-    "Melodic baby girl names that sing",
-    "Romantic baby names for dreamy parents",
-    "Enchanting baby names with magical appeal",
-    # --- Gender-Neutral ---
-    "Gender-neutral baby names on the rise",
-    "Unisex baby names: modern and flexible",
-    "Modern baby names that break gender norms",
-    "Trending gender-neutral baby names for progressive parents",
-    "Androgynous baby names: stylish and inclusive",
-    # --- Unique & Rare ---
-    "Unique baby names parents haven't overused yet",
-    "Rare baby names you won't find on every playground",
-    "Uncommon baby names: stand out from the crowd",
-    "Distinctive baby names that make a statement",
-    "One-of-a-kind baby names for extraordinary children",
-    "Hidden gem baby names waiting to be discovered",
-    "Under-the-radar baby names quietly gaining popularity",
-    # --- Short Names ---
-    "Short and sweet one-syllable baby names",
-    "Two-syllable baby names: the perfect balance",
-    "Three-letter baby names: tiny but mighty",
-    "Minimalist baby names for simple elegance",
-    # --- Color & Nature ---
-    "Color-inspired baby names: vibrant and bright",
-    "Gemstone baby names: precious and rare",
-    "Bird-inspired baby names: free and soaring",
-    "Animal-inspired baby names wild and wonderful",
-    "Weather-inspired baby names: storm, rain, and sky",
-    "Rainbow baby names full of color and hope",
-    # --- Trendy & Modern ---
-    "Trending baby names for the current year",
-    "Modern baby names defining a generation",
-    "Popular baby names climbing the charts",
-    "Celebrity baby names that set trends",
-    "Social media-inspired baby names for the digital age",
-    "Tech-inspired baby names for forward-thinking parents",
-    "Hottest baby names right now worldwide",
-    # --- Intellectual & STEM ---
-    "Baby names inspired by famous scientists and inventors",
-    "Philosopher baby names for deep thinkers",
-    "Mathematician baby names: precise and elegant",
-    "Explorer baby names for adventurous souls",
-    "Astronaut baby names reaching for the stars",
-    "Engineer baby names: innovative and strong",
-    # --- BoHo & Artistic ---
-    "Bohemian baby names with artistic flair",
-    "Free-spirited baby names for wanderlust parents",
-    "Hippie baby names: peace, love, and harmony",
-    "Creative baby names for artistic families",
-    "Eclectic baby names for unconventional parents",
-    # --- Seasonal & Calendar ---
-    "Spring baby names blooming with new life",
-    "Summer baby names warm and radiant",
-    "Autumn baby names rich and golden",
-    "Winter baby names crisp and magical",
-    "Holiday-inspired baby names for festive families",
-    "Christmas baby names: joyful and meaningful",
-    # --- Love & Emotion ---
-    "Love-inspired baby names from around the world",
-    "Names meaning love: romantic baby name ideas",
-    "Joyful baby names radiating happiness",
-    "Peaceful baby names: calm and serene",
-    "Names meaning hope and faith for your little one",
-    # --- Food & Nature ---
-    "Food-inspired baby names: sweet and savory",
-    "Spice baby names with warm, exotic flair",
-    "Herb and plant baby names from the garden",
-    "Fruit-inspired baby names: fresh and delightful",
-    "Wine and vineyard baby names for connoisseurs",
-    # --- Country & Western ---
-    "Country baby names: southern charm and grace",
-    "Western baby names with cowboy spirit",
-    "Ranch-inspired baby names rugged and rustic",
-    "Farmhouse baby names with wholesome appeal",
-    # --- Fantasy & Pop Culture ---
-    "Disney-inspired baby names: magical and beloved",
-    "Movie character baby names from iconic films",
-    "TV show baby names trending with fans",
-    "Video game baby names for gamer parents",
-    "Comic book baby names: superhero strength",
-    "Anime baby names: Japanese pop culture gems",
-    # --- Spiritual & Meaningful ---
-    "Meditation-inspired baby names for peaceful souls",
-    "Zen baby names: minimalist and meaningful",
-    "Yoga-inspired baby names for balanced lives",
-    "Soulful baby names with deep spiritual meaning",
-    "Karmic baby names: destiny and purpose",
-    "Nature spiritual baby names from indigenous traditions",
+    "vintage baby names",
+    "vintage baby boy names",
+    "vintage baby girl names",
+    "old fashioned baby names making a comeback",
+    "classic baby names that never go out of style",
+    "retro baby names from the 1950s",
+    # --- Nature, Flowers, Ocean, Forest ---
+    "nature baby names inspired by flowers",
+    "flower baby names for girls",
+    "nature baby names for boys",
+    "ocean baby names inspired by the sea",
+    "beach baby names for summer babies",
+    "forest baby names for nature lovers",
+    "earthy baby names and meanings",
+    "tree baby names and meanings",
+    # --- Japanese, Irish, French, Italian, Greek, Korean ---
+    "japanese baby names and meanings",
+    "irish baby names for boys and girls",
+    "french baby names that sound beautiful",
+    "italian baby names and meanings",
+    "greek baby names from mythology",
+    "korean baby names and meanings",
+    "chinese baby names and meanings",
+    "indian baby names and meanings",
+    "african baby names and meanings",
+    "arabic baby names and meanings",
+    "spanish baby names and meanings",
+    # --- Gender Neutral, Unique, Modern, Popular ---
+    "gender neutral baby names",
+    "gender neutral baby names for modern families",
+    "unisex baby names for boys and girls",
+    "unique baby names you haven't heard",
+    "unique baby girl names",
+    "unique baby boy names",
+    "modern baby names that are trending",
+    "popular baby names right now",
+    # --- Strong Boy, Beautiful Girl ---
+    "baby boy names that mean strong",
+    "baby boy names with powerful meanings",
+    "strong baby names for boys",
+    "beautiful baby girl names and meanings",
+    "elegant baby girl names",
+    "cute baby girl names",
+    # --- Royal, Warrior, Mythological ---
+    "royal baby names for boys and girls",
+    "warrior baby names and meanings",
+    "mythology baby names and meanings",
+    "greek god and goddess baby names",
+    "celtic baby names and meanings",
+    "norse baby names for boys",
+    # --- Celestial, Space, Star ---
+    "celestial baby names inspired by stars",
+    "space baby names and meanings",
+    "moon baby names and meanings",
+    "star names for babies",
+    # --- Short, One-Syllable, Middle ---
+    "one syllable baby names",
+    "short baby names with big meanings",
+    "middle names for girls",
+    "middle names for boys",
+    # --- Country, Western, Boho ---
+    "country baby names for boys and girls",
+    "southern baby names with charm",
+    "bohemian baby names with meanings",
+    # --- Color, Gemstone, Bird, Animal ---
+    "color baby names and meanings",
+    "gemstone baby names for girls",
+    "bird baby names and meanings",
+    "animal baby names for babies",
+    # --- Twin, Pet, Dog, Cat ---
+    "twin baby names that go together",
+    "pet inspired baby names",
+    "dog names and meanings",
+    "cat names and meanings",
+    # --- Fantasy, Elf, Dragon, Kingdom ---
+    "fantasy baby names and meanings",
+    "elf names and meanings",
+    "dragon names and meanings",
+    "kingdom names and meanings",
+    # --- Scientist, Explorer, Viking ---
+    "scientist baby names and meanings",
+    "explorer baby names inspired by adventure",
+    "viking baby names and meanings",
 ]
-
 
 # ---------------------------------------------------------------------------
 # Rich Label Map (always 4 labels per keyword match)
@@ -507,22 +419,52 @@ TOPIC_LABEL_MAP = {
 # ---------------------------------------------------------------------------
 # Prompt template — NO frontmatter; we build that ourselves.
 # ---------------------------------------------------------------------------
-SYSTEM_PROMPT = """You are a professional SEO content writer specializing in baby names.
-You write engaging, well-researched, and informative blog articles for expectant parents.
+SYSTEM_PROMPT = """You are a professional Programmatic SEO content writer specializing in baby names.
 
-Return ONLY the article body in markdown. Do NOT include YAML frontmatter or fenced code blocks.
+Your job is to write high-quality, SEO-optimized articles that rank on Google and provide real value to parents searching for baby names.
 
-Structure:
-- *First line* must be an H1 heading (# Title) — this becomes the post title
-- Engaging introduction (2-3 paragraphs)
-- Use H2 (##) for major sections and H3 (###) for subsections
-- Include 4-5 H2 sections with substantive content
-- At least one H2 section should be a list or comparison format
-- End with an H2 FAQ section containing 4-5 questions with detailed answers
-- Total length: 800-1200 words (at least 200 words minimum)
-- Use bullet points and numbered lists where appropriate
+=== TITLE RULES ===
+The first line of your response MUST be an H1 heading (# ) with the EXACT format:
+# 100 {Topic Keyword Phrase}
+Examples: # 100 Baby Names That Mean Light, # 100 Biblical Baby Names and Meanings, # 100 Irish Baby Names for Boys and Girls
+- ALWAYS start the title with a number (100, 150, 200, 250)
+- Maximum 65 characters total
+- NEVER use these phrases anywhere: The Rise of, Timeless Choices, Artistic Flair, Perfect Balance, Modern Parents, Creative Naming Ideas, For Your Little One, Beautiful Choices, Inspired Living, Elegant Selections, Meaningful Journey, Hidden Gems, Naming Inspiration, Magical Names, Dreamy Names, Enchanting Names, Whimsical Names
+
+=== ARTICLE STRUCTURE ===
+1. # Title (H1 — number-prefixed, SEO-optimized)
+2. Engaging introduction (2-3 paragraphs, naturally include the primary keyword)
+3. ## Table of Contents (ordered list)
+4. ## 100 {Topic} Names and Meanings
+   - A LARGE TABLE with these columns:
+     | # | Name | Meaning | Origin | Pronunciation | Gender |
+   - The table MUST contain at least 100 names
+   - Every row must have all 6 columns filled
+   - Use real, verified name data
+5. ## Cultural Background and History
+6. ## Naming Tips and Advice
+7. ## Frequently Asked Questions
+   - 7-10 FAQs with detailed, helpful answers
+   - Format each as: ### Q: Question? followed by a detailed answer
+8. ## Conclusion
+9. ## Related Articles (5-10 internal links in markdown format)
+
+=== CONTENT RULES ===
+- Total article length: 2500-4000 words minimum
+- The name table is the core of the article — it must be comprehensive
+- Every name needs: meaning, origin, pronunciation, gender
+- Use real, accurate name data — do not fabricate meanings
+- Write unique, original content — do not use generic AI filler text
+- Include cultural context and naming traditions
 - Bold key terms and baby names for emphasis
-- Write in a warm, helpful tone suitable for parents"""
+
+=== INTERNAL LINKING ===
+At the end of the article, add a "Related Articles" section with 5-10 contextual internal links in this format:
+- [100 Irish Baby Names for Boys and Girls](/100-irish-baby-names)
+- [100 Japanese Baby Names and Meanings](/100-japanese-baby-names)
+Pick links that are thematically related to the current article topic.
+
+Return ONLY the article body in markdown. No YAML frontmatter, no code fences, no commentary."""
 
 
 # ---------------------------------------------------------------------------
@@ -667,9 +609,20 @@ def generate_labels(topic: str) -> list[str]:
     return topic_labels[:MAX_LABELS]
 
 
-def build_frontmatter(title: str, labels: list[str], today: str) -> str:
+def build_frontmatter(title: str, labels: list[str], today: str, topic: str) -> str:
     """Construct a valid YAML frontmatter block using yaml.dump."""
-    data = {"title": title, "labels": labels, "date": today}
+    meta_desc = generate_meta_description(title, topic)
+    seo_title = title[:65] if len(title) <= 65 else title[:62] + "..."
+    data = {
+        "title": title,
+        "labels": labels,
+        "date": today,
+        "slug": slugify(title),
+        "meta_description": meta_desc,
+        "seo_title": seo_title,
+        "og_title": title,
+        "og_description": meta_desc,
+    }
     yaml_body = yaml.dump(data, default_flow_style=False, allow_unicode=True, sort_keys=False)
     return "---\n" + yaml_body + "---"
 
@@ -838,6 +791,79 @@ def generate_article_with_retry(client: OpenAI, topic: str) -> str | None:
 # ---------------------------------------------------------------------------
 # Save pipeline with production validation
 # ---------------------------------------------------------------------------
+
+def enforce_title_rules(title: str) -> str | None:
+    """Post-process a title to ensure it follows SEO rules.
+
+    Returns the cleaned title, or None if it cannot be fixed.
+    """
+    title = title.strip()
+    original = title
+
+    # Strip any "# " prefix
+    if title.startswith("# "):
+        title = title[2:].strip()
+
+    # Check for banned phrases
+    title_lower = title.lower()
+    for phrase in BANNED_PHRASES:
+        if phrase in title_lower:
+            log.warning("Title contains banned phrase '%s': %s", phrase, title)
+            return None
+
+    # Enforce max 65 characters
+    if len(title) > 65:
+        # Try to trim at last space before 65
+        trimmed = title[:65].rsplit(" ", 1)[0]
+        if len(trimmed) < 10:
+            return None
+        title = trimmed
+
+    # Must start with a number (100, 150, etc.)
+    if not re.match(r"^\d+\s", title):
+        log.warning("Title does not start with a number: %s", title)
+        return None
+
+    if title != original:
+        log.info("Title adjusted: %r -> %r", original, title)
+
+    return title
+
+
+def generate_meta_description(title: str, topic: str) -> str:
+    """Generate an SEO-optimized meta description from the title."""
+    # Strip number prefix for the description
+    desc_title = re.sub(r"^\d+\s+", "", title)
+    return (
+        f"Discover {title.lower()}, including meanings, origins, "
+        f"pronunciation guides, and naming ideas. Find the perfect "
+        f"{desc_title.lower()} for your baby."
+    )[:160]
+
+
+# Pool of related article slugs for internal linking
+RELATED_ARTICLES_POOL = [
+    ("100 Irish Baby Names for Boys and Girls", "100-irish-baby-names"),
+    ("100 Japanese Baby Names and Meanings", "100-japanese-baby-names"),
+    ("100 Biblical Baby Names and Meanings", "100-biblical-baby-names"),
+    ("100 Baby Names That Mean Light", "100-baby-names-that-mean-light"),
+    ("100 Gender Neutral Baby Names", "100-gender-neutral-baby-names"),
+    ("100 Vintage Baby Names", "100-vintage-baby-names"),
+    ("100 Nature Baby Names Inspired by Flowers", "100-nature-baby-names"),
+    ("100 Unique Baby Names You Haven't Heard", "100-unique-baby-names"),
+    ("100 Baby Boy Names That Mean Strong", "100-baby-boy-names"),
+    ("100 Beautiful Baby Girl Names and Meanings", "100-baby-girl-names"),
+    ("100 French Baby Names That Sound Beautiful", "100-french-baby-names"),
+    ("100 Italian Baby Names and Meanings", "100-italian-baby-names"),
+    ("100 Greek Baby Names from Mythology", "100-greek-baby-names"),
+    ("100 Korean Baby Names and Meanings", "100-korean-baby-names"),
+    ("100 Royal Baby Names for Boys and Girls", "100-royal-baby-names"),
+    ("100 Warrior Baby Names and Meanings", "100-warrior-baby-names"),
+    ("100 One Syllable Baby Names", "100-one-syllable-baby-names"),
+    ("100 Middle Names for Girls", "100-middle-names"),
+    ("100 Celestial Baby Names Inspired by Stars", "100-celestial-baby-names"),
+    ("100 Country Baby Names for Boys and Girls", "100-country-baby-names"),
+]
 def save_and_validate(article_text: str, topic: str, blacklist: dict) -> Path | None:
     """Clean, extract, validate, and save an article.  Returns file path or None."""
     today = datetime.now().strftime("%Y-%m-%d")
@@ -846,9 +872,12 @@ def save_and_validate(article_text: str, topic: str, blacklist: dict) -> Path | 
     cleaned = strip_fences(article_text)
     body = strip_existing_frontmatter(cleaned)
 
-    # 2. Extract and sanitize title
+    # 2. Extract and enforce SEO title rules
     raw_title = extract_title(body, topic)
-    title = sanitize_title(raw_title)
+    title = enforce_title_rules(raw_title)
+    if title is None:
+        log.error("[ERROR] Title failed SEO rules for '%s': %s", topic, raw_title)
+        return None
 
     # 3. Dedup check
     title_lower = title.strip().lower()
@@ -864,7 +893,7 @@ def save_and_validate(article_text: str, topic: str, blacklist: dict) -> Path | 
     labels = generate_labels(topic)
 
     # 5. Build frontmatter
-    frontmatter = build_frontmatter(title, labels, today)
+    frontmatter = build_frontmatter(title, labels, today, topic)
 
     # 6. Production validation
     if not body.strip():
