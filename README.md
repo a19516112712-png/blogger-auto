@@ -97,7 +97,7 @@ In your GitHub repository, go to **Settings** > **Secrets and variables** > **Ac
 | `CLIENT_SECRET`   | OAuth 2.0 Client Secret              |
 | `REFRESH_TOKEN`   | OAuth 2.0 refresh token              |
 | `AGNES_API_KEY`   | Agnes AI API key from dashboard       |
-| `AGNES_MODEL`     | Model name (default: Agnes 2.0 Flash)  |
+| `AGNES_MODEL`     | Model name (default: agnes-2.0-flash)  |
 
 ### 6. Write (or Generate) a Post
 
@@ -159,8 +159,8 @@ export AGNES_API_KEY="your_agnes_api_key"
 # Install dependencies
 pip install -r requirements.txt
 
-# Optional: set model (defaults to Agnes 2.0 Flash)
-# export AGNES_MODEL=Agnes 2.0 Flash
+# Optional: set model (defaults to agnes-2.0-flash)
+# export AGNES_MODEL=agnes-2.0-flash
 
 # Generate articles
 python generate_content.py

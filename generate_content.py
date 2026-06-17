@@ -43,8 +43,8 @@ log = logging.getLogger(__name__)
 POSTS_DIR = Path(__file__).resolve().parent / "posts"
 HISTORY_FILE = Path(__file__).resolve().parent / "generated_topics.json"
 # Primary and fallback models (Agnes AI supported models)
-DEFAULT_MODEL = "Agnes 2.0 Flash"
-FALLBACK_MODEL = "Agnes 1.5 Flash"
+DEFAULT_MODEL = "agnes-2.0-flash"
+FALLBACK_MODEL = "agnes-1.5-flash"
 MODEL = os.environ.get("AGNES_MODEL", DEFAULT_MODEL)
 
 # Dynamic article count: read from env or default to 5

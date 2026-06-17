@@ -11,9 +11,9 @@ API_KEY = os.getenv("AGNES_API_KEY", "sk-test-dummy-key")
 BASE_URL = "https://apihub.agnes-ai.com/v1"
 
 MODELS_TO_TEST = [
-    os.getenv("AGNES_MODEL", "Agnes 2.0 Flash"),
-    "Agnes 2.0 Flash",
-    "Agnes 1.5 Flash",
+    os.getenv("AGNES_MODEL", "agnes-2.0-flash"),
+    "agnes-2.0-flash",
+    "agnes-1.5-flash",
 ]
 
 print("=" * 60)
