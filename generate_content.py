@@ -2,7 +2,7 @@
 """
 Blogger Content Generator — Production Grade
 
-Uses the Gemini API (gemini-2.5-flash) to generate SEO-optimized
+Uses Agnes AI (OpenAI-compatible) to generate SEO-optimized
 baby-name articles. Articles are saved as markdown into posts/.
 
 Features:
@@ -25,8 +25,7 @@ from datetime import datetime
 from pathlib import Path
 
 import yaml
-from google import genai
-from google.genai import types
+from openai import OpenAI
 
 # ---------------------------------------------------------------------------
 # Logging
@@ -43,11 +42,13 @@ log = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 POSTS_DIR = Path(__file__).resolve().parent / "posts"
 HISTORY_FILE = Path(__file__).resolve().parent / "generated_topics.json"
-MODEL = "gemini-2.5-flash"
+MODEL = os.environ.get("AGNES_MODEL", "gpt-4o-mini")
 
 # Dynamic article count: read from env or default to 5
 DEFAULT_ARTICLES_PER_RUN = 5
 ARTICLES_PER_RUN = int(os.environ.get("ARTICLES_PER_RUN", DEFAULT_ARTICLES_PER_RUN))
+
+AGNES_BASE_URL = "https://api.hub.agnes-ai.com/v1"
 
 # Retry configuration
 MAX_RETRIES = 3
@@ -641,7 +642,7 @@ def sanitize_title(raw_title: str) -> str:
 
 
 def strip_existing_frontmatter(text: str) -> str:
-    """Remove any YAML frontmatter block Gemini may have generated."""
+    """Remove any YAML frontmatter block the model may have generated."""
     if text.startswith("---"):
         parts = text.split("---", 2)
         if len(parts) >= 3:
@@ -733,12 +734,12 @@ def validate_saved_file(filepath: Path) -> bool:
 # Generation with retry & quota protection
 # ---------------------------------------------------------------------------
 def is_quota_exhausted() -> bool:
-    """Check whether the Gemini quota has been exhausted."""
+    """Check whether the API rate limit has been exhausted."""
     return _quota_exhausted
 
 
 def set_quota_exhausted():
-    """Mark the Gemini quota as exhausted (global flag)."""
+    """Mark the API rate limit as exhausted (global flag)."""
     global _quota_exhausted
     _quota_exhausted = True
 
@@ -761,48 +762,49 @@ def pick_topics(num: int, blacklist: dict) -> list[str]:
     return chosen
 
 
-def generate_article_with_retry(client: genai.Client, topic: str) -> str | None:
+def generate_article_with_retry(client: OpenAI, topic: str) -> str | None:
     """Generate an article with retry logic for transient failures.
 
     Retries on: 429, 500, 503, and network timeouts.
     Stops immediately on permanent quota exhaustion (429).
+    Uses OpenAI-compatible chat completions API via Agnes AI.
     """
     global _quota_exhausted
 
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            response = client.models.generate_content(
+            response = client.chat.completions.create(
                 model=MODEL,
-                contents=f"Write an SEO-optimized blog article about: {topic}",
-                config={
-                    "system_instruction": SYSTEM_PROMPT,
-                    "temperature": 0.9,
-                    "top_p": 0.95,
-                    "max_output_tokens": 4096,
-                },
+                messages=[
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": f"Write an SEO-optimized blog article about: {topic}"},
+                ],
+                temperature=0.9,
+                top_p=0.95,
+                max_tokens=4096,
             )
-            if response.candidates and response.text:
-                return response.text
-            log.warning("Attempt %d: empty response from Gemini for '%s'.", attempt, topic)
+            if response.choices and response.choices[0].message.content:
+                return response.choices[0].message.content
+            log.warning("Attempt %d: empty response from Agnes AI for '%s'.", attempt, topic)
         except Exception as exc:
             exc_str = str(exc).lower()
-            code = getattr(exc, "code", None) or (429 if "429" in exc_str or "resource_exhausted" in exc_str else None)
+            status_code = getattr(exc, "status_code", None)
 
-            # 429 = quota exhausted — mark globally and stop retrying
-            if code == 429 or "429" in exc_str or "resource_exhausted" in exc_str:
-                log.warning("[WARNING] Gemini quota exceeded (429 RESOURCE_EXHAUSTED).")
+            # 429 = quota/rate limit exhausted — mark globally and stop retrying
+            if status_code == 429 or "429" in exc_str or "rate_limit" in exc_str or "resource_exhausted" in exc_str:
+                log.warning("[WARNING] Agnes AI rate limit exceeded (429).")
                 if not _quota_exhausted:
                     set_quota_exhausted()
-                return None  # Don't retry — quota is gone
+                return None  # Don't retry — rate limit is gone
 
             # Retryable error codes
-            if code in RETRYABLE_CODES or any(str(c) in exc_str for c in RETRYABLE_CODES) or "timeout" in exc_str:
+            if status_code in RETRYABLE_CODES or any(str(c) in exc_str for c in RETRYABLE_CODES) or "timeout" in exc_str:
                 if attempt < MAX_RETRIES:
                     delay = RETRY_DELAYS[attempt - 1]
                     log.warning("Attempt %d/%d failed (%s). Retrying in %ds…", attempt, MAX_RETRIES, type(exc).__name__, delay)
                     time.sleep(delay)
                     continue
-            log.error("Gemini API error for '%s' (attempt %d): %s", topic, attempt, exc)
+            log.error("Agnes AI API error for '%s' (attempt %d): %s", topic, attempt, exc)
             return None
 
     log.error("All %d retries exhausted for topic '%s'.", MAX_RETRIES, topic)
@@ -910,14 +912,14 @@ def main():
     log.info("Starting content generation for Baby Names niche…")
     log.info("Requested articles: %d | Model: %s", ARTICLES_PER_RUN, MODEL)
 
-    api_key = os.environ.get("GEMINI_API_KEY")
+    api_key = os.environ.get("AGNES_API_KEY")
     if not api_key:
-        log.error("GEMINI_API_KEY environment variable is not set.")
+        log.error("AGNES_API_KEY environment variable is not set.")
         sys.exit(1)
 
     POSTS_DIR.mkdir(parents=True, exist_ok=True)
     blacklist = build_blacklist()
-    client = genai.Client(api_key=api_key)
+    client = OpenAI(api_key=api_key, base_url=AGNES_BASE_URL)
 
     topics = pick_topics(ARTICLES_PER_RUN, blacklist)
     if not topics:
@@ -939,7 +941,7 @@ def main():
 
     for topic in topics:
         if is_quota_exhausted():
-            log.warning("[WARNING] Gemini quota exhausted. Stopping further generation.")
+            log.warning("[WARNING] Agnes AI rate limit reached. Stopping further generation.")
             break
 
         log.info("Generating article for: %s", topic)

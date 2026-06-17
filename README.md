@@ -1,10 +1,10 @@
 # Blogger Auto Publishing
 
-Automatically generate SEO-optimized baby-name articles with Gemini, then publish them to [Blogger](https://www.blogger.com) via GitHub Actions and the Blogger API v3.
+Automatically generate SEO-optimized baby-name articles with Agnes AI, then publish them to [Blogger](https://www.blogger.com) via GitHub Actions and the Blogger API v3.
 
 ## Features
 
-- **AI Content Generation** — Gemini 2.5 Flash writes 5 SEO articles per day about baby names
+- **AI Content Generation** — Agnes AI writes 5 SEO articles per day about baby names
 - **Markdown with YAML frontmatter** — title, labels, and meta descriptions included
 - **Automatic markdown-to-HTML conversion** — tables, code blocks, headings, and more
 - **Duplicate detection** — skips posts that already exist on your blog
@@ -17,7 +17,7 @@ Automatically generate SEO-optimized baby-name articles with Gemini, then publis
 blogger-auto/
 ├── posts/                       # Generated and manual .md files
 │   └── example.md
-├── generate_content.py          # Gemini-powered article generator
+├── generate_content.py          # Agnes AI-powered article generator
 ├── publish.py                   # Blogger API publisher
 ├── requirements.txt             # Python dependencies
 ├── README.md
@@ -33,7 +33,7 @@ blogger-auto/
 Daily cron (midnight UTC)
     │
     ▼
-generate.yml ──► generate_content.py ──► Gemini API
+generate.yml ──► generate_content.py ──► Agnes AI
                                               │
                                        5 new .md files in posts/
                                               │
@@ -73,11 +73,12 @@ generate.yml ──► generate_content.py ──► Gemini API
 6. In Step 2, click **Exchange authorization code for tokens**
 7. Copy the **Refresh token** shown
 
-### 3. Get a Gemini API Key
+### 3. Get an Agnes AI API Key
 
-1. Go to [Google AI Studio](https://aistudio.google.com/apikey)
-2. Click **Get API Key** or **Create API Key**
-3. Copy the generated key
+1. Go to [Agnes AI Hub](https://hub.agnes-ai.com)
+2. Sign up or log in to your account
+3. Navigate to **API Keys** in your dashboard
+4. Click **Create API Key** and copy it
 
 ### 4. Find Your Blog ID
 
@@ -95,7 +96,7 @@ In your GitHub repository, go to **Settings** > **Secrets and variables** > **Ac
 | `CLIENT_ID`       | OAuth 2.0 Client ID                  |
 | `CLIENT_SECRET`   | OAuth 2.0 Client Secret              |
 | `REFRESH_TOKEN`   | OAuth 2.0 refresh token              |
-| `GEMINI_API_KEY`  | Gemini API key from AI Studio        |
+| `AGNES_API_KEY`   | Agnes AI API key from dashboard       |
 
 ### 6. Write (or Generate) a Post
 
@@ -134,7 +135,7 @@ Write your content here using standard markdown.
 For manual posts, push your `.md` file to the repository. For generated posts, the daily cron handles everything — generation, commit, and publishing — automatically.
 
 You can also trigger either workflow manually from the **Actions** tab:
-- **Generate Baby Name Articles** — generates 5 new articles
+- **Generate Baby Name Articles** — generates 5 new articles via Agnes AI
 - **Publish to Blogger** — publishes any un-published posts in `posts/`
 
 ## Workflows
@@ -152,10 +153,13 @@ export BLOG_ID="your_blog_id"
 export CLIENT_ID="your_client_id"
 export CLIENT_SECRET="your_client_secret"
 export REFRESH_TOKEN="your_refresh_token"
-export GEMINI_API_KEY="your_gemini_key"
+export AGNES_API_KEY="your_agnes_api_key"
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Optional: set model (defaults to gpt-4o-mini)
+# export AGNES_MODEL=gpt-4o-mini
 
 # Generate articles
 python generate_content.py
