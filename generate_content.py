@@ -48,7 +48,7 @@ MODEL = os.environ.get("AGNES_MODEL", "gpt-4o-mini")
 DEFAULT_ARTICLES_PER_RUN = 5
 ARTICLES_PER_RUN = int(os.environ.get("ARTICLES_PER_RUN", DEFAULT_ARTICLES_PER_RUN))
 
-AGNES_BASE_URL = "https://api.hub.agnes-ai.com/v1"
+AGNES_BASE_URL = "https://apihub.agnes-ai.com/v1"
 
 # Retry configuration
 MAX_RETRIES = 3
