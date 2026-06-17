@@ -42,7 +42,10 @@ log = logging.getLogger(__name__)
 # ---------------------------------------------------------------------------
 POSTS_DIR = Path(__file__).resolve().parent / "posts"
 HISTORY_FILE = Path(__file__).resolve().parent / "generated_topics.json"
-MODEL = os.environ.get("AGNES_MODEL", "gpt-4o-mini")
+# Primary and fallback models (Agnes AI supported models)
+DEFAULT_MODEL = "Agnes 2.0 Flash"
+FALLBACK_MODEL = "Agnes 1.5 Flash"
+MODEL = os.environ.get("AGNES_MODEL", DEFAULT_MODEL)
 
 # Dynamic article count: read from env or default to 5
 DEFAULT_ARTICLES_PER_RUN = 5
@@ -773,16 +776,37 @@ def generate_article_with_retry(client: OpenAI, topic: str) -> str | None:
 
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            response = client.chat.completions.create(
-                model=MODEL,
-                messages=[
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": f"Write an SEO-optimized blog article about: {topic}"},
-                ],
-                temperature=0.9,
-                top_p=0.95,
-                max_tokens=4096,
-            )
+            # Try primary model first, fall back to alternate on model-not-found
+            active_model = MODEL
+            try:
+                response = client.chat.completions.create(
+                    model=active_model,
+                    messages=[
+                        {"role": "system", "content": SYSTEM_PROMPT},
+                        {"role": "user", "content": f"Write an SEO-optimized blog article about: {topic}"},
+                    ],
+                    temperature=0.9,
+                    top_p=0.95,
+                    max_tokens=4096,
+                )
+            except Exception as model_exc:
+                exc_str = str(model_exc).lower()
+                if "model_not_found" in exc_str and active_model != FALLBACK_MODEL:
+                    log.warning("Model '%s' not found, falling back to '%s'.", active_model, FALLBACK_MODEL)
+                    active_model = FALLBACK_MODEL
+                    response = client.chat.completions.create(
+                        model=active_model,
+                        messages=[
+                            {"role": "system", "content": SYSTEM_PROMPT},
+                            {"role": "user", "content": f"Write an SEO-optimized blog article about: {topic}"},
+                        ],
+                        temperature=0.9,
+                        top_p=0.95,
+                        max_tokens=4096,
+                    )
+                else:
+                    raise
+
             if response.choices and response.choices[0].message.content:
                 return response.choices[0].message.content
             log.warning("Attempt %d: empty response from Agnes AI for '%s'.", attempt, topic)
