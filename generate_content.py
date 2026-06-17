@@ -66,11 +66,11 @@ BANNED_PHRASES = [
     "beautiful choices", "inspired living", "elegant selections",
     "meaningful journey", "hidden gems", "naming inspiration",
     "magical names", "dreamy names", "enchanting names", "whimsical names",
-    "naming ideas", "the rise of", "making a comeback",
+    "naming ideas", "the rise of",
 ]
 
 MIN_TITLE_LENGTH = 10       # characters (titles now start with '100 ...')
-MIN_BODY_WORDS = 500        # words (targeting 2500-4000 word articles)
+MIN_BODY_WORDS = 1500       # words (reject below 1500, target 2500-4000)
 MIN_LABELS = 4
 MAX_LABELS = 6
 
