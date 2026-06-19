@@ -37,11 +37,37 @@ log = logging.getLogger(__name__)
 POSTS_DIR = Path(__file__).resolve().parent / "posts"
 SCOPES = ["https://www.googleapis.com/auth/blogger"]
 DUPLICATE_REASON = "duplicate"  # Reason code from Blogger API for duplicates
+FORBIDDEN_LABELS = {"seo", "blog", "article", "content", "post", "seo optimized", "adsense"}
 
 
 # ---------------------------------------------------------------------------
 # Authentication
 # ---------------------------------------------------------------------------
+
+def sanitize_labels(labels) -> list:
+    """Strip forbidden labels (SEO, Blog, Article, etc.) and deduplicate.
+    Accepts list or comma-separated string. Always includes 'Baby Names' first."""
+    # Normalize to list
+    if isinstance(labels, str):
+        labels = [lbl.strip() for lbl in labels.split(",") if lbl.strip()]
+    if not isinstance(labels, list):
+        return ["Baby Names"]
+    cleaned = []
+    seen = {"baby names"}
+    for lbl in labels:
+        lbl_str = str(lbl).strip()
+        if not lbl_str:
+            continue
+        if lbl_str.lower() in FORBIDDEN_LABELS:
+            log.info("Stripped forbidden label: %s", lbl_str)
+            continue
+        if lbl_str.lower() not in seen:
+            cleaned.append(lbl_str)
+            seen.add(lbl_str.lower())
+    if not cleaned or "Baby Names" not in cleaned:
+        return ["Baby Names"] + cleaned
+    return cleaned
+
 def get_authenticated_service():
     """Create an authenticated Blogger API service using OAuth 2.0 credentials.
 
@@ -307,13 +333,20 @@ def main():
             skipped_duplicate += 1
             continue
 
-        labels = frontmatter.get("labels", "")
-        if isinstance(labels, str):
-            labels = [lbl.strip() for lbl in labels.split(",") if lbl.strip()]
-        elif not isinstance(labels, list):
-            labels = []
+        raw_labels = frontmatter.get("labels", "")
+        labels = sanitize_labels(raw_labels)
 
         html_body = md_to_html(md_body)
+
+        print("=" * 60)
+        if not labels:
+            print("[DEBUG] No labels found.")
+        else:
+            print("[DEBUG] Final labels sent to Blogger:")
+            print(labels)
+        print("[DEBUG] Post title:")
+        print(title)
+        print("=" * 60)
 
         url = publish_post(service, blog_id, title, html_body, labels)
         if url:
