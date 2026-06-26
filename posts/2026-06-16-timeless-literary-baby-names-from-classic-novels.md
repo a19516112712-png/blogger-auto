@@ -3,7 +3,6 @@ title: Few things are as magical as a good story, and fewer still hold the power
   shape our world quite like the tales we cherish. When it comes to choosin
 labels:
 - Baby Names
-- SEO
 date: '2026-06-16'
 ---
 

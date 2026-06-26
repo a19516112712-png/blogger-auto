@@ -2,7 +2,6 @@
 title: Getting Started with Blogger Auto Publishing
 labels:
 - Baby Names
-- SEO
 date: '2026-06-16'
 ---
 

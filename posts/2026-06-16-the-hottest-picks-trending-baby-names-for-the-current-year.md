@@ -2,7 +2,6 @@
 title: 'The Hottest Picks: Trending Baby Names for the Current Year'
 labels:
 - Baby Names
-- SEO
 date: '2026-06-16'
 ---
 

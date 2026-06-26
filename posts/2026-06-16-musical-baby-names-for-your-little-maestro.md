@@ -2,7 +2,6 @@
 title: Musical Baby Names for Your Little Maestro
 labels:
 - Baby Names
-- SEO
 - Musical Names
 date: '2026-06-16'
 ---

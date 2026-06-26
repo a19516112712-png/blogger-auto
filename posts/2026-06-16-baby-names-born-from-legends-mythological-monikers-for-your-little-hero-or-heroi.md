@@ -3,7 +3,6 @@ title: 'Baby Names Born from Legends: Mythological Monikers for Your Little Hero
   Heroine'
 labels:
 - Baby Names
-- SEO
 - Mythology Names
 date: '2026-06-16'
 ---

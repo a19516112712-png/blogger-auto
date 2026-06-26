@@ -2,12 +2,11 @@
 title: 'title: Gender-Neutral Baby Names: The Rise of Modern, Flexible Choices'
 labels:
 - Baby Names
-- SEO
 date: '2026-06-16'
 ---
 
 title: Gender-Neutral Baby Names: The Rise of Modern, Flexible Choices
-labels: Baby Names,SEO,Gender-Neutral Names,Unisex Names,Modern Baby Names,Parenting,Name Trends
+labels: Baby Names, Gender-Neutral Names, Unisex Names, Modern Baby Names, Parenting, Name Trends
 meta_description: Discover why gender-neutral baby names are surging in popularity! Explore flexible, modern options for your little one and find the perfect fit. Get inspired today.
 ```
 

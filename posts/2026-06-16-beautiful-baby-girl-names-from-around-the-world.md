@@ -2,7 +2,6 @@
 title: Beautiful Baby Girl Names from Around the World
 labels:
 - Baby Names
-- SEO
 date: '2026-06-16'
 ---
 

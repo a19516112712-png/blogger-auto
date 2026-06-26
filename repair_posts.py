@@ -36,12 +36,41 @@ POSTS_DIR = Path(__file__).resolve().parent / "posts"
 REQUIRED_FRONTMATTER_FIELDS = {"title", "date", "labels"}
 
 DEFAULT_LABELS = ["Baby Names"]
-# Excludes "SEO" — labels describe content theme, not publishing strategy
+FORBIDDEN_LABELS = {"seo", "blog", "article", "content", "post", "seo optimized", "adsense"}
+# Forbidden labels stripped — labels describe content theme, not publishing strategy
 
 
 # ---------------------------------------------------------------------------
 # Frontmatter helpers
 # ---------------------------------------------------------------------------
+
+def sanitize_labels(labels) -> list:
+    """Strip forbidden labels (SEO, Blog, Article, etc.) and deduplicate.
+    Accepts list or comma-separated string."""
+    # Normalize to list
+    if isinstance(labels, str):
+        labels = [lbl.strip() for lbl in labels.split(",") if lbl.strip()]
+    if not isinstance(labels, list):
+        return list(DEFAULT_LABELS)
+    cleaned = []
+    seen = set()
+    for lbl in labels:
+        lbl_str = str(lbl).strip()
+        if not lbl_str:
+            continue
+        if lbl_str.lower() in FORBIDDEN_LABELS:
+            log.info("Stripped forbidden label: %s", lbl_str)
+            continue
+        if lbl_str.lower() not in seen:
+            cleaned.append(lbl_str)
+            seen.add(lbl_str.lower())
+    if not cleaned:
+        return list(DEFAULT_LABELS)
+    # Ensure "Baby Names" is first
+    if "Baby Names" in cleaned:
+        cleaned.remove("Baby Names")
+    return ["Baby Names"] + cleaned
+
 def has_valid_frontmatter(filepath: Path) -> bool:
     """Check whether a file starts with `---` and contains parseable YAML
     with all required fields.
@@ -86,6 +115,10 @@ def has_valid_frontmatter(filepath: Path) -> bool:
         if field == "labels":
             if not isinstance(fm[field], list) or len(fm[field]) == 0:
                 return False
+            # Check for forbidden labels — if found, mark as invalid for repair
+            for lbl in fm[field]:
+                if str(lbl).strip().lower() in FORBIDDEN_LABELS:
+                    return False
 
     return True
 
@@ -173,7 +206,18 @@ def repair_file(filepath: Path) -> bool:
     # Extract metadata
     title = extract_title_from_body(body, filepath.stem)
     date_str = extract_date_from_filename(filepath.name)
-    labels = DEFAULT_LABELS
+
+    # Try to salvage existing labels from broken frontmatter
+    labels = list(DEFAULT_LABELS)
+    if text.startswith("---"):
+        parts = text.split("---", 2)
+        if len(parts) >= 3:
+            try:
+                old_fm = yaml.safe_load(parts[1].strip())
+                if isinstance(old_fm, dict) and "labels" in old_fm:
+                    labels = sanitize_labels(old_fm["labels"])
+            except yaml.YAMLError:
+                pass
 
     # Build fresh frontmatter
     frontmatter = build_frontmatter(title, labels, date_str)
@@ -207,8 +251,12 @@ def has_valid_frontmatter_path(content: str) -> bool:
             return False
         if field in ("title", "date") and not str(fm[field]).strip():
             return False
-        if field == "labels" and (not isinstance(fm[field], list) or len(fm[field]) == 0):
-            return False
+        if field == "labels":
+            if not isinstance(fm[field], list) or len(fm[field]) == 0:
+                return False
+            for lbl in fm[field]:
+                if str(lbl).strip().lower() in FORBIDDEN_LABELS:
+                    return False
     return True
 
 

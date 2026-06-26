@@ -2,12 +2,11 @@
 title: 'title: Vintage Baby Names Making a Comeback: Timeless Charm for Today'
 labels:
 - Baby Names
-- SEO
 date: '2026-06-16'
 ---
 
 title: Vintage Baby Names Making a Comeback: Timeless Charm for Today
-labels: Baby Names,SEO,Vintage Names,Classic Names,Retro Names,Comeback Names,Timeless Names
+labels: Baby Names, Vintage Names, Classic Names, Retro Names, Comeback Names, Timeless Names
 meta_description: Discover the enchanting world of vintage baby names! Explore classic monikers for boys and girls making a stylish comeback. Find timeless charm for your little one.
 ```
 

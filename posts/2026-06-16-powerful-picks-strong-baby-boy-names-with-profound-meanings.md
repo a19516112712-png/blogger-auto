@@ -2,7 +2,6 @@
 title: 'Powerful Picks: Strong Baby Boy Names with Profound Meanings'
 labels:
 - Baby Names
-- SEO
 date: '2026-06-16'
 ---
 

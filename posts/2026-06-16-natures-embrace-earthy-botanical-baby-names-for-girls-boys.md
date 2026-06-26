@@ -2,12 +2,11 @@
 title: 'title: Nature''s Embrace: Earthy & Botanical Baby Names for Girls & Boys'
 labels:
 - Baby Names
-- SEO
 date: '2026-06-16'
 ---
 
 title: Nature's Embrace: Earthy & Botanical Baby Names for Girls & Boys
-labels: Baby Names,SEO,Earthy Names,Botanical Names,Nature Names,Girl Names,Boy Names,Unique Baby Names,Gender Neutral Names
+labels: Baby Names, Earthy Names, Botanical Names, Nature Names, Girl Names, Boy Names, Unique Baby Names, Gender Neutral Names
 meta_description: Explore a beautiful collection of earthy and botanical baby names for girls and boys! Find nature-inspired names reflecting strength, beauty, and growth for your little one.
 ---
 Welcoming a new baby into the world is an incredibly special journey, filled with anticipation and joy. One of the most cherished tasks for expectant parents is choosing the perfect name – a name that will carry meaning, resonate with their family's values, and suit their little one's unique personality. If you're drawn to the tranquility of the forest, the vibrant beauty of a garden, or the raw power of the earth itself, then earthy and botanical baby names might just be your ideal choice.

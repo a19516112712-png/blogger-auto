@@ -2,7 +2,6 @@
 title: 'Names with Powerful Meanings: Inspire Courage, Love, and Wisdom'
 labels:
 - Baby Names
-- SEO
 - Meaningful Names
 date: '2026-06-16'
 ---
