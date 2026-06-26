@@ -1,0 +1,88 @@
+{
+  "improved": [
+    {
+      "slug": "2026-06-16-musical-baby-names-for-your-little-maestro",
+      "old_word_count": 155,
+      "new_word_count": 3402,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "high"
+        },
+        {
+          "action": "add_faq",
+          "target": "5-8 FAQs with schema",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "improve_structure",
+          "target": "6+ H2 sections",
+          "priority": "low"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-26 07:08:17"
+    },
+    {
+      "slug": "example",
+      "old_word_count": 200,
+      "new_word_count": 2613,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "high"
+        },
+        {
+          "action": "add_faq",
+          "target": "5-8 FAQs with schema",
+          "priority": "high"
+        },
+        {
+          "action": "improve_structure",
+          "target": "6+ H2 sections",
+          "priority": "low"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-26 07:09:37"
+    },
+    {
+      "slug": "2026-06-16-biblical-baby-names-timeless-choices-for-modern-parents",
+      "old_word_count": 1388,
+      "new_word_count": 5433,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-26 07:19:40"
+    }
+  ]
+}
