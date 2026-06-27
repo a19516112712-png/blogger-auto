@@ -83,6 +83,75 @@
         }
       ],
       "date": "2026-06-26 07:19:40"
+    },
+    {
+      "slug": "2026-06-16-names-with-powerful-meanings-inspire-courage-love-and-wisdom",
+      "old_word_count": 1412,
+      "new_word_count": 3089,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-27 06:42:04"
+    },
+    {
+      "slug": "2026-06-16-timeless-literary-baby-names-from-classic-novels",
+      "old_word_count": 1358,
+      "new_word_count": 3466,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-27 06:43:29"
+    },
+    {
+      "slug": "2026-06-17-rooted-in-love-wholesome-farmhouse-baby-names-for-a-nostalgic-touch",
+      "old_word_count": 1312,
+      "new_word_count": 2553,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-27 06:45:23"
     }
   ]
 }

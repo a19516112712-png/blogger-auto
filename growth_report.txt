@@ -1,28 +1,28 @@
 ============================================================
 SELF-IMPROVING SEO GROWTH REPORT
 ============================================================
-Date: 2026-06-26 07:19:40
+Date: 2026-06-27 06:45:23
 Blog: https://babynameideas2026.blogspot.com
 
 ✅ growth_detection
-   total: 74
-   high_growth: 21
-   potential_growth: 53
-   #1: [80] Musical Baby Names for Your Little Maestro (155w)
-   #2: [70] Getting Started with Blogger Auto Publishing (200w)
-   #3: [57] title: Biblical Baby Names: Timeless Choices for M (1388w)
+   total: 81
+   high_growth: 18
+   potential_growth: 63
+   #1: [57] Names with Powerful Meanings: Inspire Courage, Lov (1412w)
+   #2: [57] Few things are as magical as a good story, and few (1358w)
+   #3: [57] Rooted in Love: Wholesome Farmhouse Baby Names for (1312w)
 
 ✅ content_evolution
    ran: True
-   output_preview: al Baby Names: Timeless Choices for Modern (1388w)
-  4. [57] Names with Powerful Meanings: Inspire Courage, Love, an (1412w)
-  5. [57] Few things are as magical as a good story, and fewer st (1358w)
+   output_preview: mhouse Baby Names for a No (1312w)
+  4. [57] Rooted in Nature: The Best Tree and Forest Baby Names f (1497w)
+  5. [57] Timeless Elegance: Irish Baby Names Full of Celtic Char (1467w)
 
 Running evolution on top candidates...
 
 
 RESULTS: improved=3 skipped=0 failed=0
-  ✅ Musical Baby Nam
+  ✅ Names with Powerful Meanings: In
 
 ✅ link_optimization
    ran: True
