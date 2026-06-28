@@ -1,28 +1,28 @@
 ============================================================
 SELF-IMPROVING SEO GROWTH REPORT
 ============================================================
-Date: 2026-06-27 06:45:23
+Date: 2026-06-28 07:18:35
 Blog: https://babynameideas2026.blogspot.com
 
 ✅ growth_detection
-   total: 81
-   high_growth: 18
-   potential_growth: 63
-   #1: [57] Names with Powerful Meanings: Inspire Courage, Lov (1412w)
-   #2: [57] Few things are as magical as a good story, and few (1358w)
-   #3: [57] Rooted in Love: Wholesome Farmhouse Baby Names for (1312w)
+   total: 87
+   high_growth: 16
+   potential_growth: 71
+   #1: [57] Rooted in Nature: The Best Tree and Forest Baby Na (1497w)
+   #2: [57] Timeless Elegance: Irish Baby Names Full of Celtic (1467w)
+   #3: [52] title: Bohemian Baby Names: Artistic Flair for You (1621w)
 
 ✅ content_evolution
    ran: True
-   output_preview: mhouse Baby Names for a No (1312w)
-  4. [57] Rooted in Nature: The Best Tree and Forest Baby Names f (1497w)
-  5. [57] Timeless Elegance: Irish Baby Names Full of Celtic Char (1467w)
+   output_preview: rtistic Flair for Your Lit (1621w)
+  4. [52] title: Vintage Baby Names Making a Comeback: Timeless C (1536w)
+  5. [37] Baby Names Born from Legends: Mythological Monikers for (1606w)
 
 Running evolution on top candidates...
 
 
 RESULTS: improved=3 skipped=0 failed=0
-  ✅ Names with Powerful Meanings: In
+  ✅ Rooted in Nature: The Best Tree 
 
 ✅ link_optimization
    ran: True
