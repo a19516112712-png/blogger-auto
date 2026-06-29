@@ -226,6 +226,80 @@
         }
       ],
       "date": "2026-06-28 07:18:35"
+    },
+    {
+      "slug": "2026-06-16-vintage-baby-names-making-a-comeback-timeless-charm-for-your-little-one",
+      "old_word_count": 1536,
+      "new_word_count": 3420,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_faq",
+          "target": "5-8 FAQs with schema",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-29 08:33:27"
+    },
+    {
+      "slug": "2026-06-16-beautiful-baby-girl-names-from-around-the-world",
+      "old_word_count": 1503,
+      "new_word_count": 3245,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-29 08:33:59"
+    },
+    {
+      "slug": "2026-06-16-gender-neutral-baby-names-the-rise-of-modern-flexible-choices",
+      "old_word_count": 1580,
+      "new_word_count": 3075,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-29 08:36:40"
     }
   ]
 }
