@@ -176,4 +176,14 @@ While the primary origin is important, ensure the name doesn’t have an uninten
 If you have a surname with many syllables, choose a shorter star name like **Ray** or **Sky**. Conversely, a longer surname might benefit from the rhythmic flow of **Antares** or **Alcyone**. Say the full name aloud with your chosen middle name to test the cadence.
 
 ### 4. Avoid Overused Planets
-Names like **Jupiter**, **Apollo**, and **Diana** are popular but can feel dated or overly literal. Opt for less common stars like **Lyra** (a constellation containing bright stars) or **Lyra** itself, which is musical and celestial.
+Names like **Jupiter**, **Apollo**, and **Diana** are popular but can feel dated or overly literal. Opt for less common stars like **Lyra** (a constellation containing bright stars) or
+
+### Related Articles
+
+- [100 Kingdom Baby Names and Meanings](/100-kingdom-baby-names-and-meanings)
+- [Vintage Baby Names Making a Comeback: Timeless Charm for Your Little One](/2026-06-16-vintage-baby-names-making-a-comeback-timeless-charm-for-your-little-one)
+- [100 Earthy Baby Names and Meanings](/100-earthy-baby-names-and-meanings)
+- [Bohemian Baby Names: Artistic Flair for Your Little Free Spirit](/2026-06-16-bohemian-baby-names-artistic-flair-for-your-little-free-spirit)
+- [100 Nature Baby Names Inspired by Flowers](/100-nature-baby-names-inspired-by-flowers)
+
+ **Lyra** itself, which is musical and celestial.

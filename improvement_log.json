@@ -300,6 +300,75 @@
         }
       ],
       "date": "2026-06-29 08:36:40"
+    },
+    {
+      "slug": "2026-06-16-the-hottest-picks-trending-baby-names-for-the-current-year",
+      "old_word_count": 1750,
+      "new_word_count": 3067,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-30 07:09:04"
+    },
+    {
+      "slug": "2026-06-16-vintage-baby-names-making-a-comeback-timeless-charm-for-today",
+      "old_word_count": 1602,
+      "new_word_count": 3713,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-30 07:12:19"
+    },
+    {
+      "slug": "2026-06-17-social-media-inspired-baby-names-for-the-digital-age",
+      "old_word_count": 1607,
+      "new_word_count": 2978,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-30 07:14:09"
     }
   ]
 }

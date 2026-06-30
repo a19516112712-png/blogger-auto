@@ -1,28 +1,28 @@
 ============================================================
 SELF-IMPROVING SEO GROWTH REPORT
 ============================================================
-Date: 2026-06-29 08:36:40
+Date: 2026-06-30 07:14:09
 Blog: https://babynameideas2026.blogspot.com
 
 ✅ growth_detection
    total: 91
-   high_growth: 14
-   potential_growth: 77
-   #1: [52] title: Vintage Baby Names Making a Comeback: Timel (1536w)
-   #2: [37] Beautiful Baby Girl Names from Around the World (1503w)
-   #3: [37] title: Gender-Neutral Baby Names: The Rise of Mode (1580w)
+   high_growth: 11
+   potential_growth: 80
+   #1: [37] The Hottest Picks: Trending Baby Names for the Cur (1750w)
+   #2: [37] title: Vintage Baby Names Making a Comeback: Timel (1602w)
+   #3: [37] Social Media-Inspired Baby Names for the Digital A (1607w)
 
 ✅ content_evolution
    ran: True
-   output_preview:  Names: The Rise of Modern, F (1580w)
-  4. [37] The Hottest Picks: Trending Baby Names for the Current  (1750w)
-  5. [37] title: Timeless Literary Baby Names from Classic Novels (1504w)
+   output_preview:  [37] Social Media-Inspired Baby Names for the Digital Age (1607w)
+  4. [33] 100 African Baby Names and Meanings (2316w)
+  5. [33] 100 Greek Mythology Baby Names and Meanings (2482w)
 
 Running evolution on top candidates...
 
 
 RESULTS: improved=3 skipped=0 failed=0
-  ✅ title: Vintage Baby Names Mak
+  ✅ The Hottest Picks: Trending Baby
 
 ✅ link_optimization
    ran: True
