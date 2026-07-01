@@ -369,6 +369,70 @@
         }
       ],
       "date": "2026-06-30 07:14:09"
+    },
+    {
+      "slug": "2026-06-28-100-african-baby-names-and-meanings",
+      "old_word_count": 2316,
+      "new_word_count": 3723,
+      "actions": [
+        {
+          "action": "add_faq",
+          "target": "5-8 FAQs with schema",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "improve_structure",
+          "target": "6+ H2 sections",
+          "priority": "low"
+        }
+      ],
+      "date": "2026-07-01 08:00:25"
+    },
+    {
+      "slug": "2026-06-29-100-greek-mythology-baby-names-and-meanings",
+      "old_word_count": 2482,
+      "new_word_count": 3557,
+      "actions": [
+        {
+          "action": "add_faq",
+          "target": "5-8 FAQs with schema",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "improve_structure",
+          "target": "6+ H2 sections",
+          "priority": "low"
+        }
+      ],
+      "date": "2026-07-01 08:02:01"
+    },
+    {
+      "slug": "2026-06-16-baby-names-born-from-legends-mythological-monikers-for-your-little-hero-or-heroi",
+      "old_word_count": 1655,
+      "new_word_count": 3290,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-07-01 08:03:55"
     }
   ]
 }

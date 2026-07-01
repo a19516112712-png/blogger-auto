@@ -183,4 +183,14 @@ Some Viking names, like **Loki** or **Ymir**, are highly recognizable due to pop
 Many Viking names offer great nickname potential. **Astrid** can be **Ash** or **Tri**; **Magnus** can be **Maggs** or **Nus**; **Leif** can stand alone or become **Lee**. Consider how the nickname flows and whether it complements your last name.
 
 ### 5. Gender-Neutral Options
-Viking culture was relatively fluid in its gender expression compared to modern standards. Names like **Rune** can be used for boys and girls. Others, like **Sven** or
+Viking culture was relatively fluid in its gender expression compared to modern standards. Names like **Rune** can be 
+
+### Related Articles
+
+- [100 Kingdom Baby Names and Meanings](/100-kingdom-baby-names-and-meanings)
+- [Vintage Baby Names Making a Comeback: Timeless Charm for Your Little One](/2026-06-16-vintage-baby-names-making-a-comeback-timeless-charm-for-your-little-one)
+- [100 Earthy Baby Names and Meanings](/100-earthy-baby-names-and-meanings)
+- [Bohemian Baby Names: Artistic Flair for Your Little Free Spirit](/2026-06-16-bohemian-baby-names-artistic-flair-for-your-little-free-spirit)
+- [100 Nature Baby Names Inspired by Flowers](/100-nature-baby-names-inspired-by-flowers)
+
+used for boys and girls. Others, like **Sven** or

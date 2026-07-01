@@ -1,28 +1,28 @@
 ============================================================
 SELF-IMPROVING SEO GROWTH REPORT
 ============================================================
-Date: 2026-06-30 07:14:09
+Date: 2026-07-01 08:03:55
 Blog: https://babynameideas2026.blogspot.com
 
 ✅ growth_detection
    total: 91
-   high_growth: 11
-   potential_growth: 80
-   #1: [37] The Hottest Picks: Trending Baby Names for the Cur (1750w)
-   #2: [37] title: Vintage Baby Names Making a Comeback: Timel (1602w)
-   #3: [37] Social Media-Inspired Baby Names for the Digital A (1607w)
+   high_growth: 8
+   potential_growth: 83
+   #1: [33] 100 African Baby Names and Meanings (2316w)
+   #2: [33] 100 Greek Mythology Baby Names and Meanings (2482w)
+   #3: [30] Baby Names Born from Legends: Mythological Moniker (1655w)
 
 ✅ content_evolution
    ran: True
-   output_preview:  [37] Social Media-Inspired Baby Names for the Digital Age (1607w)
-  4. [33] 100 African Baby Names and Meanings (2316w)
-  5. [33] 100 Greek Mythology Baby Names and Meanings (2482w)
+   output_preview: mes Born from Legends: Mythological Monikers for (1655w)
+  4. [30] title: Nature''s Embrace: Earthy & Botanical Baby Names (1661w)
+  5. [30] Powerful Picks: Strong Baby Boy Names with Profound Mea (1559w)
 
 Running evolution on top candidates...
 
 
 RESULTS: improved=3 skipped=0 failed=0
-  ✅ The Hottest Picks: Trending Baby
+  ✅ 100 Africa
 
 ✅ link_optimization
    ran: True
