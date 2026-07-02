@@ -1,28 +1,28 @@
 ============================================================
 SELF-IMPROVING SEO GROWTH REPORT
 ============================================================
-Date: 2026-07-01 08:03:55
+Date: 2026-07-02 07:07:13
 Blog: https://babynameideas2026.blogspot.com
 
 ✅ growth_detection
-   total: 91
-   high_growth: 8
-   potential_growth: 83
-   #1: [33] 100 African Baby Names and Meanings (2316w)
-   #2: [33] 100 Greek Mythology Baby Names and Meanings (2482w)
-   #3: [30] Baby Names Born from Legends: Mythological Moniker (1655w)
+   total: 92
+   high_growth: 5
+   potential_growth: 87
+   #1: [30] title: Nature''s Embrace: Earthy & Botanical Baby  (1661w)
+   #2: [30] Powerful Picks: Strong Baby Boy Names with Profoun (1559w)
+   #3: [30] title: Short & Sweet: Discovering Perfect One-Syll (1804w)
 
 ✅ content_evolution
    ran: True
-   output_preview: mes Born from Legends: Mythological Monikers for (1655w)
-  4. [30] title: Nature''s Embrace: Earthy & Botanical Baby Names (1661w)
-  5. [30] Powerful Picks: Strong Baby Boy Names with Profound Mea (1559w)
+   output_preview: ring Perfect One-Syllable  (1804w)
+  4. [30] title: Timeless Literary Baby Names from Classic Novels (1554w)
+  5. [30] Timeless Elegance: Reviving Old-Fashioned Baby Names wi (1641w)
 
 Running evolution on top candidates...
 
 
 RESULTS: improved=3 skipped=0 failed=0
-  ✅ 100 Africa
+  ✅ title: Nature''s Embrace: Earthy
 
 ✅ link_optimization
    ran: True

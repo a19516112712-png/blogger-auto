@@ -433,6 +433,60 @@
         }
       ],
       "date": "2026-07-01 08:03:55"
+    },
+    {
+      "slug": "2026-06-16-natures-embrace-earthy-botanical-baby-names-for-girls-boys",
+      "old_word_count": 1661,
+      "new_word_count": 3121,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-07-02 07:00:50"
+    },
+    {
+      "slug": "2026-06-16-powerful-picks-strong-baby-boy-names-with-profound-meanings",
+      "old_word_count": 1559,
+      "new_word_count": 2963,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-07-02 07:03:05"
+    },
+    {
+      "slug": "2026-06-16-short-sweet-discovering-perfect-one-syllable-baby-names",
+      "old_word_count": 1804,
+      "new_word_count": 3436,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-07-02 07:07:13"
     }
   ]
 }

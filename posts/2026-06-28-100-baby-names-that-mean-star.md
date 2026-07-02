@@ -182,4 +182,14 @@ While **Luna** and **Stella** are beautiful, they are currently very popular. If
 Many star names offer cute nicknames. **Esther** can become **Essie**, **Astra** can become **Asty**, and **Nova** remains strong on its own. Consider how the nickname fits the child’s personality.
 
 ### 5. Balance with Surname
-If your last name is long, a shorter star name like **Star** or **Sol** might provide a nice contrast. If your last name starts with an 'S', avoid names starting with 'S' (like **Stella Smith**) to prevent tongue-twisters
+If your last name is long, a shorter star name like **Star** or **Sol** might provide a nice contrast. If your last name starts with an 'S', avoid names starting with 'S' (
+
+### Related Articles
+
+- [100 Kingdom Baby Names and Meanings](/100-kingdom-baby-names-and-meanings)
+- [Vintage Baby Names Making a Comeback: Timeless Charm for Your Little One](/2026-06-16-vintage-baby-names-making-a-comeback-timeless-charm-for-your-little-one)
+- [100 Earthy Baby Names and Meanings](/100-earthy-baby-names-and-meanings)
+- [Bohemian Baby Names: Artistic Flair for Your Little Free Spirit](/2026-06-16-bohemian-baby-names-artistic-flair-for-your-little-free-spirit)
+- [100 Nature Baby Names Inspired by Flowers](/100-nature-baby-names-inspired-by-flowers)
+
+like **Stella Smith**) to prevent tongue-twisters
