@@ -243,10 +243,10 @@ A8. These names consistently rank well in modern naming surveys, particularly am
 
 ## Related Baby Name Collections
 
-Looking for more naming inspiration? Explore these complementary collections:
+Looking for more name ideas? Explore these complementary collections:
 
 - [Popular Baby Names Right Now](/p/related-1) — Trending names this year
-- [Traditional Family Names](/p/related-2) — Timeless choices passed through generations
+- [Traditional Family Names](/p/related-2) — classic selections passed through generations
 - [Modern Gender-Neutral Names](/p/related-3) — Flexible options for any child
 - [Names with Strong Meanings](/p/related-4) — Powerful choices with deep significance
 - [Cultural Heritage Names](/p/related-5) — Celebrate your family traditions

@@ -195,3 +195,46 @@ def generate_meta_description(title: str, topic: str = "") -> str:
 def compute_content_hash(text: str) -> str:
     """Compute SHA-256 hash of content for deduplication."""
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+# ---------------------------------------------------------------------------
+# AI Client Factory
+# ---------------------------------------------------------------------------
+
+def get_client(base_url: str = "https://apihub.agnes-ai.com/v1", model: str = "agnes-2.0-flash"):
+    """Create an OpenAI-compatible client for Agnes AI."""
+    from openai import OpenAI
+    import os
+    api_key = os.environ.get("AGNES_API_KEY")
+    if not api_key:
+        raise EnvironmentError("AGNES_API_KEY not set")
+    return OpenAI(api_key=api_key, base_url=base_url)
+
+# ---------------------------------------------------------------------------
+# Internal Link Graph Builder
+# ---------------------------------------------------------------------------
+
+def build_link_graph(posts_dir):
+    """Build internal link graph from all articles.
+    
+    Returns dict mapping slug -> list of target slugs found in that article.
+    """
+    import re
+    posts_dir = Path(posts_dir)
+    graph = {}
+    
+    for md_file in posts_dir.glob("*.md"):
+        content = md_file.read_text()
+        source_slug = slugify(md_file.stem)
+        
+        links = re.findall(r'\[([^\]]+)\]\(([^)]+)\)', content)
+        targets = []
+        for anchor, url in links:
+            if "/p/" in url:
+                match = re.search(r'/p/\d+_([^/]+)\.html', url)
+                if match:
+                    targets.append(match.group(1))
+        
+        graph[source_slug] = targets
+    
+    return graph
+

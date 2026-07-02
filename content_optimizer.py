@@ -40,7 +40,7 @@ from openai import OpenAI
 
 from database.topic_queue import TopicQueue
 from fingerprint_engine import FingerprintEngine, ArticleFingerprint
-from utils.helpers import compute_content_hash, BANNED_PHRASES
+from utils.helpers import compute_content_hash, BANNED_PHRASES, get_client
 
 log = logging.getLogger(__name__)
 
@@ -54,11 +54,7 @@ MAX_SIMILARITY_THRESHOLD = 0.15
 MAX_REWRITE_ATTEMPTS = 3
 
 
-def get_client():
-    api_key = os.environ.get("AGNES_API_KEY")
-    if not api_key:
-        raise EnvironmentError("AGNES_API_KEY not set")
-    return OpenAI(api_key=api_key, base_url=AGNES_BASE_URL)
+# get_client is now in utils.helpers
 
 
 class ContentOptimizer:

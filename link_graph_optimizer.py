@@ -43,38 +43,6 @@ def extract_slug_from_content(text: str, filename: str) -> str:
     return filename.replace(".md", "")
 
 
-def build_link_graph() -> dict:
-    """Build a complete internal link graph: {slug: [linked_slug, ...]}."""
-    posts = list(POSTS_DIR.glob("*.md"))
-    if not posts:
-        return {}
-
-    # Build slug → title mapping
-    slug_map = {}
-    for p in posts:
-        text = p.read_text(encoding="utf-8")
-        slug = extract_slug_from_content(text, p.name)
-        title = p.stem
-        if text.startswith("---"):
-            parts = text.split("---", 2)
-            if len(parts) >= 3:
-                for line in parts[1].split("\n"):
-                    if line.startswith("title:"):
-                        title = line.split(":", 1)[1].strip().strip('"').strip("'")
-        slug_map[slug] = {"file": p.name, "title": title, "slug": slug}
-
-    # Build outgoing link graph
-    graph = defaultdict(set)
-    for p in posts:
-        text = p.read_text(encoding="utf-8")
-        source_slug = extract_slug_from_content(text, p.name)
-        for other_slug, info in slug_map.items():
-            if other_slug != source_slug and other_slug in text:
-                graph[source_slug].add(other_slug)
-
-    return {k: list(v) for k, v in graph.items()}, slug_map
-
-
 def find_orphans(graph: dict, min_links: int = 3) -> list:
     """Find pages with fewer than `min_links` outgoing internal links."""
     orphans = []

@@ -27,7 +27,7 @@ from pathlib import Path
 from openai import OpenAI
 
 from database.topic_queue import TopicQueue
-from utils.helpers import compute_content_hash
+from utils.helpers import compute_content_hash, get_client
 
 log = logging.getLogger(__name__)
 
@@ -41,11 +41,7 @@ MAX_RETRIES = 2
 RETRY_DELAYS = [5, 15]
 
 
-def get_client():
-    api_key = os.environ.get("AGNES_API_KEY")
-    if not api_key:
-        raise EnvironmentError("AGNES_API_KEY not set")
-    return OpenAI(api_key=api_key, base_url=AGNES_BASE_URL)
+# get_client is now in utils.helpers
 
 
 def evolve_article(filepath: Path, actions: list[str], queue: TopicQueue,

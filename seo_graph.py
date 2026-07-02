@@ -19,7 +19,7 @@ from pathlib import Path
 from collections import defaultdict
 from typing import Optional
 
-from utils.helpers import slugify
+from utils.helpers import slugify, build_link_graph
 
 # ── Topic cluster definitions ───────────────────────────────────────────
 CLUSTERS = {
@@ -112,25 +112,6 @@ CLUSTERS = {
 }
 
 # ── Internal link graph ─────────────────────────────────────────────────
-def build_link_graph(posts_dir: Path, history: set) -> dict:
-    """Build an internal linking graph from existing posts.
-
-    Returns a dict mapping topic slug → [related_slug, ...].
-    """
-    graph = defaultdict(list)
-    post_files = list(posts_dir.glob("*.md"))
-
-    for pf in post_files:
-        slug = pf.stem.lower()
-        text = pf.read_text(encoding="utf-8", errors="ignore")[:5000]
-        # Find references to other slugs
-        for other in post_files:
-            other_slug = other.stem.lower()
-            if other_slug != slug and other_slug in text.lower():
-                graph[slug].append(other_slug)
-    return dict(graph)
-
-
 def suggest_internal_links(topic_kw: str, cluster_name: str, history: set) -> list:
     """Suggest internal link targets for a new article.
 
