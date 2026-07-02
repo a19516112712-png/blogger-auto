@@ -1,0 +1,228 @@
+{
+  "timestamp": "2026-07-03T00:59:24.076344",
+  "total_optimized": 20,
+  "total_failed": 0,
+  "optimized": [
+    {
+      "filename": "2026-06-16-musical-baby-names-for-your-little-maestro.md",
+      "before_overall": 13.22,
+      "after_overall": 54.83,
+      "before_seo": 35.0,
+      "after_seo": 75.0,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 136,
+      "word_count_after": 764
+    },
+    {
+      "filename": "example.md",
+      "before_overall": 27.44,
+      "after_overall": 65.5,
+      "before_seo": 57.0,
+      "after_seo": 95,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 185,
+      "word_count_after": 810
+    },
+    {
+      "filename": "2026-06-16-biblical-baby-names-timeless-choices-for-modern-parents.md",
+      "before_overall": 36.11,
+      "after_overall": 70.33,
+      "before_seo": 55.0,
+      "after_seo": 95,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1370,
+      "word_count_after": 1997
+    },
+    {
+      "filename": "2026-06-16-vintage-baby-names-making-a-comeback-timeless-charm-for-your-little-one.md",
+      "before_overall": 36.56,
+      "after_overall": 70.83,
+      "before_seo": 48.0,
+      "after_seo": 88.0,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1514,
+      "word_count_after": 2145
+    },
+    {
+      "filename": "2026-06-16-names-with-powerful-meanings-inspire-courage-love-and-wisdom.md",
+      "before_overall": 36.67,
+      "after_overall": 69.83,
+      "before_seo": 65.0,
+      "after_seo": 95,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1391,
+      "word_count_after": 2021
+    },
+    {
+      "filename": "2026-06-17-rooted-in-love-wholesome-farmhouse-baby-names-for-a-nostalgic-touch.md",
+      "before_overall": 37.56,
+      "after_overall": 69.17,
+      "before_seo": 65.0,
+      "after_seo": 95,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1280,
+      "word_count_after": 1918
+    },
+    {
+      "filename": "2026-06-16-short-sweet-discovering-perfect-one-syllable-baby-names.md",
+      "before_overall": 38.67,
+      "after_overall": 71.67,
+      "before_seo": 55.0,
+      "after_seo": 95,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1736,
+      "word_count_after": 2363
+    },
+    {
+      "filename": "2026-06-17-social-media-inspired-baby-names-for-the-digital-age.md",
+      "before_overall": 39.0,
+      "after_overall": 72.67,
+      "before_seo": 65.0,
+      "after_seo": 95,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1578,
+      "word_count_after": 2213
+    },
+    {
+      "filename": "2026-06-16-timeless-literary-baby-names-from-classic-novels-1.md",
+      "before_overall": 39.56,
+      "after_overall": 74.17,
+      "before_seo": 55.0,
+      "after_seo": 95,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1487,
+      "word_count_after": 2113
+    },
+    {
+      "filename": "2026-06-16-powerful-picks-strong-baby-boy-names-with-profound-meanings.md",
+      "before_overall": 40.11,
+      "after_overall": 74.17,
+      "before_seo": 65.0,
+      "after_seo": 95,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1490,
+      "word_count_after": 2118
+    },
+    {
+      "filename": "2026-06-16-gender-neutral-baby-names-the-rise-of-modern-flexible-choices.md",
+      "before_overall": 40.44,
+      "after_overall": 72.5,
+      "before_seo": 55.0,
+      "after_seo": 95,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1561,
+      "word_count_after": 2189
+    },
+    {
+      "filename": "2026-06-16-timeless-literary-baby-names-from-classic-novels.md",
+      "before_overall": 40.44,
+      "after_overall": 71.67,
+      "before_seo": 40.0,
+      "after_seo": 80.0,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1319,
+      "word_count_after": 1968
+    },
+    {
+      "filename": "2026-06-16-bohemian-baby-names-artistic-flair-for-your-little-free-spirit.md",
+      "before_overall": 41.0,
+      "after_overall": 76.33,
+      "before_seo": 55.0,
+      "after_seo": 95,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1601,
+      "word_count_after": 2230
+    },
+    {
+      "filename": "2026-06-16-beautiful-baby-girl-names-from-around-the-world.md",
+      "before_overall": 41.56,
+      "after_overall": 71.67,
+      "before_seo": 65.0,
+      "after_seo": 95,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1486,
+      "word_count_after": 2113
+    },
+    {
+      "filename": "2026-06-16-natures-embrace-earthy-botanical-baby-names-for-girls-boys.md",
+      "before_overall": 42.56,
+      "after_overall": 70.5,
+      "before_seo": 48.0,
+      "after_seo": 88.0,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1590,
+      "word_count_after": 2220
+    },
+    {
+      "filename": "2026-06-17-timeless-elegance-irish-baby-names-full-of-celtic-charm.md",
+      "before_overall": 43.0,
+      "after_overall": 69.67,
+      "before_seo": 65.0,
+      "after_seo": 95,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1434,
+      "word_count_after": 2072
+    },
+    {
+      "filename": "2026-06-16-the-hottest-picks-trending-baby-names-for-the-current-year.md",
+      "before_overall": 43.56,
+      "after_overall": 73.33,
+      "before_seo": 65.0,
+      "after_seo": 95,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1731,
+      "word_count_after": 2360
+    },
+    {
+      "filename": "2026-06-17-rooted-in-nature-the-best-tree-and-forest-baby-names-for-your-little-sapling.md",
+      "before_overall": 43.67,
+      "after_overall": 71.0,
+      "before_seo": 58.0,
+      "after_seo": 95,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1459,
+      "word_count_after": 2102
+    },
+    {
+      "filename": "2026-06-17-100-greek-god-and-goddess-baby-names.md",
+      "before_overall": 45.22,
+      "after_overall": 70.17,
+      "before_seo": 85.0,
+      "after_seo": 95,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 2511,
+      "word_count_after": 3145
+    },
+    {
+      "filename": "2026-06-16-baby-names-born-from-legends-mythological-monikers-for-your-little-hero-or-heroi.md",
+      "before_overall": 45.33,
+      "after_overall": 73.0,
+      "before_seo": 58.0,
+      "after_seo": 95,
+      "before_schema": 0.0,
+      "after_schema": 75,
+      "word_count_before": 1581,
+      "word_count_after": 2215
+    }
+  ],
+  "failed": []
+}
