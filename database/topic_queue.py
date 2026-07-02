@@ -114,25 +114,30 @@ class TopicQueue:
                  topic_id, generated_id, slug)
         return generated_id
 
-    def mark_published(self, topic_id: int, generated_id: int,
+    def mark_published(self, topic_id: int | None, generated_id: int | None,
                        title: str, slug: str, url: str,
-                       labels: list[str], content_hash: str) -> int:
+                       labels: list[str], content_hash: str,
+                       blogger_id: str | None = None,
+                       publish_date: str | None = None) -> int:
         """Insert into published table, mark keyword as published."""
-        now = datetime.now().isoformat()
+        now = publish_date or datetime.now().strftime("%Y-%m-%d")
+        iso_now = datetime.now().isoformat()
         cur = self.conn.execute(
             """INSERT INTO published (keyword_id, generated_id, title, slug,
-                                      url, publish_date, labels, content_hash, created_at)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                                      url, publish_date, labels, content_hash,
+                                      blogger_post_id, created_at)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             (topic_id, generated_id, title, slug, url, now,
-             ",".join(labels), content_hash, now),
+             ",".join(labels), content_hash, blogger_id, iso_now),
         )
         published_id = cur.lastrowid
 
-        self.conn.execute(
-            "UPDATE keywords SET status = 'published', published_at = ? "
-            "WHERE id = ?",
-            (now, topic_id),
-        )
+        if topic_id is not None:
+            self.conn.execute(
+                "UPDATE keywords SET status = 'published', published_at = ? "
+                "WHERE id = ?",
+                (iso_now, topic_id),
+            )
         self.conn.commit()
         log.info("mark_published: topic_id=%d → published_id=%d (%s)",
                  topic_id, published_id, slug)

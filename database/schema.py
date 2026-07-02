@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS clusters (
 -- Generated: articles produced but not yet published
 CREATE TABLE IF NOT EXISTS generated (
     id              INTEGER PRIMARY KEY AUTOINCREMENT,
-    keyword_id      INTEGER NOT NULL,
+    keyword_id      INTEGER,
     title           TEXT    NOT NULL,
     slug            TEXT    NOT NULL UNIQUE,
     url             TEXT,
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS generated (
 -- Published: successfully published to Blogger
 CREATE TABLE IF NOT EXISTS published (
     id              INTEGER PRIMARY KEY AUTOINCREMENT,
-    keyword_id      INTEGER NOT NULL,
+    keyword_id      INTEGER,
     generated_id    INTEGER,
     title           TEXT    NOT NULL,
     slug            TEXT    NOT NULL UNIQUE,
@@ -76,6 +76,7 @@ CREATE TABLE IF NOT EXISTS published (
     publish_date    TEXT    NOT NULL,
     labels          TEXT,
     content_hash    TEXT    NOT NULL,
+    blogger_post_id TEXT,
     created_at      TEXT    NOT NULL,
     FOREIGN KEY (keyword_id) REFERENCES keywords(id),
     FOREIGN KEY (generated_id) REFERENCES generated(id)
