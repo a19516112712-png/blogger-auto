@@ -1,0 +1,1853 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.0.0' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+
+<head>
+  <meta charset='UTF-8'/>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=5' name='viewport'/>
+  <meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+
+  <b:include data='blog' name='all-head-content'/>
+
+  <title><b:if cond='data:view.isHomepage'><data:blog.title/> — <data:blog.description/><b:else/><b:if cond='data:view.isPost'><data:blog.pageName/> — <data:blog.title/><b:else/><b:if cond='data:view.isPage'><data:blog.pageName/> — <data:blog.title/><b:else/><b:if cond='data:view.isError'><data:blog.pageName/> — <data:blog.title/><b:else/><data:blog.pageTitle/></b:if></b:if></b:if></b:if></title>
+
+  <!-- SEO Meta -->
+  <b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' name='description'/>
+  <b:else/>
+    <b:if cond='data:view.isHomepage'>
+      <meta expr:content='data:blog.description' name='description'/>
+    </b:if>
+  </b:if>
+
+  <b:if cond='data:view.isPost'>
+    <meta expr:content='data:blog.pageName' property='og:title'/>
+    <meta content='article' property='og:type'/>
+    <meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+    <meta expr:content='data:blog.postImageUrl' property='og:image'/>
+    <meta expr:content='data:blog.title' property='og:site_name'/>
+  </b:if>
+
+  <link expr:href='data:blog.canonicalUrl' rel='canonical'/>
+
+  <!-- Preconnect for performance -->
+  <link href='https://fonts.googleapis.com' rel='preconnect'/>
+  <link href='https://fonts.gstatic.com' rel='preconnect' crossorigin='anonymous'/>
+  <link href='https://blogger.googleusercontent.com' rel='preconnect'/>
+  <link href='https://pagead2.googlesyndication.com' rel='dns-prefetch'/>
+
+  <b:skin><![CDATA[
+
+/* ============================================================
+   BABY NAMES THEME — Modern Blogger Theme for Baby Name Ideas
+   Design: Clean, warm, mobile-first
+   ============================================================ */
+
+/* ---------- CSS Custom Properties ---------- */
+:root {
+  --color-primary: #6C63FF;
+  --color-primary-light: #8B85FF;
+  --color-primary-dark: #4A42DB;
+  --color-accent: #FF6584;
+  --color-accent-light: #FF8FA6;
+  --color-bg: #FAFAFE;
+  --color-surface: #FFFFFF;
+  --color-text: #2D2A4A;
+  --color-text-light: #6E6D8A;
+  --color-text-muted: #9B9AB5;
+  --color-border: #E8E7F2;
+  --color-border-light: #F3F2FA;
+  --color-success: #4CAF50;
+  --color-warning: #FF9800;
+  --color-footer-bg: #1A1930;
+  --color-footer-text: #C5C4DE;
+  --font-heading: 'Georgia', 'Times New Roman', serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow-sm: 0 1px 3px rgba(45,42,74,0.06);
+  --shadow-md: 0 4px 16px rgba(45,42,74,0.08);
+  --shadow-lg: 0 8px 32px rgba(45,42,74,0.10);
+  --shadow-xl: 0 16px 48px rgba(45,42,74,0.12);
+  --max-width: 1140px;
+  --header-height: 68px;
+  --transition: 0.2s ease;
+}
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body.no-scroll { overflow: hidden; }
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover { color: var(--color-primary-dark); }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol { list-style: none; }
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  line-height: 1.3;
+  color: var(--color-text);
+  margin-bottom: 0.5em;
+}
+h1 { font-size: 2.25rem; font-weight: 700; }
+h2 { font-size: 1.75rem; font-weight: 700; }
+h3 { font-size: 1.35rem; font-weight: 600; }
+h4 { font-size: 1.1rem; font-weight: 600; }
+
+p { margin-bottom: 1rem; }
+
+/* ---------- Utility ---------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-padding { padding: 64px 0; }
+
+/* ---------- Skip Link (Accessibility) ---------- */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 8px;
+  background: var(--color-primary);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  z-index: 1000;
+  font-size: 0.875rem;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 8px; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  height: var(--header-height);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.header-left { display: flex; align-items: center; gap: 12px; }
+
+.site-logo-text {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+.site-logo-text span { color: var(--color-accent); }
+
+/* Navigation */
+.main-nav { display: flex; align-items: center; gap: 4px; }
+
+.nav-link {
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-light);
+  font-size: 0.925rem;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-primary);
+  background: rgba(108,99,255,0.06);
+}
+
+/* Mobile menu toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--color-text);
+}
+
+.hamburger { display: flex; flex-direction: column; gap: 4px; }
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  background: linear-gradient(135deg, #6C63FF 0%, #8B85FF 40%, #FF6584 100%);
+  padding: 80px 0 96px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--color-bg);
+  clip-path: ellipse(75% 100% at 50% 100%);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-content { flex: 1; max-width: 580px; }
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.8px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: var(--color-primary);
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  color: var(--color-primary-dark);
+}
+
+.hero-visual {
+  flex: 0 0 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.hero-icon-card {
+  width: 100px;
+  height: 100px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: transform 0.3s ease;
+}
+.hero-icon-card:hover { transform: scale(1.08); }
+
+/* ============================================================
+   SEARCH SECTION
+   ============================================================ */
+.search-section {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.search-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 72px;
+}
+
+.search-label {
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.search-form {
+  flex: 1;
+  position: relative;
+  max-width: 520px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 48px 12px 20px;
+  border: 2px solid var(--color-border);
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  transition: all var(--transition);
+  outline: none;
+}
+.search-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(108,99,255,0.08);
+}
+
+.search-submit {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+.search-submit:hover { background: var(--color-primary-dark); }
+
+.search-tags {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag-pill {
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  background: var(--color-border-light);
+  color: var(--color-text-light);
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.tag-pill:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* ============================================================
+   CATEGORY CARDS
+   ============================================================ */
+.categories-section { background: var(--color-surface); }
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.section-header h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+.section-header p {
+  color: var(--color-text-light);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.category-card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: block;
+  color: var(--color-text);
+}
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-light);
+}
+
+.category-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-accent-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+  font-size: 1.5rem;
+}
+
+.category-name {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+.category-count {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   POPULAR NAMES SECTION
+   ============================================================ */
+.popular-section { background: var(--color-bg); }
+
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.popular-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 24px 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.popular-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-light);
+}
+
+.popular-rank {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popular-name {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+.popular-origin {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+}
+.popular-meaning {
+  font-size: 0.78rem;
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+/* ============================================================
+   MAIN CONTENT LAYOUT
+   ============================================================ */
+.main-content-area {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content-layout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 40px;
+  padding: 48px 0;
+}
+
+/* Blog Posts */
+.blog-posts { }
+
+.post-entry {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  margin-bottom: 28px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.post-entry:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary-light);
+}
+
+.post-thumbnail {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: linear-gradient(135deg, #f0eeff, #ffeef3);
+}
+
+.post-body {
+  padding: 24px 28px;
+}
+
+.post-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.post-title a {
+  color: var(--color-text);
+  transition: color var(--transition);
+}
+.post-title a:hover { color: var(--color-primary); }
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 12px;
+}
+
+.post-snippet {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.post-read-more {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition);
+}
+.post-read-more:hover { border-bottom-color: var(--color-primary); }
+
+/* Post Page */
+.post-page { }
+
+.post-page .post-entry {
+  border-radius: var(--radius-lg);
+  overflow: visible;
+}
+.post-page .post-body {
+  padding: 32px 36px;
+}
+
+.post-header {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+.post-header h1 {
+  font-size: 2.25rem;
+  margin-bottom: 12px;
+}
+
+.post-content {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--color-text);
+}
+.post-content h2 {
+  margin-top: 2em;
+  font-size: 1.5rem;
+}
+.post-content h3 {
+  margin-top: 1.5em;
+  font-size: 1.2rem;
+}
+.post-content p { margin-bottom: 1.2em; }
+.post-content ul,
+.post-content ol {
+  margin: 0 0 1.2em 1.5em;
+}
+.post-content ul { list-style: disc; }
+.post-content ol { list-style: decimal; }
+.post-content li { margin-bottom: 0.4em; }
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.92rem;
+}
+.post-content th {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+.post-content td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+.post-content tr:nth-child(even) td { background: var(--color-bg); }
+.post-content strong { color: var(--color-text); }
+.post-content em { color: var(--color-accent); }
+.post-content a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.post-content blockquote {
+  border-left: 4px solid var(--color-primary-light);
+  background: #f8f7ff;
+  padding: 16px 24px;
+  margin: 1.5em 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-style: italic;
+  color: var(--color-text-light);
+}
+
+/* Post Footer */
+.post-footer {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
+}
+
+.post-labels {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.post-labels span { font-size: 0.85rem; color: var(--color-text-muted); }
+.label-link {
+  padding: 4px 12px;
+  background: var(--color-border-light);
+  border-radius: 50px;
+  font-size: 0.78rem;
+  color: var(--color-text-light);
+  font-weight: 500;
+  transition: all var(--transition);
+}
+.label-link:hover { background: var(--color-primary); color: #fff; }
+
+.post-share {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.post-share span { font-size: 0.85rem; color: var(--color-text-muted); }
+.share-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-border-light);
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+.share-btn:hover { background: var(--color-primary); color: #fff; }
+
+/* Related Posts */
+.related-posts {
+  margin-top: 48px;
+}
+.related-posts h3 {
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+/* Comments */
+.comments-section {
+  margin-top: 48px;
+}
+.comments-section h3 {
+  margin-bottom: 20px;
+}
+
+/* ============================================================
+   SIDEBAR
+   ============================================================ */
+.sidebar { }
+
+.sidebar-widget {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+.sidebar-widget h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--color-border-light);
+}
+
+/* Popular Posts Widget */
+.PopularPosts .item-thumbnail {
+  float: left;
+  margin: 0 12px 0 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.PopularPosts .item-thumbnail img {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+.PopularPosts .item-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  padding: 0;
+}
+.PopularPosts .item-snippet {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+.PopularPosts ul { padding: 0; }
+.PopularPosts li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.PopularPosts li:last-child { border-bottom: none; padding-bottom: 0; }
+
+/* Labels Widget */
+.Label ul { padding: 0; }
+.Label li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.Label li:last-child { border-bottom: none; }
+.Label li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.Label li span {
+  background: var(--color-border-light);
+  padding: 2px 10px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* Blog Archive */
+.BlogArchive ul { padding: 0; }
+.BlogArchive li { padding: 6px 0; }
+.BlogArchive li a { color: var(--color-text); font-size: 0.9rem; }
+
+/* ============================================================
+   PAGINATION
+   ============================================================ */
+.blog-pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px 0;
+}
+.blog-pager a,
+.blog-pager span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  transition: all var(--transition);
+}
+.blog-pager a:hover {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+.blog-pager .blog-pager-older-link,
+.blog-pager .blog-pager-newer-link { padding: 0 20px; }
+.blog-pager .home-link { }
+.blog-pager .no-more { color: var(--color-text-muted); opacity: 0.5; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  padding: 64px 0 0;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-col h4 {
+  font-family: var(--font-body);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-about p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  color: var(--color-footer-text);
+}
+
+.footer-links { }
+.footer-links a {
+  display: block;
+  color: var(--color-footer-text);
+  font-size: 0.9rem;
+  padding: 6px 0;
+  transition: color var(--transition);
+}
+.footer-links a:hover { color: #fff; }
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-footer-text);
+  font-size: 0.9rem;
+  transition: all var(--transition);
+}
+.footer-social a:hover { background: var(--color-primary); color: #fff; }
+
+.footer-bottom {
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.85rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.footer-bottom a { color: var(--color-footer-text); }
+.footer-bottom a:hover { color: #fff; }
+
+/* ============================================================
+   PAGE-SPECIFIC SECTIONS (via HTML widgets)
+   ============================================================ */
+/* These styles are for HTML widgets added via Blogger layout */
+
+.hero-widget { background: transparent; }
+
+.category-cards-widget { }
+
+.popular-names-widget { }
+
+.adsense-widget {
+  text-align: center;
+  padding: 16px 0;
+}
+.adsense-placeholder {
+  background: var(--color-border-light);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   MOBILE MENU (overlay)
+   ============================================================ */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 200;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.mobile-menu-overlay.open {
+  display: block;
+  opacity: 1;
+}
+
+.mobile-menu-drawer {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100%;
+  background: var(--color-surface);
+  z-index: 201;
+  padding: 24px;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+}
+.mobile-menu-drawer.open { right: 0; }
+
+.mobile-menu-drawer .nav-link {
+  display: block;
+  padding: 12px 16px;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text);
+  padding: 4px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 960px) {
+  :root { --header-height: 60px; }
+
+  .hero { padding: 56px 0 72px; }
+  .hero-inner { flex-direction: column; text-align: center; }
+  .hero-content { max-width: 100%; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 1.05rem; }
+  .hero-visual { flex: 0 0 auto; }
+  .hero-icon-card { width: 80px; height: 80px; font-size: 1.6rem; }
+  .hero-icon-grid { gap: 8px; }
+
+  .content-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .search-inner { flex-wrap: wrap; height: auto; padding: 16px 20px; }
+  .search-tags { width: 100%; margin-top: 4px; }
+
+  .category-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .popular-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  html { font-size: 15px; }
+
+  .main-nav { display: none; }
+  .menu-toggle { display: block; }
+
+  .hero { padding: 48px 0 64px; }
+  .hero-title { font-size: 1.8rem; }
+  .hero-subtitle { font-size: 0.95rem; }
+  .hero-cta { padding: 12px 24px; font-size: 0.9rem; }
+
+  .hero-icon-card { width: 68px; height: 68px; font-size: 1.3rem; }
+  .hero-icon-grid { gap: 6px; }
+
+  .search-inner { flex-direction: column; align-items: stretch; }
+  .search-form { max-width: 100%; }
+  .search-label { text-align: center; }
+
+  .section-header h2 { font-size: 1.5rem; }
+  .section-padding { padding: 40px 0; }
+
+  .category-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .category-card { padding: 20px 14px; }
+
+  .popular-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .popular-card { padding: 18px 12px; }
+
+  .post-body { padding: 20px; }
+  .post-page .post-body { padding: 20px; }
+  .post-title { font-size: 1.2rem; }
+  .post-content { font-size: 1rem; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  .blog-pager a,
+  .blog-pager span { min-width: 36px; height: 36px; padding: 0 12px; font-size: 0.8rem; }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+  .site-header,
+  .site-footer,
+  .sidebar,
+  .hero,
+  .search-section,
+  .categories-section,
+  .popular-section,
+  .blog-pager,
+  .post-share { display: none !important; }
+
+  .content-layout { display: block; }
+  .post-entry { box-shadow: none; border: none; }
+  body { background: #fff; color: #000; }
+  a { color: #000; }
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+  ]]></b:skin>
+</head>
+
+<body>
+
+  <!-- Skip Link -->
+  <a class='skip-link' href='#main-content'>Skip to main content</a>
+
+  <!-- ============================================================
+       HEADER
+       ============================================================ -->
+  <header class='site-header'>
+    <div class='header-inner'>
+      <div class='header-left'>
+        <a class='site-logo-text' expr:href='data:blog.homepageUrl'>
+          <span>&#9829;</span> <data:blog.title/>
+        </a>
+      </div>
+
+      <nav class='main-nav' role='navigation' aria-label='Main navigation'>
+        <a class='nav-link active' expr:href='data:blog.homepageUrl'>Home</a>
+        <a class='nav-link' expr:href='data:blog.homepageUrl + "search/label/Baby Girl Names"'>Girl Names</a>
+        <a class='nav-link' expr:href='data:blog.homepageUrl + "search/label/Baby Boy Names"'>Boy Names</a>
+        <a class='nav-link' expr:href='data:blog.homepageUrl + "search/label/Gender Neutral"'>Gender Neutral</a>
+        <a class='nav-link' expr:href='data:blog.homepageUrl + "search/label/Baby Name Ideas 2026"'>All Names</a>
+      </nav>
+
+      <button aria-label='Toggle menu' class='menu-toggle' onclick='toggleMobileMenu()'>
+        <span class='hamburger'>
+          <span/><span/><span/>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class='mobile-menu-overlay' id='mobileOverlay' onclick='toggleMobileMenu()'/>
+  <div class='mobile-menu-drawer' id='mobileDrawer'>
+    <button aria-label='Close menu' class='mobile-menu-close' onclick='toggleMobileMenu()'>&#10005;</button>
+    <nav>
+      <a class='nav-link active' expr:href='data:blog.homepageUrl'>Home</a>
+      <a class='nav-link' expr:href='data:blog.homepageUrl + "search/label/Baby Girl Names"'>Girl Names</a>
+      <a class='nav-link' expr:href='data:blog.homepageUrl + "search/label/Baby Boy Names"'>Boy Names</a>
+      <a class='nav-link' expr:href='data:blog.homepageUrl + "search/label/Gender Neutral"'>Gender Neutral</a>
+      <a class='nav-link' expr:href='data:blog.homepageUrl + "search/label/Baby Name Ideas 2026"'>All Names</a>
+    </nav>
+  </div>
+
+  <!-- ============================================================
+       HERO SECTION (Homepage only)
+       ============================================================ -->
+  <b:if cond='data:view.isHomepage'>
+    <section class='hero animate-in'>
+      <div class='hero-inner'>
+        <div class='hero-content'>
+          <span class='hero-badge'>&#127881; 2026 Baby Name Ideas</span>
+          <h1 class='hero-title'>Find the Perfect Name for Your Little One</h1>
+          <p class='hero-subtitle'>Explore thousands of beautiful baby names with meanings, origins, and cultural backgrounds. From timeless classics to unique modern picks — discover the name your child will cherish forever.</p>
+          <a class='hero-cta' expr:href='data:blog.homepageUrl + "search/label/Baby Name Ideas 2026"'>
+            Explore Names &#8594;
+          </a>
+        </div>
+        <div class='hero-visual'>
+          <div class='hero-icon-grid'>
+            <div class='hero-icon-card'>&#127807;</div>
+            <div class='hero-icon-card'>&#128118;</div>
+            <div class='hero-icon-card'>&#11088;</div>
+            <div class='hero-icon-card'>&#128142;</div>
+            <div class='hero-icon-card'>&#127752;</div>
+            <div class='hero-icon-card'>&#10024;</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </b:if>
+
+  <!-- ============================================================
+       SEARCH BAR (All pages)
+       ============================================================ -->
+  <section class='search-section'>
+    <div class='search-inner'>
+      <span class='search-label'>&#128269; Search Names</span>
+      <form class='search-form' expr:action='data:blog.homepageUrl + "search"' method='get'>
+        <input aria-label='Search baby names' class='search-input' name='q' placeholder='Search by name, origin, or meaning...' type='text'/>
+        <button aria-label='Search' class='search-submit' type='submit'>&#8594;</button>
+      </form>
+      <div class='search-tags'>
+        <a class='tag-pill' expr:href='data:blog.homepageUrl + "search/label/Baby Girl Names"'>Girl Names</a>
+        <a class='tag-pill' expr:href='data:blog.homepageUrl + "search/label/Baby Boy Names"'>Boy Names</a>
+        <a class='tag-pill' expr:href='data:blog.homepageUrl + "search/label/Gender Neutral"'>Gender Neutral</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CATEGORY CARDS (Homepage only)
+       ============================================================ -->
+  <b:if cond='data:view.isHomepage'>
+    <section class='categories-section section-padding'>
+      <div class='container'>
+        <div class='section-header'>
+          <h2>Browse by Category</h2>
+          <p>Explore baby names organized by theme, origin, and style</p>
+        </div>
+        <div class='category-grid'>
+
+          <a class='category-card animate-in' expr:href='data:blog.homepageUrl + "search/label/Baby Girl Names"'>
+            <div class='category-icon'>&#127800;</div>
+            <div class='category-name'>Baby Girl Names</div>
+            <div class='category-count'>Beautiful, feminine names</div>
+          </a>
+
+          <a class='category-card animate-in' expr:href='data:blog.homepageUrl + "search/label/Baby Boy Names"'>
+            <div class='category-icon'>&#127770;</div>
+            <div class='category-name'>Baby Boy Names</div>
+            <div class='category-count'>Strong, masculine names</div>
+          </a>
+
+          <a class='category-card animate-in' expr:href='data:blog.homepageUrl + "search/label/Gender Neutral"'>
+            <div class='category-icon'>&#127752;</div>
+            <div class='category-name'>Gender Neutral</div>
+            <div class='category-count'>Names for any child</div>
+          </a>
+
+          <a class='category-card animate-in' expr:href='data:blog.homepageUrl + "search/label/Biblical"'>
+            <div class='category-icon'>&#128214;</div>
+            <div class='category-name'>Biblical Names</div>
+            <div class='category-count'>Timeless scripture names</div>
+          </a>
+
+          <a class='category-card animate-in' expr:href='data:blog.homepageUrl + "search/label/Nature"'>
+            <div class='category-icon'>&#127807;</div>
+            <div class='category-name'>Nature Names</div>
+            <div class='category-count'>Inspired by the earth</div>
+          </a>
+
+          <a class='category-card animate-in' expr:href='data:blog.homepageUrl + "search/label/Vintage"'>
+            <div class='category-icon'>&#128139;</div>
+            <div class='category-name'>Vintage Names</div>
+            <div class='category-count'>Old-fashioned charm</div>
+          </a>
+
+          <a class='category-card animate-in' expr:href='data:blog.homepageUrl + "search/label/Unique"'>
+            <div class='category-icon'>&#10024;</div>
+            <div class='category-name'>Unique Names</div>
+            <div class='category-count'>Rare &amp; distinctive</div>
+          </a>
+
+          <a class='category-card animate-in' expr:href='data:blog.homepageUrl + "search/label/Japanese"'>
+            <div class='category-icon'>&#127887;</div>
+            <div class='category-name'>Japanese Names</div>
+            <div class='category-count'>Elegant &amp; meaningful</div>
+          </a>
+
+          <a class='category-card animate-in' expr:href='data:blog.homepageUrl + "search/label/Irish"'>
+            <div class='category-icon'>&#9752;</div>
+            <div class='category-name'>Irish Names</div>
+            <div class='category-count'>Celtic beauty</div>
+          </a>
+
+          <a class='category-card animate-in' expr:href='data:blog.homepageUrl + "search/label/Warrior"'>
+            <div class='category-icon'>&#9876;</div>
+            <div class='category-name'>Warrior Names</div>
+            <div class='category-count'>Strong &amp; powerful</div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </b:if>
+
+  <!-- ============================================================
+       POPULAR NAMES SECTION (Homepage only)
+       ============================================================ -->
+  <b:if cond='data:view.isHomepage'>
+    <section class='popular-section section-padding'>
+      <div class='container'>
+        <div class='section-header'>
+          <h2>Trending Right Now</h2>
+          <p>Most popular baby names parents are loving in 2026</p>
+        </div>
+        <div class='popular-grid'>
+
+          <div class='popular-card animate-in'>
+            <span class='popular-rank'>1</span>
+            <div class='popular-name'>Olivia</div>
+            <div class='popular-origin'>Latin</div>
+            <div class='popular-meaning'>Olive tree, peace</div>
+          </div>
+
+          <div class='popular-card animate-in'>
+            <span class='popular-rank'>2</span>
+            <div class='popular-name'>Liam</div>
+            <div class='popular-origin'>Irish</div>
+            <div class='popular-meaning'>Strong-willed warrior</div>
+          </div>
+
+          <div class='popular-card animate-in'>
+            <span class='popular-rank'>3</span>
+            <div class='popular-name'>Emma</div>
+            <div class='popular-origin'>German</div>
+            <div class='popular-meaning'>Universal, whole</div>
+          </div>
+
+          <div class='popular-card animate-in'>
+            <span class='popular-rank'>4</span>
+            <div class='popular-name'>Noah</div>
+            <div class='popular-origin'>Hebrew</div>
+            <div class='popular-meaning'>Rest, comfort</div>
+          </div>
+
+          <div class='popular-card animate-in'>
+            <span class='popular-rank'>5</span>
+            <div class='popular-name'>Sophia</div>
+            <div class='popular-origin'>Greek</div>
+            <div class='popular-meaning'>Wisdom</div>
+          </div>
+
+          <div class='popular-card animate-in'>
+            <span class='popular-rank'>6</span>
+            <div class='popular-name'>Oliver</div>
+            <div class='popular-origin'>Latin</div>
+            <div class='popular-meaning'>Olive tree, peace</div>
+          </div>
+
+          <div class='popular-card animate-in'>
+            <span class='popular-rank'>7</span>
+            <div class='popular-name'>Charlotte</div>
+            <div class='popular-origin'>French</div>
+            <div class='popular-meaning'>Free, petite</div>
+          </div>
+
+          <div class='popular-card animate-in'>
+            <span class='popular-rank'>8</span>
+            <div class='popular-name'>James</div>
+            <div class='popular-origin'>Hebrew</div>
+            <div class='popular-meaning'>Supplanter</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </b:if>
+
+  <!-- ============================================================
+       ADSENSE SLOT 1 — Below Popular Names
+       ============================================================ -->
+  <b:if cond='data:view.isHomepage'>
+    <div class='container section-padding' style='padding-top:0'>
+      <div class='adsense-widget'>
+        <b:include data='blog' name='google-auto-ads'/>
+      </div>
+    </div>
+  </b:if>
+
+  <!-- ============================================================
+       MAIN CONTENT
+       ============================================================ -->
+  <main class='main-content-area' id='main-content'>
+    <div class='content-layout'>
+
+      <!-- Blog Posts Column -->
+      <div class='blog-posts'>
+        <b:section id='main' maxwidgets='1' showaddelement='no'>
+          <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2'>
+
+            <b:includable id='main' var='this'>
+
+              <!-- Homepage: post list -->
+              <b:include cond='data:view.isHomepage || data:view.isLabelSearch' data='posts' name='postList'/>
+
+              <!-- Single post page -->
+              <b:include cond='data:view.isPost' data='post' name='postPage'/>
+
+              <!-- Static page -->
+              <b:include cond='data:view.isPage' data='post' name='postPage'/>
+
+              <!-- Error page -->
+              <b:include cond='data:view.isError' name='errorPage'/>
+
+              <!-- Archive page -->
+              <b:include cond='data:view.isArchive' data='posts' name='archivePage'/>
+
+            </b:includable>
+
+            <!-- Post List Template -->
+            <b:includable id='postList' var='posts'>
+              <b:loop values='data:posts' var='post'>
+                <article class='post-entry animate-in'>
+                  <b:if cond='data:post.featuredImage'>
+                    <img class='post-thumbnail' expr:alt='data:post.title' expr:src='resizeImage(data:post.featuredImage, 720, "720:360")' loading='lazy'/>
+                  <b:else/>
+                    <div class='post-thumbnail' style='height:100px; display:flex; align-items:center; justify-content:center; font-size:2rem;'>&#128118;</div>
+                  </b:if>
+                  <div class='post-body'>
+                    <h2 class='post-title'>
+                      <a expr:href='data:post.url'><data:post.title/></a>
+                    </h2>
+                    <div class='post-meta'>
+                      <span>&#128197; <data:post.date/></span>
+                      <b:if cond='data:post.labels'>
+                        <span>
+                          <b:loop index='i' values='data:post.labels' var='label'>
+                            <b:if cond='data:i lt 2'>
+                              <a class='label-link' expr:href='data:label.url'><data:label.name/></a>
+                            </b:if>
+                          </b:loop>
+                        </span>
+                      </b:if>
+                    </div>
+                    <div class='post-snippet'>
+                      <data:post.snippet/>
+                    </div>
+                    <a class='post-read-more' expr:href='data:post.url'>Read More &#8594;</a>
+                  </div>
+                </article>
+              </b:loop>
+
+              <!-- Pagination -->
+              <b:include name='pagination'/>
+            </b:includable>
+
+            <!-- Post Page Template -->
+            <b:includable id='postPage' var='post'>
+              <article class='post-entry post-page'>
+                <div class='post-body'>
+                  <div class='post-header'>
+                    <h1><data:post.title/></h1>
+                    <div class='post-meta'>
+                      <span>&#128197; <data:post.date/></span>
+                      <span>&#128100; <data:post.author.name/></span>
+                    </div>
+                  </div>
+
+                  <div class='post-content'>
+                    <data:post.body/>
+                  </div>
+
+                  <div class='post-footer'>
+                    <b:if cond='data:post.labels'>
+                      <div class='post-labels'>
+                        <span>Tags:</span>
+                        <b:loop values='data:post.labels' var='label'>
+                          <a class='label-link' expr:href='data:label.url'><data:label.name/></a>
+                        </b:loop>
+                      </div>
+                    </b:if>
+
+                    <!-- Share Buttons -->
+                    <div class='post-share'>
+                      <span>Share:</span>
+                      <a aria-label='Share on Facebook' class='share-btn' expr:href='&quot;https://www.facebook.com/sharer.php?u=&quot; + data:post.url' rel='noopener' target='_blank'>f</a>
+                      <a aria-label='Share on Twitter' class='share-btn' expr:href='&quot;https://twitter.com/intent/tweet?url=&quot; + data:post.url' rel='noopener' target='_blank'>&#120143;</a>
+                      <a aria-label='Share on Pinterest' class='share-btn' expr:href='&quot;https://pinterest.com/pin/create/button/?url=&quot; + data:post.url' rel='noopener' target='_blank'>p</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Related Posts -->
+              <div class='related-posts'>
+                <h3>You May Also Like</h3>
+                <b:include name='relatedPosts'/>
+              </div>
+
+              <!-- AdSense in-post -->
+              <div class='adsense-widget'>
+                <b:include data='blog' name='google-auto-ads'/>
+              </div>
+
+              <!-- Comments -->
+              <div class='comments-section'>
+                <h3>Comments</h3>
+                <b:include data='post' name='comments'/>
+              </div>
+            </b:includable>
+
+            <!-- Comments Template -->
+            <b:includable id='comments' var='post'>
+              <div class='comments' id='comments'>
+                <b:if cond='data:post.allowComments'>
+                  <div expr:id='data:widget.instanceId + &quot;_comments&quot;'>
+                    <b:include data='post' name='threaded-comments'/>
+                  </div>
+                </b:if>
+              </div>
+            </b:includable>
+
+            <!-- Threaded Comments Template (flat fallback for theme compatibility) -->
+            <b:includable id='threaded-comments' var='post'>
+              <div class='comment-form'>
+                <a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'>&#9998; Post a Comment</a>
+              </div>
+              <b:if cond='data:post.comments'>
+                <div class='comment-list'>
+                  <b:loop values='data:post.comments' var='comment'>
+                    <div class='comment-item' style='padding:12px 0;border-bottom:1px solid var(--color-border-light)'>
+                      <strong><data:comment.author/></strong>
+                      <span style='font-size:0.75rem;color:var(--color-text-muted);margin-left:8px'><data:comment.date/></span>
+                      <p style='margin-top:4px;font-size:0.9rem'><data:comment.body/></p>
+                    </div>
+                  </b:loop>
+                </div>
+              </b:if>
+            </b:includable>
+
+            <!-- Pagination Template -->
+            <b:includable id='pagination'>
+              <div class='blog-pager' id='blog-pager'>
+                <b:if cond='data:newerPageUrl'>
+                  <a class='blog-pager-newer-link' expr:href='data:newerPageUrl'>&#8592; Newer</a>
+                </b:if>
+                <b:if cond='data:olderPageUrl'>
+                  <a class='blog-pager-older-link' expr:href='data:olderPageUrl'>Older &#8594;</a>
+                </b:if>
+                <a class='home-link' expr:href='data:blog.homepageUrl'>Home</a>
+              </div>
+            </b:includable>
+
+            <!-- Related Posts -->
+            <b:includable id='relatedPosts'>
+              <div style='display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;'>
+                <div style='background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:16px;text-align:center;color:var(--color-text-muted);font-size:0.85rem;'>
+                  Related posts will appear here based on labels.
+                </div>
+              </div>
+            </b:includable>
+
+            <!-- Error Page -->
+            <b:includable id='errorPage'>
+              <div style='text-align:center; padding: 80px 20px;'>
+                <div style='font-size:4rem; margin-bottom:20px;'>&#128533;</div>
+                <h2>Page Not Found</h2>
+                <p style='color:var(--color-text-light);'>The page you're looking for doesn't exist. Try searching for baby names instead!</p>
+                <a class='hero-cta' expr:href='data:blog.homepageUrl' style='margin-top:20px;'>Go Home</a>
+              </div>
+            </b:includable>
+
+            <!-- Archive Page -->
+            <b:includable id='archivePage'>
+              <b:loop values='data:posts' var='post'>
+                <article class='post-entry animate-in'>
+                  <div class='post-body'>
+                    <h2 class='post-title'>
+                      <a expr:href='data:post.url'><data:post.title/></a>
+                    </h2>
+                    <div class='post-meta'>
+                      <span>&#128197; <data:post.date/></span>
+                    </div>
+                    <div class='post-snippet'><data:post.snippet/></div>
+                    <a class='post-read-more' expr:href='data:post.url'>Read More &#8594;</a>
+                  </div>
+                </article>
+              </b:loop>
+            </b:includable>
+
+          </b:widget>
+        </b:section>
+      </div>
+
+      <!-- Sidebar Column -->
+      <aside class='sidebar' role='complementary'>
+        <!-- Sidebar AdSense -->
+        <div class='sidebar-widget'>
+          <div class='adsense-placeholder'>
+            &#128176; AdSense — Sidebar
+          </div>
+        </div>
+
+        <!-- About Widget -->
+        <div class='sidebar-widget'>
+          <h3>About This Site</h3>
+          <p style='font-size:0.88rem;color:var(--color-text-light);line-height:1.6;'>
+            Welcome to <strong><data:blog.title/></strong>! We help parents discover beautiful, meaningful baby names from cultures around the world. Every name tells a story — let us help you find the perfect one for your little bundle of joy.
+          </p>
+        </div>
+
+        <!-- Popular Posts -->
+        <b:section id='sidebar-right-1' maxwidgets='1' showaddelement='yes'>
+          <b:widget id='PopularPosts1' locked='false' title='Popular Names' type='PopularPosts' version='2'>
+            <b:widget-settings>
+              <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
+              <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+              <b:widget-setting name='showSnippets'>true</b:widget-setting>
+              <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+              <div class='sidebar-widget'>
+                <b:if cond='data:title'><h3><data:title/></h3></b:if>
+                <div class='widget-content popular-posts'>
+                  <ul>
+                    <b:loop values='data:posts' var='post'>
+                      <li>
+                        <b:if cond='data:showThumbnails == &quot;true&quot;'>
+                          <div class='item-thumbnail'>
+                            <a expr:href='data:post.url'>
+                              <img expr:alt='data:post.title' expr:src='data:post.featuredImage.isResizable ? resizeImage(data:post.featuredImage, 72, &quot;1:1&quot;) : data:post.thumbnailUrl'/>
+                            </a>
+                          </div>
+                        </b:if>
+                        <div class='item-title'>
+                          <a expr:href='data:post.url'><data:post.title/></a>
+                        </div>
+                        <b:if cond='data:showSnippets == &quot;true&quot;'>
+                          <div class='item-snippet'><data:post.snippet/></div>
+                        </b:if>
+                        <div style='clear:both;'/>
+                      </li>
+                    </b:loop>
+                  </ul>
+                </div>
+              </div>
+            </b:includable>
+          </b:widget>
+        </b:section>
+
+        <!-- Labels -->
+        <b:section id='sidebar-right-2' maxwidgets='1' showaddelement='yes'>
+          <b:widget id='Label1' locked='false' title='Categories' type='Label' version='2'>
+            <b:widget-settings>
+              <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+              <b:widget-setting name='display'>LIST</b:widget-setting>
+              <b:widget-setting name='selectedLabelsList'/>
+              <b:widget-setting name='showType'>ALL</b:widget-setting>
+              <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+              <div class='sidebar-widget'>
+                <b:if cond='data:title'><h3><data:title/></h3></b:if>
+                <div class='widget-content list-label-widget-content'>
+                  <b:include name='widgetLists'/>
+                </div>
+              </div>
+            </b:includable>
+            <b:includable id='widgetLists'>
+              <ul>
+                <b:loop values='data:labels' var='label'>
+                  <li>
+                    <a expr:href='data:label.url'>
+                      <data:label.name/>
+                      <span><data:label.count/></span>
+                    </a>
+                  </li>
+                </b:loop>
+              </ul>
+            </b:includable>
+          </b:widget>
+        </b:section>
+
+        <!-- Blog Archive -->
+        <b:section id='sidebar-right-3' maxwidgets='1' showaddelement='yes'>
+          <b:widget id='BlogArchive1' locked='false' title='Archive' type='BlogArchive' version='2'>
+            <b:widget-settings>
+              <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
+              <b:widget-setting name='showPostCount'>true</b:widget-setting>
+              <b:widget-setting name='showDropDown'>false</b:widget-setting>
+              <b:widget-setting name='showOldestFirst'>false</b:widget-setting>
+              <b:widget-setting name='useFlatPosts'>true</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+              <div class='sidebar-widget'>
+                <b:if cond='data:title'><h3><data:title/></h3></b:if>
+                <div class='widget-content'>
+                  <div id='ArchiveList'>
+                    <div expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
+                      <b:include name='intervalLists'/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </b:includable>
+            <b:includable id='intervalLists'>
+              <ul class='hierarchy'>
+                <b:loop values='data:data' var='i'>
+                  <li class='archivedate'>
+                    <b:include data='i' name='toggle'/>
+                    <a class='post-count-link' expr:href='data:i.url'><data:i.name/></a>
+                    <span class='post-count' dir='ltr'>(<data:i.post-count/>)</span>
+                    <b:if cond='data:i.data'>
+                      <b:include data='i.data' name='intervalLists'/>
+                    </b:if>
+                  </li>
+                </b:loop>
+              </ul>
+            </b:includable>
+            <b:includable id='toggle'>
+              <b:if cond='data:interval.expclass == &quot;expanded&quot;'>
+                <a class='toggle' href='javascript:void(0)'>
+                  <span class='zippy toggle-open'>&#9660; </span>
+                </a>
+              <b:else/>
+                <a class='toggle' href='javascript:void(0)'>
+                  <span class='zippy'>&#9654; </span>
+                </a>
+              </b:if>
+            </b:includable>
+          </b:widget>
+        </b:section>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class='site-footer' role='contentinfo'>
+    <div class='footer-inner'>
+      <div class='footer-grid'>
+        <div class='footer-col footer-about'>
+          <h4><span style='color:var(--color-accent)'>&#9829;</span> <data:blog.title/></h4>
+          <p>Helping parents discover beautiful, meaningful baby names from around the world. Every name carries a story, a culture, and a wish for the future.</p>
+          <div class='footer-social'>
+            <a aria-label='Pinterest' expr:href='&quot;https://pinterest.com&quot;' rel='noopener' target='_blank'>P</a>
+            <a aria-label='Facebook' expr:href='&quot;https://facebook.com&quot;' rel='noopener' target='_blank'>f</a>
+            <a aria-label='Twitter' expr:href='&quot;https://twitter.com&quot;' rel='noopener' target='_blank'>&#120143;</a>
+            <a aria-label='Instagram' expr:href='&quot;https://instagram.com&quot;' rel='noopener' target='_blank'>I</a>
+          </div>
+        </div>
+
+        <div class='footer-col'>
+          <h4>Browse Names</h4>
+          <div class='footer-links'>
+            <a expr:href='data:blog.homepageUrl + "search/label/Baby Girl Names"'>Baby Girl Names</a>
+            <a expr:href='data:blog.homepageUrl + "search/label/Baby Boy Names"'>Baby Boy Names</a>
+            <a expr:href='data:blog.homepageUrl + "search/label/Gender Neutral"'>Gender Neutral</a>
+            <a expr:href='data:blog.homepageUrl + "search/label/Biblical"'>Biblical Names</a>
+            <a expr:href='data:blog.homepageUrl + "search/label/Nature"'>Nature Names</a>
+          </div>
+        </div>
+
+        <div class='footer-col'>
+          <h4>Popular By Origin</h4>
+          <div class='footer-links'>
+            <a expr:href='data:blog.homepageUrl + "search/label/Japanese"'>Japanese Names</a>
+            <a expr:href='data:blog.homepageUrl + "search/label/Irish"'>Irish Names</a>
+            <a expr:href='data:blog.homepageUrl + "search/label/Vintage"'>Vintage Names</a>
+            <a expr:href='data:blog.homepageUrl + "search/label/Unique"'>Unique Names</a>
+            <a expr:href='data:blog.homepageUrl + "search/label/Warrior"'>Warrior Names</a>
+          </div>
+        </div>
+
+        <div class='footer-col'>
+          <h4>Resources</h4>
+          <div class='footer-links'>
+            <a expr:href='data:blog.homepageUrl'>Home</a>
+            <a expr:href='data:blog.homepageUrl + "p/about.html"'>About</a>
+            <a expr:href='data:blog.homepageUrl + "p/contact.html"'>Contact</a>
+            <a expr:href='data:blog.homepageUrl + "p/privacy-policy.html"'>Privacy Policy</a>
+            <a href='#'>Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='footer-bottom'>
+      <span>&#169; <data:blog.currentYear/> <data:blog.title/>. All rights reserved.</span>
+      <span>Powered by <a expr:href='data:blog.hostedByUrl' rel='nofollow'>Blogger</a></span>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS
+       ============================================================ -->
+  <script>//<![CDATA[
+    function toggleMobileMenu() {
+      var overlay = document.getElementById('mobileOverlay');
+      var drawer = document.getElementById('mobileDrawer');
+      var isOpen = drawer.classList.contains('open');
+      if (isOpen) {
+        drawer.classList.remove('open');
+        overlay.classList.remove('open');
+        document.body.classList.remove('no-scroll');
+      } else {
+        drawer.classList.add('open');
+        overlay.classList.add('open');
+        document.body.classList.add('no-scroll');
+      }
+    }
+  //]]></script>
+
+  <!-- Google AdSense Auto Ads -->
+  <b:include data='blog' name='google-auto-ads'/>
+
+</body>
+</html>

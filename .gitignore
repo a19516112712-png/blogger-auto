@@ -1,0 +1,7 @@
+credentials.json
+token.json
+*.bak
+__pycache__/
+*.pyc
+node_modules/
+.env

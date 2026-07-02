@@ -1,0 +1,1305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='2' b:layoutsVersion='3' b:responsive='true' b:templateVersion='1.0.0' expr:dir='data:blog.languageDirection' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+
+<head>
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1, maximum-scale=5' name='viewport'/>
+<meta content='blogger' name='generator'/>
+<b:include data='blog' name='all-head-content'/>
+
+<title><data:blog.pageTitle/></title>
+<b:if cond='data:blog.metaDescription'>
+  <meta expr:content='data:blog.metaDescription' name='description'/>
+</b:if>
+
+<!-- Open Graph -->
+<meta expr:content='data:blog.pageTitle' property='og:title'/>
+<meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+<b:if cond='data:blog.metaDescription'>
+  <meta expr:content='data:blog.metaDescription' property='og:description'/>
+</b:if>
+<meta content='website' property='og:type'/>
+<meta content='Baby Name Ideas' property='og:site_name'/>
+<meta content='summary_large_image' name='twitter:card'/>
+<meta expr:content='data:blog.pageTitle' name='twitter:title'/>
+
+<!-- DNS Prefetch -->
+<link href='https://fonts.googleapis.com' rel='preconnect'/>
+<link href='https://fonts.gstatic.com' rel='preconnect' crossorigin='anonymous'/>
+<link href='https://www.blogger.com' rel='dns-prefetch'/>
+<link href='https://1.bp.blogspot.com' rel='dns-prefetch'/>
+<link href='https://2.bp.blogspot.com' rel='dns-prefetch'/>
+<link href='https://3.bp.blogspot.com' rel='dns-prefetch'/>
+<link href='https://4.bp.blogspot.com' rel='dns-prefetch'/>
+<link href='https://pagead2.googlesyndication.com' rel='dns-prefetch'/>
+<link href='https://www.google-analytics.com' rel='dns-prefetch'/>
+
+<!-- Google Fonts -->
+<link href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@500;600;700;800&amp;display=swap' rel='stylesheet'/>
+
+<b:skin><![CDATA[
+/*
+============================================
+Baby Name Ideas - Blogger Theme
+Design: Modern Parenting Magazine
+Colors: Primary #FF7A8A | Secondary #FFF5F6 | Accent #FFB6C1
+Typography: Inter + Poppins
+============================================
+*/
+
+/* ========== RESET & BASE ========== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter','Poppins',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:16px;
+  line-height:1.625;
+  color:#333;
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:#FF7A8A;text-decoration:none;transition:color .2s}
+a:hover{color:#e85d6e}
+h1,h2,h3,h4,h5,h6{font-family:'Poppins',sans-serif;color:#333;line-height:1.3}
+h1{font-size:2rem;font-weight:800}
+h2{font-size:1.625rem;font-weight:700;margin:2rem 0 1rem}
+h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 .75rem}
+h4{font-size:1.1rem;font-weight:600}
+p{margin-bottom:1rem}
+ul,ol{margin:0 0 1rem 1.5rem}
+blockquote{border-left:4px solid #FFB6C1;margin:1.5rem 0;padding:.5rem 1.5rem;background:#FFF5F6;border-radius:0 12px 12px 0}
+table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.925rem}
+thead{background:#FFF5F6}
+th{padding:12px 16px;text-align:left;font-weight:600;color:#333;font-size:.85rem}
+td{padding:10px 16px;border-bottom:1px solid #f0f0f0}
+tr:hover td{background:rgba(255,122,138,.04)}
+button{cursor:pointer;font-family:inherit}
+
+/* ========== LAYOUT ========== */
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.row{display:flex;flex-wrap:wrap;gap:24px}
+.main-content{flex:1 1 100%;max-width:100%}
+
+/* ========== HEADER ========== */
+.site-header{
+  background:#fff;
+  border-bottom:1px solid #f0f0f0;
+  position:sticky;
+  top:0;
+  z-index:100;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+.header-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:66px;
+}
+.site-branding{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-shrink:0;
+}
+.site-logo{
+  font-size:1.75rem;
+}
+.site-title{
+  font-family:'Poppins',sans-serif;
+  font-size:1.3rem;
+  font-weight:800;
+  color:#FF7A8A;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.site-title:hover{color:#FF7A8A}
+.site-description{
+  display:none;
+}
+
+/* ========== NAVIGATION ========== */
+.main-nav{display:flex;align-items:center;gap:2px}
+.main-nav a{
+  display:inline-flex;
+  align-items:center;
+  padding:8px 14px;
+  font-size:.875rem;
+  font-weight:500;
+  color:#555;
+  border-radius:8px;
+  transition:all .2s;
+  white-space:nowrap;
+}
+.main-nav a:hover{
+  color:#FF7A8A;
+  background:#FFF5F6;
+}
+.nav-toggle{
+  display:none;
+  background:none;
+  border:none;
+  font-size:1.5rem;
+  color:#333;
+  padding:8px;
+  cursor:pointer;
+}
+
+/* ========== HERO SECTION ========== */
+.hero-section{
+  background:linear-gradient(180deg,#FFF5F6 0%,#fff 100%);
+  padding:48px 20px 40px;
+  text-align:center;
+}
+.hero-inner{max-width:720px;margin:0 auto}
+.hero-title{
+  font-family:'Poppins',sans-serif;
+  font-size:2.5rem;
+  font-weight:800;
+  color:#FF7A8A;
+  margin-bottom:12px;
+  line-height:1.15;
+}
+.hero-subtitle{
+  font-size:1.15rem;
+  color:#777;
+  margin-bottom:28px;
+  max-width:540px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.hero-search{
+  max-width:500px;
+  margin:0 auto;
+  position:relative;
+}
+.hero-search form{display:flex;width:100%}
+.hero-search input{
+  flex:1;
+  padding:14px 20px;
+  border:2px solid #FFB6C1;
+  border-radius:50px 0 0 50px;
+  font-size:1rem;
+  outline:none;
+  transition:border-color .2s;
+  font-family:inherit;
+}
+.hero-search input:focus{border-color:#FF7A8A}
+.hero-search button{
+  padding:14px 28px;
+  background:#FF7A8A;
+  color:#fff;
+  border:none;
+  border-radius:0 50px 50px 0;
+  font-weight:600;
+  font-size:.95rem;
+  transition:background .2s;
+}
+.hero-search button:hover{background:#e85d6e}
+
+/* ========== CATEGORY CARDS ========== */
+.categories-section{
+  padding:48px 20px;
+  max-width:1200px;
+  margin:0 auto;
+}
+.section-title{
+  font-family:'Poppins',sans-serif;
+  font-size:1.75rem;
+  font-weight:700;
+  text-align:center;
+  margin-bottom:32px;
+  color:#333;
+}
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:14px;
+}
+.category-card{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:16px;
+  padding:22px 18px;
+  text-align:center;
+  transition:all .25s;
+  text-decoration:none;
+  display:block;
+}
+.category-card:hover{
+  border-color:#FF7A8A;
+  box-shadow:0 8px 30px rgba(255,122,138,.12);
+  transform:translateY(-2px);
+}
+.category-card-icon{
+  font-size:2rem;
+  margin-bottom:8px;
+  display:block;
+}
+.category-card-name{
+  font-family:'Poppins',sans-serif;
+  font-weight:600;
+  font-size:.9rem;
+  color:#333;
+  margin-bottom:4px;
+}
+.category-card-desc{
+  font-size:.775rem;
+  color:#999;
+  line-height:1.4;
+}
+
+/* ========== FEATURED SECTION ========== */
+.featured-section{
+  padding:0 20px 48px;
+  max-width:1200px;
+  margin:0 auto;
+}
+.featured-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+  gap:20px;
+}
+.featured-card{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:16px;
+  overflow:hidden;
+  transition:all .25s;
+}
+.featured-card:hover{
+  border-color:#FF7A8A;
+  box-shadow:0 12px 40px rgba(255,122,138,.1);
+  transform:translateY(-3px);
+}
+.featured-card-image{
+  height:180px;
+  background:linear-gradient(135deg,#FFB6C1,#FFF5F6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:3rem;
+}
+.featured-card-body{padding:20px}
+.featured-card-labels{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-bottom:10px;
+}
+.featured-card-label{
+  font-size:.7rem;
+  font-weight:600;
+  padding:3px 10px;
+  border-radius:50px;
+  background:#FFF5F6;
+  color:#FF7A8A;
+}
+.featured-card-title{
+  font-family:'Poppins',sans-serif;
+  font-weight:600;
+  font-size:1.05rem;
+  margin-bottom:8px;
+  line-height:1.35;
+}
+.featured-card-title a{color:#333}
+.featured-card-title a:hover{color:#FF7A8A}
+.featured-card-excerpt{
+  font-size:.85rem;
+  color:#888;
+  line-height:1.5;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.featured-card-meta{
+  font-size:.75rem;
+  color:#bbb;
+  margin-top:10px;
+}
+
+/* ========== POSTS GRID ========== */
+.posts-section{
+  padding:0 20px 48px;
+  max-width:1200px;
+  margin:0 auto;
+}
+.posts-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:20px;
+}
+.post-card{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:16px;
+  overflow:hidden;
+  transition:all .25s;
+}
+.post-card:hover{
+  border-color:#FFB6C1;
+  box-shadow:0 8px 30px rgba(0,0,0,.06);
+}
+.post-card-image{
+  height:160px;
+  background:linear-gradient(135deg,#FFF5F6,#FFE0E5);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2.5rem;
+}
+.post-card-body{padding:18px}
+.post-card-labels{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-bottom:8px;
+}
+.post-card-label{
+  font-size:.65rem;
+  font-weight:600;
+  padding:2px 8px;
+  border-radius:50px;
+  background:#FFF5F6;
+  color:#FF7A8A;
+}
+.post-card-title{
+  font-family:'Poppins',sans-serif;
+  font-weight:600;
+  font-size:.95rem;
+  line-height:1.35;
+  margin-bottom:6px;
+}
+.post-card-title a{color:#333}
+.post-card-title a:hover{color:#FF7A8A}
+.post-card-excerpt{
+  font-size:.8rem;
+  color:#999;
+  line-height:1.5;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.post-card-date{font-size:.7rem;color:#ccc;margin-top:8px}
+
+/* ========== POST PAGE ========== */
+.post-single{
+  max-width:780px;
+  margin:0 auto;
+  padding:32px 20px;
+}
+.breadcrumbs{
+  font-size:.8rem;
+  color:#aaa;
+  margin-bottom:20px;
+}
+.breadcrumbs a{color:#999;text-decoration:none}
+.breadcrumbs a:hover{color:#FF7A8A}
+.post-header{margin-bottom:24px}
+.post-labels{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-bottom:12px;
+}
+.post-label{
+  font-size:.75rem;
+  font-weight:600;
+  padding:4px 12px;
+  border-radius:50px;
+  background:#FFF5F6;
+  color:#FF7A8A;
+}
+.post-title{
+  font-family:'Poppins',sans-serif;
+  font-size:2rem;
+  font-weight:800;
+  color:#333;
+  line-height:1.2;
+  margin-bottom:12px;
+}
+.post-meta{
+  font-size:.85rem;
+  color:#aaa;
+}
+.post-body{
+  font-size:1.05rem;
+  line-height:1.75;
+  color:#444;
+}
+.post-body h2{
+  font-size:1.5rem;
+  margin:2.5rem 0 1rem;
+  padding-bottom:.5rem;
+  border-bottom:2px solid #FFF5F6;
+}
+.post-body h3{font-size:1.2rem;margin:2rem 0 .75rem}
+.post-body img{border-radius:12px;margin:1.5rem auto}
+.post-body a{font-weight:500;text-decoration:underline;text-underline-offset:3px}
+.post-body table{
+  border:1px solid #eee;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 2px 8px rgba(0,0,0,.03);
+}
+.post-body blockquote{
+  font-style:italic;
+  font-size:1.05rem;
+}
+.post-footer{
+  margin-top:40px;
+  padding-top:24px;
+  border-top:1px solid #f0f0f0;
+}
+.author-box{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:20px;
+  background:#FFF5F6;
+  border-radius:16px;
+  margin-bottom:24px;
+}
+.author-avatar{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:#FF7A8A;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-weight:700;
+  font-size:1.25rem;
+  flex-shrink:0;
+}
+.author-info-name{font-weight:600;color:#333;font-size:.9rem}
+.author-info-bio{font-size:.8rem;color:#888;margin-top:2px}
+
+/* ========== FAQ ACCORDION ========== */
+.faq-section{margin:2rem 0}
+.faq-item{
+  border:1px solid #eee;
+  border-radius:12px;
+  margin-bottom:10px;
+  overflow:hidden;
+}
+.faq-question{
+  padding:16px 20px;
+  cursor:pointer;
+  font-weight:500;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#fff;
+  transition:background .2s;
+}
+.faq-question:hover{background:#FFF5F6}
+.faq-toggle{
+  font-size:1.25rem;
+  color:#FF7A8A;
+  transition:transform .2s;
+  flex-shrink:0;
+  margin-left:12px;
+}
+.faq-answer{
+  padding:0 20px 16px;
+  font-size:.95rem;
+  color:#666;
+  display:none;
+}
+.faq-open .faq-question{background:#FFF5F6}
+.faq-open .faq-toggle{transform:rotate(45deg)}
+.faq-open .faq-answer{display:block}
+
+/* ========== SIDEBAR ========== */
+.sidebar{
+  background:#fff;
+  border-radius:16px;
+}
+.sidebar-section{
+  margin-bottom:24px;
+  padding:20px;
+  background:#fff;
+  border:1px solid #f0f0f0;
+  border-radius:16px;
+}
+.sidebar-title{
+  font-family:'Poppins',sans-serif;
+  font-size:1rem;
+  font-weight:700;
+  color:#333;
+  margin-bottom:14px;
+  padding-bottom:10px;
+  border-bottom:2px solid #FFF5F6;
+}
+.sidebar ul{list-style:none;margin:0;padding:0}
+.sidebar li{margin-bottom:8px}
+.sidebar a{
+  color:#666;
+  font-size:.875rem;
+  transition:color .2s;
+  display:block;
+  padding:4px 0;
+}
+.sidebar a:hover{color:#FF7A8A}
+
+/* Popular posts widget styling */
+.PopularPosts .item-title{
+  font-size:.875rem;
+  font-weight:600;
+  line-height:1.4;
+  padding-bottom:0;
+}
+
+/* Labels widget */
+.Label li{
+  display:inline-block;
+  margin:0 5px 8px 0;
+}
+.Label a{
+  background:#FFF5F6;
+  color:#FF7A8A;
+  padding:5px 12px;
+  border-radius:50px;
+  font-size:.75rem;
+  font-weight:500;
+}
+.Label a:hover{background:#FF7A8A;color:#fff}
+
+/* ========== PAGINATION ========== */
+.blog-pager{
+  text-align:center;
+  padding:32px 0;
+  clear:both;
+}
+.blog-pager a,.blog-pager span{
+  display:inline-block;
+  padding:10px 20px;
+  margin:0 4px;
+  border-radius:50px;
+  font-size:.875rem;
+  font-weight:500;
+  transition:all .2s;
+}
+.blog-pager a{
+  background:#FFF5F6;
+  color:#FF7A8A;
+}
+.blog-pager a:hover{background:#FF7A8A;color:#fff}
+.blog-pager .current{
+  background:#FF7A8A;
+  color:#fff;
+}
+.blog-pager .blog-pager-older-link,
+.blog-pager .blog-pager-newer-link{
+  float:none;
+}
+
+/* ========== NEWSLETTER ========== */
+.newsletter-section{
+  background:#FFF5F6;
+  padding:48px 20px;
+  text-align:center;
+}
+.newsletter-inner{max-width:480px;margin:0 auto}
+.newsletter-title{
+  font-family:'Poppins',sans-serif;
+  font-size:1.5rem;
+  font-weight:700;
+  margin-bottom:8px;
+}
+.newsletter-desc{font-size:.9rem;color:#888;margin-bottom:20px}
+.newsletter-form{display:flex;gap:8px}
+.newsletter-form input{
+  flex:1;
+  padding:12px 18px;
+  border:2px solid #FFB6C1;
+  border-radius:50px;
+  font-size:.9rem;
+  outline:none;
+  font-family:inherit;
+}
+.newsletter-form button{
+  padding:12px 24px;
+  background:#FF7A8A;
+  color:#fff;
+  border:none;
+  border-radius:50px;
+  font-weight:600;
+  font-size:.9rem;
+}
+
+/* ========== FOOTER ========== */
+.site-footer{
+  background:#fff;
+  border-top:1px solid #f0f0f0;
+  padding:48px 20px 24px;
+}
+.footer-inner{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:32px;
+}
+.footer-col-title{
+  font-family:'Poppins',sans-serif;
+  font-size:.85rem;
+  font-weight:700;
+  color:#333;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  margin-bottom:16px;
+}
+.footer-col ul{list-style:none;margin:0;padding:0}
+.footer-col li{margin-bottom:6px}
+.footer-col a{
+  font-size:.85rem;
+  color:#888;
+  transition:color .2s;
+}
+.footer-col a:hover{color:#FF7A8A}
+.footer-brand{font-size:1rem}
+.footer-brand .site-title{font-size:1.2rem;margin-bottom:6px}
+.footer-brand-desc{
+  font-size:.8rem;
+  color:#aaa;
+  line-height:1.5;
+  margin-top:6px;
+}
+.footer-bottom{
+  max-width:1200px;
+  margin:32px auto 0;
+  padding-top:20px;
+  border-top:1px solid #f0f0f0;
+  text-align:center;
+  font-size:.75rem;
+  color:#bbb;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (min-width:769px){
+  .has-sidebar .main-content{flex:1 1 68%;max-width:68%}
+  .has-sidebar .sidebar{flex:0 0 30%}
+}
+
+@media (max-width:768px){
+  .site-title{font-size:1.1rem}
+  .main-nav{
+    position:fixed;
+    top:66px;
+    left:0;
+    right:0;
+    background:#fff;
+    flex-direction:column;
+    padding:12px;
+    border-bottom:1px solid #f0f0f0;
+    display:none;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+  }
+  .main-nav.open{display:flex}
+  .main-nav a{padding:12px 16px;width:100%;border-radius:0}
+  .nav-toggle{display:block}
+  .hero-title{font-size:1.75rem}
+  .hero-subtitle{font-size:1rem}
+  .category-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+  .category-card{padding:14px 10px}
+  .category-card-name{font-size:.75rem}
+  .featured-grid{grid-template-columns:1fr}
+  .posts-grid{grid-template-columns:1fr}
+  .post-title{font-size:1.5rem}
+  .footer-inner{grid-template-columns:repeat(2,1fr)}
+  .newsletter-form{flex-direction:column}
+}
+
+@media (max-width:480px){
+  .header-inner{height:56px}
+  .site-title{font-size:1rem}
+  .hero-section{padding:32px 16px 28px}
+  .hero-title{font-size:1.4rem}
+  .hero-search input{padding:12px 16px;font-size:.9rem}
+  .hero-search button{padding:12px 18px;font-size:.85rem}
+  .category-grid{grid-template-columns:repeat(2,1fr)}
+  .section-title{font-size:1.3rem}
+  .footer-inner{grid-template-columns:1fr}
+}
+
+/* ========== PRINT ========== */
+@media print{
+  .site-header,.site-footer,.sidebar,.hero-section,.categories-section{display:none}
+  .post-single{max-width:100%}
+  body{font-size:12pt}
+}
+]]></b:skin>
+
+<!-- Google AdSense -->
+<b:if cond='data:blog.adsenseClientId'>
+  <script async='async' expr:src='&quot;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=&quot; + data:blog.adsenseClientId' crossorigin='anonymous'/>
+</b:if>
+
+</head>
+
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class='site-header'>
+  <div class='header-inner'>
+    <div class='site-branding'>
+      <span class='site-logo'>👶</span>
+      <b:if cond='data:blog.url == data:blog.homepageUrl'>
+        <span class='site-title'><data:blog.title/></span>
+      <b:else/>
+        <a class='site-title' expr:href='data:blog.homepageUrl'><data:blog.title/></a>
+      </b:if>
+    </div>
+
+    <b:section id='nav_section' maxwidgets='1' showaddelement='no'>
+      <b:widget id='PageList1' locked='true' title='Pages' type='PageList' version='2'>
+        <b:widget-settings>
+          <b:widget-setting name='pageListJson'>
+            {"showAll":true,"homeTitle":"Home","showHome":true}
+          </b:widget-setting>
+          <b:widget-setting name='showAll'>true</b:widget-setting>
+          <b:widget-setting name='showHome'>true</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main'>
+          <button aria-label='Toggle navigation' class='nav-toggle' expr:onclick='&quot;document.querySelector(&apos;.main-nav&apos;).classList.toggle(&apos;open&apos;)&quot;'>
+            &#9776;
+          </button>
+          <nav class='main-nav' role='navigation'>
+            <b:if cond='data:showHome'>
+              <a expr:href='data:blog.homepageUrl'><data:messages.home/></a>
+            </b:if>
+            <b:loop values='data:links' var='link'>
+              <b:class cond='data:link.isCurrentPage' name='current'/>
+              <a expr:href='data:link.href'><data:link.title/></a>
+            </b:loop>
+          </nav>
+        </b:includable>
+      </b:widget>
+    </b:section>
+  </div>
+</header>
+
+<!-- ========== HERO SECTION (Homepage Only) ========== -->
+<b:if cond='data:view.isHomepage'>
+<section class='hero-section'>
+  <div class='hero-inner'>
+    <h1 class='hero-title'>Baby Name Ideas</h1>
+    <p class='hero-subtitle'>Discover Beautiful Baby Names From Around The World</p>
+    <div class='hero-search'>
+      <form expr:action='data:blog.homepageUrl + &quot;search&quot;' method='get'>
+        <input type='text' name='q' placeholder='Search baby names by meaning, origin, or style...'/>
+        <button type='submit'>Search</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CATEGORY CARDS (Homepage Only) ========== -->
+<section class='categories-section'>
+  <h2 class='section-title'>Popular Categories</h2>
+  <div class='category-grid'>
+    <a class='category-card' href='/search/label/Baby%20Girl%20Names'>
+      <span class='category-card-icon'>👧</span>
+      <div class='category-card-name'>Baby Girl Names</div>
+      <div class='category-card-desc'>Beautiful &amp; meaningful</div>
+    </a>
+    <a class='category-card' href='/search/label/Baby%20Boy%20Names'>
+      <span class='category-card-icon'>👦</span>
+      <div class='category-card-name'>Baby Boy Names</div>
+      <div class='category-card-desc'>Strong &amp; classic</div>
+    </a>
+    <a class='category-card' href='/search/label/Gender%20Neutral%20Names'>
+      <span class='category-card-icon'>🌈</span>
+      <div class='category-card-name'>Gender Neutral</div>
+      <div class='category-card-desc'>For every family</div>
+    </a>
+    <a class='category-card' href='/search/label/Names%20By%20Meaning'>
+      <span class='category-card-icon'>💝</span>
+      <div class='category-card-name'>Names By Meaning</div>
+      <div class='category-card-desc'>Love, hope &amp; more</div>
+    </a>
+    <a class='category-card' href='/search/label/Japanese%20Names'>
+      <span class='category-card-icon'>🏯</span>
+      <div class='category-card-name'>Japanese Names</div>
+      <div class='category-card-desc'>Rich cultural meanings</div>
+    </a>
+    <a class='category-card' href='/search/label/Irish%20Names'>
+      <span class='category-card-icon'>☘️</span>
+      <div class='category-card-name'>Irish Names</div>
+      <div class='category-card-desc'>Character &amp; charm</div>
+    </a>
+    <a class='category-card' href='/search/label/Biblical%20Names'>
+      <span class='category-card-icon'>📖</span>
+      <div class='category-card-name'>Biblical Names</div>
+      <div class='category-card-desc'>Timeless &amp; spiritual</div>
+    </a>
+    <a class='category-card' href='/search/label/Nature%20Names'>
+      <span class='category-card-icon'>🌿</span>
+      <div class='category-card-name'>Nature Names</div>
+      <div class='category-card-desc'>Inspired by the world</div>
+    </a>
+    <a class='category-card' href='/search/label/Unique%20Names'>
+      <span class='category-card-icon'>✨</span>
+      <div class='category-card-name'>Unique Names</div>
+      <div class='category-card-desc'>Rare &amp; distinctive</div>
+    </a>
+  </div>
+</section>
+
+<!-- ========== FEATURED POSTS (Homepage Only) ========== -->
+<section class='featured-section'>
+  <h2 class='section-title'>Featured Articles</h2>
+  <b:section id='featured_section' maxwidgets='1' showaddelement='no'>
+    <b:widget id='FeaturedPost1' locked='true' title='Featured Post' type='FeaturedPost' version='2'>
+      <b:widget-settings>
+        <b:widget-setting name='showSnippet'>true</b:widget-setting>
+        <b:widget-setting name='showPost'>true</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+        <div class='featured-grid'>
+          <b:loop values='data:posts' var='post'>
+            <article class='featured-card'>
+              <b:if cond='data:post.featuredImage'>
+                <img class='featured-card-image' expr:alt='data:post.title' expr:src='data:post.featuredImage' style='object-fit:cover;width:100%'/>
+              <b:else/>
+                <div class='featured-card-image'>📝</div>
+              </b:if>
+              <div class='featured-card-body'>
+                <div class='featured-card-labels'>
+                  <b:loop values='data:post.labels' var='label' index='i'>
+                    <b:if cond='data:i lt 2'>
+                      <span class='featured-card-label'><data:label.name/></span>
+                    </b:if>
+                  </b:loop>
+                </div>
+                <h3 class='featured-card-title'>
+                  <a expr:href='data:post.url'><data:post.title/></a>
+                </h3>
+                <div class='featured-card-excerpt'><data:post.snippets.long/></div>
+                <div class='featured-card-meta'><data:post.date/></div>
+              </div>
+            </article>
+          </b:loop>
+        </div>
+      </b:includable>
+    </b:widget>
+  </b:section>
+</section>
+</b:if>
+
+<!-- ========== MAIN LAYOUT ========== -->
+<div class='container' style='padding-top:24px'>
+  <b:if cond='data:view.isHomepage || data:view.isLabelSearch || data:view.isArchive'>
+    <!-- Homepage / Archive: posts grid + sidebar -->
+    <div class='row has-sidebar'>
+      <main class='main-content' role='main'>
+
+        <b:if cond='data:view.isLabelSearch'>
+          <div style='margin-bottom:24px'>
+            <h1 class='section-title' style='text-align:left'><data:view.search.label/></h1>
+          </div>
+        </b:if>
+
+        <b:if cond='data:view.isArchive'>
+          <div style='margin-bottom:24px'>
+            <h1 class='section-title' style='text-align:left'>Archive</h1>
+          </div>
+        </b:if>
+
+        <b:if cond='data:view.isHomepage'>
+          <h2 class='section-title' style='text-align:left;margin-top:0'>Latest Articles</h2>
+        </b:if>
+
+        <b:section id='main_section' maxwidgets='1' showaddelement='yes'>
+          <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2'>
+            <b:includable id='main' var='this'>
+              <b:if cond='data:numPosts gt 0'>
+                <div class='posts-grid'>
+                  <b:loop values='data:posts' var='post'>
+                    <article class='post-card'>
+                      <b:if cond='data:post.featuredImage'>
+                        <img class='post-card-image' expr:alt='data:post.title' expr:src='data:post.featuredImage' style='object-fit:cover;width:100%'/>
+                      <b:else/>
+                        <div class='post-card-image'>📝</div>
+                      </b:if>
+                      <div class='post-card-body'>
+                        <div class='post-card-labels'>
+                          <b:loop values='data:post.labels' var='label' index='i'>
+                            <b:if cond='data:i lt 2'>
+                              <span class='post-card-label'><data:label.name/></span>
+                            </b:if>
+                          </b:loop>
+                        </div>
+                        <h3 class='post-card-title'>
+                          <a expr:href='data:post.url'><data:post.title/></a>
+                        </h3>
+                        <div class='post-card-excerpt'><data:post.snippets.short/></div>
+                        <div class='post-card-date'><data:post.date/></div>
+                      </div>
+                    </article>
+                  </b:loop>
+                </div>
+
+                <!-- Pagination -->
+                <b:include name='nextprev'/>
+              <b:else/>
+                <div style='text-align:center;padding:60px 20px'>
+                  <p>No posts found.</p>
+                </div>
+              </b:if>
+            </b:includable>
+
+            <b:includable id='nextprev'>
+              <div class='blog-pager' id='blog-pager'>
+                <b:if cond='data:newerPageUrl'>
+                  <a class='blog-pager-newer-link' expr:href='data:newerPageUrl'>← Newer Posts</a>
+                </b:if>
+                <b:if cond='data:olderPageUrl'>
+                  <a class='blog-pager-older-link' expr:href='data:olderPageUrl'>Older Posts →</a>
+                </b:if>
+              </div>
+            </b:includable>
+
+            <b:includable id='post' var='post'>
+              <article class='post-single' expr:data-post-id='data:post.id'>
+                <!-- Breadcrumbs -->
+                <nav class='breadcrumbs' aria-label='Breadcrumb'>
+                  <a expr:href='data:blog.homepageUrl'>Home</a>
+                  <b:loop values='data:post.labels' var='label' index='i'>
+                    <b:if cond='data:i == 0'>
+                      \&#160;#160;/\&#160;#160;
+                      <a expr:href='data:label.url'><data:label.name/></a>
+                    </b:if>
+                  </b:loop>
+                  \&#160;#160;/\&#160;#160; <span><data:post.title/></span>
+                </nav>
+
+                <header class='post-header'>
+                  <!-- Labels -->
+                  <div class='post-labels'>
+                    <b:loop values='data:post.labels' var='label'>
+                      <a class='post-label' expr:href='data:label.url'><data:label.name/></a>
+                    </b:loop>
+                  </div>
+
+                  <h1 class='post-title'><data:post.title/></h1>
+
+                  <div class='post-meta'>
+                    <time expr:datetime='data:post.date.iso8601'><data:post.date/></time>
+                  </div>
+                </header>
+
+                <div class='post-body'>
+                  <data:post.body/>
+                </div>
+
+                <footer class='post-footer'>
+                  <div class='author-box'>
+                    <div class='author-avatar'>B</div>
+                    <div>
+                      <div class='author-info-name'>Baby Name Ideas Team</div>
+                      <div class='author-info-bio'>Helping parents find the perfect baby name with detailed meanings, origins, and pronunciation guides.</div>
+                    </div>
+                  </div>
+
+                  <!-- Related Posts (via labels) -->
+                  <b:if cond='data:post.labels'>
+                    <div style='margin-top:24px'>
+                      <h3 style='font-size:1.1rem;margin-bottom:12px'>Related Articles</h3>
+                      <div style='display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px'>
+                        <b:loop values='data:post.labels' var='label' index='i'>
+                          <b:if cond='data:i lt 2'>
+                            <a expr:href='data:label.url' style='padding:14px 16px;background:#FFF5F6;border-radius:12px;font-size:.85rem;color:#666'>
+                              More <strong style='color:#FF7A8A'><data:label.name/></strong>
+                            </a>
+                          </b:if>
+                        </b:loop>
+                      </div>
+                    </div>
+                  </b:if>
+                </footer>
+              </article>
+            </b:includable>
+
+            <b:includable id='postQuickEdit'/>
+            <b:includable id='feedLinks'/>
+            <b:includable id='feedLinksBody'/>
+            <b:includable id='backlinks' var='post'/>
+            <b:includable id='comments' var='post'/>
+            <b:includable id='comment-form' var='post'/>
+            <b:includable id='status-message'/>
+          </b:widget>
+        </b:section>
+      </main>
+
+      <!-- ========== SIDEBAR ========== -->
+      <aside class='sidebar' role='complementary'>
+        <b:if cond='data:view.isHomepage || data:view.isLabelSearch || data:view.isArchive'>
+          <!-- Labels widget -->
+          <div class='sidebar-section'>
+            <h3 class='sidebar-title'>Categories</h3>
+            <b:section id='sidebar_labels' maxwidgets='1' showaddelement='yes'>
+              <b:widget id='Label1' locked='false' title='Labels' type='Label' version='2'>
+                <b:widget-settings>
+                  <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+                  <b:widget-setting name='display'>LIST</b:widget-setting>
+                  <b:widget-setting name='selectedLabelsList'/>
+                  <b:widget-setting name='showType'>ALL</b:widget-setting>
+                  <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+                </b:widget-settings>
+                <b:includable id='main'>
+                  <b:if cond='data:title'><h3 class='sidebar-title'><data:title/></h3></b:if>
+                  <div expr:class='data:display'>
+                    <ul>
+                      <b:loop values='data:labels' var='label'>
+                        <li>
+                          <b:if cond='data:display == &quot;list&quot;'>
+                            <a expr:href='data:label.url'><data:label.name/>
+                              <b:if cond='data:showFreqNumbers'>
+                                <span style='color:#bbb;font-size:.75rem;margin-left:4px'>(<data:label.count/>)</span>
+                              </b:if>
+                            </a>
+                          <b:else/>
+                            <span class='label-size-{data:label.cssSize}'>
+                              <a expr:href='data:label.url'><data:label.name/></a>
+                            </span>
+                          </b:if>
+                        </li>
+                      </b:loop>
+                    </ul>
+                  </div>
+                </b:includable>
+              </b:widget>
+            </b:section>
+          </div>
+
+          <!-- Popular Posts widget -->
+          <div class='sidebar-section'>
+            <h3 class='sidebar-title'>Popular Articles</h3>
+            <b:section id='sidebar_popular' maxwidgets='1' showaddelement='yes'>
+              <b:widget id='PopularPosts1' locked='false' title='Popular Posts' type='PopularPosts' version='2'>
+                <b:widget-settings>
+                  <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
+                  <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+                  <b:widget-setting name='showSnippets'>false</b:widget-setting>
+                  <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+                </b:widget-settings>
+              </b:widget>
+            </b:section>
+          </div>
+
+          <!-- Blog Archive -->
+          <div class='sidebar-section'>
+            <h3 class='sidebar-title'>Archive</h3>
+            <b:section id='sidebar_archive' maxwidgets='1' showaddelement='yes'>
+              <b:widget id='BlogArchive1' locked='false' title='Blog Archive' type='BlogArchive' version='2'>
+                <b:widget-settings>
+                  <b:widget-setting name='showLastUpdate'>false</b:widget-setting>
+                </b:widget-settings>
+              </b:widget>
+            </b:section>
+          </div>
+        </b:if>
+      </aside>
+    </div>
+  <b:else/>
+    <!-- ========== SINGLE POST / PAGE LAYOUT ========== -->
+    <main class='post-single' role='main'>
+      <b:section id='post_section' maxwidgets='1' showaddelement='no'>
+        <b:widget id='Blog2' locked='true' title='Blog Posts' type='Blog' version='2'>
+
+          <b:includable id='main' var='this'>
+            <b:if cond='data:numPosts gt 0'>
+              <b:loop values='data:posts' var='post'>
+                <b:include name='post' data='post'/>
+              </b:loop>
+              <b:include name='nextprev'/>
+            </b:if>
+          </b:includable>
+
+          <b:includable id='post' var='post'>
+            <article class='post-single' style='padding:0'>
+
+              <b:if cond='data:view.isPage'>
+                <!-- Page: simple layout -->
+                <header class='post-header'>
+                  <h1 class='post-title'><data:post.title/></h1>
+                </header>
+                <div class='post-body'><data:post.body/></div>
+              <b:else/>
+                <!-- Post: full layout with breadcrumbs and labels -->
+                <nav class='breadcrumbs'>
+                  <a expr:href='data:blog.homepageUrl'>Home</a>
+                  <b:loop values='data:post.labels' var='label' index='i'>
+                    <b:if cond='data:i == 0'>
+                      \&#160;#160;/\&#160;#160;
+                      <a expr:href='data:label.url'><data:label.name/></a>
+                    </b:if>
+                  </b:loop>
+                  \&#160;#160;/\&#160;#160; <span><data:post.title/></span>
+                </nav>
+
+                <header class='post-header'>
+                  <div class='post-labels'>
+                    <b:loop values='data:post.labels' var='label'>
+                      <a class='post-label' expr:href='data:label.url'><data:label.name/></a>
+                    </b:loop>
+                  </div>
+                  <h1 class='post-title'><data:post.title/></h1>
+                  <div class='post-meta'>
+                    <time expr:datetime='data:post.date.iso8601'><data:post.date/></time>
+                  </div>
+                </header>
+
+                <div class='post-body'><data:post.body/></div>
+
+                <footer class='post-footer'>
+                  <div class='author-box'>
+                    <div class='author-avatar'>B</div>
+                    <div>
+                      <div class='author-info-name'>Baby Name Ideas Team</div>
+                      <div class='author-info-bio'>Helping parents find the perfect baby name with detailed meanings, origins, and pronunciation guides.</div>
+                    </div>
+                  </div>
+                </footer>
+              </b:if>
+            </article>
+          </b:includable>
+
+          <b:includable id='nextprev'>
+            <div class='blog-pager'>
+              <b:if cond='data:newerPageUrl'>
+                <a class='blog-pager-newer-link' expr:href='data:newerPageUrl'>← Newer Posts</a>
+              </b:if>
+              <b:if cond='data:olderPageUrl'>
+                <a class='blog-pager-older-link' expr:href='data:olderPageUrl'>Older Posts →</a>
+              </b:if>
+            </div>
+          </b:includable>
+
+          <b:includable id='postQuickEdit'/>
+          <b:includable id='feedLinks'/>
+          <b:includable id='feedLinksBody'/>
+          <b:includable id='backlinks' var='post'/>
+          <b:includable id='comments' var='post'/>
+          <b:includable id='comment-form' var='post'/>
+          <b:includable id='status-message'/>
+        </b:widget>
+      </b:section>
+    </main>
+  </b:if>
+</div>
+
+<!-- ========== NEWSLETTER SECTION (Homepage Only) ========== -->
+<b:if cond='data:view.isHomepage'>
+<section class='newsletter-section'>
+  <div class='newsletter-inner'>
+    <h2 class='newsletter-title'>Get Baby Name Inspiration</h2>
+    <p class='newsletter-desc'>Join our newsletter for weekly baby name ideas, naming trends, and inspiration delivered to your inbox.</p>
+    <div class='newsletter-form'>
+      <input type='email' placeholder='Your email address'/>
+      <button type='button'>Subscribe</button>
+    </div>
+  </div>
+</section>
+</b:if>
+
+<!-- ========== FOOTER ========== -->
+<footer class='site-footer'>
+  <div class='footer-inner'>
+    <!-- Brand -->
+    <div class='footer-col footer-brand'>
+      <div class='site-title' style='font-size:1.2rem;margin-bottom:6px'>Baby Name Ideas</div>
+      <p class='footer-brand-desc'>
+        Discover beautiful baby names from around the world. Browse thousands of names with meanings, origins, and pronunciation guides. Helping parents find the perfect name.
+      </p>
+    </div>
+
+    <!-- Category Links -->
+    <div class='footer-col'>
+      <div class='footer-col-title'>Popular Categories</div>
+      <ul>
+        <li><a href='/search/label/Baby%20Girl%20Names'>Baby Girl Names</a></li>
+        <li><a href='/search/label/Baby%20Boy%20Names'>Baby Boy Names</a></li>
+        <li><a href='/search/label/Gender%20Neutral%20Names'>Gender Neutral Names</a></li>
+        <li><a href='/search/label/Names%20By%20Meaning'>Names By Meaning</a></li>
+        <li><a href='/search/label/Japanese%20Names'>Japanese Names</a></li>
+        <li><a href='/search/label/Irish%20Names'>Irish Names</a></li>
+        <li><a href='/search/label/Biblical%20Names'>Biblical Names</a></li>
+        <li><a href='/search/label/Nature%20Names'>Nature Names</a></li>
+        <li><a href='/search/label/Unique%20Names'>Unique Names</a></li>
+      </ul>
+    </div>
+
+    <!-- Page Links (Footer) -->
+    <div class='footer-col'>
+      <div class='footer-col-title'>Information</div>
+      <b:section id='footer_pages' maxwidgets='1' showaddelement='no'>
+        <b:widget id='PageList2' locked='true' title='Footer Pages' type='PageList' version='2'>
+          <b:widget-settings>
+            <b:widget-setting name='pageListJson'>
+              {"showAll":true,"homeTitle":null,"showHome":false}
+            </b:widget-setting>
+            <b:widget-setting name='showAll'>true</b:widget-setting>
+            <b:widget-setting name='showHome'>false</b:widget-setting>
+          </b:widget-settings>
+          <b:includable id='main'>
+            <ul>
+              <b:loop values='data:links' var='link'>
+                <li><a expr:href='data:link.href'><data:link.title/></a></li>
+              </b:loop>
+            </ul>
+          </b:includable>
+        </b:widget>
+      </b:section>
+    </div>
+  </div>
+
+  <div class='footer-bottom'>
+    <p>\&#169;#169; <script>document.write(new Date().getFullYear())</script> Baby Name Ideas. All rights reserved. Names and their meanings are provided for informational purposes only.</p>
+  </div>
+</footer>
+
+<!-- FAQ Accordion Script -->
+<script>
+//<![CDATA[
+(function(){
+  document.addEventListener('click', function(e){
+    var q = e.target.closest('.faq-question');
+    if(q){
+      var item = q.parentNode;
+      item.classList.toggle('faq-open');
+    }
+  });
+})();
+//]]>
+</script>
+
+<!-- Mobile Nav Toggle -->
+<script>
+//<![CDATA[
+(function(){
+  var t = document.querySelector('.nav-toggle');
+  if(t){
+    t.addEventListener('click', function(){
+      document.querySelector('.main-nav').classList.toggle('open');
+    });
+  }
+})();
+//]]>
+</script>
+
+</body>
+</html>
