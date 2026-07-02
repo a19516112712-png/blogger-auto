@@ -19,6 +19,8 @@ from pathlib import Path
 from collections import defaultdict
 from typing import Optional
 
+from utils.helpers import slugify
+
 # ── Topic cluster definitions ───────────────────────────────────────────
 CLUSTERS = {
     "names_by_meaning": {

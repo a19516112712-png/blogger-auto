@@ -23,6 +23,8 @@ import csv
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Optional
+
+from utils.helpers import count_words
 from dataclasses import dataclass, field
 
 

@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
 """
-Autonomous SEO Content & Revenue Engine — Master Orchestrator
-===============================================================
+Autonomous SEO Content & Revenue Engine — Master Orchestrator (Refactored)
+
 Operates without human intervention. Each run:
-  1. Discover high-revenue keywords
-  2. Score & rank keywords by revenue potential
-  3. Detect content gaps in topic clusters
+  1. Build topic clusters
+  2. Discover keywords → insert into SQLite
+  3. Pick pending topics (ORDER BY RANDOM())
   4. Generate articles via Agnes AI
-  5. Repair frontmatter
-  6. Publish to Blogger
-  7. Update sitemap/SEO signals
-  8. Report results
+  5. Validate quality (≥95 score)
+  6. Repair frontmatter
+  7. Publish to Blogger
+  8. Record in SQLite (URL, hash, labels)
+  9. Schedule content evolution (90-day refresh)
+  10. Build internal link graph
+  11. Generate daily report
 
 Designed for daily GitHub Actions execution.
 """
@@ -23,6 +26,10 @@ import sys
 import time
 from datetime import datetime
 from pathlib import Path
+
+from database.topic_queue import TopicQueue
+from database.schema import DB_PATH
+from reporter import generate_report
 
 # ── Logging ──────────────────────────────────────────────────────────────
 logging.basicConfig(
@@ -37,7 +44,7 @@ BASE_DIR = Path(__file__).resolve().parent
 ARTICLES_PER_RUN = int(os.environ.get("ARTICLES_PER_RUN", "10"))
 MIN_REVENUE_SCORE = float(os.environ.get("MIN_REVENUE_SCORE", "30.0"))
 
-# ── Phase execution ──────────────────────────────────────────────────────
+
 def run_script(script_name: str, timeout: int = 600) -> bool:
     """Run a Python script and return True if it succeeded."""
     path = BASE_DIR / script_name
@@ -54,11 +61,6 @@ def run_script(script_name: str, timeout: int = 600) -> bool:
         elapsed = time.time() - start
         if result.returncode == 0:
             log.info("✅ %s completed in %.1fs", script_name, elapsed)
-            if result.stdout:
-                # Print last few lines
-                lines = result.stdout.strip().split("\n")
-                for line in lines[-5:]:
-                    log.info("   %s", line[:120])
             return True
         else:
             log.error("❌ %s FAILED (exit %d) after %.1fs", script_name, result.returncode, elapsed)
@@ -73,72 +75,6 @@ def run_script(script_name: str, timeout: int = 600) -> bool:
         return False
 
 
-def discover_keywords_for_run() -> list:
-    """Run keyword discovery and return top scored topics."""
-    try:
-        from keyword_discovery import discover_keywords, load_history
-        history = load_history()
-        keywords = discover_keywords(count=ARTICLES_PER_RUN + 5, history_blacklist=history)
-        # Filter by minimum revenue score
-        filtered = [kw for kw in keywords if kw["revenue_score"] >= MIN_REVENUE_SCORE]
-        log.info(
-            "Keyword discovery: %d found, %d above revenue threshold (≥%.1f)",
-            len(keywords), len(filtered), MIN_REVENUE_SCORE,
-        )
-        for i, kw in enumerate(filtered[:5]):
-            log.info(
-                "  %d. [score=%.1f cpc=$%.2f] %s",
-                i + 1, kw["revenue_score"], kw["cpc"], kw["topic"][:70],
-            )
-        return filtered[:ARTICLES_PER_RUN]
-    except Exception as exc:
-        log.warning("Keyword discovery failed (%s), falling back to generate_content.py", exc)
-        return []
-
-
-def get_cluster_status() -> str:
-    """Get SEO graph status summary."""
-    try:
-        from seo_graph import cluster_status
-        posts_dir = BASE_DIR / "posts"
-        history = set()
-        history_file = BASE_DIR / "generated_topics.json"
-        if history_file.exists():
-            data = json.loads(history_file.read_text())
-            if isinstance(data, list):
-                for item in data:
-                    if isinstance(item, dict):
-                        history.add(item.get("slug", "").lower().strip())
-        status = cluster_status(posts_dir, history)
-        lines = []
-        for s in status:
-            bar = "█" * (s["completeness"] // 10) + "░" * (10 - s["completeness"] // 10)
-            lines.append(f"  [{bar}] {s['cluster']}: {s['completeness']}% ({s['covered']}/{s['total']})")
-        return "\n".join(lines)
-    except Exception as exc:
-        return f"Cluster status unavailable: {exc}"
-
-
-# ── Revenue report ───────────────────────────────────────────────────────
-def generate_revenue_report(published: int, keywords: list) -> str:
-    """Generate a daily revenue projection report."""
-    if not keywords:
-        return "No keyword data available."
-    avg_cpc = sum(kw["cpc"] for kw in keywords) / len(keywords) if keywords else 0
-    avg_score = sum(kw["revenue_score"] for kw in keywords) / len(keywords) if keywords else 0
-    estimated_monthly_clicks = published * 30 * 5  # Rough estimate: 5 clicks/day/article
-    estimated_monthly_revenue = estimated_monthly_clicks * avg_cpc * 0.68  # 68% AdSense rev share
-
-    return (
-        f"Articles published: {published}\n"
-        f"Average CPC: ${avg_cpc:.2f}\n"
-        f"Average revenue score: {avg_score:.1f}\n"
-        f"Est. monthly clicks: {estimated_monthly_clicks:,}\n"
-        f"Est. monthly AdSense revenue: ${estimated_monthly_revenue:.2f}\n"
-        f"Est. annual AdSense revenue: ${estimated_monthly_revenue * 12:.2f}"
-    )
-
-
 # ── MAIN ─────────────────────────────────────────────────────────────────
 def main():
     log.info("=" * 60)
@@ -146,39 +82,50 @@ def main():
     log.info("=" * 60)
     log.info("Date: %s", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     log.info("Target: %d articles per run", ARTICLES_PER_RUN)
-    log.info("Min revenue score: %.1f", MIN_REVENUE_SCORE)
+    log.info("Database: %s", DB_PATH)
     log.info("")
 
-    # ── Phase 0: Pre-flight checks ────────────────────────────────────
+    # ── Phase 0: Pre-flight ──
     api_key = os.environ.get("AGNES_API_KEY")
     if not api_key:
         log.error("AGNES_API_KEY not set. Cannot generate content.")
         sys.exit(1)
 
-    # ── Phase 1: Keyword discovery & revenue scoring ──────────────────
-    log.info("─── Phase 1: Keyword Discovery & Revenue Scoring ───")
-    keywords = discover_keywords_for_run()
-    revenue_report = generate_revenue_report(
-        len(keywords) if keywords else ARTICLES_PER_RUN, keywords
-    )
-    log.info("Revenue projection:\n%s", revenue_report)
+    # ── Phase 1: Initialize database + clusters ──
+    log.info("─── Phase 1: Database & Clusters ───")
+    queue = TopicQueue()
 
-    # ── Phase 2: SEO graph & cluster status ──────────────────────────
-    log.info("\n─── Phase 2: Topic Cluster Status ───")
-    cluster_info = get_cluster_status()
-    log.info("Cluster completeness:\n%s", cluster_info)
+    # Build topic clusters if empty
+    clusters = queue.get_all_clusters()
+    if not clusters:
+        log.info("Building topic clusters...")
+        try:
+            from topic_cluster import build_clusters
+            stats = build_clusters(queue)
+            log.info("Clusters built: %d clusters, %d keywords",
+                     stats["clusters_created"], stats["keywords_added"])
+        except Exception as exc:
+            log.warning("Cluster build failed: %s", exc)
 
-    # ── Phase 3: Content generation ──────────────────────────────────
+    # ── Phase 2: Keyword discovery ──
+    log.info("─── Phase 2: Keyword Discovery ───")
+    try:
+        from keyword_discovery import discover_keywords
+        keywords = discover_keywords(queue, count=ARTICLES_PER_RUN * 5)
+        inserted = queue.bulk_insert_keywords(keywords)
+        log.info("Discovered and inserted %d new keywords.", inserted)
+    except Exception as exc:
+        log.warning("Keyword discovery failed: %s", exc)
+
+    # ── Phase 3: Content generation ──
     log.info("\n─── Phase 3: Content Generation ───")
     gen_ok = run_script("generate_content.py", timeout=1200)
-    if not gen_ok:
-        log.warning("Content generation had issues. Continuing with available posts.")
 
-    # ── Phase 4: Repair frontmatter ──────────────────────────────────
+    # ── Phase 4: Repair frontmatter ──
     log.info("\n─── Phase 4: Frontmatter Repair ───")
     repair_ok = run_script("repair_posts.py", timeout=300)
 
-    # ── Phase 5: Publish to Blogger ──────────────────────────────────
+    # ── Phase 5: Publish to Blogger ──
     log.info("\n─── Phase 5: Blogger Publication ───")
     blog_id = os.environ.get("BLOG_ID")
     client_id = os.environ.get("CLIENT_ID")
@@ -188,27 +135,53 @@ def main():
     if all([blog_id, client_id, client_secret, refresh_token]):
         publish_ok = run_script("publish.py", timeout=600)
         if not publish_ok:
-            log.warning("Publication had issues. Check publish.py logs.")
+            log.warning("Publication had issues.")
     else:
         log.warning("Blogger credentials not available. Skipping publication.")
-        log.info("  Set: CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN, BLOG_ID")
 
-    # ── Phase 6: SEO index acceleration ──────────────────────────────
-    log.info("\n─── Phase 6: Index Acceleration ───")
+    # ── Phase 6: Schedule content evolution ──
+    log.info("\n─── Phase 6: Content Evolution Scheduling ───")
     try:
-        sitemap_url = "https://babynameideas2026.blogspot.com/sitemap.xml"
-        log.info("Sitemap available at: %s", sitemap_url)
-        log.info("Tip: Submit sitemap at Google Search Console for faster indexing.")
+        published_count = queue.stats().get("published", 0)
+        # Schedule oldest unpublished articles for refresh after 90 days
+        due = queue.get_refresh_due()
+        log.info("Articles due for refresh: %d", len(due))
     except Exception as exc:
-        log.warning("Sitemap check: %s", exc)
+        log.warning("Refresh scheduling failed: %s", exc)
 
-    # ── Phase 7: Final report ────────────────────────────────────────
+    # ── Phase 7: Internal link graph ──
+    log.info("\n─── Phase 7: Internal Link Graph ───")
+    try:
+        from internal_linker import build_link_graph
+        graph = build_link_graph(queue)
+        log.info("Link graph: %d pages, %d links",
+                 len(graph), sum(len(v) for v in graph.values()))
+    except Exception as exc:
+        log.warning("Link graph build failed: %s", exc)
+
+    # ── Phase 8: Content evolution ──
+    log.info("\n─── Phase 8: Content Evolution ───")
+    try:
+        from content_evolver import run_evolution_cycle
+        results = run_evolution_cycle(queue, max_articles=3)
+        log.info("Evolution: evolved=%d, failed=%d",
+                 results.get("evolved", 0), results.get("failed", 0))
+    except Exception as exc:
+        log.warning("Evolution failed: %s", exc)
+
+    # ── Phase 9: Daily report ──
+    log.info("\n─── Phase 9: Daily Report ───")
+    report = generate_report(queue)
+    log.info(report)
+
+    # Save report
+    report_path = BASE_DIR / "daily_report.txt"
+    report_path.write_text(report, encoding="utf-8")
+
+    queue.close()
+
     log.info("\n" + "=" * 60)
     log.info("DAILY AUTONOMOUS RUN COMPLETE")
-    log.info("=" * 60)
-    log.info(revenue_report)
-    log.info("\nCluster status:\n%s", cluster_info)
-    log.info("\nNext run: tomorrow via GitHub Actions schedule (UTC midnight)")
     log.info("=" * 60)
 
 

@@ -1,26 +1,18 @@
 #!/usr/bin/env python3
 """
-Post Repair Script
+Post Repair Script (Refactored)
 
-Scans all markdown files in posts/ and ensures every file has valid
-YAML frontmatter. If frontmatter is missing or malformed, it is
-rebuilt automatically by extracting the title from the first H1 heading.
-
-Run this before publish.py to guarantee zero skipped posts due to
-frontmatter issues.
+Scans all markdown files in posts/ and ensures valid YAML frontmatter.
+Uses shared helpers from utils/ — no duplicate functions.
 """
 
 import logging
-import re
 import sys
-from datetime import datetime
 from pathlib import Path
 
-import yaml
+from utils.helpers import sanitize_labels, build_frontmatter, FORBIDDEN_LABELS
+from utils.yaml_parser import parse_frontmatter, extract_date_from_filename, has_valid_frontmatter
 
-# ---------------------------------------------------------------------------
-# Logging
-# ---------------------------------------------------------------------------
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -28,204 +20,50 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-# ---------------------------------------------------------------------------
-# Constants
-# ---------------------------------------------------------------------------
 POSTS_DIR = Path(__file__).resolve().parent / "posts"
-
 REQUIRED_FRONTMATTER_FIELDS = {"title", "date", "labels"}
-
 DEFAULT_LABELS = ["Baby Names"]
-FORBIDDEN_LABELS = {"seo", "blog", "article", "content", "post", "seo optimized", "adsense"}
-# Forbidden labels stripped — labels describe content theme, not publishing strategy
-
-
-# ---------------------------------------------------------------------------
-# Frontmatter helpers
-# ---------------------------------------------------------------------------
-
-def sanitize_labels(labels) -> list:
-    """Strip forbidden labels (SEO, Blog, Article, etc.) and deduplicate.
-    Accepts list or comma-separated string."""
-    # Normalize to list
-    if isinstance(labels, str):
-        labels = [lbl.strip() for lbl in labels.split(",") if lbl.strip()]
-    if not isinstance(labels, list):
-        return list(DEFAULT_LABELS)
-    cleaned = []
-    seen = set()
-    for lbl in labels:
-        lbl_str = str(lbl).strip()
-        if not lbl_str:
-            continue
-        if lbl_str.lower() in FORBIDDEN_LABELS:
-            log.info("Stripped forbidden label: %s", lbl_str)
-            continue
-        if lbl_str.lower() not in seen:
-            cleaned.append(lbl_str)
-            seen.add(lbl_str.lower())
-    if not cleaned:
-        return list(DEFAULT_LABELS)
-    # Ensure "Baby Names" is first
-    if "Baby Names" in cleaned:
-        cleaned.remove("Baby Names")
-    return ["Baby Names"] + cleaned
-
-def has_valid_frontmatter(filepath: Path) -> bool:
-    """Check whether a file starts with `---` and contains parseable YAML
-    with all required fields.
-
-    Args:
-        filepath: Path to the markdown file.
-
-    Returns:
-        True if the frontmatter is valid.
-    """
-    try:
-        text = filepath.read_text(encoding="utf-8")
-    except Exception as exc:
-        log.warning("Cannot read %s: %s", filepath.name, exc)
-        return False
-
-    if not text.startswith("---"):
-        return False
-
-    parts = text.split("---", 2)
-    if len(parts) < 3:
-        return False
-
-    try:
-        fm = yaml.safe_load(parts[1].strip())
-    except yaml.YAMLError:
-        return False
-
-    if not isinstance(fm, dict):
-        return False
-
-    # Check all required fields present and non-empty
-    for field in REQUIRED_FRONTMATTER_FIELDS:
-        if field not in fm:
-            return False
-        if fm[field] is None:
-            return False
-        # title and date must be non-empty strings
-        if field in ("title", "date") and not str(fm[field]).strip():
-            return False
-        # labels must be a non-empty list
-        if field == "labels":
-            if not isinstance(fm[field], list) or len(fm[field]) == 0:
-                return False
-            # Check for forbidden labels — if found, mark as invalid for repair
-            for lbl in fm[field]:
-                if str(lbl).strip().lower() in FORBIDDEN_LABELS:
-                    return False
-
-    return True
-
-
-def extract_title_from_body(body: str, fallback: str) -> str:
-    """Extract the title from the first H1 heading in the body.
-
-    Args:
-        body: Markdown body text (after any frontmatter).
-        fallback: Fallback title if no H1 is found.
-
-    Returns:
-        Extracted or fallback title.
-    """
-    match = re.search(r"^#\s+(.+?)$", body, re.MULTILINE)
-    if match:
-        title = match.group(1).strip()
-        # Sanitize: strip any YAML key prefixes that leaked into the title
-        for prefix in ("title:", "date:", "labels:", "meta_description:", "---"):
-            if title.lower().startswith(prefix):
-                if prefix in ("date:", "labels:", "meta_description:", "---"):
-                    log.warning("Title begins with '%s' in %s — skipping H1 extraction.", prefix.rstrip(":"), filepath.name if 'filepath' in dir() else 'unknown')
-                    break
-                title = title.split(":", 1)[1].strip()
-                log.info("Stripped '%s' prefix from extracted title.", prefix.rstrip(":"))
-                break
-        return title
-    # Try first non-empty, non-delimiter line
-    for line in body.split("\n"):
-        stripped = line.strip()
-        if stripped and not stripped.startswith("---") and not stripped.startswith("```"):
-            return stripped[:150]
-    return fallback
-
-
-def extract_date_from_filename(filename: str) -> str:
-    """Try to extract a date from a filename like 2026-06-16-slug.md.
-
-    Falls back to today's date if no date prefix is found.
-    """
-    match = re.match(r"^(\d{4}-\d{2}-\d{2})", filename)
-    if match:
-        return match.group(1)
-    return datetime.now().strftime("%Y-%m-%d")
-
-
-def build_frontmatter(title: str, labels: list[str], date_str: str) -> str:
-    """Build a valid YAML frontmatter block using yaml.dump."""
-    data = {
-        "title": title,
-        "labels": labels,
-        "date": date_str,
-        "slug": title.lower().replace(" ", "-")[:80],
-    }
-    yaml_body = yaml.dump(data, default_flow_style=False, allow_unicode=True, sort_keys=False)
-    return "---\n" + yaml_body + "---"
 
 
 def repair_file(filepath: Path) -> bool:
-    """Repair a single markdown file's frontmatter.
-
-    Args:
-        filepath: Path to the .md file.
-
-    Returns:
-        True if the file was repaired, False if it needed no repair or
-        could not be repaired.
-    """
+    """Repair a single markdown file's frontmatter."""
     try:
         text = filepath.read_text(encoding="utf-8")
     except Exception as exc:
         log.error("Cannot read %s: %s", filepath.name, exc)
         return False
 
-    # Separate existing frontmatter from body
+    # Extract title from H1
+    body = text
     if text.startswith("---"):
         parts = text.split("---", 2)
         if len(parts) >= 3:
-            body = parts[2].strip()
-        else:
-            body = text
-    else:
-        body = text
+            body = parts[2]
 
-    # Extract metadata
-    title = extract_title_from_body(body, filepath.stem)
+    title = body.split('\n')[0].strip()
+    if title.startswith('# '):
+        title = title[2:].strip()
+
     date_str = extract_date_from_filename(filepath.name)
 
-    # Try to salvage existing labels from broken frontmatter
+    # Salvage existing labels
     labels = list(DEFAULT_LABELS)
     if text.startswith("---"):
         parts = text.split("---", 2)
         if len(parts) >= 3:
+            import yaml
             try:
                 old_fm = yaml.safe_load(parts[1].strip())
                 if isinstance(old_fm, dict) and "labels" in old_fm:
                     labels = sanitize_labels(old_fm["labels"])
-            except yaml.YAMLError:
+            except Exception:
                 pass
 
-    # Build fresh frontmatter
     frontmatter = build_frontmatter(title, labels, date_str)
     new_content = f"{frontmatter}\n\n{body}\n"
 
-    # Validate the new content
     if not has_valid_frontmatter_path(new_content):
-        log.error("Repair FAILED for %s: rebuilt frontmatter still invalid.", filepath.name)
+        log.error("Repair FAILED for %s", filepath.name)
         return False
 
     filepath.write_text(new_content, encoding="utf-8")
@@ -234,12 +72,13 @@ def repair_file(filepath: Path) -> bool:
 
 
 def has_valid_frontmatter_path(content: str) -> bool:
-    """Like has_valid_frontmatter but operates on a string."""
+    """Validate frontmatter from string content."""
     if not content.startswith("---"):
         return False
     parts = content.split("---", 2)
     if len(parts) < 3:
         return False
+    import yaml
     try:
         fm = yaml.safe_load(parts[1].strip())
     except yaml.YAMLError:
@@ -254,15 +93,9 @@ def has_valid_frontmatter_path(content: str) -> bool:
         if field == "labels":
             if not isinstance(fm[field], list) or len(fm[field]) == 0:
                 return False
-            for lbl in fm[field]:
-                if str(lbl).strip().lower() in FORBIDDEN_LABELS:
-                    return False
     return True
 
 
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
 def main():
     log.info("Starting post repair scan…")
 
@@ -278,23 +111,17 @@ def main():
 
     for md_file in md_files:
         if has_valid_frontmatter(md_file):
-            log.info("OK: %s", md_file.name)
             already_valid += 1
         else:
-            log.warning("BROKEN frontmatter: %s — attempting repair…", md_file.name)
             if repair_file(md_file):
                 repaired += 1
             else:
                 failed += 1
 
-    log.info("Repair scan complete.")
-    log.info("  Total files:     %d", total)
-    log.info("  Already valid:   %d", already_valid)
-    log.info("  Repaired:        %d", repaired)
-    log.info("  Failed:          %d", failed)
+    log.info("Repair scan complete. Total: %d, Valid: %d, Repaired: %d, Failed: %d",
+             total, already_valid, repaired, failed)
 
     if failed > 0:
-        log.error("%d file(s) could not be repaired.", failed)
         sys.exit(1)
 
 

@@ -1,355 +1,421 @@
 #!/usr/bin/env python3
 """
-Autonomous Keyword Discovery Module
-====================================
-Discovers high-potential baby name keywords from multiple sources:
-  - Internal topic gap analysis (what haven't we covered)
-  - Semantic keyword expansion (related terms from seed topics)
-  - Pre-computed CPC data for baby naming niches
-  - Trending topic detection via available signals
+Keyword Discovery Engine — Unlimited Combinatorial Topic Generator
 
-Returns scored keywords ready for content generation.
+Replaces the old static TOPICS array and limited keyword_discovery.
+Generates 10,000+ unique long-tail keywords from combinatorial dimensions.
+
+Dimensions:
+  Meaning, Origin, Gender, Popularity, Religion, Nature, Animals,
+  Flowers, Colors, Season, Letter, Ending, Middle Names, Sibling Names,
+  Twin Names, Nicknames, Rare, Vintage, Modern, Country, Language,
+  Mythology, Occupation, Celebrity Trend, Current Year
+
+Every generated keyword is checked against the SQLite database before
+insertion — zero duplicates guaranteed.
+
+Usage:
+    from database.topic_queue import TopicQueue
+    from keyword_discovery import discover_keywords
+    
+    q = TopicQueue()
+    keywords = discover_keywords(q, count=100)
+    q.bulk_insert_keywords(keywords)
 """
 
-import json
-import os
+import hashlib
+import logging
 import random
+import re
 from datetime import datetime
 from pathlib import Path
+from typing import Optional
 
-# ── CPC data by baby name niche (USD, estimated) ─────────────────────────
-NICHE_CPC_DATA = {
-    # High revenue niches ($2.00+ CPC)
-    "baby names that mean": 2.85,
-    "baby girl names": 2.40,
-    "baby boy names": 2.35,
-    "unique baby names": 2.20,
-    "gender neutral names": 2.10,
-    "middle names": 1.95,
-    "biblical names": 1.90,
-    "japanese names": 1.85,
-    "vintage names": 1.80,
-    "rare names": 1.75,
-    # Medium revenue niches ($1.00-$2.00 CPC)
-    "irish names": 1.65,
-    "nature names": 1.60,
-    "strong names": 1.55,
-    "modern names": 1.50,
-    "twin names": 1.45,
-    "greek names": 1.40,
-    "french names": 1.35,
-    "italian names": 1.30,
-    "spanish names": 1.25,
-    "german names": 1.20,
-    "scandinavian names": 1.15,
-    "celtic names": 1.10,
-    "korean names": 1.05,
-    "arabic names": 1.00,
-    # Growing niches (rising CPC)
-    "names by letter": 1.80,
-    "short names": 1.70,
-    "cute names": 1.90,
-    "beautiful names": 1.85,
-    "flower names": 1.60,
-    "ocean names": 1.55,
-    "star names": 1.50,
-    "moon names": 1.45,
-    "color names": 1.40,
-    "animal names": 1.35,
-    "tree names": 1.30,
-    "gemstone names": 1.25,
-    "seasonal names": 1.20,
-    "mythology names": 1.15,
-    "literary names": 1.10,
-    "musical names": 1.05,
-    "royal names": 1.00,
-}
+log = logging.getLogger(__name__)
 
-# ── Search intent strength by modifier ──────────────────────────────────
-INTENT_SCORES = {
-    "names that mean": 0.95,   # Very high intent
-    "girl names": 0.90,
-    "boy names": 0.90,
-    "with meanings": 0.85,
-    "unique": 0.80,
-    "rare": 0.80,
-    "beautiful": 0.75,
-    "popular": 0.70,
-    "modern": 0.65,
-    "vintage": 0.65,
-    "gender neutral": 0.60,
-    "and meanings": 0.85,
-}
+# ---------------------------------------------------------------------------
+# Combinatorial dimension pools
+# ---------------------------------------------------------------------------
 
-# ── SEO difficulty estimates (lower = easier to rank) ──────────────────
-SEO_DIFFICULTY = {
-    "baby names": 75,         # Very competitive
-    "baby girl names": 80,
-    "baby boy names": 80,
-    "unique baby names": 55,
-    "rare baby names": 40,    # Lower competition
-    "vintage baby names": 45,
-    "gender neutral names": 50,
-    "japanese baby names": 35,
-    "irish baby names": 40,
-    "biblical baby names": 50,
-    "nature baby names": 45,
-    "names that mean": 55,
-    "middle names": 60,
-    "korean baby names": 25,  # Very low competition
-    "arabic baby names": 30,
-    "celtic baby names": 30,
-    "nordic baby names": 25,
-    "flower baby names": 40,
-    "ocean baby names": 35,
-    "star baby names": 35,
-    "season baby names": 30,
-}
+MEANINGS = [
+    "love", "hope", "light", "peace", "joy", "strength", "grace", "wisdom",
+    "miracle", "blessing", "dream", "star", "brave", "courage", "faith",
+    "truth", "honor", "victory", "freedom", "kindness", "beauty", "power",
+    "courage", "valor", "noble", "gentle", "pure", "bright", "swift",
+    "calm", "serene", "radiant", "divine", "eternal", "wise", "strong",
+    "fierce", "bold", "free", "wild", "sweet", "soft", "warm", "cool",
+    "fair", "just", "true", "good", "kind", "dear", "precious", "rare",
+]
 
-# ── Semantic topic clusters (pillar + supporting) ──────────────────────
-TOPIC_CLUSTERS = {
-    "names_by_meaning": {
-        "pillar": "Baby Names That Mean — Complete Guide",
-        "supporting": [
-            "love", "hope", "light", "strength", "miracle", "peace",
-            "wisdom", "joy", "brave", "warrior", "grace", "beauty",
-            "blessing", "gift", "victory", "protector", "angel",
-            "moon", "sun", "star", "fire", "water", "earth",
-            "queen", "king", "lion", "eagle", "wolf", "rose",
-        ]
-    },
-    "international_names": {
-        "pillar": "International Baby Names From Around the World",
-        "supporting": [
-            "japanese", "irish", "korean", "french", "italian",
-            "spanish", "german", "arabic", "greek", "scandinavian",
-            "celtic", "nordic", "russian", "polish", "dutch",
-            "hawaiian", "african", "indian", "persian", "chinese",
-        ]
-    },
-    "style_collections": {
-        "pillar": "Baby Names by Style — Complete Collections",
-        "supporting": [
-            "vintage", "modern", "unique", "rare", "cute", "short",
-            "gender neutral", "strong", "beautiful", "royal",
-            "bohemian", "literary", "musical", "mythology",
-        ]
-    },
-    "nature_names": {
-        "pillar": "Nature-Inspired Baby Names",
-        "supporting": [
-            "flower", "tree", "ocean", "mountain", "river", "star",
-            "moon", "bird", "animal", "gemstone", "color", "season",
-            "forest", "desert", "island", "garden", "meadow",
-        ]
-    },
-    "letters": {
-        "pillar": None,  # No pillar — letter pages are standalone
-        "supporting": [chr(c) for c in range(ord('a'), ord('z')+1)]
-    },
-}
+ORIGINS = [
+    "Irish", "Japanese", "Korean", "French", "Italian", "Spanish", "German",
+    "Arabic", "Greek", "Scandinavian", "Celtic", "Nordic", "Russian",
+    "Polish", "Dutch", "Hawaiian", "African", "Indian", "Persian", "Chinese",
+    "Hebrew", "Latin", "Slavic", "Portuguese", "Turkish", "Egyptian",
+    "Mayan", "Aztec", "Sanskrit", "Welsh", "Scottish", "English",
+    "Norman", "Basque", "Finnish", "Estonian", "Lithuanian", "Ukrainian",
+]
 
-# ── CTR potential modifiers (based on SERP features) ──────────────────
-def estimate_ctr_potential(topic: str) -> float:
-    """Estimate CTR potential based on topic characteristics."""
-    topic_lower = topic.lower()
-    ctr = 0.03  # Base CTR
+GENGENDERS = ["baby", "boy", "girl", "unisex", "gender-neutral"]
 
-    # Modifiers that increase CTR
-    if "meaning" in topic_lower: ctr += 0.015
-    if "100" in topic_lower: ctr += 0.010   # List posts perform well
-    if "girl" in topic_lower: ctr += 0.005
-    if "boy" in topic_lower: ctr += 0.005
-    if "unique" in topic_lower: ctr += 0.005
-    if "rare" in topic_lower: ctr += 0.008
+POPULARITY = ["popular", "trending", "classic", "modern", "vintage",
+              "unique", "rare", "obscure", "hidden gem", "rising",
+              "timeless", "traditional", "contemporary", "new", "fresh"]
 
-    return min(ctr, 0.08)
+RELIGIONS = ["biblical", "christian", "hebrew", "muslim", "hindu",
+             "buddhist", "jewish", "catholic", "orthodox", "spiritual",
+             "saint", "angelic", "monastic", "pagan", "druid"]
 
+NATURE = [
+    "flower", "tree", "ocean", "mountain", "river", "lake", "sea",
+    "forest", "garden", "meadow", "field", "valley", "hill", "cliff",
+    "canyon", "desert", "island", "beach", "shore", "wave", "tide",
+    "stream", "brook", "pond", "spring", "glacier", "volcano", "crater",
+]
 
-# ── Revenue scoring engine ────────────────────────────────────────────
-def score_keyword(topic: str) -> dict:
-    """Score a keyword for revenue potential. Returns a dict with scores."""
-    topic_lower = topic.lower()
+ANIMALS = [
+    "bird", "eagle", "hawk", "falcon", "owl", "raven", "dove", "swan",
+    "crane", "heron", "sparrow", "robin", "lark", "thrush", "finch",
+    "lion", "tiger", "wolf", "bear", "fox", "deer", "stag", "hare",
+    "rabbit", "horse", "wolf", "panther", "leopard", "cheetah", "jaguar",
+    "fish", "dolphin", "whale", "shark", "salmon", "trout", "bass",
+    "dragon", "phoenix", "griffin", "unicorn", "centaur", "satyr",
+]
 
-    # Find CPC
-    cpc = 0.50  # Default low
-    for niche, value in NICHE_CPC_DATA.items():
-        if niche in topic_lower:
-            cpc = max(cpc, value)
+FLOWERS = [
+    "rose", "lily", "daisy", "violet", "jasmine", "tulip", "orchid",
+    "lavender", "lotus", "iris", "peony", "hibiscus", "magnolia",
+    "azalea", "camellia", "chrysanthemum", "sunflower", "poppy",
+    "marigold", "blossom", "petal", "fern", "ivy", "willow", "birch",
+]
 
-    # Find search intent
-    intent = 0.50  # Default medium
-    for modifier, score in INTENT_SCORES.items():
-        if modifier in topic_lower:
-            intent = max(intent, score)
+COLORS = [
+    "red", "blue", "green", "gold", "silver", "ivory", "pearl", "ruby",
+    "emerald", "sapphire", "diamond", "amber", "coral", "jade", "bronze",
+    "crimson", "scarlet", "azure", "teal", "violet", "indigo", "mauve",
+    "lavender", "ochre", "sienna", "umber", "ebony", "ivory", "cream",
+]
 
-    # Find SEO difficulty (invert: lower difficulty = higher score)
-    difficulty = 75  # Default high
-    for term, score in SEO_DIFFICULTY.items():
-        if term in topic_lower:
-            difficulty = min(difficulty, score)
-    seo_score = 1.0 - (difficulty / 100.0)  # Invert
+SEASONS = ["spring", "summer", "autumn", "winter", "seasonal"]
 
-    # CTR potential
-    ctr = estimate_ctr_potential(topic)
+LETTERS = list("abcdefghijklmnopqrstuvwxyz")
 
-    # Monetization probability
-    monetization = 0.70
-    if "meaning" in topic_lower: monetization = 0.85
-    if "girl" in topic_lower: monetization = max(monetization, 0.80)
-    if "boy" in topic_lower: monetization = max(monetization, 0.80)
-    if "unique" in topic_lower: monetization = 0.75
-    if "rare" in topic_lower: monetization = 0.75
+ENDINGS = [
+    "a", "ia", "ea", "oa", "ua",  # feminine
+    "o", "io", "eo", "ao",       # masculine
+    "er", "or", "ar", "ir", "ur",
+    "ley", "leigh", "ly", "ney",
+    "wood", "worth", "ton", "field", "dale", "gate",
+    "ette", "elle", "ine", "ine", "elle",
+    "wen", "lyn", "ynn", "ren",
+    "ith", "iel", "iel", "iel",
+]
 
-    # Composite revenue score (weighted)
-    revenue_score = (
-        cpc * 0.35 +
-        intent * 100 * 0.25 +
-        seo_score * 100 * 0.20 +
-        ctr * 1000 * 0.10 +
-        monetization * 100 * 0.10
-    )
+YEARS = [str(y) for y in range(2025, 2035)]
 
-    return {
-        "topic": topic,
-        "cpc": round(cpc, 2),
-        "search_intent": round(intent, 2),
-        "seo_difficulty": difficulty,
-        "seo_rankability": round(seo_score, 2),
-        "ctr_potential": round(ctr, 3),
-        "monetization_prob": round(monetization, 2),
-        "revenue_score": round(revenue_score, 2),
-    }
+MYTHOLOGIES = [
+    "greek", "roman", "norse", "egyptian", "celtic", "hindu",
+    "japanese", "korean", "chinese", "mesopotamian", "babylonian",
+    "persian", "aztec", "maya", "inca", "polynesian", "welsh",
+    "irish", "scottish", "finnish", "slavic", "tibetan", "thai",
+]
+
+OCCUPATIONS = [
+    "king", "queen", "prince", "princess", "noble", "royal",
+    "warrior", "knight", "soldier", "guardian", "protector",
+    "scholar", "teacher", "healer", "artist", "musician",
+    "poet", "writer", "singer", "dancer", "painter",
+    "hunter", "fisher", "weaver", "smith", "builder",
+    "leader", "chief", "ruler", "ranger", "scout",
+]
+
+CELEBRITY_TRENDS = [
+    "celebrity", "influencer", "instagram", "tiktok", "viral",
+    "modern celebrity", "hollywood", "pop star", "rock star",
+]
+
+# ---------------------------------------------------------------------------
+# Template library — each template produces semantically valid keywords
+# ---------------------------------------------------------------------------
+
+TEMPLATES = [
+    # Meaning-based
+    "{gender} names that mean {meaning}",
+    "names meaning {meaning} for {gender}",
+    "{gender} baby names with meaning {meaning}",
+    "meaning of {gender} name {meaning}",
+    
+    # Origin-based
+    "{origin} {gender} baby names",
+    "{origin} baby names and meanings for {gender}",
+    "traditional {origin} {gender} names",
+    "modern {origin} {gender} baby names",
+    "{origin} {gender} names with meanings",
+    "ancient {origin} {gender} names",
+    "{origin} {gender} names starting with {letter}",
+    "{origin} {gender} names ending with {ending}",
+    
+    # Nature-based
+    "nature {gender} baby names",
+    "{nature} inspired {gender} names",
+    "{flower} names for {gender}",
+    "{animal} names for babies",
+    "{color} themed {gender} names",
+    "{season} inspired {gender} baby names",
+    "{nature} {gender} baby names",
+    
+    # Mythology
+    "{mythology} {gender} baby names",
+    "{mythology} mythology {gender} names",
+    "norse {gender} warrior names",
+    "greek {gender} god names",
+    
+    # Style
+    "{popularity} {gender} baby names",
+    "unique {gender} baby names",
+    "rare {gender} names",
+    "vintage {gender} baby names",
+    "modern {gender} baby names",
+    "classic {gender} names",
+    
+    # Letter-based
+    "{gender} baby names starting with {letter}",
+    "baby names beginning with {letter} for {gender}",
+    "{origin} {gender} names starting with {letter}",
+    
+    # Ending-based
+    "{gender} names ending with {ending}",
+    "baby names that end in {ending} for {gender}",
+    "{origin} {gender} names ending with {ending}",
+    
+    # Middle names
+    "best middle names for {gender}",
+    "{origin} middle names for {gender}",
+    "nature middle names for {gender}",
+    "unique middle names for {gender}",
+    "{popularity} middle names for {gender}",
+    "{meaning} middle names for {gender}",
+    
+    # Sibling names
+    "sibling names to match {gender}",
+    "matching sibling names for {gender}",
+    "{origin} sibling name sets for {gender}",
+    "coordinated sibling names for {gender}",
+    
+    # Twin names
+    "twin names for {gender} babies",
+    "{origin} twin names for {gender}",
+    "matching twin names for {gender}",
+    "unique twin name pairs for {gender}",
+    
+    # Nicknames
+    "cute nicknames for {gender} names",
+    "{origin} nickname ideas for {gender}",
+    "sweet nicknames for {gender}",
+    "funny nicknames for {gender} babies",
+    
+    # Occasion
+    "{season} {gender} baby names",
+    "{color} themed {gender} names",
+    "{mythology} inspired {gender} names",
+    
+    # Year
+    "{gender} baby names {year}",
+    "trending {gender} names {year}",
+    "popular {gender} names {year}",
+    
+    # Occupations
+    "{occupation} inspired {gender} names",
+    "royal {gender} baby names",
+    "warrior {gender} names",
+]
 
 
-# ── Keyword discovery ─────────────────────────────────────────────────
-def load_history() -> set:
-    """Load previously generated topics/slugs/titles to avoid duplicates."""
-    history_file = Path(__file__).resolve().parent / "generated_topics.json"
-    if not history_file.exists():
-        return set()
-    try:
-        data = json.loads(history_file.read_text())
-        blacklist = set()
-        if isinstance(data, list):
-            for item in data:
-                if isinstance(item, dict):
-                    blacklist.add(item.get("topic", "").lower().strip())
-                    blacklist.add(item.get("slug", "").lower().strip())
-                    blacklist.add(item.get("title", "").lower().strip())
-        elif isinstance(data, dict):
-            for k in ("blacklist_topics", "blacklist_titles"):
-                for item in data.get(k, []):
-                    blacklist.add(str(item).lower().strip())
-        return blacklist
-    except Exception:
-        return set()
+def _normalize(keyword: str) -> str:
+    """Normalize a keyword for dedup comparison."""
+    return re.sub(r"\s+", " ", keyword.strip().lower())
 
 
-def discover_keywords(count: int = 15, history_blacklist: set = None) -> list:
-    """Discover top `count` keywords for content generation.
+def _keyword_hash(keyword: str) -> str:
+    """SHA-256 hash for content dedup."""
+    return hashlib.sha256(_normalize(keyword).encode()).hexdigest()[:16]
 
-    Strategy:
-      1. Semantic expansion from high-CPC seed topics
-      2. Topic cluster gap analysis
-      3. Shuffle for diversity, score, and return top N.
+
+def discover_keywords(queue, count: int = 100,
+                      history_blacklist: Optional[set] = None) -> list[tuple]:
+    """Discover up to `count` unique keywords.
+
+    Args:
+        queue: TopicQueue instance for duplicate checking.
+        count: Maximum keywords to generate.
+        history_blacklist: Set of already-seen keywords (legacy compat).
+
+    Returns:
+        List of tuples: (keyword, intent, cluster, priority, difficulty,
+                         search_volume, cpc)
     """
-    if history_blacklist is None:
-        history_blacklist = load_history()
+    seen = set()
+    if history_blacklist:
+        seen = {_normalize(h) for h in history_blacklist}
+
+    # Also check database
+    db_keywords = set()
+    try:
+        existing = queue.conn.execute(
+            "SELECT LOWER(keyword) FROM keywords"
+        ).fetchall()
+        db_keywords = {r[0] for r in existing}
+    except Exception:
+        pass
+
+    seen |= db_keywords
 
     candidates = []
+    attempts = 0
+    max_attempts = count * 50  # Safety limit
 
-    # Strategy 1: Expand from high-CPC seed topics
-    # Separated modifier pools for semantic correctness
-    MEANING_MODIFIERS = [
-        "love", "hope", "light", "strength", "miracle", "peace",
-        "wisdom", "joy", "brave", "warrior", "grace", "beauty",
-        "blessing", "gift", "victory", "protector", "angel",
-        "fire", "water", "earth", "wind", "moon", "sun", "star",
-        "queen", "king", "lion", "eagle", "wolf", "rose",
-        "royal", "garden", "island", "desert", "meadow",
-        "forest", "ocean", "mountain", "river", "lake",
-        "flower", "tree", "bird", "butterfly", "gem", "pearl",
-        "gold", "silver", "rainbow", "storm", "snow",
-    ]
-    ORIGIN_MODIFIERS = [
-        "japanese", "irish", "korean", "french", "italian",
-        "spanish", "german", "arabic", "greek", "scandinavian",
-        "celtic", "nordic", "russian", "polish", "dutch",
-        "hawaiian", "african", "indian", "persian", "chinese",
-        "hebrew", "latin", "slavic",
-    ]
-    STYLE_MODIFIERS = [
-        "vintage", "modern", "unique", "rare", "cute", "short",
-        "gender neutral", "strong", "beautiful", "royal",
-        "bohemian", "literary", "musical", "mythology",
-        "biblical",
-    ]
+    random.seed()  # Fresh seed per run
 
-    seeds = [
-        ("100 baby names that mean {modifier} — beautiful names with meanings", MEANING_MODIFIERS),
-        ("100 {origin} baby names and meanings", ORIGIN_MODIFIERS),
-        ("100 {style} baby names with meanings", STYLE_MODIFIERS),
-        ("100 gender neutral {style} names", [
-            "nature", "vintage", "modern", "unique", "celtic",
-            "literary", "musical", "mythology",
-        ]),
-        ("100 baby girl names inspired by {modifier}", [
-            "flowers", "nature", "colors", "gems", "butterflies", "stars",
-            "oceans", "gardens", "birds", "seasons",
-        ]),
-        ("100 baby boy names that mean {modifier}", [
-            "strong", "warrior", "leader", "brave", "protector",
-            "king", "lion", "eagle", "wolf", "bear",
-        ]),
-        ("baby names starting with {letter} — complete guide", [
-            "a", "b", "c", "d", "e", "m", "n", "r", "s", "z",
-        ]),
-    ]
+    while len(candidates) < count and attempts < max_attempts:
+        attempts += 1
 
-    for template, modifiers in seeds:
-        random.shuffle(modifiers)
-        for mod in modifiers[:5]:  # Take top 5 shuffled per seed
-            topic = template.format(
-                origin=mod, modifier=mod, style=mod,
-                theme=mod, letter=mod.upper(),
-            )
-            if topic.lower().strip() not in history_blacklist:
-                candidates.append(topic)
+        # Pick random template and random dimension values
+        template = random.choice(TEMPLATES)
+        keyword = _fill_template(template)
+        normalized = _normalize(keyword)
 
-    # Strategy 2: Topic cluster gap check — find uncovered clusters
-    all_supporting = set()
-    for cluster in TOPIC_CLUSTERS.values():
-        all_supporting.update(cluster["supporting"])
-    covered = set()
-    for t in candidates:
-        for s in all_supporting:
-            if s in t.lower():
-                covered.add(s)
-    # Push uncovered supports as candidates
-    uncovered = all_supporting - covered
-    for u in list(uncovered)[:10]:
-        topic = f"100 baby names that mean {u} — beautiful names with meanings"
-        if topic.lower().strip() not in history_blacklist:
-            candidates.append(topic)
+        if normalized in seen:
+            continue
 
-    # Score and rank
-    scored = [score_keyword(c) for c in candidates]
-    scored.sort(key=lambda x: x["revenue_score"], reverse=True)
+        seen.add(normalized)
 
-    return scored[:count]
+        # Score the keyword
+        intent, cluster, priority, difficulty, volume, cpc = _score_keyword(keyword)
+
+        candidates.append((
+            keyword, intent, cluster, priority, difficulty, volume, cpc,
+        ))
+
+    log.info("Keyword discovery: %d unique keywords in %d attempts",
+             len(candidates), attempts)
+    return candidates
 
 
-# ── Main (for testing) ─────────────────────────────────────────────────
-if __name__ == "__main__":
-    print("Autonomous Keyword Discovery Engine")
-    print("=" * 60)
-    history = load_history()
-    print(f"History size: {len(history)} entries\n")
-    keywords = discover_keywords(count=15)
-    print(f"{'#':<3} {'Revenue':<8} {'CPC':<6} {'Intent':<7} {'SEO Diff':<9} {'Topic'}")
-    print("-" * 90)
-    for i, kw in enumerate(keywords, 1):
-        print(f"{i:<3} {kw['revenue_score']:<8.1f} ${kw['cpc']:<5.2f} {kw['search_intent']:<7.2f} {kw['seo_difficulty']:<9} {kw['topic'][:55]}")
-    print("-" * 90)
-    print(f"\nDiscovered {len(keywords)} high-revenue keywords")
+def _fill_template(template: str) -> str:
+    """Fill a template with random dimension values."""
+    replacements = {
+        "{meaning}": random.choice(MEANINGS),
+        "{origin}": random.choice(ORIGINS),
+        "{gender}": random.choice(GENGENDERS),
+        "{popularity}": random.choice(POPULARITY),
+        "{religion}": random.choice(RELIGIONS),
+        "{nature}": random.choice(NATURE),
+        "{animal}": random.choice(ANIMALS),
+        "{flower}": random.choice(FLOWERS),
+        "{color}": random.choice(COLORS),
+        "{season}": random.choice(SEASONS),
+        "{letter}": random.choice(LETTERS),
+        "{ending}": random.choice(ENDINGS),
+        "{year}": random.choice(YEARS),
+        "{mythology}": random.choice(MYTHOLOGIES),
+        "{occupation}": random.choice(OCCUPATIONS),
+    }
+
+    keyword = template
+    for placeholder, value in replacements.items():
+        keyword = keyword.replace(placeholder, value)
+
+    # Clean up double spaces
+    keyword = re.sub(r"\s+", " ", keyword).strip()
+    return keyword
+
+
+def _score_keyword(keyword: str) -> tuple:
+    """Score a keyword for CPC, intent, cluster, priority, difficulty, volume."""
+    kw = keyword.lower()
+
+    # CPC lookup (from old keyword_discovery.py, enhanced)
+    cpc_map = {
+        "meaning": 2.85, "girl": 2.40, "boy": 2.35, "unique": 2.20,
+        "gender": 2.10, "middle name": 1.95, "biblical": 1.90,
+        "japanese": 1.85, "vintage": 1.80, "rare": 1.75,
+        "irish": 1.65, "nature": 1.60, "strong": 1.55,
+        "modern": 1.50, "twin": 1.45, "greek": 1.40,
+        "french": 1.35, "italian": 1.30, "spanish": 1.25,
+        "german": 1.20, "korean": 1.05, "arabic": 1.00,
+        "letter": 1.80, "short": 1.70, "cute": 1.90,
+        "flower": 1.60, "ocean": 1.55, "star": 1.50,
+        "mythology": 1.15, "royal": 1.00, "nick": 1.30,
+        "sibling": 1.25, "ending": 1.10,
+    }
+
+    cpc = 0.50
+    for term, value in cpc_map.items():
+        if term in kw:
+            cpc = max(cpc, value)
+
+    # Intent classification
+    if "meaning" in kw or "mean" in kw:
+        intent = "LIST_INTENT"
+    elif any(o in kw for o in ORIGINS):
+        intent = "ORIGIN_INTENT"
+    elif "twin" in kw:
+        intent = "LIST_INTENT"
+    elif "middle name" in kw or "sibling" in kw or "nickname" in kw:
+        intent = "ADVICE_INTENT"
+    elif "starting with" in kw or "ending with" in kw:
+        intent = "LETTER_INTENT"
+    elif "unique" in kw or "rare" in kw or "popular" in kw:
+        intent = "TREND_INTENT"
+    else:
+        intent = "LIST_INTENT"
+
+    # Cluster
+    cluster = "uncategorized"
+    for o in ORIGINS:
+        if o.lower() in kw:
+            cluster = f"origin_{o.lower()}"
+            break
+    if cluster == "uncategorized":
+        for n in NATURE:
+            if n in kw:
+                cluster = f"nature_{n}"
+                break
+    if cluster == "uncategorized":
+        for m in MEANINGS[:10]:
+            if m in kw:
+                cluster = f"meaning_{m}"
+                break
+
+    # Priority (higher = more valuable)
+    priority = 50.0
+    if cpc >= 2.0:
+        priority = 80.0
+    elif cpc >= 1.5:
+        priority = 65.0
+    if "unique" in kw or "rare" in kw:
+        priority += 10
+    if "middle" in kw or "sibling" in kw:
+        priority += 5
+
+    # Difficulty (lower = easier to rank)
+    difficulty = 60.0
+    if "baby names" in kw:
+        difficulty = 75.0
+    if "unique" in kw or "rare" in kw:
+        difficulty = 40.0
+    for o in ORIGINS:
+        if o.lower() in kw:
+            difficulty = min(difficulty, 35.0)
+            break
+
+    # Volume estimate
+    volume = 1000
+    if cpc >= 2.0:
+        volume = 10000
+    elif cpc >= 1.5:
+        volume = 5000
+    if "unique" in kw or "rare" in kw:
+        volume = max(volume, 3000)
+
+    return intent, cluster, round(priority, 1), round(difficulty, 1), volume, round(cpc, 2)
