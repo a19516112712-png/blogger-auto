@@ -1,7 +1,7 @@
 {
-  "date": "2026-07-02",
+  "date": "2026-07-03",
   "total_posts": 92,
-  "new_since_last": 1,
+  "new_since_last": 0,
   "timestamps": [
     {
       "date": "2026-06-26",
@@ -29,6 +29,10 @@
     },
     {
       "date": "2026-07-02",
+      "total": 92
+    },
+    {
+      "date": "2026-07-03",
       "total": 92
     }
   ]

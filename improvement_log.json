@@ -487,6 +487,42 @@
         }
       ],
       "date": "2026-07-02 07:07:13"
+    },
+    {
+      "slug": "2026-06-16-timeless-literary-baby-names-from-classic-novels-1",
+      "old_word_count": 1554,
+      "new_word_count": 3292,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-07-03 06:47:43"
+    },
+    {
+      "slug": "2026-06-17-timeless-elegance-reviving-old-fashioned-baby-names-with-old-world-charm",
+      "old_word_count": 1641,
+      "new_word_count": 3189,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-07-03 06:51:09"
     }
   ]
 }

@@ -1,28 +1,26 @@
 ============================================================
 SELF-IMPROVING SEO GROWTH REPORT
 ============================================================
-Date: 2026-07-02 07:07:13
+Date: 2026-07-03 06:51:09
 Blog: https://babynameideas2026.blogspot.com
 
 ✅ growth_detection
    total: 92
-   high_growth: 5
-   potential_growth: 87
-   #1: [30] title: Nature''s Embrace: Earthy & Botanical Baby  (1661w)
-   #2: [30] Powerful Picks: Strong Baby Boy Names with Profoun (1559w)
-   #3: [30] title: Short & Sweet: Discovering Perfect One-Syll (1804w)
+   high_growth: 2
+   potential_growth: 90
+   #1: [30] title: Timeless Literary Baby Names from Classic N (1554w)
+   #2: [30] Timeless Elegance: Reviving Old-Fashioned Baby Nam (1641w)
 
 ✅ content_evolution
    ran: True
-   output_preview: ring Perfect One-Syllable  (1804w)
-  4. [30] title: Timeless Literary Baby Names from Classic Novels (1554w)
-  5. [30] Timeless Elegance: Reviving Old-Fashioned Baby Names wi (1641w)
+   output_preview: mous Article Improvement
+============================================================
 
-Running evolution on top candidates...
+Top 2 improvement targets:
+  1. [30] title: Timeless Literary Baby Names from Classic Novels (1554w)
+  2. [30] Timeless Elegance: Reviving Old-Fashioned Baby Names wi (1641w)
 
-
-RESULTS: improved=3 skipped=0 failed=0
-  ✅ title: Nature''s Embrace: Earthy
+Running evolution on top candidates..
 
 ✅ link_optimization
    ran: True
