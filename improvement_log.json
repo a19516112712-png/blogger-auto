@@ -1,0 +1,528 @@
+{
+  "improved": [
+    {
+      "slug": "2026-06-16-musical-baby-names-for-your-little-maestro",
+      "old_word_count": 155,
+      "new_word_count": 3402,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "high"
+        },
+        {
+          "action": "add_faq",
+          "target": "5-8 FAQs with schema",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "improve_structure",
+          "target": "6+ H2 sections",
+          "priority": "low"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-26 07:08:17"
+    },
+    {
+      "slug": "example",
+      "old_word_count": 200,
+      "new_word_count": 2613,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "high"
+        },
+        {
+          "action": "add_faq",
+          "target": "5-8 FAQs with schema",
+          "priority": "high"
+        },
+        {
+          "action": "improve_structure",
+          "target": "6+ H2 sections",
+          "priority": "low"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-26 07:09:37"
+    },
+    {
+      "slug": "2026-06-16-biblical-baby-names-timeless-choices-for-modern-parents",
+      "old_word_count": 1388,
+      "new_word_count": 5433,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-26 07:19:40"
+    },
+    {
+      "slug": "2026-06-16-names-with-powerful-meanings-inspire-courage-love-and-wisdom",
+      "old_word_count": 1412,
+      "new_word_count": 3089,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-27 06:42:04"
+    },
+    {
+      "slug": "2026-06-16-timeless-literary-baby-names-from-classic-novels",
+      "old_word_count": 1358,
+      "new_word_count": 3466,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-27 06:43:29"
+    },
+    {
+      "slug": "2026-06-17-rooted-in-love-wholesome-farmhouse-baby-names-for-a-nostalgic-touch",
+      "old_word_count": 1312,
+      "new_word_count": 2553,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-27 06:45:23"
+    },
+    {
+      "slug": "2026-06-17-rooted-in-nature-the-best-tree-and-forest-baby-names-for-your-little-sapling",
+      "old_word_count": 1497,
+      "new_word_count": 3338,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-28 07:14:32"
+    },
+    {
+      "slug": "2026-06-17-timeless-elegance-irish-baby-names-full-of-celtic-charm",
+      "old_word_count": 1467,
+      "new_word_count": 3021,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-28 07:15:45"
+    },
+    {
+      "slug": "2026-06-16-bohemian-baby-names-artistic-flair-for-your-little-free-spirit",
+      "old_word_count": 1621,
+      "new_word_count": 3163,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_faq",
+          "target": "5-8 FAQs with schema",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-28 07:18:35"
+    },
+    {
+      "slug": "2026-06-16-vintage-baby-names-making-a-comeback-timeless-charm-for-your-little-one",
+      "old_word_count": 1536,
+      "new_word_count": 3420,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_faq",
+          "target": "5-8 FAQs with schema",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-29 08:33:27"
+    },
+    {
+      "slug": "2026-06-16-beautiful-baby-girl-names-from-around-the-world",
+      "old_word_count": 1503,
+      "new_word_count": 3245,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-29 08:33:59"
+    },
+    {
+      "slug": "2026-06-16-gender-neutral-baby-names-the-rise-of-modern-flexible-choices",
+      "old_word_count": 1580,
+      "new_word_count": 3075,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-29 08:36:40"
+    },
+    {
+      "slug": "2026-06-16-the-hottest-picks-trending-baby-names-for-the-current-year",
+      "old_word_count": 1750,
+      "new_word_count": 3067,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-30 07:09:04"
+    },
+    {
+      "slug": "2026-06-16-vintage-baby-names-making-a-comeback-timeless-charm-for-today",
+      "old_word_count": 1602,
+      "new_word_count": 3713,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-30 07:12:19"
+    },
+    {
+      "slug": "2026-06-17-social-media-inspired-baby-names-for-the-digital-age",
+      "old_word_count": 1607,
+      "new_word_count": 2978,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "add_internal_links",
+          "target": "3-10 related links",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-06-30 07:14:09"
+    },
+    {
+      "slug": "2026-06-28-100-african-baby-names-and-meanings",
+      "old_word_count": 2316,
+      "new_word_count": 3723,
+      "actions": [
+        {
+          "action": "add_faq",
+          "target": "5-8 FAQs with schema",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "improve_structure",
+          "target": "6+ H2 sections",
+          "priority": "low"
+        }
+      ],
+      "date": "2026-07-01 08:00:25"
+    },
+    {
+      "slug": "2026-06-29-100-greek-mythology-baby-names-and-meanings",
+      "old_word_count": 2482,
+      "new_word_count": 3557,
+      "actions": [
+        {
+          "action": "add_faq",
+          "target": "5-8 FAQs with schema",
+          "priority": "high"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        },
+        {
+          "action": "improve_structure",
+          "target": "6+ H2 sections",
+          "priority": "low"
+        }
+      ],
+      "date": "2026-07-01 08:02:01"
+    },
+    {
+      "slug": "2026-06-16-baby-names-born-from-legends-mythological-monikers-for-your-little-hero-or-heroi",
+      "old_word_count": 1655,
+      "new_word_count": 3290,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-07-01 08:03:55"
+    },
+    {
+      "slug": "2026-06-16-natures-embrace-earthy-botanical-baby-names-for-girls-boys",
+      "old_word_count": 1661,
+      "new_word_count": 3121,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-07-02 07:00:50"
+    },
+    {
+      "slug": "2026-06-16-powerful-picks-strong-baby-boy-names-with-profound-meanings",
+      "old_word_count": 1559,
+      "new_word_count": 2963,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-07-02 07:03:05"
+    },
+    {
+      "slug": "2026-06-16-short-sweet-discovering-perfect-one-syllable-baby-names",
+      "old_word_count": 1804,
+      "new_word_count": 3436,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-07-02 07:07:13"
+    },
+    {
+      "slug": "2026-06-16-timeless-literary-baby-names-from-classic-novels-1",
+      "old_word_count": 1554,
+      "new_word_count": 3292,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-07-03 06:47:43"
+    },
+    {
+      "slug": "2026-06-17-timeless-elegance-reviving-old-fashioned-baby-names-with-old-world-charm",
+      "old_word_count": 1641,
+      "new_word_count": 3189,
+      "actions": [
+        {
+          "action": "expand_content",
+          "target": "2500+ words",
+          "priority": "medium"
+        },
+        {
+          "action": "add_table",
+          "target": "Name-meaning-origin table",
+          "priority": "medium"
+        }
+      ],
+      "date": "2026-07-03 06:51:09"
+    }
+  ]
+}
