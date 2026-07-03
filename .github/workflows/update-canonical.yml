@@ -1,0 +1,67 @@
+name: Update Canonical Blogger Posts
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Preview updates without publishing (true/false)"
+        required: false
+        default: "false"
+        type: string
+  push:
+    branches: [main]
+    paths:
+      - "posts/2026-06-16-gender-neutral-baby-names-the-rise-of-modern-flexible-choices.md"
+      - "posts/2026-06-16-bohemian-baby-names-artistic-flair-for-your-little-free-spirit.md"
+      - "posts/2026-06-16-biblical-baby-names-timeless-choices-for-modern-parents.md"
+      - "posts/2026-06-16-beautiful-baby-girl-names-from-around-the-world.md"
+      - "posts/2026-06-16-baby-names-born-from-legends-mythological-monikers-for-your-little-hero-or-heroi.md"
+      - "posts/2026-06-16-musical-baby-names-for-your-little-maestro.md"
+
+permissions:
+  contents: read
+
+jobs:
+  update-canonical:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.event.inputs.dry_run != 'true')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Validate CI environment
+        run: |
+          echo "Running in GitHub Actions CI"
+          echo "GITHUB_ACTIONS=$GITHUB_ACTIONS"
+          if [ -z "$BLOG_ID" ]; then
+            echo "ERROR: BLOG_ID secret is not configured"
+            exit 1
+          fi
+
+      - name: Update canonical Blogger posts
+        env:
+          BLOG_ID: ${{ secrets.BLOG_ID }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
+        run: |
+          python update_canonical_posts.py
+
+      - name: Upload update results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: canonical-update-results
+          path: /tmp/blogger_canonical_update_results.json
+          retention-days: 30
