@@ -1,0 +1,36 @@
+{
+  "timestamp": "2026-07-03T23:48:34.650577",
+  "dry_run": true,
+  "total_candidates": 2,
+  "passed_safety": 2,
+  "failed_safety": 0,
+  "deleted": [
+    {
+      "filename": "2026-06-16-timeless-literary-baby-names-from-classic-novels-1.md",
+      "group": "timeless-literary-baby-names-from-classic-novels",
+      "status": "dry_run_would_delete",
+      "published_id": null,
+      "blogger_post_id": ""
+    },
+    {
+      "filename": "2026-06-16-vintage-baby-names-making-a-comeback-timeless-charm-for-today.md",
+      "group": "vintage-baby-names-making-a-comeback-timeless-charm",
+      "status": "dry_run_would_delete",
+      "published_id": 14,
+      "blogger_post_id": ""
+    }
+  ],
+  "skipped": [],
+  "errors": [],
+  "summary": {
+    "total_candidates": 2,
+    "passed_safety": 2,
+    "failed_safety": 0,
+    "deleted": 2,
+    "skipped": 0,
+    "errors": 0,
+    "remaining_posts": 66,
+    "canonical_posts_kept": 2,
+    "sitemap_update_needed": true
+  }
+}

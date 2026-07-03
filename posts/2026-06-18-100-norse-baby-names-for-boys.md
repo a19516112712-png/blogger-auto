@@ -220,52 +220,52 @@ Not necessarily. While many Norse names are associated with warriors and gods, m
 }
 </script>
 <script type="application/ld+json">
-{{
+{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {{
+    {
       "@type": "Question",
       "name": "What does this name mean?",
-      "acceptedAnswer": {{
+      "acceptedAnswer": {
         "@type": "Answer",
         "text": "This name carries deep cultural significance and has been popular among parents seeking meaningful names for their children."
-      }}
-    }},
-    {{
+      }
+    },
+    {
       "@type": "Question",
       "name": "Is this name easy to pronounce?",
-      "acceptedAnswer": {{
+      "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes, this name is straightforward to pronounce and spell, making it accessible across different languages and cultures."
-      }}
-    }},
-    {{
+      }
+    },
+    {
       "@type": "Question",
       "name": "What are popular variations of this name?",
-      "acceptedAnswer": {{
+      "acceptedAnswer": {
         "@type": "Answer",
         "text": "Common variations include diminutive forms, international adaptations, and modern spelling alternatives that maintain the original essence."
-      }}
-    }},
-    {{
+      }
+    },
+    {
       "@type": "Question",
       "name": "How popular is this name currently?",
-      "acceptedAnswer": {{
+      "acceptedAnswer": {
         "@type": "Answer",
         "text": "This name has seen steady popularity in recent years, ranking well within top naming trends for parents seeking distinctive yet familiar options."
-      }}
-    }},
-    {{
+      }
+    },
+    {
       "@type": "Question",
       "name": "What nicknames work well with this name?",
-      "acceptedAnswer": {{
+      "acceptedAnswer": {
         "@type": "Answer",
         "text": "Multiple nickname options exist, from shortened versions to completely different diminutives that give flexibility as the child grows."
-      }}
-    }}
+      }
+    }
   ]
-}}
+}
 </script>
 <script type="application/ld+json">
 {

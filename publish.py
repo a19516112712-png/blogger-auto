@@ -148,18 +148,45 @@ def publish_post(service, blog_id: str, title: str, html_body: str,
         # Store in database
         slug = slugify(title)
         content_hash = _compute_hash(html_body)
+        blogger_post_id = post.get("id")
         queue.conn.execute(
             """INSERT INTO published (title, slug, url, publish_date,
-                                       labels, content_hash, created_at)
-               VALUES (?, ?, ?, ?, ?, ?, ?)""",
+                                       labels, content_hash, blogger_post_id, created_at)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
             (title, slug, post_url, datetime.now().strftime("%Y-%m-%d"),
-             ",".join(labels), content_hash, datetime.now().isoformat()),
+             ",".join(labels), content_hash, blogger_post_id,
+             datetime.now().isoformat()),
         )
         queue.conn.commit()
 
         return post_url
     except HttpError as exc:
         log.error("API error publishing '%s': %s", title, exc)
+        return None
+
+
+def update_post(service, blog_id: str, blogger_post_id: str, title: str,
+                html_body: str, labels: list[str]) -> str | None:
+    """Update an existing Blogger post using posts.patch().
+    
+    Preserves: Blogger ID, URL, slug, publish date, labels
+    Replaces: title, content
+    """
+    body = {
+        "id": blogger_post_id,
+        "title": title,
+        "content": html_body,
+        "labels": labels or [],
+    }
+    try:
+        post = service.posts().patch(
+            blogId=blog_id, postId=blogger_post_id, body=body
+        ).execute()
+        post_url = post.get("url", f"https://{blogger_post_id}.blogspot.com")
+        log.info("Updated: '%s' -> %s", title, post_url)
+        return post_url
+    except HttpError as exc:
+        log.error("API error updating '%s': %s", title, exc)
         return None
 
 
@@ -249,7 +276,28 @@ def main():
 
         html_body = md_to_html(md_body)
 
-        url = publish_post(service, blog_id, title, html_body, labels, queue)
+        # Check if this post already exists on Blogger (by slug/title match)
+        existing = queue.conn.execute(
+            "SELECT blogger_post_id FROM published WHERE slug = ?", (slugify(title),)
+        ).fetchone()
+        
+        if existing and existing[0]:
+            # Post exists — update instead of insert
+            url = update_post(service, blog_id, existing[0], title, html_body, labels)
+            if url:
+                published_count += 1
+                existing_titles.add(title.strip().lower())
+            else:
+                publish_failed += 1
+                log.error("Failed to update '%s'.", title)
+        else:
+            url = publish_post(service, blog_id, title, html_body, labels, queue)
+            if url:
+                published_count += 1
+                existing_titles.add(title.strip().lower())
+            else:
+                publish_failed += 1
+                log.error("Failed to publish '%s'.", title)
         if url:
             published_count += 1
             existing_titles.add(title.strip().lower())
