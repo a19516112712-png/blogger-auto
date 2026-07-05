@@ -46,6 +46,14 @@ jobs:
           REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
         run: python orchestrator.py
 
+      - name: Publish to Blogger
+        env:
+          BLOG_ID: ${{ secrets.BLOG_ID }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
+        run: python publish.py
+
       - name: Commit generated content
         run: |
           git config user.name "github-actions[bot]"
