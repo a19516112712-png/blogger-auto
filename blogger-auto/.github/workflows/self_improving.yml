@@ -1,0 +1,54 @@
+name: Self-Improving SEO Growth Loop
+
+on:
+  schedule:
+    - cron: "30 3 * * *"   # Daily at 3:30 UTC (after content generation)
+  workflow_dispatch:
+    inputs:
+      max_improvements:
+        description: "Max articles to improve per run"
+        required: false
+        default: "5"
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  improve:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Self-Improving Growth Loop
+        env:
+          AGNES_API_KEY: ${{ secrets.AGNES_API_KEY }}
+          MAX_IMPROVEMENTS: ${{ github.event.inputs.max_improvements || '5' }}
+        run: python self_improving_loop.py
+
+      - name: Commit improved content
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add posts/*.md
+          if git diff --staged --quiet; then
+            echo "No improvements to commit."
+          else
+            git commit -m "Self-improving growth loop ($(date +%Y-%m-%d))"
+            git push
+          fi
