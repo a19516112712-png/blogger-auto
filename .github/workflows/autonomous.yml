@@ -1,4 +1,4 @@
-name: Autonomous SEO Revenue Engine
+name: Autonomous SEO Content Engine
 
 on:
   schedule:
@@ -8,12 +8,7 @@ on:
       articles_per_run:
         description: "Number of articles to generate"
         required: false
-        default: "10"
-        type: string
-      min_revenue_score:
-        description: "Minimum revenue score threshold"
-        required: false
-        default: "30.0"
+        default: "3"
         type: string
 
 permissions:
@@ -40,11 +35,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run Autonomous Revenue Engine
+      - name: Run Autonomous Content Engine
         env:
           AGNES_API_KEY: ${{ secrets.AGNES_API_KEY }}
-          ARTICLES_PER_RUN: ${{ github.event.inputs.articles_per_run || '10' }}
-          MIN_REVENUE_SCORE: ${{ github.event.inputs.min_revenue_score || '30.0' }}
+          AGNES_MODEL: ${{ secrets.AGNES_MODEL || 'agnes-2.0-flash' }}
+          ARTICLES_PER_RUN: ${{ github.event.inputs.articles_per_run || '3' }}
           BLOG_ID: ${{ secrets.BLOG_ID }}
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
@@ -55,7 +50,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add posts/*.md generated_topics.json
+          git add posts/
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
