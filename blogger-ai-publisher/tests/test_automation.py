@@ -786,36 +786,50 @@ class TestPipeline:
             "SELECT id FROM articles WHERE slug = ?", ("pipeline-test",)
         ).fetchone()[0]
 
-        # Mock the heavy components
-        with patch("automation.pipeline._generate_prompt") as mock_prompt:
-            mock_prompt.return_value = {
-                "prompt_text": "Test prompt",
-                "prompt_hash": "hash123",
-                "score": 85,
+        from unittest.mock import MagicMock
+
+        # Mock ArticleQueue.acquire_next to return exactly 1 article
+        with patch("automation.queue.ArticleQueue.acquire_next") as mock_acquire:
+            mock_article = {
+                "id": article_id,
+                "title": "Pipeline Test",
+                "slug": "pipeline-test",
+                "content_markdown": "# Test\n\nContent here.",
+                "labels": "",
+                "meta_description": "",
             }
-            with patch("automation.pipeline._generate_image") as mock_image:
-                mock_image.return_value = {
-                    "success": True,
-                    "image_path": "/tmp/test.webp",
-                    "provider": "mock",
-                    "alt_text": "Test",
+            mock_acquire.side_effect = [mock_article, None]
+
+            # Mock the heavy components
+            with patch("automation.pipeline._generate_prompt") as mock_prompt:
+                mock_prompt.return_value = {
+                    "prompt_text": "Test prompt",
+                    "prompt_hash": "hash123",
+                    "score": 85,
                 }
-                with patch("automation.pipeline._do_publish") as mock_pub:
-                    mock_pub.return_value = {
+                with patch("automation.pipeline._generate_image") as mock_image:
+                    mock_image.return_value = {
                         "success": True,
-                        "article_id": article_id,
-                        "title": "Pipeline Test",
-                        "blogger_post_id": "post_123",
-                        "blogger_url": "https://example.com/pipeline",
-                        "slug": "pipeline-test",
-                        "labels": ["Baby Names"],
+                        "image_path": "/tmp/test.webp",
+                        "provider": "mock",
+                        "alt_text": "Test",
                     }
-                    with patch("automation.health.CLIENT_ID", "test-id"):
-                        with patch("automation.health.CLIENT_SECRET", "test-secret"):
-                            with patch("automation.health.REFRESH_TOKEN", "test-token"):
-                                with patch("automation.health.BLOG_ID", "test-blog"):
-                                    from automation.pipeline import run_pipeline
-                                    results = run_pipeline()
+                    with patch("automation.pipeline._do_publish") as mock_pub:
+                        mock_pub.return_value = {
+                            "success": True,
+                            "article_id": article_id,
+                            "title": "Pipeline Test",
+                            "blogger_post_id": "post_123",
+                            "blogger_url": "https://example.com/pipeline",
+                            "slug": "pipeline-test",
+                            "labels": ["Baby Names"],
+                        }
+                        with patch("automation.health.CLIENT_ID", "test-id"):
+                            with patch("automation.health.CLIENT_SECRET", "test-secret"):
+                                with patch("automation.health.REFRESH_TOKEN", "test-token"):
+                                    with patch("automation.health.BLOG_ID", "test-blog"):
+                                        from automation.pipeline import run_pipeline
+                                        results = run_pipeline()
 
         assert len(results) == 1
         assert results[0]["success"] is True
@@ -825,6 +839,86 @@ class TestPipeline:
 # ======================================================================
 # Helper
 # ======================================================================
+
+
+
+class TestDailyPublishLimit:
+    """Test the DAILY_PUBLISH_LIMIT constraint."""
+
+    def _create_articles(self, count: int, fresh_db) -> None:
+        """Insert N ready articles for testing."""
+        from database.database import execute
+        for i in range(count):
+            execute(
+                "INSERT INTO articles (title, slug, content_markdown, status) "
+                "VALUES (?, ?, ?, ?)",
+                (f"Article {i}", f"article-{i}",
+                 "# Test\n\nContent here.", "ready"),
+                commit=True,
+            )
+
+    def test_queue_fifo_ordering(self, fresh_db) -> None:
+        """Queue returns articles in FIFO order."""
+        from automation.queue import ArticleQueue
+        self._create_articles(5, fresh_db)
+        queue = ArticleQueue()
+
+        # acquire_next should return the oldest first (article-0)
+        article1 = queue.acquire_next()
+        assert article1 is not None
+        assert article1["slug"] == "article-0"
+        queue.mark_failed(article1["id"], "test rollback")
+
+        # After marking failed, it should be available again
+        article2 = queue.acquire_next()
+        assert article2 is not None
+        assert article2["slug"] == "article-0"  # oldest retry first
+
+
+    def test_queue_5_publishes_5_remains_0(self, fresh_db) -> None:
+        """5 articles in queue -> publish 5 -> 0 remain."""
+        from automation.queue import ArticleQueue
+        self._create_articles(5, fresh_db)
+        queue = ArticleQueue()
+        assert queue.count_pending() == 5
+
+        published = 0
+        for _ in range(10):
+            article = queue.acquire_next()
+            if article is None:
+                break
+            queue.mark_published(article["id"], f"post_{article['id']}",
+                                 f"https://example.com/{article['slug']}")
+            published += 1
+
+        assert published == 5, f"Published {published}, expected 5"
+        remaining = queue.count_pending()
+        assert remaining == 0, f"Remaining {remaining}, expected 0"
+
+    def test_queue_3_publishes_3_success(self, fresh_db) -> None:
+        """3 articles in queue -> publish 3 -> success."""
+        from automation.queue import ArticleQueue
+        self._create_articles(3, fresh_db)
+        queue = ArticleQueue()
+        assert queue.count_pending() == 3
+
+        published = 0
+        for _ in range(10):
+            article = queue.acquire_next()
+            if article is None:
+                break
+            queue.mark_published(article["id"], f"post_{article['id']}",
+                                 f"https://example.com/{article['slug']}")
+            published += 1
+
+        assert published == 3, f"Published {published}, expected 3"
+        remaining = queue.count_pending()
+        assert remaining == 0, f"Remaining {remaining}, expected 0"
+
+    def test_daily_publish_limit_config_default(self) -> None:
+        """DAILY_PUBLISH_LIMIT is 5 by default."""
+        from config.settings import DAILY_PUBLISH_LIMIT
+        assert DAILY_PUBLISH_LIMIT == 5
 
 
 def _fetch_run(run_id: int) -> dict:

@@ -1,11 +1,11 @@
 """Complete publishing pipeline orchestration.
 
-Runs one full cycle:
+Runs one full publishing cycle (up to DAILY_PUBLISH_LIMIT articles).
 
 1. Health check
 2. Crash recovery
 3. Import unpublished posts from disk (recursive)
-4. Acquire next article from queue
+4. Acquire next article from queue (FIFO)
 5. Generate image (Prompt Engine → Image Engine)
 6. Build HTML
 7. Publish to Blogger
@@ -13,6 +13,7 @@ Runs one full cycle:
 9. Archive article
 10. Record metrics
 11. Generate report
+12. Print DAILY PUBLISH SUMMARY
 
 This module is designed to be called by the Scheduler (CLI) or by
 GitHub Actions.
@@ -24,7 +25,7 @@ import time
 from typing import Any
 
 from config.logging import get_logger
-from config.settings import AUTOMATION_MAX_ARTICLES_PER_RUN
+from config.settings import DAILY_PUBLISH_LIMIT
 from database.database import execute, fetch_one
 
 log = get_logger(__name__)
@@ -150,7 +151,7 @@ def run_pipeline() -> list[dict[str, Any]]:
     from automation.metrics import record_pipeline_run
 
     results: list[dict[str, Any]] = []
-    max_articles = AUTOMATION_MAX_ARTICLES_PER_RUN
+    max_articles = DAILY_PUBLISH_LIMIT
 
     # Step 1: Health check
     log.info("Pipeline — Step 1/8: Health check")
@@ -246,6 +247,20 @@ def run_pipeline() -> list[dict[str, Any]]:
             log.info("✅ Published: %s → %s", title, publish_result.get("blogger_url"))
         else:
             log.warning("❌ Failed: %s — %s", title, publish_result.get("error_message"))
+
+    # Print daily publish summary
+    published = sum(1 for r in results if r.get("success"))
+    failed = sum(1 for r in results if not r.get("success"))
+    remaining = queue.count_pending()
+    log.info("=" * 34)
+    log.info("DAILY PUBLISH SUMMARY")
+    log.info("=" * 34)
+    log.info("Imported: %d", imported)
+    log.info("Ready: %d", pending)
+    log.info("Published: %d", published)
+    log.info("Remaining: %d", remaining)
+    log.info("Failed: %d", failed)
+    log.info("=" * 34)
 
     return results
 

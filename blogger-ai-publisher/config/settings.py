@@ -146,6 +146,9 @@ BLOGGER_TOKEN_URI: Final[str] = "https://oauth2.googleapis.com/token"
 AUTOMATION_MAX_ARTICLES_PER_RUN: Final[int] = int(
     os.getenv("AUTOMATION_MAX_ARTICLES_PER_RUN", "1")
 )
+DAILY_PUBLISH_LIMIT: Final[int] = int(
+    os.getenv("DAILY_PUBLISH_LIMIT", "5")
+)
 AUTOMATION_RETRY_FAILED: Final[bool] = os.getenv(
     "AUTOMATION_RETRY_FAILED", "true"
 ).lower() in ("1", "true", "yes")
