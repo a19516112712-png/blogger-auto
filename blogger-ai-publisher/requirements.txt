@@ -1,6 +1,4 @@
 # Core
-sqlite3  # stdlib
-pathlib  # stdlib
 
 # Blogging
 google-auth>=2.28.0
