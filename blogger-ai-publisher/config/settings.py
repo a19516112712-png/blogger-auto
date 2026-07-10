@@ -23,6 +23,7 @@ PROMPTS_DIR: Final[Path] = PROJECT_ROOT / "prompts"
 TEMPLATES_DIR: Final[Path] = PROJECT_ROOT / "templates"
 LOGS_DIR: Final[Path] = PROJECT_ROOT / "logs"
 DATABASE_DIR: Final[Path] = PROJECT_ROOT / "database"
+POSTS_DIR: Final[Path] = PROJECT_ROOT.parent / "posts"
 
 # Ensure directories exist at import time (idempotent)
 for _dir in (ARTICLES_DIR, PUBLISHED_DIR, IMAGES_DIR, PROMPTS_DIR,

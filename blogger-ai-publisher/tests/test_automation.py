@@ -244,6 +244,187 @@ class TestArticleQueue:
 # ======================================================================
 
 
+
+
+# ======================================================================
+# import_posts_from_directory tests
+# ======================================================================
+
+
+class TestImportPosts:
+    """Test auto-importing markdown posts into the articles table."""
+
+    def test_import_creates_articles(self, fresh_db, tmp_path) -> None:
+        """Valid markdown files are imported as draft articles."""
+        from automation.pipeline import import_posts_from_directory
+        from database.database import fetch_one
+        import config.settings
+
+        posts_dir = tmp_path / "posts"
+        posts_dir.mkdir()
+        md = posts_dir / "test-article.md"
+        md.write_text("---\ntitle: Test Article\nslug: test-article\nlabels:\n  - Baby Names\nmeta_description: A test\n---\nHello world")
+
+        orig = config.settings.POSTS_DIR
+        config.settings.POSTS_DIR = posts_dir
+
+        try:
+            count = import_posts_from_directory()
+            assert count == 1
+
+            row = fetch_one(
+                "SELECT title, slug, status, labels, word_count FROM articles WHERE slug = ?",
+                ("test-article",),
+            )
+            assert row is not None
+            assert row["title"] == "Test Article"
+            assert row["status"] == "draft"
+            assert row["labels"] == "Baby Names"
+            assert row["word_count"] == 2
+        finally:
+            config.settings.POSTS_DIR = orig
+
+    def test_import_skips_duplicate_slug(self, fresh_db, tmp_path) -> None:
+        """Files with existing slug are skipped."""
+        from automation.pipeline import import_posts_from_directory
+        from database.database import execute
+        import config.settings
+
+        execute(
+            "INSERT INTO articles (title, slug, status) VALUES (?, ?, ?)",
+            ("Existing", "existing-article", "draft"),
+            commit=True,
+        )
+
+        posts_dir = tmp_path / "posts"
+        posts_dir.mkdir()
+        md = posts_dir / "dup.md"
+        md.write_text("---\ntitle: Duplicate\nslug: existing-article\nlabels: []\nmeta_description: dup\n---\nBody")
+
+        orig = config.settings.POSTS_DIR
+        config.settings.POSTS_DIR = posts_dir
+
+        try:
+            count = import_posts_from_directory()
+            assert count == 0
+        finally:
+            config.settings.POSTS_DIR = orig
+
+    def test_import_no_posts_directory(self, fresh_db, tmp_path) -> None:
+        """Non-existent posts directory returns 0 without error."""
+        from automation.pipeline import import_posts_from_directory
+        import config.settings
+
+        posts_dir = tmp_path / "nonexistent"
+        orig = config.settings.POSTS_DIR
+        config.settings.POSTS_DIR = posts_dir
+
+        try:
+            count = import_posts_from_directory()
+            assert count == 0
+        finally:
+            config.settings.POSTS_DIR = orig
+
+    def test_import_empty_directory(self, fresh_db, tmp_path) -> None:
+        """Empty posts directory returns 0 without error."""
+        from automation.pipeline import import_posts_from_directory
+        import config.settings
+
+        posts_dir = tmp_path / "posts-empty"
+        posts_dir.mkdir()
+        orig = config.settings.POSTS_DIR
+        config.settings.POSTS_DIR = posts_dir
+
+        try:
+            count = import_posts_from_directory()
+            assert count == 0
+        finally:
+            config.settings.POSTS_DIR = orig
+
+    def test_import_malformed_frontmatter(self, fresh_db, tmp_path) -> None:
+        """Files with invalid YAML are skipped."""
+        from automation.pipeline import import_posts_from_directory
+        import config.settings
+
+        posts_dir = tmp_path / "posts"
+        posts_dir.mkdir()
+        md = posts_dir / "broken.md"
+        md.write_text("---\ntitle: title: Broken\nslug: broken\n---\nBody")
+
+        orig = config.settings.POSTS_DIR
+        config.settings.POSTS_DIR = posts_dir
+
+        try:
+            count = import_posts_from_directory()
+            assert count == 0
+        finally:
+            config.settings.POSTS_DIR = orig
+
+    def test_import_missing_title_or_slug(self, fresh_db, tmp_path) -> None:
+        """Files missing title or slug are skipped."""
+        from automation.pipeline import import_posts_from_directory
+        import config.settings
+
+        posts_dir = tmp_path / "posts"
+        posts_dir.mkdir()
+        md1 = posts_dir / "no-title.md"
+        md1.write_text("---\nslug: no-title\n---\nBody")
+        md2 = posts_dir / "no-slug.md"
+        md2.write_text("---\ntitle: No Slug\n---\nBody")
+
+        orig = config.settings.POSTS_DIR
+        config.settings.POSTS_DIR = posts_dir
+
+        try:
+            count = import_posts_from_directory()
+            assert count == 0
+        finally:
+            config.settings.POSTS_DIR = orig
+
+    def test_import_preserves_all_metadata(self, fresh_db, tmp_path) -> None:
+        """All frontmatter fields are preserved in the database."""
+        from automation.pipeline import import_posts_from_directory
+        from database.database import fetch_one
+        import config.settings
+
+        posts_dir = tmp_path / "posts"
+        posts_dir.mkdir()
+        md = posts_dir / "full.md"
+        md.write_text(
+            "---\n"
+            "title: Full Metadata Test\n"
+            "slug: full-metadata-test\n"
+            "meta_description: A complete test article\n"
+            "labels:\n"
+            "  - Baby Names\n"
+            "  - Unique Names\n"
+            "  - Japanese Names\n"
+            "---\n"
+            "This is the body with multiple words for counting."
+        )
+
+        orig = config.settings.POSTS_DIR
+        config.settings.POSTS_DIR = posts_dir
+
+        try:
+            count = import_posts_from_directory()
+            assert count == 1
+
+            row = fetch_one(
+                "SELECT * FROM articles WHERE slug = ?",
+                ("full-metadata-test",),
+            )
+            assert row is not None
+            assert row["title"] == "Full Metadata Test"
+            assert row["slug"] == "full-metadata-test"
+            assert row["meta_description"] == "A complete test article"
+            assert row["labels"] == "Baby Names,Unique Names,Japanese Names"
+            assert row["status"] == "draft"
+            assert row["word_count"] == 9
+        finally:
+            config.settings.POSTS_DIR = orig
+
+
 class TestHealthCheck:
     """Test pre-flight health verification."""
 
@@ -562,16 +743,25 @@ class TestScheduler:
 class TestPipeline:
     """Test the full pipeline (mocked)."""
 
-    def test_run_pipeline_no_articles(self) -> None:
+    def test_run_pipeline_no_articles(self, tmp_path) -> None:
         """Pipeline exits cleanly with no articles."""
         from automation.pipeline import run_pipeline
+        import config.settings
+
+        empty_posts = tmp_path / "posts"
+        empty_posts.mkdir()
 
         with patch("automation.health.CLIENT_ID", "test-id"):
             with patch("automation.health.CLIENT_SECRET", "test-secret"):
                 with patch("automation.health.REFRESH_TOKEN", "test-token"):
                     with patch("automation.health.BLOG_ID", "test-blog"):
-                        results = run_pipeline()
-                        assert results == []
+                        orig = config.settings.POSTS_DIR
+                        config.settings.POSTS_DIR = empty_posts
+                        try:
+                            results = run_pipeline()
+                            assert results == []
+                        finally:
+                            config.settings.POSTS_DIR = orig
 
     def test_run_pipeline_with_article(self, fresh_db) -> None:
         """Pipeline publishes one article."""
