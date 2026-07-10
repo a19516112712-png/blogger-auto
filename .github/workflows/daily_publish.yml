@@ -29,9 +29,19 @@ env:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./blogger-ai-publisher
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Print diagnostics
+        run: |
+          pwd
+          ls -la
+          python --version
+          python -c "import sys; print(sys.path)"
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v5
@@ -44,14 +54,20 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run database migration
+        env:
+          PYTHONPATH: ${{ github.workspace }}/blogger-ai-publisher
         run: |
           python -c "from database.init_db import init_database; init_database(); print('Migration OK')"
 
       - name: Run health check
+        env:
+          PYTHONPATH: ${{ github.workspace }}/blogger-ai-publisher
         run: |
           python scripts/main.py doctor
 
       - name: Run pipeline
+        env:
+          PYTHONPATH: ${{ github.workspace }}/blogger-ai-publisher
         run: |
           python scripts/main.py ${{ github.event.inputs.command || 'run' }}
 
@@ -60,5 +76,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: pipeline-logs
-          path: logs/
+          path: ${{ github.workspace }}/blogger-ai-publisher/logs/
           retention-days: 7
