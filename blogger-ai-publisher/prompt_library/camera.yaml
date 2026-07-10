@@ -1,0 +1,25 @@
+# Camera and lens settings for AI baby photography prompts
+
+angles:
+  - "shot from a low angle looking down at the baby"
+  - "top-down flat lay composition"
+  - "eye-level shot creating intimate connection"
+  - "close-up macro shot of baby's features"
+  - "wide shot showing the full scene and environment"
+  - "three-quarter angle from slightly above"
+  - "profile view showing the baby's silhouette"
+  - "over-the-shoulder perspective"
+
+lenses:
+  - "85mm prime lens with f/1.4 aperture"
+  - "50mm lens at f/2.0 for natural perspective"
+  - "35mm wide lens capturing environmental context"
+  - "105mm macro lens for detailed close-ups"
+  - "70-200mm telephoto at 135mm for compressed backgrounds"
+
+focus:
+  - "sharp focus on the baby's face with creamy bokeh background"
+  - "soft dreamy focus creating an ethereal atmosphere"
+  - "sharp focus on baby's tiny hands and fingers"
+  - "selective focus with soft falloff on edges"
+  - "tack sharp eyes with soft gradient background blur"

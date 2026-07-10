@@ -1,0 +1,29 @@
+# Background options for AI baby photography prompts
+
+nature:
+  - "soft green forest bokeh background"
+  - "wildflower meadow in gentle morning light"
+  - "calm lake surface with soft reflections"
+  - "sandy beach with smooth ocean waves in background"
+  - "autumn leaves creating a warm colorful backdrop"
+  - "snow-covered landscape with soft white light"
+  - "mountain silhouette at golden hour"
+  - "garden path with blooming flowers"
+
+indoor:
+  - "minimalist white studio background"
+  - "soft pastel nursery wall with subtle texture"
+  - "warm wooden tones creating a cozy atmosphere"
+  - "cream-colored linen draped beautifully"
+  - "soft gray seamless paper background"
+  - "knitted blanket texture in neutral tones"
+  - "hand-painted watercolor-style backdrop"
+  - "vintage wallpaper pattern in soft colors"
+
+abstract:
+  - "soft gradient background from warm to cool tones"
+  - "marble texture in pastel colors"
+  - "watercolor wash effect in gentle hues"
+  - "bokeh light circles in soft focus background"
+  - "misty atmospheric background fading into light"
+  - "dreamy cloud-like texture in pastel tones"

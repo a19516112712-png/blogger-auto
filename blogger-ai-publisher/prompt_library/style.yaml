@@ -1,0 +1,27 @@
+# Photography style descriptors for AI baby photography prompts
+
+photographic:
+  - "fine art photography style with museum-quality composition"
+  - "editorial photography style with magazine-quality polish"
+  - "documentary style capturing authentic candid moments"
+  - "portrait studio style with professional lighting"
+  - "lifestyle photography style with natural everyday moments"
+  - "fashion editorial style with artistic composition"
+
+aesthetic:
+  - "award-winning professional newborn photography"
+  - "ethereal and dreamlike aesthetic with soft glow"
+  - "timeless classic style that transcends trends"
+  - "modern minimalist aesthetic with clean lines"
+  - "romantic soft style with gentle warm tones"
+  - "fine art aesthetic with painterly quality"
+
+mood_enhancement:
+  - "cinematic color grading with subtle teal and orange tones"
+  - "warm amber tones creating a nostalgic feeling"
+  - "cool blue tones for a calm serene atmosphere"
+  - "desaturated muted tones for an artistic look"
+  - "high contrast black and white for dramatic effect"
+  - "soft pastel tones for a gentle dreamy quality"
+  - "rich earth tones for warmth and depth"
+  - "vintage film grain adding texture and character"

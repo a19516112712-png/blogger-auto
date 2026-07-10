@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual env
+.venv/
+venv/
+
+# Data files
+*.db
+*.db-journal
+*.db-wal
+
+# Logs
+logs/
+*.log
+
+# Generated content (keep git-clean)
+articles/*.md
+!articles/.gitkeep
+published/
+images/*.png
+!images/.gitkeep
+
+# Secrets
+.env
+credentials.json
+token.json
+*.bak
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Test-generated images
+images/*.webp

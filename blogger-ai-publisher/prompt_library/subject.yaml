@@ -1,0 +1,51 @@
+# Subject prompts for AI image generation of baby name articles
+# Each entry: { category: [prompt_fragments] }
+
+girl_names:
+  - "a newborn baby girl wrapped in a soft pink blanket"
+  - "a little girl with wide curious eyes in a sunlit nursery"
+  - "a peaceful sleeping baby girl surrounded by flowers"
+  - "a baby girl in a white lace dress lying on a cloud-like surface"
+  - "a serene baby girl with tiny hands reaching for morning light"
+
+boy_names:
+  - "a newborn baby boy wrapped in a cozy blue blanket"
+  - "a strong little baby boy with bright alert eyes"
+  - "a baby boy sleeping peacefully on a soft natural fabric"
+  - "a curious baby boy in a naturally lit nursery room"
+  - "a baby boy with a gentle smile surrounded by soft shadows"
+
+gender_neutral:
+  - "a peaceful sleeping baby wrapped in organic cotton"
+  - "a calm newborn resting on a soft neutral-toned surface"
+  - "a serene baby surrounded by natural elements and soft light"
+  - "a sleeping infant on a textured natural fabric background"
+  - "a quiet baby bathed in warm golden hour light"
+
+nature_names:
+  - "a newborn baby resting on a bed of soft green leaves"
+  - "a baby surrounded by wildflowers and morning dew"
+  - "a peaceful infant sleeping under a canopy of tree branches"
+  - "a baby cradled in a nest of natural branches and moss"
+  - "a baby resting on smooth river stones with soft flowing water"
+
+mythology_names:
+  - "a mystical baby surrounded by golden celestial light"
+  - "a newborn bathed in moonlight with star specks floating around"
+  - "a baby crowned with a wreath of golden laurel leaves"
+  - "an ethereal baby glowing with soft divine light"
+  - "a mythical baby resting on clouds with soft golden rays"
+
+vintage_names:
+  - "a vintage-style baby in sepia-toned natural lighting"
+  - "a baby wrapped in antique lace with a timeless expression"
+  - "an old-fashioned portrait of a peaceful sleeping baby"
+  - "a baby in a vintage wooden cradle with soft window light"
+  - "a classic baby portrait with warm amber-toned lighting"
+
+international_names:
+  - "a baby wearing traditional cultural fabric in natural light"
+  - "a newborn surrounded by cultural heritage patterns and textures"
+  - "a baby in a beautifully woven traditional wrap"
+  - "a peaceful infant with cultural artifacts in soft light"
+  - "a baby wrapped in handcrafted textiles from around the world"
