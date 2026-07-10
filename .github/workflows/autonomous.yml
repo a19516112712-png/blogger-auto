@@ -37,8 +37,6 @@ jobs:
 
       - name: Run Autonomous Content Engine
         env:
-          AGNES_API_KEY: ${{ secrets.AGNES_API_KEY }}
-          AGNES_MODEL: ${{ secrets.AGNES_MODEL || 'agnes-2.0-flash' }}
           ARTICLES_PER_RUN: ${{ github.event.inputs.articles_per_run || '3' }}
           BLOG_ID: ${{ secrets.BLOG_ID }}
           CLIENT_ID: ${{ secrets.CLIENT_ID }}

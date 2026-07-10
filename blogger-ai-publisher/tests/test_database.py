@@ -160,7 +160,7 @@ class TestUsedPrompts:
         execute(
             "INSERT INTO used_prompts (prompt_text, model, tokens_input, tokens_output, "
             "duration_ms, prompt_type) VALUES (?, ?, ?, ?, ?, ?)",
-            ("Write article about love names", "agnes-2.0-flash", 500, 1500, 12000, "article"),
+            ("Write article about love names", "gpt-4", 500, 1500, 12000, "article"),
             commit=True,
         )
         row = fetch_one("SELECT * FROM used_prompts WHERE prompt_type = ?", ("article",))

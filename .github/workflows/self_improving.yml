@@ -37,7 +37,6 @@ jobs:
 
       - name: Run Self-Improving Growth Loop
         env:
-          AGNES_API_KEY: ${{ secrets.AGNES_API_KEY }}
           MAX_IMPROVEMENTS: ${{ github.event.inputs.max_improvements || '5' }}
           BLOG_ID: ${{ secrets.BLOG_ID }}
           CLIENT_ID: ${{ secrets.CLIENT_ID }}

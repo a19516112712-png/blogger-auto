@@ -4,7 +4,7 @@ Runs one full cycle:
 
 1. Health check
 2. Crash recovery
-3. Import unpublished posts from disk
+3. Import unpublished posts from disk (recursive)
 4. Acquire next article from queue
 5. Generate image (Prompt Engine → Image Engine)
 6. Build HTML
@@ -32,53 +32,53 @@ log = get_logger(__name__)
 
 
 
-def import_posts_from_directory() -> int:
-    """Scan the posts directory and import unpublished markdown files
-    into the articles table.
+def import_posts_from_directory() -> tuple[int, int]:
+    """Scan the posts directory recursively and import unpublished
+    markdown files into the articles table with status ``ready``.
 
-    Reads YAML frontmatter from each markdown file, extracts
-    ``title``, ``slug``, ``labels`` (list), ``meta_description``,
-    and the body content.  Skips files whose ``slug`` already exists
-    in the ``articles`` table.
+    Reads YAML frontmatter from each ``.md`` file, extracting
+    ``title``, ``slug``, ``labels``, ``meta_description``, and the
+    body content.  Skips files whose ``slug`` already exists in the
+    ``articles`` table.
 
     Returns:
-        Number of new articles imported.
+        Tuple of ``(imported_count, skipped_count)``.
     """
     import yaml
-    from pathlib import Path as _Path
     from config.settings import POSTS_DIR
     from database.database import execute, fetch_one
 
     if not POSTS_DIR.is_dir():
         log.warning("Posts directory does not exist: %s", POSTS_DIR)
-        return 0
+        return 0, 0
 
-    md_files = sorted(POSTS_DIR.glob("*.md"))
+    md_files = sorted(POSTS_DIR.rglob("*.md"))
     if not md_files:
         log.warning("No markdown files found in %s", POSTS_DIR)
-        return 0
+        return 0, 0
 
     imported = 0
+    skipped = 0
     for md_file in md_files:
         raw = md_file.read_text(encoding="utf-8")
 
-        # Parse YAML frontmatter (between --- delimiters)
         if not raw.startswith("---"):
-            log.debug("Skipping %s — no frontmatter", md_file.name)
+            skipped += 1
             continue
 
         parts = raw.split("---", 2)
         if len(parts) < 3:
-            log.debug("Skipping %s — malformed frontmatter", md_file.name)
+            skipped += 1
             continue
 
         try:
             meta = yaml.safe_load(parts[1])
-        except Exception as exc:
-            log.warning("Failed to parse YAML in %s: %s", md_file.name, exc)
+        except Exception:
+            skipped += 1
             continue
 
         if not isinstance(meta, dict):
+            skipped += 1
             continue
 
         title = (meta.get("title") or "").strip()
@@ -88,7 +88,7 @@ def import_posts_from_directory() -> int:
         body = parts[2].strip()
 
         if not title or not slug:
-            log.debug("Skipping %s — missing title or slug", md_file.name)
+            skipped += 1
             continue
 
         # Check for duplicate slug
@@ -96,10 +96,9 @@ def import_posts_from_directory() -> int:
             "SELECT id FROM articles WHERE slug = ?", (slug,)
         )
         if existing is not None:
-            log.debug("Skipping %s — slug already exists: %s", md_file.name, slug)
+            skipped += 1
             continue
 
-        # Normalise labels to comma-separated string
         if isinstance(labels_raw, list):
             labels_str = ",".join(
                 str(lbl).strip() for lbl in labels_raw if lbl
@@ -115,7 +114,7 @@ def import_posts_from_directory() -> int:
             """INSERT INTO articles
                (title, slug, meta_description, content_markdown,
                 labels, word_count, status, publish_status)
-               VALUES (?, ?, ?, ?, ?, ?, 'draft', 'pending')""",
+               VALUES (?, ?, ?, ?, ?, ?, 'ready', 'pending')""",
             (title, slug, meta_description, body, labels_str, word_count),
             commit=True,
         )
@@ -125,8 +124,11 @@ def import_posts_from_directory() -> int:
             md_file.name, slug, labels_str,
         )
 
-    log.info("Imported %d new article(s) from posts directory", imported)
-    return imported
+    log.info(
+        "Imported %d article(s), skipped %d duplicate(s) from posts directory",
+        imported, skipped,
+    )
+    return imported, skipped
 
 
 class PipelineError(Exception):
@@ -166,19 +168,19 @@ def run_pipeline() -> list[dict[str, Any]]:
     recovered = recover_state()
 
     # Step 3: Auto-import unpublished posts
-    log.info("Pipeline — Step 3/8: Import unpublished posts")
-    imported = import_posts_from_directory()
+    log.info("Pipeline — Step 3/9: Import unpublished posts")
+    imported, skipped = import_posts_from_directory()
 
     # Step 4: Article queue
-    log.info("Pipeline — Step 4/8: Acquire article from queue")
+    log.info("Pipeline — Step 4/9: Acquire article from queue")
     queue = ArticleQueue()
     pending = queue.count_pending()
+
+    log.info("Ready articles: %d", pending)
 
     if pending == 0:
         log.info("No pending articles — pipeline complete")
         return []
-
-    log.info("Pipeline — %d article(s) pending", pending)
 
     for cycle in range(max_articles):
         start_time = time.perf_counter()

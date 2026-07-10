@@ -269,8 +269,9 @@ class TestImportPosts:
         config.settings.POSTS_DIR = posts_dir
 
         try:
-            count = import_posts_from_directory()
-            assert count == 1
+            imported, skipped = import_posts_from_directory()
+            assert imported == 1
+            assert skipped == 0
 
             row = fetch_one(
                 "SELECT title, slug, status, labels, word_count FROM articles WHERE slug = ?",
@@ -278,7 +279,7 @@ class TestImportPosts:
             )
             assert row is not None
             assert row["title"] == "Test Article"
-            assert row["status"] == "draft"
+            assert row["status"] == "ready"
             assert row["labels"] == "Baby Names"
             assert row["word_count"] == 2
         finally:
@@ -305,8 +306,9 @@ class TestImportPosts:
         config.settings.POSTS_DIR = posts_dir
 
         try:
-            count = import_posts_from_directory()
-            assert count == 0
+            imported, skipped = import_posts_from_directory()
+            assert imported == 0
+            assert skipped == 1
         finally:
             config.settings.POSTS_DIR = orig
 
@@ -320,8 +322,9 @@ class TestImportPosts:
         config.settings.POSTS_DIR = posts_dir
 
         try:
-            count = import_posts_from_directory()
-            assert count == 0
+            imported, skipped = import_posts_from_directory()
+            assert imported == 0
+            assert skipped == 0
         finally:
             config.settings.POSTS_DIR = orig
 
@@ -336,8 +339,9 @@ class TestImportPosts:
         config.settings.POSTS_DIR = posts_dir
 
         try:
-            count = import_posts_from_directory()
-            assert count == 0
+            imported, skipped = import_posts_from_directory()
+            assert imported == 0
+            assert skipped == 0
         finally:
             config.settings.POSTS_DIR = orig
 
@@ -355,8 +359,9 @@ class TestImportPosts:
         config.settings.POSTS_DIR = posts_dir
 
         try:
-            count = import_posts_from_directory()
-            assert count == 0
+            imported, skipped = import_posts_from_directory()
+            assert imported == 0
+            assert skipped == 1
         finally:
             config.settings.POSTS_DIR = orig
 
@@ -376,8 +381,9 @@ class TestImportPosts:
         config.settings.POSTS_DIR = posts_dir
 
         try:
-            count = import_posts_from_directory()
-            assert count == 0
+            imported, skipped = import_posts_from_directory()
+            assert imported == 0
+            assert skipped == 2
         finally:
             config.settings.POSTS_DIR = orig
 
@@ -407,8 +413,9 @@ class TestImportPosts:
         config.settings.POSTS_DIR = posts_dir
 
         try:
-            count = import_posts_from_directory()
-            assert count == 1
+            imported, skipped = import_posts_from_directory()
+            assert imported == 1
+            assert skipped == 0
 
             row = fetch_one(
                 "SELECT * FROM articles WHERE slug = ?",
@@ -419,7 +426,7 @@ class TestImportPosts:
             assert row["slug"] == "full-metadata-test"
             assert row["meta_description"] == "A complete test article"
             assert row["labels"] == "Baby Names,Unique Names,Japanese Names"
-            assert row["status"] == "draft"
+            assert row["status"] == "ready"
             assert row["word_count"] == 9
         finally:
             config.settings.POSTS_DIR = orig

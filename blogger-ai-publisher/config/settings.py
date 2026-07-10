@@ -69,15 +69,6 @@ REFRESH_TOKEN: Final[str] = os.getenv("REFRESH_TOKEN", "")
 BLOG_URL: Final[str] = os.getenv("BLOG_URL", "https://babynameideas2026.blogspot.com")
 
 # ---------------------------------------------------------------------------
-# AI Generation
-# ---------------------------------------------------------------------------
-AGNES_API_KEY: Final[str] = os.getenv("AGNES_API_KEY", "")
-AGNES_MODEL: Final[str] = os.getenv("AGNES_MODEL", "agnes-2.0-flash")
-AGNES_BASE_URL: Final[str] = os.getenv(
-    "AGNES_BASE_URL",
-    "https://apihub.agnes-ai.com/v1",
-)
-
 # ---------------------------------------------------------------------------
 # Image Engine
 # ---------------------------------------------------------------------------
@@ -188,6 +179,5 @@ def validate() -> list[str]:
         warnings.append("BLOG_ID is not set — publishing will be disabled.")
     if not CLIENT_ID:
         warnings.append("CLIENT_ID is not set — Blogger API auth unavailable.")
-    if not AGNES_API_KEY:
-        warnings.append("AGNES_API_KEY is not set — AI generation disabled.")
+
     return warnings

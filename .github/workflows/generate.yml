@@ -35,9 +35,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Generate articles via Agnes AI
         env:
-          AGNES_API_KEY: ${{ secrets.AGNES_API_KEY }}
           ARTICLES_PER_RUN: ${{ github.event.inputs.articles_per_run || '5' }}
         run: python generate_content.py
 
