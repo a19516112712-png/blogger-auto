@@ -1,29 +1,11 @@
-# Mood descriptors for AI baby photography prompts
-
-peaceful:
-  - "peaceful and tranquil atmosphere"
-  - "calm serene mood with gentle energy"
-  - "quiet contemplative stillness"
-  - "soft gentle dreamlike peacefulness"
-  - "harmonious balanced tranquil scene"
-
-joyful:
-  - "warm joyful loving atmosphere"
-  - "tender affectionate emotional connection"
-  - "hopeful optimistic bright feeling"
-  - "gentle happiness radiating warmth"
-  - "content satisfied peaceful joy"
-
-mystical:
-  - "magical ethereal otherworldly atmosphere"
-  - "dreamy surreal quality"
-  - "mysterious enchanting captivating mood"
-  - "spiritual transcendent elevated feeling"
-  - "whimsical fantastical imaginative atmosphere"
-
-romantic:
-  - "tender loving intimate atmosphere"
-  - "soft romantic dreamy quality"
-  - "warm affectionate nurturing feeling"
-  - "gentle loving tender emotional mood"
-  - "sweet sentimental nostalgic feeling"
+mood:
+  - "peaceful and serene atmosphere with gentle calming energy"
+  - "warm and tender mood filled with unconditional love"
+  - "tranquil and quiet ambiance, pure and undisturbed"
+  - "joyful and hopeful mood radiating warmth and happiness"
+  - "gentle and nurturing atmosphere full of tender care"
+  - "calm and meditative mood, completely at peace"
+  - "soft dreamy atmosphere with ethereal floating quality"
+  - "intimate and personal mood creating deep emotional connection"
+  - "sacred and reverent mood, pure and spiritual"
+  - "natural and authentic mood, genuine unposed emotion"

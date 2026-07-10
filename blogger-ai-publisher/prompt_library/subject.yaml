@@ -1,51 +1,52 @@
-# Subject prompts for AI image generation of baby name articles
+# Subject prompts for AI baby name article hero images
+# Ultra-realistic editorial photography
 # Each entry: { category: [prompt_fragments] }
 
 girl_names:
-  - "a newborn baby girl wrapped in a soft pink blanket"
-  - "a little girl with wide curious eyes in a sunlit nursery"
-  - "a peaceful sleeping baby girl surrounded by flowers"
-  - "a baby girl in a white lace dress lying on a cloud-like surface"
-  - "a serene baby girl with tiny hands reaching for morning light"
+  - "a beautiful newborn baby girl with soft delicate features, wrapped in a light pink organic cotton blanket, peaceful expression, tiny fingers curled gently"
+  - "a newborn baby girl resting on soft cream linen, delicate eyelashes, rosebud lips, soft tiny hands, gentle peaceful slumber"
+  - "a baby girl with wide curious brown eyes, soft peach fuzz hair, wearing a white knit onesie, natural authentic expression"
+  - "a serene newborn daughter sleeping on a cloud-like white surface, lace trim details, soft natural shadows, pure innocence"
+  - "a baby girl cradled in loving父母的 hands, soft smile, tiny toes peeking out, warm intimate family moment"
 
 boy_names:
-  - "a newborn baby boy wrapped in a cozy blue blanket"
-  - "a strong little baby boy with bright alert eyes"
-  - "a baby boy sleeping peacefully on a soft natural fabric"
-  - "a curious baby boy in a naturally lit nursery room"
-  - "a baby boy with a gentle smile surrounded by soft shadows"
+  - "a strong healthy newborn baby boy wrapped in a soft navy blue blanket, alert bright eyes, peaceful strong features"
+  - "a baby boy sleeping soundly on natural cream muslin, one tiny hand resting on cheek, deep peaceful breathing"
+  - "a curious baby boy with bright blue eyes, light brown hair, wearing a soft gray cotton outfit, genuine smile"
+  - "a newborn son swaddled in warm oatmeal-colored knit, soft window light across face, pure calm expression"
+  - "a baby boy lying on textured natural linen, strong jawline even as newborn, peaceful dignified expression"
 
 gender_neutral:
-  - "a peaceful sleeping baby wrapped in organic cotton"
-  - "a calm newborn resting on a soft neutral-toned surface"
-  - "a serene baby surrounded by natural elements and soft light"
-  - "a sleeping infant on a textured natural fabric background"
-  - "a quiet baby bathed in warm golden hour light"
+  - "a peaceful newborn baby wrapped in organic cream muslin, soft window light, serene neutral-toned nursery"
+  - "a calm sleeping infant on natural unbleached cotton, minimalist composition, soft warm natural lighting"
+  - "a serene baby with closed eyes, resting on textured sage green fabric, peaceful authentic newborn moment"
+  - "a newborn sleeping peacefully on natural bamboo fiber blanket, gentle side lighting, tranquil atmosphere"
+  - "a quiet baby bathed in warm golden hour sunlight, natural earth-tone surroundings, pure innocence"
 
 nature_names:
-  - "a newborn baby resting on a bed of soft green leaves"
-  - "a baby surrounded by wildflowers and morning dew"
-  - "a peaceful infant sleeping under a canopy of tree branches"
-  - "a baby cradled in a nest of natural branches and moss"
-  - "a baby resting on smooth river stones with soft flowing water"
+  - "a peaceful newborn resting on a bed of soft green moss, dappled forest light filtering through leaves"
+  - "a baby surrounded by wild lavender and chamomile flowers, golden morning dew, ethereal natural setting"
+  - "a serene infant sleeping in a cradle of eucalyptus branches, soft botanical shadows, lush greenery"
+  - "a newborn wrapped in organic cotton, surrounded by ferns and white blooms, soft natural woodland light"
+  - "a baby resting on smooth river stones with soft flowing stream nearby, peaceful nature embrace"
 
 mythology_names:
-  - "a mystical baby surrounded by golden celestial light"
-  - "a newborn bathed in moonlight with star specks floating around"
-  - "a baby crowned with a wreath of golden laurel leaves"
-  - "an ethereal baby glowing with soft divine light"
-  - "a mythical baby resting on clouds with soft golden rays"
+  - "a mystical newborn bathed in warm golden celestial light, soft halo glow, ethereal divine atmosphere"
+  - "a baby crowned with a delicate wreath of golden olive leaves, soft amber light, timeless mythological scene"
+  - "an ethereal newborn with soft golden specks of light floating around, divine peaceful expression"
+  - "a baby wrapped in flowing white silk, soft heavenly light from above, angelic serene presence"
+  - "a mythical infant resting on soft white clouds, warm golden sunlight rays, celestial peaceful beauty"
 
 vintage_names:
-  - "a vintage-style baby in sepia-toned natural lighting"
-  - "a baby wrapped in antique lace with a timeless expression"
-  - "an old-fashioned portrait of a peaceful sleeping baby"
-  - "a baby in a vintage wooden cradle with soft window light"
-  - "a classic baby portrait with warm amber-toned lighting"
+  - "a vintage-style newborn portrait with warm sepia tones, soft diffused natural light, timeless elegance"
+  - "a baby wrapped in antique cream lace, classic portrait composition, soft amber-tinted window light"
+  - "a newborn in a vintage wooden cradle, soft muted earth tones, old-fashioned timeless charm"
+  - "a classic baby portrait with warm golden-hour light, soft focus background, heirloom quality"
+  - "a baby in hand-knitted cream heirloom blanket, romantic soft lighting, nostalgic warm atmosphere"
 
 international_names:
-  - "a baby wearing traditional cultural fabric in natural light"
-  - "a newborn surrounded by cultural heritage patterns and textures"
-  - "a baby in a beautifully woven traditional wrap"
-  - "a peaceful infant with cultural artifacts in soft light"
-  - "a baby wrapped in handcrafted textiles from around the world"
+  - "a baby wrapped in traditional indigo-dyed fabric, warm natural sunlight, authentic cultural beauty"
+  - "a newborn surrounded by handcrafted cultural textiles and patterns, soft window light, rich textures"
+  - "a baby in a beautifully woven traditional wrap, natural outdoor light, authentic heritage atmosphere"
+  - "a peaceful infant with artisanal cultural elements, warm soft lighting, genuine cultural connection"
+  - "a baby wrapped in handwoven organic textiles, soft natural shadows, timeless cultural portrait"

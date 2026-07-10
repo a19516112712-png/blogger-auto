@@ -1,27 +1,23 @@
-# Photography style descriptors for AI baby photography prompts
+# Photography style descriptors for ultra-realistic baby name article hero images
 
 photographic:
-  - "fine art photography style with museum-quality composition"
-  - "editorial photography style with magazine-quality polish"
-  - "documentary style capturing authentic candid moments"
-  - "portrait studio style with professional lighting"
-  - "lifestyle photography style with natural everyday moments"
-  - "fashion editorial style with artistic composition"
+  - "ultra realistic photography, sharp focus, professional DSLR quality"
+  - "editorial magazine photography, museum-quality composition, premium aesthetic"
+  - "fine art documentary photography with authentic genuine moments"
+  - "professional portrait studio quality with masterful lighting"
+  - "lifestyle photography capturing authentic real-world beauty"
+  - "editorial fashion photography with artistic sophisticated composition"
+  - "National Geographic style authentic documentary photography"
+  - "Vogue editorial quality with perfect composition and lighting"
+  - "professional newborn photography, award-winning technique"
+  - "master photographer quality, technically flawless execution"
 
 aesthetic:
-  - "award-winning professional newborn photography"
-  - "ethereal and dreamlike aesthetic with soft glow"
-  - "timeless classic style that transcends trends"
-  - "modern minimalist aesthetic with clean lines"
-  - "romantic soft style with gentle warm tones"
-  - "fine art aesthetic with painterly quality"
-
-mood_enhancement:
-  - "cinematic color grading with subtle teal and orange tones"
-  - "warm amber tones creating a nostalgic feeling"
-  - "cool blue tones for a calm serene atmosphere"
-  - "desaturated muted tones for an artistic look"
-  - "high contrast black and white for dramatic effect"
-  - "soft pastel tones for a gentle dreamy quality"
-  - "rich earth tones for warmth and depth"
-  - "vintage film grain adding texture and character"
+  - "award-winning professional newborn photography, museum quality"
+  - "ethereal and dreamlike aesthetic with soft natural glow"
+  - "timeless classic style, heirloom quality that transcends trends"
+  - "modern minimalist aesthetic with clean elegant lines"
+  - "romantic soft art style with gentle warm earth tones"
+  - "fine art aesthetic with painterly quality and depth"
+  - "pure authentic beauty, no artificial elements, genuine emotion"
+  - "minimalist sophisticated composition with perfect negative space"

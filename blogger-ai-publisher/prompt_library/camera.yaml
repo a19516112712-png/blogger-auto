@@ -1,25 +1,22 @@
-# Camera and lens settings for AI baby photography prompts
+# Camera settings for ultra-realistic baby photography prompts
 
 angles:
-  - "shot from a low angle looking down at the baby"
-  - "top-down flat lay composition"
-  - "eye-level shot creating intimate connection"
-  - "close-up macro shot of baby's features"
-  - "wide shot showing the full scene and environment"
-  - "three-quarter angle from slightly above"
-  - "profile view showing the baby's silhouette"
-  - "over-the-shoulder perspective"
+  - "shot on a Canon EOS R5 with professional L-series lens"
+  - "captured with a Nikon Z9 and 85mm f/1.2 portrait lens"
+  - "shot on a Sony A7R V with premium G Master prime lens"
+  - "photographed with a professional Hasselblad medium format camera"
+  - "shot on a Fujifilm GFX 100 with medium format quality"
 
 lenses:
-  - "85mm prime lens with f/1.4 aperture"
-  - "50mm lens at f/2.0 for natural perspective"
-  - "35mm wide lens capturing environmental context"
-  - "105mm macro lens for detailed close-ups"
-  - "70-200mm telephoto at 135mm for compressed backgrounds"
+  - "85mm prime lens at f/1.4 creating soft creamy bokeh"
+  - "50mm f/1.2 lens for natural perspective and shallow depth of field"
+  - "135mm f/1.8 portrait lens for compressed elegant portraiture"
+  - "70-200mm f/2.8 at 100mm for classic portrait compression"
+  - "105mm f/1.4 prime lens with buttery smooth bokeh"
 
 focus:
-  - "sharp focus on the baby's face with creamy bokeh background"
-  - "soft dreamy focus creating an ethereal atmosphere"
-  - "sharp focus on baby's tiny hands and fingers"
-  - "selective focus with soft falloff on edges"
-  - "tack sharp eyes with soft gradient background blur"
+  - "sharp focus on the baby's face with soft dreamy background"
+  - "razor-sharp eye focus with beautiful lens falloff"
+  - "perfect focus on baby's features, creamy bokeh all around"
+  - "tack sharp on the eyes, smooth gradient out of focus"
+  - "selective focus on baby with artistic background blur"

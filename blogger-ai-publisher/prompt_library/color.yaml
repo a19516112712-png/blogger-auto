@@ -1,31 +1,20 @@
-# Color palettes for AI baby photography prompts
-
-pastels:
-  - "soft pink and cream color palette"
-  - "powder blue and white gentle combination"
-  - "mint green and soft yellow fresh tones"
-  - "lavender and pale gray calming blend"
-  - "peach and ivory warm delicate tones"
-  - "baby blue and blush pink soft pairing"
-  - "butter yellow and seafoam green fresh palette"
+# Color palettes for baby name article hero images
+# Warm, natural, editorial tones
 
 warm:
-  - "golden amber and cream warm tones"
-  - "terracotta and warm beige earthy palette"
-  - "coral and soft brown warm harmonious blend"
-  - "rust and cream rich warm combination"
-  - "honey and ivory golden warm tones"
+  - "warm amber and honey tones creating a cozy timeless feel"
+  - "soft peach and cream palette with warm golden highlights"
+  - "rich caramel and warm beige tones, sophisticated and natural"
+  - "golden hour color palette with warm sun-kissed tones"
 
 cool:
-  - "cool gray and ice blue serene combination"
-  - "slate blue and silver sophisticated cool tones"
-  - "sage green and soft gray natural cool palette"
-  - "dusty lavender and pale blue calming cool blend"
-  - "teal and white fresh clean cool tones"
+  - "cool sage and dusty blue palette with calm serene atmosphere"
+  - "soft lavender and pale gray tones for dreamy ethereal mood"
+  - "muted teal and cream combination, fresh and modern"
+  - "soft dove gray with pale blue undertones, peaceful and serene"
 
-monochrome:
-  - "black and white high contrast fine art"
-  - "sepia tone vintage style warm monochrome"
-  - "black and white soft silver toned print"
-  - "cream and white monochromatic neutral palette"
-  - "charcoal gray and cream sophisticated monochrome"
+neutral:
+  - "warm neutral earth tones with rich brown and cream depth"
+  - "monochromatic beige palette with subtle tonal variations"
+  - "organic oatmeal and warm mushroom tones, natural and grounding"
+  - "soft ivory and warm taupe combination, timeless elegance"

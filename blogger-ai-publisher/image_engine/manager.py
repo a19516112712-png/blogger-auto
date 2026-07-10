@@ -97,6 +97,10 @@ class ImageManager:
             title=title, slug=slug, prompt_text=prompt
         )
 
+        # Augment prompt with photography style for unique hero images
+        # Every article gets a combination driven by its title analysis
+        prompt = self._build_production_prompt(title, prompt)
+
         # Try each provider in order, up to per-provider retries
         provider_retries = 3
         providers = self._get_provider_list()
@@ -221,6 +225,71 @@ class ImageManager:
     # ------------------------------------------------------------------
     # Internal helpers
     # ------------------------------------------------------------------
+
+    @staticmethod
+    def _build_production_prompt(title: str, existing_prompt: str) -> str:
+        """Build a unique production-quality photography prompt.
+
+        Analyzes the article title for country, culture, and gender
+        context, then embeds the existing prompt into a high-end
+        editorial photography scene.
+
+        Args:
+            title:           Article title (for analysis).
+            existing_prompt: The base prompt from the Prompt Engine.
+
+        Returns:
+            A fully composed prompt string for ultra-realistic
+            photography.
+        """
+        # Analyze title for context
+        try:
+            from prompt_engine.analyzer import analyze_title
+            analysis = analyze_title(title)
+            country = analysis.country
+            category = analysis.category
+        except Exception:
+            country = ""
+            category = ""
+
+        # Build context-aware scene prefix
+        if country:
+            scene_prefix = (
+                f"Professional editorial newborn photography set in "
+                f"a {country.replace('_', ' ').title()} cultural "
+                f"environment, "
+            )
+        elif category == "girl_names":
+            scene_prefix = (
+                f"Professional editorial portrait of a baby girl, "
+            )
+        elif category == "boy_names":
+            scene_prefix = (
+                f"Professional editorial portrait of a baby boy, "
+            )
+        elif category == "nature_names":
+            scene_prefix = (
+                f"Professional editorial nature photography with baby, "
+            )
+        else:
+            scene_prefix = (
+                f"Professional editorial newborn photography, "
+            )
+
+        # Core photography style that every image must have
+        style_core = (
+            f"ultra realistic photography, natural window lighting, "
+            f"shot on 85mm f/1.4 lens, soft creamy bokeh, "
+            f"high dynamic range, premium editorial quality, "
+            f"authentic genuine beauty, no text, no watermark"
+        )
+
+        # Combine: scene context + existing prompt + style core
+        # Use the existing prompt as the "subject" description
+        # Assemble and clean: strip trailing/leading commas and whitespace
+        parts = [scene_prefix, existing_prompt, style_core]
+        cleaned = [p.strip().rstrip(",").lstrip(",").strip() for p in parts if p]
+        return ", ".join(p for p in cleaned if p)
 
     @staticmethod
     def _get_provider_list() -> list[str]:

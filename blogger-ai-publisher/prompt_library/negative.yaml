@@ -1,41 +1,11 @@
-# Negative prompts to avoid in AI baby image generation
-
-quality:
-  - "low resolution"
-  - "blurry image"
-  - "pixelated"
-  - "grainy noisy texture"
-  - "compression artifacts"
-  - "low quality jpeg artifacts"
-  - "oversaturated colors"
-  - "underexposed dark areas"
-
-anatomy:
-  - "deformed hands"
-  - "extra fingers"
-  - "missing fingers"
-  - "malformed facial features"
-  - "asymmetrical eyes"
-  - "unnatural proportions"
-  - "distorted anatomy"
-  - "mutated limbs"
-
-safety:
-  - "violence"
-  - "weapons"
-  - "blood"
-  - "gore"
-  - "horror elements"
-  - "scary expressions"
-  - "disturbing imagery"
-  - "unsafe content"
-
-quality_photography:
-  - "amateur photography"
-  - "snapshot quality"
-  - "harsh flash lighting"
-  - "poor composition"
-  - "cluttered background"
-  - "distracting elements"
-  - "unflattering angle"
-  - "flat uninteresting lighting"
+negative:
+  - "text, watermark, signature, logo, brand, writing, words, letters"
+  - "illustration, cartoon, drawing, painting, digital art, CGI, 3D render"
+  - "cartoonish, anime, manga, comic, sketch, doodle"
+  - "blurry, out of focus, low resolution, pixelated, grainy noise"
+  - "dark, underexposed, flat lighting, harsh shadows, overexposed"
+  - "cluttered background, busy, messy, distracting elements"
+  - "overprocessed, oversaturated, artificial looking, fake"
+  - "cheap, amateur, snapshot quality, phone camera, filter"
+  - "deformed, distorted, ugly, unnatural, creepy, unsettling"
+  - "multiple babies, twins, groups of people unless requested"

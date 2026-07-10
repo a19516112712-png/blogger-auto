@@ -1,25 +1,13 @@
-# Composition rules for AI baby photography prompts
-
-framing:
-  - "centered symmetrical composition"
-  - "rule of thirds with baby positioned off-center"
-  - "framed by natural elements like leaves or fabric"
-  - "wrapped in fabric creating a circular composition"
-  - "diagonal composition with baby placed along the line"
-  - "minimalist negative space composition"
-  - "layered composition with foreground and background elements"
-  - "letterbox-style wide horizontal frame"
-
-depth:
-  - "shallow depth of field with smooth background blur"
-  - "deep focus showing the entire scene in detail"
-  - "foreground elements creating depth and dimension"
-  - "background out of focus with baby as the sharp subject"
-  - "layered elements from front to back creating three-dimensional feel"
-
-perspective:
-  - "bird's eye view directly from above"
-  - "low perspective looking up at the baby"
-  - "straight-on eye-level perspective"
-  - "slight overhead angle for a nurturing viewpoint"
-  - "close intimate perspective from the parent's point of view"
+composition:
+  - "shot from above, flat lay composition with beautiful symmetry"
+  - "close-up macro-style portrait emphasizing delicate baby features"
+  - "three-quarter angle portrait showing baby in natural environment"
+  - "centered symmetrical composition with balanced negative space"
+  - "rule of thirds composition with baby positioned off-center"
+  - "intimate tight crop focusing on baby's face and tiny hands"
+  - "wide shot showing baby in natural context with environmental details"
+  - "diagonal composition creating visual flow and dynamic energy"
+  - "frame within frame composition using natural elements"
+  - "leading lines drawing the eye to baby's peaceful face"
+  - "minimalist composition with plenty of breathing room"
+  - "candid capture style composition, authentic unposed moment"

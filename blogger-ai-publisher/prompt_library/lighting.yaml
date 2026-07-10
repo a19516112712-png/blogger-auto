@@ -1,22 +1,13 @@
-# Lighting setups for AI baby photography
-
-natural:
-  - "soft window light from the side creating gentle shadows"
+lighting:
+  - "soft natural window light creating gentle shadows and highlights"
   - "golden hour sunlight streaming through sheer curtains"
-  - "overcast natural light creating even soft illumination"
-  - "morning light filtering through gauze curtains"
-  - "diffused skylight from above creating wrap-around lighting"
-
-studio:
-  - "single large softbox key light with fill reflector"
-  - "Rembrandt lighting with soft shadow on one cheek"
-  - "butterfly lighting with catchlights in the eyes"
-  - "split lighting for dramatic contrast"
-  - "high-key setup with bright even illumination"
-
-dramatic:
-  - "low-key lighting with deep shadows and highlights on face"
-  - "backlighting creating a rim light effect on baby's hair"
-  - "side lighting emphasizing texture and dimension"
-  - "dappled light through leaves creating patterns"
-  - "candle-style warm light creating intimate atmosphere"
+  - "professional softbox diffused studio lighting with wrap-around quality"
+  - "natural north-facing window light, soft and even illumination"
+  - "warm backlight creating a beautiful rim light effect on baby's hair"
+  - "soft diffused morning light with gentle directional quality"
+  - "natural ambient light from a large window, soft and flattering"
+  - "professional three-point portrait lighting with soft modifiers"
+  - "butterfly lighting pattern for classic beautiful portraiture"
+  - "Rembrandt lighting creating dramatic yet soft depth"
+  - "loop lighting pattern for natural three-dimensional form"
+  - "soft split lighting creating artistic dimension without harshness"
