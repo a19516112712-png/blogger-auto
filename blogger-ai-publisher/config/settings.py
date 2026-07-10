@@ -92,13 +92,17 @@ IMAGE_MAX_FILE_SIZE: Final[int] = int(os.getenv(
 # Provider configuration (comma-separated ordered list; first available wins)
 IMAGE_PROVIDERS: Final[list[str]] = os.getenv(
     "IMAGE_PROVIDERS",
-    "huggingface,pollinations",
+    "pollinations,huggingface",
 ).split(",")
 
 # Max retries across all providers
-IMAGE_MAX_RETRIES: Final[int] = int(os.getenv("IMAGE_MAX_RETRIES", "5"))
+IMAGE_MAX_RETRIES: Final[int] = int(os.getenv("IMAGE_MAX_RETRIES", "3"))
 
 # Per-provider settings
+IMAGE_PROVIDER_TIMEOUT: Final[int] = int(
+    os.getenv("IMAGE_PROVIDER_TIMEOUT", "20")
+)
+
 HUGGINGFACE_API_TOKEN: Final[str] = os.getenv("HUGGINGFACE_API_TOKEN", "")
 HUGGINGFACE_MODEL: Final[str] = os.getenv(
     "HUGGINGFACE_MODEL",

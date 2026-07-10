@@ -1032,8 +1032,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -2270,8 +2271,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -3477,8 +3479,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -4684,8 +4687,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -5891,8 +5895,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -7098,8 +7103,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -8310,8 +8316,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -9548,8 +9555,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -10776,8 +10784,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -11983,8 +11992,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -13190,8 +13200,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -14397,8 +14408,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -15604,8 +15616,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -16811,8 +16824,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -18018,8 +18032,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -19233,8 +19248,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -20445,8 +20461,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -21652,8 +21669,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -22859,3629 +22877,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
-IMAGE_PHASH_THRESHOLD=5
-
-# HuggingFace (optional — only if provider is in list)
-HUGGINGFACE_API_TOKEN=hf_...
-HUGGINGFACE_MODEL=black-forest-labs/FLUX.1-schnell
-```
-
-### Usage
-
-```python
-from image_engine.manager import ImageManager
-
-mgr = ImageManager()
-result = mgr.generate(
-    title="100 Japanese Baby Names",
-    slug="japanese-baby-names",
-    prompt="A beautiful flat-vector illustration of cherry blossoms...",
-    article_id=42,              # optional, links to database record
-)
-
-if result["success"]:
-    print(f"Image saved: {result['image_path']}")
-    print(f"Provider: {result['provider']}")
-    print(f"pHash: {result['phash']}")
-```
-
-### Provider Fallback
-
-Providers are tried in order. If one fails (timeout, invalid config, 
-corrupt image), the next in line is tried automatically:
-
-1. `huggingface` (requires `HUGGINGFACE_API_TOKEN`)
-2. `pollinations` (free, no auth required)
-3. `mock` (tests only, never in production)
-
-Set `IMAGE_PROVIDERS` to reorder or limit which providers are used.
-
-### Validation Rules
-
-- File must be a valid image (Pillow readable)
-- Dimensions ≥ configured minimum (default 1600×900)
-- Not blank (all black or all white)
-- Not single-colour (requires pixel variance)
-- Supported format
-
-### Deduplication
-
-Uses **[imagehash](https://github.com/JohannesBuchner/imagehash)** (pHash) 
-for perceptual hashing.  If a generated image's pHash is within 
-Hamming distance ≤ 5 of any existing image in the database, it's 
-automatically regenerated with a new seed.
-
-### Tests
-
-```bash
-# Run all tests (114 total across all milestones)
-python3 -m pytest tests/ -v
-
-# Run only image engine tests
-python3 -m pytest tests/test_image_engine.py -v
-```
-
-Tests cover:
-- `MockProvider` — full pipeline without network (CI safe)
-- `ImageValidator` — dimension, blank, corrupt, and single-colour checks
-- `ImageOptimizer` — resize, WEBP conversion, compression
-- `ImageDeduplicator` — pHash computation, Hamming distance comparison
-- `MetadataGenerator` — alt text, title, caption, SEO keywords
-- `ImageManager` — end-to-end orchestration with DB persistence
-
-
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
-----|
-## AI Image Engine (Milestone 3)
-
-A production-ready image generation engine that creates **unique hero images** 
-for every article. Supports multiple free providers with automatic fallback.
-
-### Architecture
-
-```
-Prompt
-  │
-  ▼
-ImageManager.generate()
-  │
-  ├─► Provider.generate(prompt)
-  │     ├─► huggingface (FLUX.1-schnell via Inference API) 
-  │     ├─► pollinations (Pollinations AI free API)          
-  │     └─► mock (testing only)                               
-  │
-  ├─► Validator.validate(image)         reject if corrupt/too-small
-  ├─► Optimizer.optimize(image)         resize → WEBP → compress  
-  ├─► Deduplicator.is_duplicate(phash)  reject if Hamming ≤ threshold
-  └─► store metadata → database
-```
-
-### Directory Structure
-
-```
-image_engine/
-├── __init__.py         # Package export (ImageManager)
-├── base.py             # Abstract BaseProvider interface
-├── manager.py          # ImageManager orchestrator
-├── validator.py        # Image validation rules
-├── optimizer.py        # Resize, compress, WEBP conversion
-├── deduplicator.py     # Perceptual hash deduplication
-├── metadata.py         # SEO metadata generation
-└── providers/
-    ├── __init__.py
-    ├── mock.py         # In-memory test images (no network)
-    ├── pollinations.py # Free public API (no key required)
-    └── huggingface.py  # HF Inference API (FLUX.1-schnell)
-```
-
-### Output Specifications
-
-| Setting          | Default   |
-|
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----|
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
------|
-| Format           | WEBP     |
-| Dimensions       | 1600×900  |
-| Colour           | RGB      |
-| Quality          | 90       |
-| Max file size    | 300 KB   |
-| Dedup threshold  | Hamming ≤ 5 |
-
-### Configuration
-
-All settings are controlled via environment variables (`.env` file):
-
-```bash
-# Image Engine
-IMAGE_OUTPUT_WIDTH=1600
-IMAGE_OUTPUT_HEIGHT=900
-IMAGE_OUTPUT_FORMAT=WEBP
-IMAGE_OUTPUT_QUALITY=90
-IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
-IMAGE_PHASH_THRESHOLD=5
-
-# HuggingFace (optional — only if provider is in list)
-HUGGINGFACE_API_TOKEN=hf_...
-HUGGINGFACE_MODEL=black-forest-labs/FLUX.1-schnell
-```
-
-### Usage
-
-```python
-from image_engine.manager import ImageManager
-
-mgr = ImageManager()
-result = mgr.generate(
-    title="100 Japanese Baby Names",
-    slug="japanese-baby-names",
-    prompt="A beautiful flat-vector illustration of cherry blossoms...",
-    article_id=42,              # optional, links to database record
-)
-
-if result["success"]:
-    print(f"Image saved: {result['image_path']}")
-    print(f"Provider: {result['provider']}")
-    print(f"pHash: {result['phash']}")
-```
-
-### Provider Fallback
-
-Providers are tried in order. If one fails (timeout, invalid config, 
-corrupt image), the next in line is tried automatically:
-
-1. `huggingface` (requires `HUGGINGFACE_API_TOKEN`)
-2. `pollinations` (free, no auth required)
-3. `mock` (tests only, never in production)
-
-Set `IMAGE_PROVIDERS` to reorder or limit which providers are used.
-
-### Validation Rules
-
-- File must be a valid image (Pillow readable)
-- Dimensions ≥ configured minimum (default 1600×900)
-- Not blank (all black or all white)
-- Not single-colour (requires pixel variance)
-- Supported format
-
-### Deduplication
-
-Uses **[imagehash](https://github.com/JohannesBuchner/imagehash)** (pHash) 
-for perceptual hashing.  If a generated image's pHash is within 
-Hamming distance ≤ 5 of any existing image in the database, it's 
-automatically regenerated with a new seed.
-
-### Tests
-
-```bash
-# Run all tests (114 total across all milestones)
-python3 -m pytest tests/ -v
-
-# Run only image engine tests
-python3 -m pytest tests/test_image_engine.py -v
-```
-
-Tests cover:
-- `MockProvider` — full pipeline without network (CI safe)
-- `ImageValidator` — dimension, blank, corrupt, and single-colour checks
-- `ImageOptimizer` — resize, WEBP conversion, compression
-- `ImageDeduplicator` — pHash computation, Hamming distance comparison
-- `MetadataGenerator` — alt text, title, caption, SEO keywords
-- `ImageManager` — end-to-end orchestration with DB persistence
-
-
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## AI Image Engine (Milestone 3)
-
-A production-ready image generation engine that creates **unique hero images** 
-for every article. Supports multiple free providers with automatic fallback.
-
-### Architecture
-
-```
-Prompt
-  │
-  ▼
-ImageManager.generate()
-  │
-  ├─► Provider.generate(prompt)
-  │     ├─► huggingface (FLUX.1-schnell via Inference API) 
-  │     ├─► pollinations (Pollinations AI free API)          
-  │     └─► mock (testing only)                               
-  │
-  ├─► Validator.validate(image)         reject if corrupt/too-small
-  ├─► Optimizer.optimize(image)         resize → WEBP → compress  
-  ├─► Deduplicator.is_duplicate(phash)  reject if Hamming ≤ threshold
-  └─► store metadata → database
-```
-
-### Directory Structure
-
-```
-image_engine/
-├── __init__.py         # Package export (ImageManager)
-├── base.py             # Abstract BaseProvider interface
-├── manager.py          # ImageManager orchestrator
-├── validator.py        # Image validation rules
-├── optimizer.py        # Resize, compress, WEBP conversion
-├── deduplicator.py     # Perceptual hash deduplication
-├── metadata.py         # SEO metadata generation
-└── providers/
-    ├── __init__.py
-    ├── mock.py         # In-memory test images (no network)
-    ├── pollinations.py # Free public API (no key required)
-    └── huggingface.py  # HF Inference API (FLUX.1-schnell)
-```
-
-### Output Specifications
-
-| Setting          | Default   |
-|
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----|
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
------|
-| Format           | WEBP     |
-| Dimensions       | 1600×900  |
-| Colour           | RGB      |
-| Quality          | 90       |
-| Max file size    | 300 KB   |
-| Dedup threshold  | Hamming ≤ 5 |
-
-### Configuration
-
-All settings are controlled via environment variables (`.env` file):
-
-```bash
-# Image Engine
-IMAGE_OUTPUT_WIDTH=1600
-IMAGE_OUTPUT_HEIGHT=900
-IMAGE_OUTPUT_FORMAT=WEBP
-IMAGE_OUTPUT_QUALITY=90
-IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
-IMAGE_PHASH_THRESHOLD=5
-
-# HuggingFace (optional — only if provider is in list)
-HUGGINGFACE_API_TOKEN=hf_...
-HUGGINGFACE_MODEL=black-forest-labs/FLUX.1-schnell
-```
-
-### Usage
-
-```python
-from image_engine.manager import ImageManager
-
-mgr = ImageManager()
-result = mgr.generate(
-    title="100 Japanese Baby Names",
-    slug="japanese-baby-names",
-    prompt="A beautiful flat-vector illustration of cherry blossoms...",
-    article_id=42,              # optional, links to database record
-)
-
-if result["success"]:
-    print(f"Image saved: {result['image_path']}")
-    print(f"Provider: {result['provider']}")
-    print(f"pHash: {result['phash']}")
-```
-
-### Provider Fallback
-
-Providers are tried in order. If one fails (timeout, invalid config, 
-corrupt image), the next in line is tried automatically:
-
-1. `huggingface` (requires `HUGGINGFACE_API_TOKEN`)
-2. `pollinations` (free, no auth required)
-3. `mock` (tests only, never in production)
-
-Set `IMAGE_PROVIDERS` to reorder or limit which providers are used.
-
-### Validation Rules
-
-- File must be a valid image (Pillow readable)
-- Dimensions ≥ configured minimum (default 1600×900)
-- Not blank (all black or all white)
-- Not single-colour (requires pixel variance)
-- Supported format
-
-### Deduplication
-
-Uses **[imagehash](https://github.com/JohannesBuchner/imagehash)** (pHash) 
-for perceptual hashing.  If a generated image's pHash is within 
-Hamming distance ≤ 5 of any existing image in the database, it's 
-automatically regenerated with a new seed.
-
-### Tests
-
-```bash
-# Run all tests (114 total across all milestones)
-python3 -m pytest tests/ -v
-
-# Run only image engine tests
-python3 -m pytest tests/test_image_engine.py -v
-```
-
-Tests cover:
-- `MockProvider` — full pipeline without network (CI safe)
-- `ImageValidator` — dimension, blank, corrupt, and single-colour checks
-- `ImageOptimizer` — resize, WEBP conversion, compression
-- `ImageDeduplicator` — pHash computation, Hamming distance comparison
-- `MetadataGenerator` — alt text, title, caption, SEO keywords
-- `ImageManager` — end-to-end orchestration with DB persistence
-
-
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## AI Image Engine (Milestone 3)
-
-A production-ready image generation engine that creates **unique hero images** 
-for every article. Supports multiple free providers with automatic fallback.
-
-### Architecture
-
-```
-Prompt
-  │
-  ▼
-ImageManager.generate()
-  │
-  ├─► Provider.generate(prompt)
-  │     ├─► huggingface (FLUX.1-schnell via Inference API) 
-  │     ├─► pollinations (Pollinations AI free API)          
-  │     └─► mock (testing only)                               
-  │
-  ├─► Validator.validate(image)         reject if corrupt/too-small
-  ├─► Optimizer.optimize(image)         resize → WEBP → compress  
-  ├─► Deduplicator.is_duplicate(phash)  reject if Hamming ≤ threshold
-  └─► store metadata → database
-```
-
-### Directory Structure
-
-```
-image_engine/
-├── __init__.py         # Package export (ImageManager)
-├── base.py             # Abstract BaseProvider interface
-├── manager.py          # ImageManager orchestrator
-├── validator.py        # Image validation rules
-├── optimizer.py        # Resize, compress, WEBP conversion
-├── deduplicator.py     # Perceptual hash deduplication
-├── metadata.py         # SEO metadata generation
-└── providers/
-    ├── __init__.py
-    ├── mock.py         # In-memory test images (no network)
-    ├── pollinations.py # Free public API (no key required)
-    └── huggingface.py  # HF Inference API (FLUX.1-schnell)
-```
-
-### Output Specifications
-
-| Setting          | Default   |
-|
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----|
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
------|
-| Format           | WEBP     |
-| Dimensions       | 1600×900  |
-| Colour           | RGB      |
-| Quality          | 90       |
-| Max file size    | 300 KB   |
-| Dedup threshold  | Hamming ≤ 5 |
-
-### Configuration
-
-All settings are controlled via environment variables (`.env` file):
-
-```bash
-# Image Engine
-IMAGE_OUTPUT_WIDTH=1600
-IMAGE_OUTPUT_HEIGHT=900
-IMAGE_OUTPUT_FORMAT=WEBP
-IMAGE_OUTPUT_QUALITY=90
-IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -27687,8 +24085,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -28894,8 +25293,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -30101,8 +26501,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -30280,7 +26681,7 @@ python3 -m pytest tests/test_blogger.py -v
 Tests use **mocked** Blogger API — no real credentials required for CI.
 
 
----|
+----|
 ## AI Image Engine (Milestone 3)
 
 A production-ready image generation engine that creates **unique hero images** 
@@ -31308,1215 +27709,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
-IMAGE_PHASH_THRESHOLD=5
-
-# HuggingFace (optional — only if provider is in list)
-HUGGINGFACE_API_TOKEN=hf_...
-HUGGINGFACE_MODEL=black-forest-labs/FLUX.1-schnell
-```
-
-### Usage
-
-```python
-from image_engine.manager import ImageManager
-
-mgr = ImageManager()
-result = mgr.generate(
-    title="100 Japanese Baby Names",
-    slug="japanese-baby-names",
-    prompt="A beautiful flat-vector illustration of cherry blossoms...",
-    article_id=42,              # optional, links to database record
-)
-
-if result["success"]:
-    print(f"Image saved: {result['image_path']}")
-    print(f"Provider: {result['provider']}")
-    print(f"pHash: {result['phash']}")
-```
-
-### Provider Fallback
-
-Providers are tried in order. If one fails (timeout, invalid config, 
-corrupt image), the next in line is tried automatically:
-
-1. `huggingface` (requires `HUGGINGFACE_API_TOKEN`)
-2. `pollinations` (free, no auth required)
-3. `mock` (tests only, never in production)
-
-Set `IMAGE_PROVIDERS` to reorder or limit which providers are used.
-
-### Validation Rules
-
-- File must be a valid image (Pillow readable)
-- Dimensions ≥ configured minimum (default 1600×900)
-- Not blank (all black or all white)
-- Not single-colour (requires pixel variance)
-- Supported format
-
-### Deduplication
-
-Uses **[imagehash](https://github.com/JohannesBuchner/imagehash)** (pHash) 
-for perceptual hashing.  If a generated image's pHash is within 
-Hamming distance ≤ 5 of any existing image in the database, it's 
-automatically regenerated with a new seed.
-
-### Tests
-
-```bash
-# Run all tests (114 total across all milestones)
-python3 -m pytest tests/ -v
-
-# Run only image engine tests
-python3 -m pytest tests/test_image_engine.py -v
-```
-
-Tests cover:
-- `MockProvider` — full pipeline without network (CI safe)
-- `ImageValidator` — dimension, blank, corrupt, and single-colour checks
-- `ImageOptimizer` — resize, WEBP conversion, compression
-- `ImageDeduplicator` — pHash computation, Hamming distance comparison
-- `MetadataGenerator` — alt text, title, caption, SEO keywords
-- `ImageManager` — end-to-end orchestration with DB persistence
-
-
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## AI Image Engine (Milestone 3)
-
-A production-ready image generation engine that creates **unique hero images** 
-for every article. Supports multiple free providers with automatic fallback.
-
-### Architecture
-
-```
-Prompt
-  │
-  ▼
-ImageManager.generate()
-  │
-  ├─► Provider.generate(prompt)
-  │     ├─► huggingface (FLUX.1-schnell via Inference API) 
-  │     ├─► pollinations (Pollinations AI free API)          
-  │     └─► mock (testing only)                               
-  │
-  ├─► Validator.validate(image)         reject if corrupt/too-small
-  ├─► Optimizer.optimize(image)         resize → WEBP → compress  
-  ├─► Deduplicator.is_duplicate(phash)  reject if Hamming ≤ threshold
-  └─► store metadata → database
-```
-
-### Directory Structure
-
-```
-image_engine/
-├── __init__.py         # Package export (ImageManager)
-├── base.py             # Abstract BaseProvider interface
-├── manager.py          # ImageManager orchestrator
-├── validator.py        # Image validation rules
-├── optimizer.py        # Resize, compress, WEBP conversion
-├── deduplicator.py     # Perceptual hash deduplication
-├── metadata.py         # SEO metadata generation
-└── providers/
-    ├── __init__.py
-    ├── mock.py         # In-memory test images (no network)
-    ├── pollinations.py # Free public API (no key required)
-    └── huggingface.py  # HF Inference API (FLUX.1-schnell)
-```
-
-### Output Specifications
-
-| Setting          | Default   |
-|
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----|
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
----
-## Blogger Publisher Engine (Milestone 4)
-
-A production-ready Blogger publishing engine that publishes one article 
-(with one generated hero image) to Google Blogger through the official API v3.
-
-### Architecture
-
-```
-Article (from database)
-  │
-  ▼
-Publisher.publish_article(article_id)
-  │
-  ├─► Load article + image from DB/files
-  ├─► Slug.generate()              → SEO-friendly URL
-  ├─► Labels.generate()            → automatic label selection
-  ├─► HtmlBuilder.build()          → full article HTML
-  ├─► Auth.refresh_token()         → OAuth2 access token
-  ├─► Client.create_post()         → Blogger API v3 POST
-  │     ├─► Retry on 429/5xx (exponential backoff)
-  │     └─► Max 3 attempts
-  ├─► DB update                    → blogger_post_id, URL, status
-  └─► Move article to published/   → archive
-```
-
-### Directory Structure
-
-```
-blogger/
-├── __init__.py         # Package export (Publisher)
-├── auth.py             # OAuth2 refresh token flow
-├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
-├── labels.py           # Automatic label generation (keyword-based)
-├── slug.py             # SEO-friendly URL slug generation
-├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
-├── image_uploader.py   # Image upload (base64 data URI embedding)
-└── publisher.py        # Main orchestrator (publish_article)
-```
-
-### Configuration
-
-```bash
-# Blogger API credentials (required)
-BLOG_ID=122799461405250161
-CLIENT_ID=your-client-id.apps.googleusercontent.com
-CLIENT_SECRET=your-client-secret
-REFRESH_TOKEN=your-refresh-token
-
-# Publisher settings (optional)
-PUBLISHER_MAX_RETRIES=3
-PUBLISHER_RETRY_DELAY_SECONDS=5
-PUBLISHER_MAX_BACKOFF_SECONDS=60
-PUBLISHER_IMAGE_MAX_RETRIES=3
-PUBLISHER_SLUG_MAX_LENGTH=75
-PUBLISHER_DEFAULT_LABELS=Baby Names
-```
-
-### Usage
-
-```python
-from blogger.publisher import Publisher
-
-publisher = Publisher()
-
-# Publish a single article
-result = publisher.publish_article(article_id=42)
-print(result["blogger_url"])  # Published URL
-
-# Batch publish pending articles
-results = publisher.publish_pending_articles(max_articles=10)
-
-# Retry failed articles
-results = publisher.republish_failed_articles(max_articles=10)
-```
-
-### Idempotency
-
-If ``blogger_post_id`` is already set on the article, the Publisher calls 
-**update** instead of **create**, so running ``publish_article`` twice is safe.
-
-### Retry Logic
-
-- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
-- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
-- Failed articles are tracked in the database (``publish_status``, 
-  ``publish_attempts``, ``last_publish_error``).
-
-### Labels
-
-Labels are automatically generated from the article title using keyword 
-matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
-"Baby Names" as a base label.  Max 5 labels per post.
-
-### Tests
-
-```bash
-# Run all tests (168 total)
-python3 -m pytest tests/ -v
-
-# Run only publisher tests
-python3 -m pytest tests/test_blogger.py -v
-```
-
-Tests use **mocked** Blogger API — no real credentials required for CI.
-
-
------|
-| Format           | WEBP     |
-| Dimensions       | 1600×900  |
-| Colour           | RGB      |
-| Quality          | 90       |
-| Max file size    | 300 KB   |
-| Dedup threshold  | Hamming ≤ 5 |
-
-### Configuration
-
-All settings are controlled via environment variables (`.env` file):
-
-```bash
-# Image Engine
-IMAGE_OUTPUT_WIDTH=1600
-IMAGE_OUTPUT_HEIGHT=900
-IMAGE_OUTPUT_FORMAT=WEBP
-IMAGE_OUTPUT_QUALITY=90
-IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -33722,8 +28917,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -34929,8 +30125,4841 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
+IMAGE_PHASH_THRESHOLD=5
+
+# HuggingFace (optional — only if provider is in list)
+HUGGINGFACE_API_TOKEN=hf_...
+HUGGINGFACE_MODEL=black-forest-labs/FLUX.1-schnell
+```
+
+### Usage
+
+```python
+from image_engine.manager import ImageManager
+
+mgr = ImageManager()
+result = mgr.generate(
+    title="100 Japanese Baby Names",
+    slug="japanese-baby-names",
+    prompt="A beautiful flat-vector illustration of cherry blossoms...",
+    article_id=42,              # optional, links to database record
+)
+
+if result["success"]:
+    print(f"Image saved: {result['image_path']}")
+    print(f"Provider: {result['provider']}")
+    print(f"pHash: {result['phash']}")
+```
+
+### Provider Fallback
+
+Providers are tried in order. If one fails (timeout, invalid config, 
+corrupt image), the next in line is tried automatically:
+
+1. `huggingface` (requires `HUGGINGFACE_API_TOKEN`)
+2. `pollinations` (free, no auth required)
+3. `mock` (tests only, never in production)
+
+Set `IMAGE_PROVIDERS` to reorder or limit which providers are used.
+
+### Validation Rules
+
+- File must be a valid image (Pillow readable)
+- Dimensions ≥ configured minimum (default 1600×900)
+- Not blank (all black or all white)
+- Not single-colour (requires pixel variance)
+- Supported format
+
+### Deduplication
+
+Uses **[imagehash](https://github.com/JohannesBuchner/imagehash)** (pHash) 
+for perceptual hashing.  If a generated image's pHash is within 
+Hamming distance ≤ 5 of any existing image in the database, it's 
+automatically regenerated with a new seed.
+
+### Tests
+
+```bash
+# Run all tests (114 total across all milestones)
+python3 -m pytest tests/ -v
+
+# Run only image engine tests
+python3 -m pytest tests/test_image_engine.py -v
+```
+
+Tests cover:
+- `MockProvider` — full pipeline without network (CI safe)
+- `ImageValidator` — dimension, blank, corrupt, and single-colour checks
+- `ImageOptimizer` — resize, WEBP conversion, compression
+- `ImageDeduplicator` — pHash computation, Hamming distance comparison
+- `MetadataGenerator` — alt text, title, caption, SEO keywords
+- `ImageManager` — end-to-end orchestration with DB persistence
+
+
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---|
+## AI Image Engine (Milestone 3)
+
+A production-ready image generation engine that creates **unique hero images** 
+for every article. Supports multiple free providers with automatic fallback.
+
+### Architecture
+
+```
+Prompt
+  │
+  ▼
+ImageManager.generate()
+  │
+  ├─► Provider.generate(prompt)
+  │     ├─► huggingface (FLUX.1-schnell via Inference API) 
+  │     ├─► pollinations (Pollinations AI free API)          
+  │     └─► mock (testing only)                               
+  │
+  ├─► Validator.validate(image)         reject if corrupt/too-small
+  ├─► Optimizer.optimize(image)         resize → WEBP → compress  
+  ├─► Deduplicator.is_duplicate(phash)  reject if Hamming ≤ threshold
+  └─► store metadata → database
+```
+
+### Directory Structure
+
+```
+image_engine/
+├── __init__.py         # Package export (ImageManager)
+├── base.py             # Abstract BaseProvider interface
+├── manager.py          # ImageManager orchestrator
+├── validator.py        # Image validation rules
+├── optimizer.py        # Resize, compress, WEBP conversion
+├── deduplicator.py     # Perceptual hash deduplication
+├── metadata.py         # SEO metadata generation
+└── providers/
+    ├── __init__.py
+    ├── mock.py         # In-memory test images (no network)
+    ├── pollinations.py # Free public API (no key required)
+    └── huggingface.py  # HF Inference API (FLUX.1-schnell)
+```
+
+### Output Specifications
+
+| Setting          | Default   |
+|
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---|
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+-----|
+| Format           | WEBP     |
+| Dimensions       | 1600×900  |
+| Colour           | RGB      |
+| Quality          | 90       |
+| Max file size    | 300 KB   |
+| Dedup threshold  | Hamming ≤ 5 |
+
+### Configuration
+
+All settings are controlled via environment variables (`.env` file):
+
+```bash
+# Image Engine
+IMAGE_OUTPUT_WIDTH=1600
+IMAGE_OUTPUT_HEIGHT=900
+IMAGE_OUTPUT_FORMAT=WEBP
+IMAGE_OUTPUT_QUALITY=90
+IMAGE_MAX_FILE_SIZE=307200          # 300 KB
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
+IMAGE_PHASH_THRESHOLD=5
+
+# HuggingFace (optional — only if provider is in list)
+HUGGINGFACE_API_TOKEN=hf_...
+HUGGINGFACE_MODEL=black-forest-labs/FLUX.1-schnell
+```
+
+### Usage
+
+```python
+from image_engine.manager import ImageManager
+
+mgr = ImageManager()
+result = mgr.generate(
+    title="100 Japanese Baby Names",
+    slug="japanese-baby-names",
+    prompt="A beautiful flat-vector illustration of cherry blossoms...",
+    article_id=42,              # optional, links to database record
+)
+
+if result["success"]:
+    print(f"Image saved: {result['image_path']}")
+    print(f"Provider: {result['provider']}")
+    print(f"pHash: {result['phash']}")
+```
+
+### Provider Fallback
+
+Providers are tried in order. If one fails (timeout, invalid config, 
+corrupt image), the next in line is tried automatically:
+
+1. `huggingface` (requires `HUGGINGFACE_API_TOKEN`)
+2. `pollinations` (free, no auth required)
+3. `mock` (tests only, never in production)
+
+Set `IMAGE_PROVIDERS` to reorder or limit which providers are used.
+
+### Validation Rules
+
+- File must be a valid image (Pillow readable)
+- Dimensions ≥ configured minimum (default 1600×900)
+- Not blank (all black or all white)
+- Not single-colour (requires pixel variance)
+- Supported format
+
+### Deduplication
+
+Uses **[imagehash](https://github.com/JohannesBuchner/imagehash)** (pHash) 
+for perceptual hashing.  If a generated image's pHash is within 
+Hamming distance ≤ 5 of any existing image in the database, it's 
+automatically regenerated with a new seed.
+
+### Tests
+
+```bash
+# Run all tests (114 total across all milestones)
+python3 -m pytest tests/ -v
+
+# Run only image engine tests
+python3 -m pytest tests/test_image_engine.py -v
+```
+
+Tests cover:
+- `MockProvider` — full pipeline without network (CI safe)
+- `ImageValidator` — dimension, blank, corrupt, and single-colour checks
+- `ImageOptimizer` — resize, WEBP conversion, compression
+- `ImageDeduplicator` — pHash computation, Hamming distance comparison
+- `MetadataGenerator` — alt text, title, caption, SEO keywords
+- `ImageManager` — end-to-end orchestration with DB persistence
+
+
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## AI Image Engine (Milestone 3)
+
+A production-ready image generation engine that creates **unique hero images** 
+for every article. Supports multiple free providers with automatic fallback.
+
+### Architecture
+
+```
+Prompt
+  │
+  ▼
+ImageManager.generate()
+  │
+  ├─► Provider.generate(prompt)
+  │     ├─► huggingface (FLUX.1-schnell via Inference API) 
+  │     ├─► pollinations (Pollinations AI free API)          
+  │     └─► mock (testing only)                               
+  │
+  ├─► Validator.validate(image)         reject if corrupt/too-small
+  ├─► Optimizer.optimize(image)         resize → WEBP → compress  
+  ├─► Deduplicator.is_duplicate(phash)  reject if Hamming ≤ threshold
+  └─► store metadata → database
+```
+
+### Directory Structure
+
+```
+image_engine/
+├── __init__.py         # Package export (ImageManager)
+├── base.py             # Abstract BaseProvider interface
+├── manager.py          # ImageManager orchestrator
+├── validator.py        # Image validation rules
+├── optimizer.py        # Resize, compress, WEBP conversion
+├── deduplicator.py     # Perceptual hash deduplication
+├── metadata.py         # SEO metadata generation
+└── providers/
+    ├── __init__.py
+    ├── mock.py         # In-memory test images (no network)
+    ├── pollinations.py # Free public API (no key required)
+    └── huggingface.py  # HF Inference API (FLUX.1-schnell)
+```
+
+### Output Specifications
+
+| Setting          | Default   |
+|
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---|
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+-----|
+| Format           | WEBP     |
+| Dimensions       | 1600×900  |
+| Colour           | RGB      |
+| Quality          | 90       |
+| Max file size    | 300 KB   |
+| Dedup threshold  | Hamming ≤ 5 |
+
+### Configuration
+
+All settings are controlled via environment variables (`.env` file):
+
+```bash
+# Image Engine
+IMAGE_OUTPUT_WIDTH=1600
+IMAGE_OUTPUT_HEIGHT=900
+IMAGE_OUTPUT_FORMAT=WEBP
+IMAGE_OUTPUT_QUALITY=90
+IMAGE_MAX_FILE_SIZE=307200          # 300 KB
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
+IMAGE_PHASH_THRESHOLD=5
+
+# HuggingFace (optional — only if provider is in list)
+HUGGINGFACE_API_TOKEN=hf_...
+HUGGINGFACE_MODEL=black-forest-labs/FLUX.1-schnell
+```
+
+### Usage
+
+```python
+from image_engine.manager import ImageManager
+
+mgr = ImageManager()
+result = mgr.generate(
+    title="100 Japanese Baby Names",
+    slug="japanese-baby-names",
+    prompt="A beautiful flat-vector illustration of cherry blossoms...",
+    article_id=42,              # optional, links to database record
+)
+
+if result["success"]:
+    print(f"Image saved: {result['image_path']}")
+    print(f"Provider: {result['provider']}")
+    print(f"pHash: {result['phash']}")
+```
+
+### Provider Fallback
+
+Providers are tried in order. If one fails (timeout, invalid config, 
+corrupt image), the next in line is tried automatically:
+
+1. `huggingface` (requires `HUGGINGFACE_API_TOKEN`)
+2. `pollinations` (free, no auth required)
+3. `mock` (tests only, never in production)
+
+Set `IMAGE_PROVIDERS` to reorder or limit which providers are used.
+
+### Validation Rules
+
+- File must be a valid image (Pillow readable)
+- Dimensions ≥ configured minimum (default 1600×900)
+- Not blank (all black or all white)
+- Not single-colour (requires pixel variance)
+- Supported format
+
+### Deduplication
+
+Uses **[imagehash](https://github.com/JohannesBuchner/imagehash)** (pHash) 
+for perceptual hashing.  If a generated image's pHash is within 
+Hamming distance ≤ 5 of any existing image in the database, it's 
+automatically regenerated with a new seed.
+
+### Tests
+
+```bash
+# Run all tests (114 total across all milestones)
+python3 -m pytest tests/ -v
+
+# Run only image engine tests
+python3 -m pytest tests/test_image_engine.py -v
+```
+
+Tests cover:
+- `MockProvider` — full pipeline without network (CI safe)
+- `ImageValidator` — dimension, blank, corrupt, and single-colour checks
+- `ImageOptimizer` — resize, WEBP conversion, compression
+- `ImageDeduplicator` — pHash computation, Hamming distance comparison
+- `MetadataGenerator` — alt text, title, caption, SEO keywords
+- `ImageManager` — end-to-end orchestration with DB persistence
+
+
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## AI Image Engine (Milestone 3)
+
+A production-ready image generation engine that creates **unique hero images** 
+for every article. Supports multiple free providers with automatic fallback.
+
+### Architecture
+
+```
+Prompt
+  │
+  ▼
+ImageManager.generate()
+  │
+  ├─► Provider.generate(prompt)
+  │     ├─► huggingface (FLUX.1-schnell via Inference API) 
+  │     ├─► pollinations (Pollinations AI free API)          
+  │     └─► mock (testing only)                               
+  │
+  ├─► Validator.validate(image)         reject if corrupt/too-small
+  ├─► Optimizer.optimize(image)         resize → WEBP → compress  
+  ├─► Deduplicator.is_duplicate(phash)  reject if Hamming ≤ threshold
+  └─► store metadata → database
+```
+
+### Directory Structure
+
+```
+image_engine/
+├── __init__.py         # Package export (ImageManager)
+├── base.py             # Abstract BaseProvider interface
+├── manager.py          # ImageManager orchestrator
+├── validator.py        # Image validation rules
+├── optimizer.py        # Resize, compress, WEBP conversion
+├── deduplicator.py     # Perceptual hash deduplication
+├── metadata.py         # SEO metadata generation
+└── providers/
+    ├── __init__.py
+    ├── mock.py         # In-memory test images (no network)
+    ├── pollinations.py # Free public API (no key required)
+    └── huggingface.py  # HF Inference API (FLUX.1-schnell)
+```
+
+### Output Specifications
+
+| Setting          | Default   |
+|
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---|
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+-----|
+| Format           | WEBP     |
+| Dimensions       | 1600×900  |
+| Colour           | RGB      |
+| Quality          | 90       |
+| Max file size    | 300 KB   |
+| Dedup threshold  | Hamming ≤ 5 |
+
+### Configuration
+
+All settings are controlled via environment variables (`.env` file):
+
+```bash
+# Image Engine
+IMAGE_OUTPUT_WIDTH=1600
+IMAGE_OUTPUT_HEIGHT=900
+IMAGE_OUTPUT_FORMAT=WEBP
+IMAGE_OUTPUT_QUALITY=90
+IMAGE_MAX_FILE_SIZE=307200          # 300 KB
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
+IMAGE_PHASH_THRESHOLD=5
+
+# HuggingFace (optional — only if provider is in list)
+HUGGINGFACE_API_TOKEN=hf_...
+HUGGINGFACE_MODEL=black-forest-labs/FLUX.1-schnell
+```
+
+### Usage
+
+```python
+from image_engine.manager import ImageManager
+
+mgr = ImageManager()
+result = mgr.generate(
+    title="100 Japanese Baby Names",
+    slug="japanese-baby-names",
+    prompt="A beautiful flat-vector illustration of cherry blossoms...",
+    article_id=42,              # optional, links to database record
+)
+
+if result["success"]:
+    print(f"Image saved: {result['image_path']}")
+    print(f"Provider: {result['provider']}")
+    print(f"pHash: {result['phash']}")
+```
+
+### Provider Fallback
+
+Providers are tried in order. If one fails (timeout, invalid config, 
+corrupt image), the next in line is tried automatically:
+
+1. `huggingface` (requires `HUGGINGFACE_API_TOKEN`)
+2. `pollinations` (free, no auth required)
+3. `mock` (tests only, never in production)
+
+Set `IMAGE_PROVIDERS` to reorder or limit which providers are used.
+
+### Validation Rules
+
+- File must be a valid image (Pillow readable)
+- Dimensions ≥ configured minimum (default 1600×900)
+- Not blank (all black or all white)
+- Not single-colour (requires pixel variance)
+- Supported format
+
+### Deduplication
+
+Uses **[imagehash](https://github.com/JohannesBuchner/imagehash)** (pHash) 
+for perceptual hashing.  If a generated image's pHash is within 
+Hamming distance ≤ 5 of any existing image in the database, it's 
+automatically regenerated with a new seed.
+
+### Tests
+
+```bash
+# Run all tests (114 total across all milestones)
+python3 -m pytest tests/ -v
+
+# Run only image engine tests
+python3 -m pytest tests/test_image_engine.py -v
+```
+
+Tests cover:
+- `MockProvider` — full pipeline without network (CI safe)
+- `ImageValidator` — dimension, blank, corrupt, and single-colour checks
+- `ImageOptimizer` — resize, WEBP conversion, compression
+- `ImageDeduplicator` — pHash computation, Hamming distance comparison
+- `MetadataGenerator` — alt text, title, caption, SEO keywords
+- `ImageManager` — end-to-end orchestration with DB persistence
+
+
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## AI Image Engine (Milestone 3)
+
+A production-ready image generation engine that creates **unique hero images** 
+for every article. Supports multiple free providers with automatic fallback.
+
+### Architecture
+
+```
+Prompt
+  │
+  ▼
+ImageManager.generate()
+  │
+  ├─► Provider.generate(prompt)
+  │     ├─► huggingface (FLUX.1-schnell via Inference API) 
+  │     ├─► pollinations (Pollinations AI free API)          
+  │     └─► mock (testing only)                               
+  │
+  ├─► Validator.validate(image)         reject if corrupt/too-small
+  ├─► Optimizer.optimize(image)         resize → WEBP → compress  
+  ├─► Deduplicator.is_duplicate(phash)  reject if Hamming ≤ threshold
+  └─► store metadata → database
+```
+
+### Directory Structure
+
+```
+image_engine/
+├── __init__.py         # Package export (ImageManager)
+├── base.py             # Abstract BaseProvider interface
+├── manager.py          # ImageManager orchestrator
+├── validator.py        # Image validation rules
+├── optimizer.py        # Resize, compress, WEBP conversion
+├── deduplicator.py     # Perceptual hash deduplication
+├── metadata.py         # SEO metadata generation
+└── providers/
+    ├── __init__.py
+    ├── mock.py         # In-memory test images (no network)
+    ├── pollinations.py # Free public API (no key required)
+    └── huggingface.py  # HF Inference API (FLUX.1-schnell)
+```
+
+### Output Specifications
+
+| Setting          | Default   |
+|
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---|
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+---
+## Blogger Publisher Engine (Milestone 4)
+
+A production-ready Blogger publishing engine that publishes one article 
+(with one generated hero image) to Google Blogger through the official API v3.
+
+### Architecture
+
+```
+Article (from database)
+  │
+  ▼
+Publisher.publish_article(article_id)
+  │
+  ├─► Load article + image from DB/files
+  ├─► Slug.generate()              → SEO-friendly URL
+  ├─► Labels.generate()            → automatic label selection
+  ├─► HtmlBuilder.build()          → full article HTML
+  ├─► Auth.refresh_token()         → OAuth2 access token
+  ├─► Client.create_post()         → Blogger API v3 POST
+  │     ├─► Retry on 429/5xx (exponential backoff)
+  │     └─► Max 3 attempts
+  ├─► DB update                    → blogger_post_id, URL, status
+  └─► Move article to published/   → archive
+```
+
+### Directory Structure
+
+```
+blogger/
+├── __init__.py         # Package export (Publisher)
+├── auth.py             # OAuth2 refresh token flow
+├── client.py           # Blogger API v3 wrapper (create/update/get/delete)
+├── labels.py           # Automatic label generation (keyword-based)
+├── slug.py             # SEO-friendly URL slug generation
+├── html_builder.py     # Article HTML builder (Markdown → HTML + sections)
+├── image_uploader.py   # Image upload (base64 data URI embedding)
+└── publisher.py        # Main orchestrator (publish_article)
+```
+
+### Configuration
+
+```bash
+# Blogger API credentials (required)
+BLOG_ID=122799461405250161
+CLIENT_ID=your-client-id.apps.googleusercontent.com
+CLIENT_SECRET=your-client-secret
+REFRESH_TOKEN=your-refresh-token
+
+# Publisher settings (optional)
+PUBLISHER_MAX_RETRIES=3
+PUBLISHER_RETRY_DELAY_SECONDS=5
+PUBLISHER_MAX_BACKOFF_SECONDS=60
+PUBLISHER_IMAGE_MAX_RETRIES=3
+PUBLISHER_SLUG_MAX_LENGTH=75
+PUBLISHER_DEFAULT_LABELS=Baby Names
+```
+
+### Usage
+
+```python
+from blogger.publisher import Publisher
+
+publisher = Publisher()
+
+# Publish a single article
+result = publisher.publish_article(article_id=42)
+print(result["blogger_url"])  # Published URL
+
+# Batch publish pending articles
+results = publisher.publish_pending_articles(max_articles=10)
+
+# Retry failed articles
+results = publisher.republish_failed_articles(max_articles=10)
+```
+
+### Idempotency
+
+If ``blogger_post_id`` is already set on the article, the Publisher calls 
+**update** instead of **create**, so running ``publish_article`` twice is safe.
+
+### Retry Logic
+
+- HTTP 429 (rate limit) and 5xx errors are retried with exponential backoff.
+- Max 3 retries by default (configurable via ``PUBLISHER_MAX_RETRIES``).
+- Failed articles are tracked in the database (``publish_status``, 
+  ``publish_attempts``, ``last_publish_error``).
+
+### Labels
+
+Labels are automatically generated from the article title using keyword 
+matching.  See ``blogger/labels.py`` for the full mapping.  Always includes 
+"Baby Names" as a base label.  Max 5 labels per post.
+
+### Tests
+
+```bash
+# Run all tests (168 total)
+python3 -m pytest tests/ -v
+
+# Run only publisher tests
+python3 -m pytest tests/test_blogger.py -v
+```
+
+Tests use **mocked** Blogger API — no real credentials required for CI.
+
+
+-----|
+| Format           | WEBP     |
+| Dimensions       | 1600×900  |
+| Colour           | RGB      |
+| Quality          | 90       |
+| Max file size    | 300 KB   |
+| Dedup threshold  | Hamming ≤ 5 |
+
+### Configuration
+
+All settings are controlled via environment variables (`.env` file):
+
+```bash
+# Image Engine
+IMAGE_OUTPUT_WIDTH=1600
+IMAGE_OUTPUT_HEIGHT=900
+IMAGE_OUTPUT_FORMAT=WEBP
+IMAGE_OUTPUT_QUALITY=90
+IMAGE_MAX_FILE_SIZE=307200          # 300 KB
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -36146,8 +36175,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -37367,8 +37397,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -38584,8 +38615,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)
@@ -39821,8 +39853,9 @@ IMAGE_OUTPUT_HEIGHT=900
 IMAGE_OUTPUT_FORMAT=WEBP
 IMAGE_OUTPUT_QUALITY=90
 IMAGE_MAX_FILE_SIZE=307200          # 300 KB
-IMAGE_PROVIDERS=huggingface,pollinations
-IMAGE_MAX_RETRIES=5
+IMAGE_PROVIDERS=pollinations,huggingface
+IMAGE_PROVIDER_TIMEOUT=20          # seconds
+IMAGE_MAX_RETRIES=3
 IMAGE_PHASH_THRESHOLD=5
 
 # HuggingFace (optional — only if provider is in list)

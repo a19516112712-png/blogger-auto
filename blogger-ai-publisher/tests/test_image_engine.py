@@ -208,11 +208,14 @@ class TestPollinationsProvider:
     """Test PollinationsProvider (config validation only — no real calls)."""
 
     def test_init_default_config(self) -> None:
-        """Provider initialises without errors."""
+        """Provider initialises with correct name and timeout."""
         from image_engine.providers.pollinations import PollinationsProvider
+        import config.settings
 
         provider = PollinationsProvider()
         assert provider.name == "pollinations"
+        # timeout is stored as private _timeout
+        assert provider._timeout == config.settings.IMAGE_PROVIDER_TIMEOUT
 
 
 # ======================================================================
@@ -707,6 +710,13 @@ class TestImageEngineSettings:
         assert IMAGE_PHASH_THRESHOLD > 0
         assert IMAGE_MAX_RETRIES > 0
         assert len(IMAGE_PROVIDERS) > 0
+
+    def test_image_provider_timeout_setting(self) -> None:
+        """IMAGE_PROVIDER_TIMEOUT is a positive integer."""
+        from config.settings import IMAGE_PROVIDER_TIMEOUT
+        assert isinstance(IMAGE_PROVIDER_TIMEOUT, int)
+        assert IMAGE_PROVIDER_TIMEOUT > 0
+        assert IMAGE_PROVIDER_TIMEOUT == 20
 
 
 # ======================================================================

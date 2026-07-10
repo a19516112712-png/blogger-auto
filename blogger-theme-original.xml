@@ -1,0 +1,1063 @@
+Role: Principal Blogger XML Architect & Programmatic SEO Expert
+
+Task: Refactor the provided Blogger XML theme code to implement an absolute "Zero-Blank-Page" hardcoded fallback framework using advanced Blogger conditional views (`<b:if cond='...'>`).
+
+Background Concept: 
+Currently, category/label pages like `/search/label/Girl%20Names` return a blank "Database Search Results" page because there are 0 posts under that label in the database. To solve this and pass Google AdSense human review instantly, we want to intercept the article rendering zone (`<div class='articles-feed-wrapper-zone'>`) and inject beautiful, highly styled, hardcoded English content datasets for EVERY category route so the site looks 100% complete even with zero blog posts.
+
+Strict Modification Rules:
+
+1. DO NOT TOUCH ANY CSS, JS, OR DESIGN SYSTEM: Keep the entire design, responsive media queries, dark mode script, grid structures, and typography properties completely untouched. Only modify the content rendering block.
+
+2. SECURE THE BLOG FEED ZONE: Inside `<div class='articles-feed-wrapper-zone'>`, check if the database has posts (`b:if cond='data:posts'`). If it doesn't, or if the view matches a specific label search, use `<b:if cond='data:view.search.label == "..."'>` to hardcode an exhaustive, premium layout.
+
+3. HARDCODE DATASETS FOR EACH LABELS (No Blank Pages Rule):
+Generate a full-width container filled with a beautifully styled 10-row dataset table (Name, Gender, Meaning, Origin, Popularity) and 2-3 paragraphs of professional editorial copy written by "Dr. Evelyn Vance" for each of the following paths:
+
+   * Label "Boy Names": Inject an authoritative directory titled "Premium 2026 Boy Names Registry". Include a 10-row database table of top trending male names (e.g., Liam, Noah, Oliver, Elijah, Lucas, Mason, Levi, Asher, James, Ethan) complete with meanings and origins.
+   * Label "Girl Names": Inject an authoritative directory titled "Premium 2026 Girl Names Registry". Include a 10-row database table of top trending female names (e.g., Olivia, Emma, Amelia, Ava, Sophia, Isabella, Luna, Mia, Charlotte, Evelyn) complete with meanings and origins.
+   * Label "Unique Names": Inject a database titled "Rare & Aesthetic Unique Nomenclature Matrix" featuring 10 elite non-traditional names (e.g., Celestial, Cassian, Soren, Aurelia, Zephyr, Lyra, Elio, Nova, Maeve, Atlas).
+   * Label "Tips": Inject a massive, beautifully structured layout titled "Linguistic Selection Guides & Phonetic Blueprints", writing out a real 800-word expert article detailing the top 5 phonetic rules for 2026 parents.
+   * Label "Middle Names": Inject a structural grid titled "Cohesive Middle Name Coordination System" featuring a 10-row table showing perfect First-Middle name combinations.
+   * Label "Sibling Names": Inject a database titled "Symmetrical Household Sibling Name Matcher" showing perfect pairing matrices for brothers and sisters.
+
+4. STATIC PAGES AUTO-INJECTION:
+Ensure that when a user visits any of the 7 static compliance paths (e.g., `/p/privacy-policy.html`, `/p/about-us.html`, etc.), the hardcoded template text we wrote earlier is perfectly preserved and rendered within this layout seamlessly.
+
+5. XML SYNTAX SAFETY:
+Strictly ensure that all ampersands within strings are escaped as `&amp;` and double quotes inside expressions are escaped as `&quot;`. Never use loose tags that break the Blogger XML compiler. Double-check that all open tags have matching closing tags (e.g., `<section>` must match `</section>`).
+
+Input Code to Refactor:
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultmessages='true' b:responsive='true' b:version='2' class='v2' expr:dir='data:blog.languageDirection' expr:lang='data:blog.locale' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/data'>
+<head>
+  <meta content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5' name='viewport'/>
+  <b:include data='blog' name='all-head-content'/>
+  
+  <title><data:blog.pageTitle/></title>
+  
+  <meta content='Global' name='distribution'/>
+  <meta content='General' name='rating'/>
+  <meta expr:content='data:blog.title' name='author'/>
+  <meta content='Baby Names, Naming Trends 2026, Boy Names, Girl Names, Unisex Names, Unique Baby Names, Name Meanings, Baby Name Generator' name='keywords'/>
+  <meta expr:content='data:blog.metaDescription' name='description'/>
+  
+  <meta expr:content='data:blog.pageTitle' property='og:title'/>
+  <meta expr:content='data:blog.url' property='og:url'/>
+  <meta expr:content='data:blog.title' property='og:site_name'/>
+  <meta content='website' property='og:type'/>
+  <b:if cond='data:blog.postImageUrl'>
+    <meta expr:content='data:blog.postImageUrl' property='og:image'/>
+  <b:else/>
+    <meta content='https://images.unsplash.com/photo-1505632951788-8b3488cf1b9a?auto=format&amp;fit=crop&amp;w=1200&amp;q=80' property='og:image'/>
+  </b:if>
+  
+  <meta content='summary_large_image' name='twitter:card'/>
+  <meta expr:content='data:blog.pageTitle' name='twitter:title'/>
+  <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+
+  <script type='application/ld+json'>
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "<data:blog.homepageUrl/>#organization",
+      "name": "<data:blog.title/>",
+      "url": "<data:blog.homepageUrl/>",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://images.unsplash.com/photo-1505632951788-8b3488cf1b9a?auto=format&amp;fit=crop&amp;w=200&amp;q=80"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "<data:blog.homepageUrl/>#website",
+      "name": "<data:blog.title/>",
+      "url": "<data:blog.homepageUrl/>",
+      "publisher": {
+        "@type": "Organization",
+        "className": "<data:blog.homepageUrl/>#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "<data:blog.homepageUrl/>search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+  </script>
+
+  <b:skin><![CDATA[
+    /* -------------------------------------------------------------------------
+       DESIGN SYSTEM & ARCHITECTURE - BABY NAME AUTHORITY 2026
+       Fonts are split into separate expressions to prevent XML parsing bugs.
+    ---------------------------------------------------------------------------- */
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+    :root {
+        --primary: #FFB6C1;
+        --primary-hover: #ff99aa;
+        --secondary: #A0CED9;
+        --accent: #FFD166;
+        --bg-site: #FFFDF9;
+        --bg-surface: #FFFFFF;
+        --text-main: #4A4A4A;
+        --text-muted: #7A7A7A;
+        --text-dark: #2C2C2C;
+        --border-color: rgba(255, 182, 193, 0.15);
+        --shadow-sm: 0 2px 8px rgba(255, 182, 193, 0.08);
+        --shadow-md: 0 8px 24px rgba(255, 182, 193, 0.12);
+        --shadow-lg: 0 16px 40px rgba(255, 182, 193, 0.16);
+        --radius-sm: 8px;
+        --radius-md: 16px;
+        --radius-lg: 24px;
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --max-width: 1400px;
+    }
+
+    body.dark-mode {
+        --bg-site: #121212;
+        --bg-surface: #1E1E1E;
+        --text-main: #E0E0E0;
+        --text-muted: #A0A0A0;
+        --text-dark: #FFFFFF;
+        --border-color: rgba(255, 255, 255, 0.08);
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+        --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+    body {
+        font-family: 'Nunito', 'Noto Sans SC', sans-serif;
+        background-color: var(--bg-site);
+        color: var(--text-main);
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    img { max-width: 100%; height: auto; display: block; }
+    button, input { font-family: inherit; border: none; outline: none; background: none; }
+
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--secondary); outline-offset: 2px; }
+
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+    .clearfix::after { content: ""; display: table; clear: both; }
+
+    /* Premium Ad Placeholder Grid Styles */
+    .ads-wrapper {
+        background: var(--bg-surface);
+        border: 2px dashed var(--border-color);
+        border-radius: var(--radius-md);
+        padding: 20px;
+        text-align: center;
+        margin: 24px 0;
+        position: relative;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .ads-wrapper::before {
+        content: "Advertisement Space";
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        letter-spacing: 1px;
+    }
+
+    /* Header Navigation Core */
+    header {
+        background-color: var(--bg-surface);
+        box-shadow: var(--shadow-sm);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 80px;
+    }
+    .logo-area { font-size: 26px; font-weight: 800; color: var(--text-dark); display: flex; align-items: center; gap: 8px; }
+    .logo-area span { color: var(--primary); }
+    
+    .nav-box { display: flex; align-items: center; gap: 32px; }
+    .main-nav { list-style: none; display: flex; align-items: center; gap: 20px; }
+    .main-nav li { position: relative; }
+    .main-nav a { font-weight: 600; font-size: 15px; color: var(--text-main); padding: 8px 12px; border-radius: var(--radius-sm); }
+    .main-nav a:hover, .main-nav li.has-drop:hover > a { color: var(--primary); background: rgba(255,182,193,0.05); }
+
+    .dropdown-nav {
+        position: absolute; top: 100%; left: 0; background: var(--bg-surface);
+        box-shadow: var(--shadow-md); border-radius: var(--radius-md);
+        list-style: none; padding: 12px; min-width: 220px; display: none;
+        border: 1px solid var(--border-color); margin-top: 8px;
+    }
+    .main-nav li:hover .dropdown-nav { display: block; animation: navFade 0.2s ease; }
+    .dropdown-nav a { display: block; padding: 10px 16px; font-size: 14px; }
+
+    .action-grid { display: flex; align-items: center; gap: 16px; }
+    .icon-btn { width: 42px; height: 42px; border-radius: 50%; background: rgba(255,182,193,0.05); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: var(--transition); font-size: 18px; color: var(--text-dark); }
+    .icon-btn:hover { background: var(--primary); color: white; transform: scale(1.05); }
+    .hamburger { display: none; }
+
+    @keyframes navFade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Hero Search Module Frame */
+    .hero-wrapper {
+        background: linear-gradient(135deg, #FFE5EC 0%, #E8F0FE 100%);
+        padding: 100px 0 120px;
+        text-align: center;
+        border-bottom-left-radius: var(--radius-lg);
+        border-bottom-right-radius: var(--radius-lg);
+        margin-bottom: 60px;
+    }
+    body.dark-mode .hero-wrapper { background: linear-gradient(135deg, #2C1A20 0%, #1A2230 100%); }
+    .hero-content { max-width: 850px; margin: 0 auto; }
+    .hero-content h1 { font-size: 48px; font-weight: 800; color: var(--text-dark); margin-bottom: 20px; line-height: 1.2; letter-spacing: -1px; }
+    .hero-content p { font-size: 19px; color: var(--text-main); margin-bottom: 40px; font-weight: 500; }
+    
+    .search-engine-box {
+        background: var(--bg-surface); padding: 10px; border-radius: 40px;
+        box-shadow: var(--shadow-lg); display: flex; align-items: center; max-width: 700px; margin: 0 auto 32px;
+    }
+    .search-engine-box input { flex: 1; padding: 12px 24px; font-size: 17px; color: var(--text-dark); background: transparent; }
+    .search-engine-box button { background: var(--primary); color: white; padding: 14px 36px; font-size: 16px; font-weight: 700; border-radius: 30px; cursor: pointer; box-shadow: 0 4px 12px rgba(255,182,193,0.3); }
+    .search-engine-box button:hover { background: var(--primary-hover); transform: translateY(-1px); }
+    
+    .search-tags-box { display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .search-tags-box span { font-weight: 700; font-size: 14px; color: var(--text-muted); }
+    .search-tags-box a { background: rgba(255,255,255,0.6); padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: 600; color: var(--text-main); border: 1px solid var(--border-color); }
+    .search-tags-box a:hover { background: var(--bg-surface); color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+
+    /* Category Cards Architectural Layout */
+    .section-header { margin-bottom: 32px; text-align: left; position: relative; }
+    .section-header h2 { font-size: 32px; font-weight: 800; color: var(--text-dark); letter-spacing: -0.5px; }
+    .section-header p { color: var(--text-muted); font-size: 16px; margin-top: 4px; font-weight: 500; }
+    
+    .category-grid-matrix {
+        display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; margin-bottom: 60px;
+    }
+    .category-premium-card {
+        background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md);
+        padding: 24px; position: relative; transition: var(--transition); box-shadow: var(--shadow-sm);
+        display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .category-premium-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+    .cat-card-meta .icon-box { font-size: 36px; margin-bottom: 16px; display: inline-block; }
+    .cat-card-meta h3 { font-size: 20px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+    .cat-card-meta p { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.5; }
+    .cat-explore-btn { font-size: 14px; font-weight: 700; color: var(--primary); display: flex; align-items: center; gap: 4px; }
+    .category-premium-card:hover .cat-explore-btn { color: var(--primary-hover); }
+
+    /* Trending Dashboard Grid Matrix */
+    .trending-showcase-box {
+        background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg);
+        padding: 32px; box-shadow: var(--shadow-md); margin-bottom: 60px;
+    }
+    .trending-table-wrapper { width: 100%; overflow-x: auto; }
+    .trending-data-table { width: 100%; border-collapse: collapse; text-align: left; min-width: 600px; }
+    .trending-data-table th { padding: 16px; border-bottom: 2px solid var(--border-color); font-weight: 700; color: var(--text-dark); font-size: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .trending-data-table td { padding: 18px 16px; border-bottom: 1px solid var(--border-color); vertical-align: middle; }
+    .rank-indicator { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; background: rgba(0,0,0,0.04); color: var(--text-main); }
+    .trending-data-table tr:nth-child(1) .rank-indicator { background: var(--accent); color: white; }
+    .trending-data-table tr:nth-child(2) .rank-indicator { background: var(--secondary); color: white; }
+    .trending-data-table tr:nth-child(3) .rank-indicator { background: var(--primary); color: white; }
+    
+    .name-badge-node { font-size: 18px; font-weight: 700; color: var(--text-dark); }
+    .gender-pill { padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 700; text-transform: uppercase; display: inline-block; }
+    .gender-pill.boy-tag { background: #E1F5FE; color: #0288D1; }
+    .gender-pill.girl-tag { background: #FCE4EC; color: #C2185B; }
+    .gender-pill.unisex-tag { background: #E8F5E9; color: #388E3C; }
+    
+    .score-indicator-bar { width: 100px; height: 6px; background: rgba(0,0,0,0.05); border-radius: 3px; overflow: hidden; display: inline-block; vertical-align: middle; margin-right: 8px; }
+    .score-fill { height: 100%; background: linear-gradient(90deg, var(--secondary), var(--primary)); border-radius: 3px; }
+    .score-val { font-size: 13px; font-weight: 700; color: var(--text-dark); vertical-align: middle; }
+
+    /* Primary Dynamic Grid Structural Panels */
+    .dual-layout-grid { display: flex; gap: 40px; margin-bottom: 60px; }
+    .premium-stream-area { width: 70%; }
+    .premium-sidebar-area { width: 30%; }
+
+    /* Editor&#39;s Pick Magazine Box Layout */
+    .editors-choice-box { margin-bottom: 48px; }
+    .featured-magazine-card {
+        background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg);
+        overflow: hidden; box-shadow: var(--shadow-md); display: flex; transition: var(--transition);
+    }
+    .featured-magazine-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .feat-card-img-wrapper { width: 45%; overflow: hidden; position: relative; min-height: 300px; background-color: var(--border-color); }
+    .feat-card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+    .featured-magazine-card:hover .feat-card-img-wrapper img { transform: scale(1.03); }
+    
+    .feat-card-content-wrapper { width: 55%; padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+    .node-category-tag { font-size: 12px; font-weight: 800; text-transform: uppercase; color: var(--primary); letter-spacing: 1.5px; margin-bottom: 12px; display: inline-block; }
+    .feat-card-content-wrapper h3 { font-size: 28px; font-weight: 800; color: var(--text-dark); margin-bottom: 16px; line-height: 1.3; }
+    .feat-card-content-wrapper p { font-size: 15px; color: var(--text-muted); margin-bottom: 24px; line-height: 1.6; }
+    
+    .meta-metrics-row { display: flex; align-items: center; gap: 16px; font-size: 13px; color: var(--text-muted); font-weight: 600; }
+    .meta-metrics-row span { display: flex; align-items: center; gap: 4px; }
+    .read-more-premium-btn {
+        background: var(--text-dark); color: var(--bg-surface); padding: 12px 28px; border-radius: 30px;
+        font-size: 14px; font-weight: 700; display: inline-block; width: fit-content; margin-top: 8px; box-shadow: var(--shadow-sm);
+    }
+    .read-more-premium-btn:hover { background: var(--primary); color: white; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+    /* Feed List Grid Structure */
+    .magazine-posts-stream-grid {
+        display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 32px;
+    }
+    .magazine-standard-card {
+        background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md);
+        overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); display: flex; flex-direction: column;
+    }
+    .magazine-standard-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+    .std-card-img-wrapper { width: 100%; height: 200px; overflow: hidden; position: relative; background-color: var(--border-color); }
+    .std-card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+    .magazine-standard-card:hover .std-card-img-wrapper img { transform: scale(1.05); }
+    
+    .std-card-content-wrapper { padding: 24px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .std-card-content-wrapper h3 { font-size: 20px; font-weight: 700; color: var(--text-dark); margin-bottom: 12px; line-height: 1.4; }
+    .std-card-content-wrapper h3 a:hover { color: var(--primary); }
+    .std-card-content-wrapper p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+    /* Sidebar Widget Styling Modules */
+    .sidebar-widget-card {
+        background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-md);
+        padding: 24px; box-shadow: var(--shadow-sm); margin-bottom: 32px;
+    }
+    .sidebar-widget-title {
+        font-size: 18px; font-weight: 800; color: var(--text-dark); margin-bottom: 20px;
+        position: relative; padding-bottom: 10px; border-bottom: 2px solid var(--border-color);
+    }
+    .sidebar-widget-title::after {
+        content: ''; position: absolute; bottom: -2px; left: 0; width: 40px; height: 2px; background-color: var(--primary);
+    }
+    
+    .sidebar-links-menu { list-style: none; }
+    .sidebar-links-menu li { border-bottom: 1px dashed var(--border-color); }
+    .sidebar-links-menu li:last-child { border: none; }
+    .sidebar-links-menu a { display: flex; justify-content: space-between; align-items: center; padding: 12px 4px; font-size: 14px; font-weight: 600; color: var(--text-main); }
+    .sidebar-links-menu a:hover { color: var(--primary); padding-left: 6px; }
+    .sidebar-links-menu .counter-badge { background: rgba(255,182,193,0.1); color: var(--primary); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+
+    .compact-post-row-node { display: flex; gap: 16px; margin-bottom: 16px; align-items: center; }
+    .compact-post-row-node:last-child { margin: 0; }
+    .compact-node-thumb { width: 70px; height: 70px; border-radius: var(--radius-sm); overflow: hidden; flex-shrink: 0; background-color: var(--border-color); }
+    .compact-node-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .compact-node-details h4 { font-size: 14px; font-weight: 700; color: var(--text-dark); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .compact-node-details h4 a:hover { color: var(--primary); }
+    .compact-node-details span { font-size: 11px; color: var(--text-muted); font-weight: 500; display: block; margin-top: 4px; }
+
+    .generator-action-widget-ui {
+        background: linear-gradient(135deg, rgba(160,206,217,0.15), rgba(255,182,193,0.15));
+        border: none; border-radius: var(--radius-md); padding: 24px; text-align: center;
+    }
+    .generator-action-widget-ui p { font-size: 14px; color: var(--text-main); margin-bottom: 16px; font-weight: 500; }
+    .gen-trigger-btn {
+        display: block; width: 100%; background: var(--bg-surface); color: var(--text-dark);
+        border: 1px solid var(--border-color); padding: 12px; border-radius: 24px; font-weight: 700;
+        font-size: 14px; margin-bottom: 12px; box-shadow: var(--shadow-sm); text-align: center;
+    }
+    .gen-trigger-btn:hover { background: var(--primary); color: white; border-color: var(--primary); transform: translateY(-1px); }
+
+    .newsletter-form-box { display: flex; flex-direction: column; gap: 12px; }
+    .newsletter-form-box input {
+        background: var(--bg-site); border: 1px solid var(--border-color); padding: 12px 16px;
+        border-radius: 24px; font-size: 14px; color: var(--text-dark); width: 100%;
+    }
+    .newsletter-form-box button {
+        background: var(--text-dark); color: var(--bg-surface); padding: 12px;
+        border-radius: 24px; font-weight: 700; font-size: 14px; cursor: pointer; text-align: center;
+    }
+    .newsletter-form-box button:hover { background: var(--primary); color: white; }
+
+    /* Single Inner Post Core Framework Layout */
+    .article-magazine-frame { background: var(--bg-surface); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 48px; box-shadow: var(--shadow-md); margin-bottom: 40px; }
+    .article-hero-media-wrapper { width: 100%; height: 450px; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 32px; background-color: var(--border-color); }
+    .article-hero-media-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+    
+    .breadcrumb-row-nav { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 16px; }
+    .breadcrumb-row-nav a:hover { color: var(--primary); }
+    
+    .article-magazine-frame h1.entry-headline-title { font-size: 40px; font-weight: 800; color: var(--text-dark); margin-bottom: 20px; line-height: 1.25; letter-spacing: -1px; }
+    
+    .toc-anchor-box-container {
+        background: var(--bg-site); border: 1px solid var(--border-color); border-radius: var(--radius-md);
+        padding: 24px; margin: 32px 0; max-width: 500px;
+    }
+    .toc-anchor-box-container h3 { font-size: 18px; font-weight: 800; color: var(--text-dark); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .toc-ordered-list-links { list-style-position: inside; font-size: 14px; font-weight: 600; color: var(--text-main); }
+    .toc-ordered-list-links li { margin-bottom: 8px; }
+    .toc-ordered-list-links a:hover { color: var(--primary); text-decoration: underline; }
+    .toc-sub-heading { margin-left: 20px; list-style-type: circle; }
+
+    /* Typography Matrix Configuration Core */
+    .item-post-body { font-size: 17px; color: var(--text-main); line-height: 1.85; }
+    .item-post-body p { margin-bottom: 24px; }
+    .item-post-body h2 { font-size: 28px; font-weight: 800; color: var(--text-dark); margin: 40px 0 20px; letter-spacing: -0.5px; }
+    .item-post-body h3 { font-size: 22px; font-weight: 700; color: var(--text-dark); margin: 32px 0 16px; }
+    
+    .item-post-body ul, .item-post-body ol { margin: 0 0 24px 24px; }
+    .item-post-body li { margin-bottom: 8px; }
+    
+    .item-post-body table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 15px; }
+    .item-post-body th { background: rgba(255,182,193,0.08); padding: 12px 16px; font-weight: 700; color: var(--text-dark); border: 1px solid var(--border-color); }
+    .item-post-body td { padding: 12px 16px; border: 1px solid var(--border-color); }
+    
+    .premium-callout-box-container {
+        background: linear-gradient(135deg, rgba(255,182,193,0.08), rgba(160,206,217,0.08));
+        border-left: 4px solid var(--primary); padding: 24px; border-radius: 0 var(--radius-md) var(--radius-md) 0;
+        margin: 32px 0; font-style: italic; color: var(--text-dark); font-weight: 500;
+    }
+    
+    /* FAQ Accordion Layout */
+    .faq-accordion-root { margin: 40px 0; }
+    .faq-accordion-node { background: var(--bg-site); border: 1px solid var(--border-color); border-radius: var(--radius-sm); margin-bottom: 12px; overflow: hidden; }
+    .faq-query-trigger { padding: 16px 24px; font-weight: 700; color: var(--text-dark); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-answer-panel { padding: 0 24px 16px; font-size: 15px; color: var(--text-main); display: none; border-top: 1px solid var(--border-color); padding-top: 16px; }
+
+    .cluster-related-box { margin-top: 48px; border-top: 2px solid var(--border-color); padding-top: 32px; }
+    .cluster-related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+    .cluster-related-node-card { background: var(--bg-site); border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--border-color); }
+    .cluster-related-node-card .mini-thumb { width: 100%; height: 120px; background-color: var(--border-color); }
+    .cluster-related-node-card .mini-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .cluster-related-node-card h5 { padding: 12px; font-size: 14px; font-weight: 700; color: var(--text-dark); line-height: 1.4; }
+
+    .split-navigation-link-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 40px 0; padding: 24px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+    .split-nav-card.next-link-card { text-align: right; }
+    .split-nav-card span { font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 4px; }
+    .split-nav-card strong { font-size: 15px; color: var(--text-dark); font-weight: 700; }
+    .split-nav-card a:hover strong { color: var(--primary); }
+
+    .author-biography-identity-box { background: var(--bg-site); border-radius: var(--radius-md); border: 1px solid var(--border-color); padding: 32px; display: flex; gap: 24px; align-items: center; margin-bottom: 40px; }
+    .author-avatar-container { width: 90px; height: 90px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background-color: var(--border-color); }
+    .author-avatar-container img { width: 100%; height: 100%; object-fit: cover; }
+    .author-metadata-details h4 { font-size: 18px; font-weight: 800; color: var(--text-dark); margin-bottom: 6px; }
+    .author-metadata-details p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+    .social-share-strip { display: flex; align-items: center; gap: 12px; margin: 32px 0; }
+    .social-share-strip span { font-weight: 700; font-size: 14px; color: var(--text-muted); text-transform: uppercase; }
+    .share-node-link { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px; font-weight: bold; }
+
+    .sources-reference-wrapper-box { background: rgba(0,0,0,0.02); padding: 16px 24px; border-radius: var(--radius-sm); font-size: 13px; color: var(--text-muted); margin: 32px 0; }
+    .sources-reference-wrapper-box ol { margin-left: 20px; margin-top: 6px; }
+
+    /* Overlay Search Trigger Frame */
+    .search-modal-overlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(18,18,18,0.95);
+        z-index: 2000; display: none; align-items: center; justify-content: center; padding: 24px;
+    }
+    .search-modal-container { width: 100%; max-width: 650px; position: relative; }
+    .search-modal-container input {
+        width: 100%; background: transparent; border-bottom: 3px solid var(--primary);
+        padding: 16px 0; font-size: 24px; color: white; font-weight: 700; outline: none;
+    }
+    .search-modal-close-trigger { position: absolute; top: -60px; right: 0; color: white; font-size: 32px; cursor: pointer; }
+
+    /* Footer Framework Layout Grid */
+    footer.premium-footer-root { background-color: #1A1A1A; color: #E0E0E0; padding: 80px 0 40px; border-top-left-radius: var(--radius-lg); border-top-right-radius: var(--radius-lg); }
+    .footer-grid-columns-matrix { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; margin-bottom: 60px; }
+    .footer-column-widget h3 { color: white; font-size: 18px; font-weight: 800; margin-bottom: 24px; position: relative; padding-bottom: 8px; }
+    .footer-column-widget h3::after { content: ''; position: absolute; bottom: 0; left: 0; width: 30px; height: 2px; background: var(--primary); }
+    .footer-column-widget p { font-size: 14px; color: #A0A0A0; line-height: 1.6; }
+    
+    .footer-menu-links { list-style: none; }
+    .footer-menu-links li { margin-bottom: 12px; }
+    .footer-menu-links a { font-size: 14px; color: #A0A0A0; font-weight: 500; }
+    .footer-menu-links a:hover { color: var(--primary); padding-left: 4px; }
+    
+    .footer-copyright-row-bar { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 40px; text-align: center; font-size: 13px; color: #777777; font-weight: 600; }
+
+    /* Media Adaptive Screen Configurations */
+    @media (max-width: 1024px) {
+        .dual-layout-grid { flex-direction: column; }
+        .premium-stream-area, .premium-sidebar-area { width: 100%; }
+        .featured-magazine-card { flex-direction: column; }
+        .feat-card-img-wrapper, .feat-card-content-wrapper { width: 100%; }
+        .feat-card-img-wrapper { min-height: 240px; }
+    }
+    @media (max-width: 768px) {
+        .main-nav, .action-grid .icon-btn:not(.hamburger) { display: none; }
+        .hamburger { display: flex; }
+        .hero-content h1 { font-size: 34px; }
+        .hero-content p { font-size: 16px; }
+        .article-magazine-frame { padding: 24px; }
+        .article-magazine-frame h1.entry-headline-title { font-size: 28px; }
+        .category-grid-matrix { grid-template-columns: 1fr; }
+    }
+  ]]></b:skin>
+</head>
+
+<body>
+
+  <header>
+    <div class='container header-inner'>
+      <a class='logo-area' expr:href='data:blog.homepageUrl'>👶 BabyName<span>2026</span></a>
+      
+      <div class='nav-box'>
+        <nav role='navigation'>
+          <ul class='main-nav'>
+            <li><a expr:href='data:blog.homepageUrl'>Home</a></li>
+            <li class='has-drop'>
+              <a expr:href='data:blog.homepageUrl + &quot;search?q=boy&quot;'>Boy Names</a>
+              <ul class='dropdown-nav'>
+                <li><a expr:href='data:blog.homepageUrl + &quot;search?q=biblical+boy&quot;'>Biblical Boy</a></li>
+                <li><a expr:href='data:blog.homepageUrl + &quot;search?q=japanese+boy&quot;'>Japanese Boy</a></li>
+                <li><a expr:href='data:blog.homepageUrl + &quot;search?q=irish+boy&quot;'>Irish Boy</a></li>
+              </ul>
+            </li>
+            <li class='has-drop'>
+              <a expr:href='data:blog.homepageUrl + &quot;search?q=girl&quot;'>Girl Names</a>
+              <ul class='dropdown-nav'>
+                <li><a expr:href='data:blog.homepageUrl + &quot;search?q=biblical+girl&quot;'>Biblical Girl</a></li>
+                <li><a expr:href='data:blog.homepageUrl + &quot;search?q=japanese+girl&quot;'>Japanese Girl</a></li>
+                <li><a expr:href='data:blog.homepageUrl + &quot;search?q=irish+girl&quot;'>Irish Girl</a></li>
+              </ul>
+            </li>
+            <li><a expr:href='data:blog.homepageUrl + &quot;search?q=meaning&quot;'>Meaning</a></li>
+            <li><a expr:href='data:blog.homepageUrl + &quot;search?q=origin&quot;'>Origin</a></li>
+            <li><a expr:href='data:blog.homepageUrl + &quot;search?q=unique&quot;'>Unique</a></li>
+            <li><a expr:href='data:blog.homepageUrl + &quot;search?q=tips&quot;'>Naming Tips</a></li>
+            <li><a expr:href='data:blog.homepageUrl + &quot;search?q=generator&quot;'>Generators</a></li>
+          </ul>
+        </nav>
+        
+        <div class='action-grid'>
+          <button aria-label='Open Search' class='icon-btn' id='trigger-search-modal'>🔍</button>
+          <button aria-label='Toggle Dark Mode' class='icon-btn' id='trigger-dark-mode'>🌓</button>
+          <button aria-label='Open Menu' class='icon-btn hamburger' id='mobile-menu-trigger'>☰</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <b:if cond='data:view.isHomepage'>
+    <section class='hero-wrapper' role='banner'>
+      <div class='container hero-content'>
+        <h1>Find the Perfect Name for Your 2026 Baby</h1>
+        <p>Discover deep meanings, cultural origins, and beautiful modern trends across 20,000+ curated selections.</p>
+        
+        <form class='search-engine-box' expr:action='data:blog.homepageUrl + &quot;search&quot;' method='get'>
+          <input aria-label='Search baby names' name='q' placeholder='e.g., Liam, Olivia, Caleb, Celestial, Irish...' required='required' type='text'/>
+          <button type='submit'>Search</button>
+        </form>
+        
+        <div class='search-tags-box'>
+          <span>Popular Searches:</span>
+          <a expr:href='data:blog.homepageUrl + &quot;search?q=royal&quot;'>👑 Royal</a>
+          <a expr:href='data:blog.homepageUrl + &quot;search?q=nature&quot;'>🌿 Nature</a>
+          <a expr:href='data:blog.homepageUrl + &quot;search?q=vintage&quot;'>📜 Vintage</a>
+          <a expr:href='data:blog.homepageUrl + &quot;search?q=twin&quot;'>♊ Twins</a>
+        </div>
+      </div>
+    </section>
+  </b:if>
+
+  <div class='container'>
+    <div class='ads-wrapper' id='ads-below-hero'></div>
+  </div>
+
+  <main class='container'>
+    <div class='dual-layout-grid clearfix'>
+      
+      <div class='premium-stream-area'>
+        
+        <b:if cond='data:view.isHomepage'>
+          
+          <section aria-label='Name Categories'>
+            <div class='section-header'>
+              <h2>Explore Baby Names By Category</h2>
+              <p>Tailored thematic collections curated specifically for 2026 parents.</p>
+            </div>
+            
+            <div class='category-grid-matrix'>
+              <div class='category-premium-card'>
+                <div class='cat-card-meta'>
+                  <span class='icon-box'>👦</span>
+                  <h3>Boy Names</h3>
+                  <p>Strong, noble, and timeless naming inspirations for your little prince.</p>
+                </div>
+                <a class='cat-explore-btn' expr:href='data:blog.homepageUrl + &quot;search?q=boy&quot;'>Explore Category →</a>
+              </div>
+              <div class='category-premium-card'>
+                <div class='cat-card-meta'>
+                  <span class='icon-box'>👧</span>
+                  <h3>Girl Names</h3>
+                  <p>Graceful, elegant, and modern selections designed for baby girls.</p>
+                </div>
+                <a class='cat-explore-btn' expr:href='data:blog.homepageUrl + &quot;search?q=girl&quot;'>Explore Category →</a>
+              </div>
+              <div class='category-premium-card'>
+                <div class='cat-card-meta'>
+                  <span class='icon-box'>🌿</span>
+                  <h3>Nature Names</h3>
+                  <p>Organic, structural, earthy titles pulled straight from elements of our earth.</p>
+                </div>
+                <a class='cat-explore-btn' expr:href='data:blog.homepageUrl + &quot;search?q=nature&quot;'>Explore Category →</a>
+              </div>
+              <div class='category-premium-card'>
+                <div class='cat-card-meta'>
+                  <span class='icon-box'>📜</span>
+                  <h3>Biblical Names</h3>
+                  <p>Sacred historical titles carrying intense scriptural weight and traditional heritage.</p>
+                </div>
+                <a class='cat-explore-btn' expr:href='data:blog.homepageUrl + &quot;search?q=biblical&quot;'>Explore Category →</a>
+              </div>
+              <div class='category-premium-card'>
+                <div class='cat-card-meta'>
+                  <span class='icon-box'>🍀</span>
+                  <h3>Irish Names</h3>
+                  <p>Celtic lyrical melodies rooted deeply in traditional Gaelic historical identity.</p>
+                </div>
+                <a class='cat-explore-btn' expr:href='data:blog.homepageUrl + &quot;search?q=irish&quot;'>Explore Category →</a>
+              </div>
+              <div class='category-premium-card'>
+                <div class='cat-card-meta'>
+                  <span class='icon-box'>🌸</span>
+                  <h3>Japanese Names</h3>
+                  <p>Poetic structural naming systems deeply intertwined with nature and honor.</p>
+                </div>
+                <a class='cat-explore-btn' expr:href='data:blog.homepageUrl + &quot;search?q=japanese&quot;'>Explore Category →</a>
+              </div>
+              <div class='category-premium-card'>
+                <div class='cat-card-meta'>
+                  <span class='icon-box'>⏳</span>
+                  <h3>Vintage Names</h3>
+                  <p>Charming old-fashioned historical titles staging massive contemporary style comebacks.</p>
+                </div>
+                <a class='cat-explore-btn' expr:href='data:blog.homepageUrl + &quot;search?q=vintage&quot;'>Explore Category →</a>
+              </div>
+              <div class='category-premium-card'>
+                <div class='cat-card-meta'>
+                  <span class='icon-box'>💎</span>
+                  <h3>Unique Names</h3>
+                  <p>Rare, modern variations for parents looking to break free from traditional charts.</p>
+                </div>
+                <a class='cat-explore-btn' expr:href='data:blog.homepageUrl + &quot;search?q=unique&quot;'>Explore Category →</a>
+              </div>
+              <div class='category-premium-card'>
+                <div class='cat-card-meta'>
+                  <span class='icon-box'>✨</span>
+                  <h3>Modern Names</h3>
+                  <p>Sleek, futuristic, non-traditional trends gaining heavy speed globally.</p>
+                </div>
+                <a class='cat-explore-btn' expr:href='data:blog.homepageUrl + &quot;search?q=modern&quot;'>Explore Category →</a>
+              </div>
+              <div class='category-premium-card'>
+                <div class='cat-card-meta'>
+                  <span class='icon-box'>👑</span>
+                  <h3>Royal Names</h3>
+                  <p>Majestic aristocratic titles borne by historical rulers and dynastic monarchs.</p>
+                </div>
+                <a class='cat-explore-btn' expr:href='data:blog.homepageUrl + &quot;search?q=royal&quot;'>Explore Category →</a>
+              </div>
+              <div class='category-premium-card'>
+                <div class='cat-card-meta'>
+                  <span class='icon-box'>🎭</span>
+                  <h3>Celebrity Names</h3>
+                  <p>High-profile cultural choices popularized by modern pop-culture figures.</p>
+                </div>
+                <a class='cat-explore-btn' expr:href='data:blog.homepageUrl + &quot;search?q=celebrity&quot;'>Explore Category →</a>
+              </div>
+              <div class='category-premium-card'>
+                <div class='cat-card-meta'>
+                  <span class='icon-box'>👫</span>
+                  <h3>Sibling Names</h3>
+                  <p>Perfect coordinate pairings tailored to match your existing children smoothly.</p>
+                </div>
+                <a class='cat-explore-btn' expr:href='data:blog.homepageUrl + &quot;search?q=sibling&quot;'>Explore Category →</a>
+              </div>
+              <div class='category-premium-card'>
+                <div class='cat-card-meta'>
+                  <span class='icon-box'>♊</span>
+                  <h3>Twin Names</h3>
+                  <p>Harmonious matching configurations custom-built for twin arrivals.</p>
+                </div>
+                <a class='cat-explore-btn' expr:href='data:blog.homepageUrl + &quot;search?q=twin&quot;'>Explore Category →</a>
+              </div>
+            </div>
+          </section>
+
+          <section class='trending-showcase-box' id='trending-anchor-node'>
+            <div class='section-header'>
+              <h2>Trending Baby Names This Week</h2>
+              <p>Real-time statistical metric velocity tracking current index shifts.</p>
+            </div>
+            <div class='trending-table-wrapper'>
+              <table class='trending-data-table'>
+                <thead>
+                  <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Velocity Score</th>
+                    <th>Primary Origin</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class='rank-indicator'>1</span></td>
+                    <td><a class='name-badge-node' expr:href='data:blog.homepageUrl + &quot;search?q=Liam&quot;'>Liam</a></td>
+                    <td><span class='gender-pill boy-tag'>Boy</span></td>
+                    <td><div class='score-indicator-bar'><div class='score-fill' style='width: 98%'></div></div><span class='score-val'>9.8</span></td>
+                    <td>Irish Celtic</td>
+                  </tr>
+                  <tr>
+                    <td><span class='rank-indicator'>2</span></td>
+                    <td><a class='name-badge-node' expr:href='data:blog.homepageUrl + &quot;search?q=Olivia&quot;'>Olivia</a></td>
+                    <td><span class='gender-pill girl-tag'>Girl</span></td>
+                    <td><div class='score-indicator-bar'><div class='score-fill' style='width: 95%'></div></div><span class='score-val'>9.5</span></td>
+                    <td>Latin Roman</td>
+                  </tr>
+                  <tr>
+                    <td><span class='rank-indicator'>3</span></td>
+                    <td><a class='name-badge-node' expr:href='data:blog.homepageUrl + &quot;search?q=Charlie&quot;'>Charlie</a></td>
+                    <td><span class='gender-pill unisex-tag'>Unisex</span></td>
+                    <td><div class='score-indicator-bar'><div class='score-fill' style='width: 91%'></div></div><span class='score-val'>9.1</span></td>
+                    <td>Old German</td>
+                  </tr>
+                  <tr>
+                    <td><span class='rank-indicator'>4</span></td>
+                    <td><a class='name-badge-node' expr:href='data:blog.homepageUrl + &quot;search?q=Ethan&quot;'>Ethan</a></td>
+                    <td><span class='gender-pill boy-tag'>Boy</span></td>
+                    <td><div class='score-indicator-bar'><div class='score-fill' style='width: 88%'></div></div><span class='score-val'>8.8</span></td>
+                    <td>Hebrew Biblical</td>
+                  </tr>
+                  <tr>
+                    <td><span class='rank-indicator'>5</span></td>
+                    <td><a class='name-badge-node' expr:href='data:blog.homepageUrl + &quot;search?q=Mia&quot;'>Mia</a></td>
+                    <td><span class='gender-pill girl-tag'>Girl</span></td>
+                    <td><div class='score-indicator-bar'><div class='score-fill' style='width: 86%'></div></div><span class='score-val'>8.6</span></td>
+                    <td>Scandinavian</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class='editors-choice-box'>
+            <div class='section-header'>
+              <h2>Editor&#39;s Featured Selection</h2>
+              <p>Deep-dive research breakdowns providing premium strategic naming clarity.</p>
+            </div>
+            
+            <article class='featured-magazine-card'>
+              <div class='feat-card-img-wrapper'>
+                <img alt='Featured Article Premium Background' src='https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&amp;fit=crop&amp;w=600&amp;q=80'/>
+              </div>
+              <div class='feat-card-content-wrapper'>
+                <span class='node-category-tag'>Naming Strategy</span>
+                <h3>2026 Naming Blueprints: Balancing Tradition and Modern Innovation</h3>
+                <p>An exhaustive guide detailing linguistic harmony metrics, cross-cultural phonetic alignment, and systemic pitfalls to avoid when selecting a permanent identity flag for your child.</p>
+                <div class='meta-metrics-row' style='margin-bottom: 20px;'>
+                  <span>⏱️ 8 Min Read</span>
+                  <span>📅 Updated: June 2026</span>
+                </div>
+                <a class='read-more-premium-btn' expr:href='data:blog.homepageUrl + &quot;search?q=tips&quot;'>Read Blueprint</a>
+              </div>
+            </article>
+          </section>
+        </b:if>
+
+        <section aria-label='Articles Feed'>
+          <div class='section-header'>
+            <h2><b:if cond='data:view.isHomepage'>Latest Insights &amp; Collections<b:else/>Database Search Results</b:if></h2>
+            <p>Comprehensive analytical breakdowns cataloged within our primary registry.</p>
+          </div>
+
+          <b:section id='main-blog-section' showaddelement='no'>
+            <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
+              <b:includable id='main' var='top'>
+                
+                <b:if cond='data:view.isMultipleItems'>
+                  <div class='magazine-posts-stream-grid'>
+                    <b:loop values='data:posts' var='post'>
+                      <article class='magazine-standard-card'>
+                        <div class='std-card-img-wrapper'>
+                          <b:if cond='data:post.firstImageUrl'>
+                            <img expr:alt='data:post.title' expr:src='data:post.firstImageUrl' loading='lazy'/>
+                          <b:else/>
+                            <img expr:alt='data:post.title' expr:src='&quot;https://loremflickr.com/600/380/baby,infant?random=&quot; + data:post.id' loading='lazy'/>
+                          </b:if>
+                        </div>
+                        <div class='std-card-content-wrapper'>
+                          <div>
+                            <span class='node-category-tag'>
+                              <b:if cond='data:post.labels'><b:loop values='data:post.labels' var='label'><data:label.name/> </b:loop><b:else/>Uncategorized</b:if>
+                            </span>
+                            <h3><a expr:href='data:post.url'><data:post.title/></a></h3>
+                            <p><data:post.snippet/></p>
+                          </div>
+                          <div class='meta-metrics-row' style='margin-top: 16px;'>
+                            <span>👤 Expert Staff</span>
+                            <span>⏱️ 5 Min</span>
+                          </div>
+                        </div>
+                      </article>
+                    </b:loop>
+                  </div>
+
+                <b:else/>
+                  <b:loop values='data:posts' var='post'>
+                    <article class='article-magazine-frame' role='main'>
+                      
+                      <nav aria-label='Breadcrumb' class='breadcrumb-row-nav'>
+                        <a expr:href='data:blog.homepageUrl'>Home</a> 
+                        <span>/</span> 
+                        <a expr:href='data:blog.homepageUrl + &quot;search&quot;'>Registry</a>
+                        <span>/</span>
+                        <span class='current-node'><data:post.title/></span>
+                      </nav>
+
+                      <h1 class='entry-headline-title'><data:post.title/></h1>
+                      
+                      <div class='meta-metrics-row' style='margin-bottom: 32px;'>
+                        <span>👤 Medical/Editorial Staff Reviewed</span>
+                        <span>📅 Verified Update: 2026</span>
+                        <span>⏱️ Comprehensive Document</span>
+                      </div>
+
+                      <div class='article-hero-media-wrapper'>
+                        <b:if cond='data:post.firstImageUrl'>
+                          <img expr:alt='data:post.title' expr:src='data:post.firstImageUrl'/>
+                        <b:else/>
+                          <img expr:alt='data:post.title' expr:src='&quot;https://loremflickr.com/1200/500/baby,infant?random=&quot; + data:post.id'/>
+                        </b:if>
+                      </div>
+
+                      <div class='ads-wrapper' id='ads-mid-content-alpha'></div>
+
+                      <div class='toc-anchor-box-container' id='automated-toc-box'>
+                        <h3>📋 Document Outline Framework</h3>
+                        <ol class='toc-ordered-list-links' id='toc-links-target-node'></ol>
+                      </div>
+
+                      <div class='item-post-body' id='primary-article-content-body'>
+                        <data:post.body/>
+                      </div>
+
+                      <div class='premium-callout-box-container'>
+                        <b>Editorial Quality Statement:</b> All name collections listed within our database platform are subjected to absolute morphological cross-examination to guarantee zero localized semantic collision risks.
+                      </div>
+                      
+                      <div class='ads-wrapper' id='ads-post-bottom'></div>
+
+                      <div class='sources-reference-wrapper-box'>
+                        <h4>Verified Document Citations &amp; Foundations:</h4>
+                        <ol>
+                          <li>Social Security Administration Naming Database Registry Index (Verified 2026).</li>
+                          <li>Oxford Dictionary of English Christian Names - Etymological System Index.</li>
+                        </ol>
+                      </div>
+
+                      <div class='social-share-strip'>
+                        <span>Share Registry Data:</span>
+                        <a class='share-node-link' expr:href='&quot;https://www.facebook.com/sharer/sharer.php?u=&quot; + data:post.url' style='background: #3b5998' target='_blank'>FB</a>
+                        <a class='share-node-link' expr:href='&quot;https://twitter.com/intent/tweet?url=&quot; + data:post.url' style='background: #1da1f2' target='_blank'>X</a>
+                        <a class='share-node-link' expr:href='&quot;https://pinterest.com/pin/create/button/?url=&quot; + data:post.url' style='background: #bd081c' target='_blank'>PIN</a>
+                      </div>
+
+                      <div class='split-navigation-link-grid'>
+                        <div class='split-nav-card prev-link-card'>
+                          <span>Previous Entry</span>
+                          <a expr:href='data:blog.homepageUrl + &quot;search&quot;'><strong>Database Archives</strong></a>
+                        </div>
+                        <div class='split-nav-card next-link-card'>
+                          <span>Next Entry</span>
+                          <a expr:href='data:blog.homepageUrl + &quot;search?q=trends&quot;'><strong>2026 General Trends</strong></a>
+                        </div>
+                      </div>
+
+                      <div class='author-biography-identity-box'>
+                        <div class='author-avatar-container'>
+                          <img alt='Editorial Expert Avatar' src='https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&amp;fit=crop&amp;w=150&amp;q=80'/>
+                        </div>
+                        <div class='author-metadata-details'>
+                          <h4>Dr. Evelyn Vance (Chief Onomastics Editor)</h4>
+                          <p>Evelyn Vance holds an expert doctoral specialization in historical linguistics. She commands the core data compilation matrices across our global naming registry grids.</p>
+                        </div>
+                      </div>
+
+                    </article>
+                  </b:loop>
+                </b:if>
+
+                <div class='blog-pager'>
+                  <b:if cond='data:newerPageUrl'>
+                    <a expr:href='data:newerPageUrl'>Newer Collections</a>
+                  </b:if>
+                  <b:if cond='data:olderPageUrl'>
+                    <a expr:href='data:olderPageUrl'>Older Collections</a>
+                  </b:if>
+                </div>
+
+              </b:includable>
+            </b:widget>
+          </b:section>
+        </section>
+
+      </div>
+
+      <aside class='premium-sidebar-area' role='complementary'>
+        
+        <div class='ads-wrapper' id='ads-sidebar-top'></div>
+
+        <div class='sidebar-widget-card generator-action-widget-ui'>
+          <h3 class='sidebar-widget-title'>Instant Core Generators</h3>
+          <p>Deploy localized parameters across specific matrix categories immediately.</p>
+          <a class='gen-trigger-btn' expr:href='data:blog.homepageUrl + &quot;search?q=generator+boy&quot;'>Middle Name Generator</a>
+          <a class='gen-trigger-btn' expr:href='data:blog.homepageUrl + &quot;search?q=generator+twin&quot;'>Sibling Name Matcher</a>
+          <a class='gen-trigger-btn' expr:href='data:blog.homepageUrl + &quot;search?q=generator+unique&quot;'>Rare Theme Generator</a>
+        </div>
+
+        <div class='sidebar-widget-card'>
+          <h3 class='sidebar-widget-title'>Popular Categories</h3>
+          <ul class='sidebar-links-menu'>
+            <li><a expr:href='data:blog.homepageUrl + &quot;search?q=japanese&quot;'>Japanese Traditions <span class='counter-badge'>Core</span></a></li>
+            <li><a expr:href='data:blog.homepageUrl + &quot;search?q=irish&quot;'>Gaelic &amp; Irish Anthems <span class='counter-badge'>Hot</span></a></li>
+            <li><a expr:href='data:blog.homepageUrl + &quot;search?q=biblical&quot;'>Scriptural Foundations <span class='counter-badge'>Vast</span></a></li>
+            <li><a expr:href='data:blog.homepageUrl + &quot;search?q=nature&quot;'>Botanical &amp; Nature Elements <span class='counter-badge'>Eco</span></a></li>
+          </ul>
+        </div>
+
+        <div class='sidebar-widget-card'>
+          <h3 class='sidebar-widget-title'>Trending Insights</h3>
+          <div class='compact-post-row-node'>
+            <div class='compact-node-thumb'>
+              <img alt='Article Mini Thumbnail Graphic' src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&amp;fit=crop&amp;w=100&amp;q=80'/>
+            </div>
+            <div class='compact-node-details'>
+              <h4><a expr:href='data:blog.homepageUrl + &quot;search?q=tips&quot;'>10 Phonetic Rules Every Modern Parent Must Follow</a></h4>
+              <span>⏱️ 4 Min Read</span>
+            </div>
+          </div>
+          <div class='compact-post-row-node'>
+            <div class='compact-node-thumb'>
+              <img alt='Article Mini Thumbnail Graphic' src='https://images.unsplash.com/photo-1596815064285-45ed8a9c0463?auto=format&amp;fit=crop&amp;w=100&amp;q=80'/>
+            </div>
+            <div class='compact-node-details'>
+              <h4><a expr:href='data:blog.homepageUrl + &quot;search?q=unique&quot;'>Linguistic Slavonic Masterpieces Ripe for Contemporary Shifts</a></h4>
+              <span>⏱️ 6 Min Read</span>
+            </div>
+          </div>
+        </div>
+
+        <div class='sidebar-widget-card'>
+          <h3 class='sidebar-widget-title'>Newsletter Feed</h3>
+          <div class='newsletter-form-box'>
+            <input aria-label='Email Address' placeholder='Enter corporate email...' type='email'/>
+            <button type='button'>Lock Subscription</button>
+          </div>
+        </div>
+
+        <b:section id='sidebar-native-widgets-zone' showaddelement='yes'/>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class='premium-footer-root'>
+    <div class='container footer-inner-grid'>
+      <div class='footer-grid-columns-matrix'>
+        
+        <div class='footer-column-widget'>
+          <h3>Registry Platform</h3>
+          <p style='margin-top: 16px;'>BabyName2026 operates as an independent global authority data engine tracking morphological updates within the field of professional anthroponymy.</p>
+        </div>
+        
+        <div class='footer-column-widget'>
+          <h3>Core Channels</h3>
+          <ul class='footer-menu-links' style='margin-top: 16px;'>
+            <li><a expr:href='data:blog.homepageUrl + &quot;search?q=boy&quot;'>Boy Name Registers</a></li>
+            <li><a expr:href='data:blog.homepageUrl + &quot;search?q=girl&quot;'>Girl Name Registers</a></li>
+            <li><a expr:href='data:blog.homepageUrl + &quot;search?q=unique&quot;'>Rare Custom Configurations</a></li>
+          </ul>
+        </div>
+        
+        <div class='footer-column-widget'>
+          <h3>Compliance Profiles</h3>
+          <ul class='footer-menu-links' style='margin-top: 16px;'>
+            <li><a expr:href='data:blog.homepageUrl + &quot;p/privacy-policy.html&quot;'>Privacy Statement Protocol</a></li>
+            <li><a expr:href='data:blog.homepageUrl + &quot;p/disclaimer.html&quot;'>Platform Terms &amp; Disclaimers</a></li>
+            <li><a expr:href='data:blog.homepageUrl + &quot;p/about-us.html&quot;'>Editorial Authority Profiles</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class='footer-copyright-row-bar'>
+        <p>© 2026 BabyName2026 Platform Network Engine. Fully Engineered for Google Core Web Vitals &amp; GEO AI Standards.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class='search-modal-overlay' id='global-search-modal-box'>
+    <div class='search-modal-container'>
+      <span class='search-modal-close-trigger' id='kill-search-modal'>✕</span>
+      <form expr:action='data:blog.homepageUrl + &quot;search&quot;' method='get'>
+        <input autocomplete='off' name='q' placeholder='Type target parameter string...' required='required' type='text'/>
+      </form>
+    </div>
+  </div>
+
+  <script type='text/javascript'>
+    //<![CDATA[
+    (function() {
+      var smModal = document.getElementById('global-search-modal-box');
+      var smTrigger = document.getElementById('trigger-search-modal');
+      var smKill = document.getElementById('kill-search-modal');
+      var dmTrigger = document.getElementById('trigger-dark-mode');
+
+      if (smTrigger && smModal && smKill) {
+        smTrigger.addEventListener('click', function() { smModal.style.display = 'flex'; });
+        smKill.addEventListener('click', function() { smModal.style.display = 'none'; });
+      }
+
+      if (dmTrigger) {
+        dmTrigger.addEventListener('click', function() {
+          document.body.classList.toggle('dark-mode');
+        });
+      }
+
+      var articleBody = document.getElementById('primary-article-content-body');
+      var tocLinksContainer = document.getElementById('toc-links-target-node');
+      var tocBox = document.getElementById('automated-toc-box');
+
+      if (articleBody && tocLinksContainer && tocBox) {
+        var headers = articleBody.querySelectorAll('h2, h3');
+        if (headers.length > 0) {
+          headers.forEach(function(headerNode, indexKey) {
+            var proxyId = 'anchor_node_index_' + indexKey;
+            headerNode.setAttribute('id', proxyId);
+
+            var listItem = document.createElement('li');
+            if (headerNode.tagName.toLowerCase() === 'h3') {
+              listItem.className = 'toc-sub-heading';
+            }
+            
+            var anchorLink = document.createElement('a');
+            anchorLink.setAttribute('href', '#' + proxyId);
+            anchorLink.textContent = headerNode.textContent;
+            
+            listItem.appendChild(anchorLink);
+            tocLinksContainer.appendChild(listItem);
+          });
+        } else {
+          tocBox.style.display = 'none';
+        }
+      }
+    })();
+    //]]>
+  </script>
+
+</body>
+</html>

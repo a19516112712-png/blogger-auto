@@ -97,99 +97,105 @@ class ImageManager:
             title=title, slug=slug, prompt_text=prompt
         )
 
-        # Try providers in order with retries
-        for attempt in range(1, self.max_retries + 1):
-            provider_name = self._pick_provider(attempt)
-            if provider_name is None:
-                break
+        # Try each provider in order, up to per-provider retries
+        provider_retries = 3
+        providers = self._get_provider_list()
 
-            seed = random.randint(0, 2**32 - 1)
+        for provider_name in providers:
+            for attempt in range(1, provider_retries + 1):
+                seed = random.randint(0, 2**32 - 1)
 
-            try:
-                raw: GeneratedImage = self._run_provider(
-                    provider_name, prompt, seed
-                )
-
-                # Validate
-                self.validator.validate(raw.image_path)
-
-                # Optimize to final path
-                final_path = IMAGES_DIR / meta.filename
-                self.optimizer.optimize(raw.image_path, output_path=final_path)
-
-                # Deduplication check
-                phash = self.deduplicator.compute_phash(final_path)
-                existing = self.deduplicator.load_existing_hashes()
-                if self.deduplicator.is_duplicate(phash, existing):
-                    log.warning(
-                        "Duplicate image detected (phash=%s, attempt=%d/%d) — "
-                        "regenerating...",
-                        phash,
-                        attempt,
-                        self.max_retries,
+                try:
+                    raw: GeneratedImage = self._run_provider(
+                        provider_name, prompt, seed
                     )
-                    final_path.unlink(missing_ok=True)
+
+                    # Validate
+                    self.validator.validate(raw.image_path)
+
+                    # Optimize to final path
+                    final_path = IMAGES_DIR / meta.filename
+                    self.optimizer.optimize(raw.image_path, output_path=final_path)
+
+                    # Deduplication check
+                    phash = self.deduplicator.compute_phash(final_path)
+                    existing = self.deduplicator.load_existing_hashes()
+                    if self.deduplicator.is_duplicate(phash, existing):
+                        log.warning(
+                            "Duplicate image detected (phash=%s, provider=%s, "
+                            "seed=%d, attempt=%d/%d) — regenerating...",
+                            phash,
+                            provider_name,
+                            seed,
+                            attempt,
+                            provider_retries,
+                        )
+                        final_path.unlink(missing_ok=True)
+                        continue
+
+                    # Persist to database
+                    self._store_image_record(
+                        article_id=article_id,
+                        prompt_text=prompt,
+                        image_path=str(final_path),
+                        alt_text=meta.alt_text,
+                        width=IMAGE_OUTPUT_WIDTH,
+                        height=IMAGE_OUTPUT_HEIGHT,
+                        file_size_bytes=final_path.stat().st_size,
+                        phash=phash,
+                        provider=raw.provider,
+                        generation_seed=raw.generation_seed,
+                        generation_time_ms=raw.generation_time_ms,
+                        quality=IMAGE_OUTPUT_QUALITY,
+                    )
+
+                    log.info(
+                        "Image generated successfully: provider=%s seed=%d "
+                        "phash=%s size=%dKB path=%s elapsed=%dms",
+                        raw.provider,
+                        raw.generation_seed,
+                        phash,
+                        final_path.stat().st_size / 1024,
+                        final_path.name,
+                        raw.generation_time_ms,
+                    )
+
+                    return {
+                        "success": True,
+                        "image_path": str(final_path),
+                        "alt_text": meta.alt_text,
+                        "caption": meta.caption,
+                        "title": meta.title,
+                        "description": meta.description,
+                        "width": IMAGE_OUTPUT_WIDTH,
+                        "height": IMAGE_OUTPUT_HEIGHT,
+                        "file_size_bytes": final_path.stat().st_size,
+                        "phash": phash,
+                        "provider": raw.provider,
+                        "generation_seed": raw.generation_seed,
+                        "generation_time_ms": raw.generation_time_ms,
+                        "optimized": True,
+                        "quality": IMAGE_OUTPUT_QUALITY,
+                        "seo_keywords": meta.seo_keywords,
+                        "error_message": "",
+                    }
+
+                except (ValidationError, OptimizationError, GenerationError, ConfigurationError) as exc:
+                    log.warning(
+                        "Provider %s failed (provider_attempt=%d/%d, "
+                        "seed=%d): %s",
+                        provider_name,
+                        attempt,
+                        provider_retries,
+                        seed,
+                        exc,
+                    )
                     continue
 
-                # Persist to database
-                self._store_image_record(
-                    article_id=article_id,
-                    prompt_text=prompt,
-                    image_path=str(final_path),
-                    alt_text=meta.alt_text,
-                    width=IMAGE_OUTPUT_WIDTH,
-                    height=IMAGE_OUTPUT_HEIGHT,
-                    file_size_bytes=final_path.stat().st_size,
-                    phash=phash,
-                    provider=raw.provider,
-                    generation_seed=raw.generation_seed,
-                    generation_time_ms=raw.generation_time_ms,
-                    quality=IMAGE_OUTPUT_QUALITY,
-                )
-
-                log.info(
-                    "Image generated successfully: %s "
-                    "(provider=%s, seed=%d, phash=%s, size=%d bytes)",
-                    final_path.name,
-                    raw.provider,
-                    raw.generation_seed,
-                    phash,
-                    final_path.stat().st_size,
-                )
-
-                return {
-                    "success": True,
-                    "image_path": str(final_path),
-                    "alt_text": meta.alt_text,
-                    "caption": meta.caption,
-                    "title": meta.title,
-                    "description": meta.description,
-                    "width": IMAGE_OUTPUT_WIDTH,
-                    "height": IMAGE_OUTPUT_HEIGHT,
-                    "file_size_bytes": final_path.stat().st_size,
-                    "phash": phash,
-                    "provider": raw.provider,
-                    "generation_seed": raw.generation_seed,
-                    "generation_time_ms": raw.generation_time_ms,
-                    "optimized": True,
-                    "quality": IMAGE_OUTPUT_QUALITY,
-                    "seo_keywords": meta.seo_keywords,
-                    "error_message": "",
-                }
-
-            except (ValidationError, OptimizationError, GenerationError, ConfigurationError) as exc:
-                log.warning(
-                    "Provider %s failed (attempt %d/%d): %s",
-                    provider_name,
-                    attempt,
-                    self.max_retries,
-                    exc,
-                )
-                continue
-
-        # All retries exhausted
+        # All providers exhausted
         error_msg = (
-            f"All providers exhausted after {self.max_retries} attempts"
+            f"All providers exhausted "
+            f"(providers={providers}, retries={provider_retries} each)"
         )
         log.error(error_msg)
         return {
@@ -217,23 +223,17 @@ class ImageManager:
     # ------------------------------------------------------------------
 
     @staticmethod
-    def _pick_provider(attempt: int) -> str | None:
-        """Return the provider name to use for this attempt.
+    def _get_provider_list() -> list[str]:
+        """Return the ordered list of image providers.
 
         Reads from ``config.settings`` at call time so that tests
         can override ``IMAGE_PROVIDERS`` dynamically.
 
-        Args:
-            attempt: 1-based attempt number.
-
         Returns:
-            Provider name string, or ``None`` if all exhausted.
+            List of provider name strings.  Empty if none configured.
         """
         from config.settings import IMAGE_PROVIDERS as _providers
-        if not _providers:
-            return None
-        idx = (attempt - 1) % len(_providers)
-        return _providers[idx].strip()
+        return [p.strip() for p in _providers if p.strip()]
 
     @staticmethod
     def _resolve_provider(name: str) -> Any:

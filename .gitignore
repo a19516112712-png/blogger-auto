@@ -5,3 +5,8 @@ __pycache__/
 *.pyc
 node_modules/
 .env
+*.py[cod]
+.pytest_cache/
+.coverage
+logs/
+*.db
