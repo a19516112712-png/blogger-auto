@@ -361,20 +361,24 @@ class TopicQueue:
     def bulk_insert_keywords(self, keywords: list[tuple]) -> int:
         """Insert multiple keywords at once.
 
-        Each tuple: (keyword, intent, cluster, priority, difficulty,
-                     search_volume, cpc)
+        Accepts both 7-tuple format (keyword, intent, cluster, priority,
+        difficulty, search_volume, cpc) and 9-tuple format (adds
+        top_level_cluster, leaf_cluster at positions 8-9).
+
         Returns count of newly inserted rows.
         """
         now = datetime.now().isoformat()
         inserted = 0
         for kw_tuple in keywords:
             try:
+                # Always use first 7 fields for the INSERT (keyword through cpc)
                 self.conn.execute(
                     """INSERT INTO keywords
                        (keyword, intent, cluster, priority, difficulty,
                         search_volume, cpc, status, created_at, last_updated)
                        VALUES (?, ?, ?, ?, ?, ?, ?, 'pending', ?, ?)""",
-                    (*kw_tuple, now, now),
+                    (kw_tuple[0], kw_tuple[1], kw_tuple[2], kw_tuple[3],
+                     kw_tuple[4], kw_tuple[5], kw_tuple[6], now, now),
                 )
                 inserted += 1
             except sqlite3.IntegrityError:
@@ -382,6 +386,175 @@ class TopicQueue:
         self.conn.commit()
         log.info("bulk_insert_keywords: %d new topics inserted", inserted)
         return inserted
+
+    # ------------------------------------------------------------------
+    # Diversity Scoring (Rule 8)
+    # ------------------------------------------------------------------
+
+    def calculate_diversity_score(self, topics: list[dict]) -> float:
+        """Calculate topic diversity score for a batch of topics.
+        
+        Returns 0-100 based on how many unique top-level clusters are represented.
+        Score >95 required for publishing.
+        
+        Measures coverage of available top-level categories.
+        With 19 available categories, having 15+ = ~95%+ diversity.
+        """
+        if not topics:
+            return 0.0
+        
+        try:
+            from keyword_discovery import TOP_LEVEL_CLUSTERS, _extract_top_level_cluster_v2
+        except ImportError:
+            return 0.0
+        
+        top_clusters = set()
+        for topic in topics:
+            keyword = topic.get("keyword", "")
+            try:
+                top_cluster = _extract_top_level_cluster_v2(keyword)
+            except Exception:
+                top_cluster = topic.get("cluster", "uncategorized").split("_")[0]
+            top_clusters.add(top_cluster)
+        
+        num_unique = len(top_clusters)
+        total_available = len(TOP_LEVEL_CLUSTERS)  # e.g., 19
+        
+        if total_available == 0:
+            return 0.0
+        
+        # Score: percentage of available top-level categories covered
+        base_score = (num_unique / total_available) * 100
+        
+        # Bonus for having many unique clusters relative to batch size
+        # This rewards spreading topics across different clusters
+        batch_size = len(topics)
+        if batch_size > 0:
+            uniqueness_ratio = num_unique / batch_size
+            bonus = min(5.0, uniqueness_ratio * 10)
+        else:
+            bonus = 0.0
+        
+        return min(100.0, round(base_score + bonus, 1))
+
+    def get_top_level_cluster(self, keyword: str) -> str:
+        """Get the top-level cluster for a keyword.
+        
+        Uses the scoring system from keyword_discovery.
+        Falls back to first part of cluster name if import fails.
+        """
+        try:
+            from keyword_discovery import _extract_top_level_cluster
+            return _extract_top_level_cluster(keyword)
+        except ImportError:
+            return "uncategorized"
+
+    def get_daily_excluded_clusters(self, today_topics: list[dict]) -> set[str]:
+        """Get top-level clusters that should be excluded for today.
+        
+        If today includes Nature cluster, exclude all nature-related sub-clusters:
+        Nature, Plants, Flowers, Trees, Ocean, etc.
+        """
+        excluded = set()
+        for topic in today_topics:
+            keyword = topic.get("keyword", "")
+            top_cluster = self.get_top_level_cluster(keyword)
+            excluded.add(top_cluster)
+            
+            # Also exclude related sub-clusters
+            related = {
+                "nature": {"nature", "animals", "flowers"},
+                "animals": {"nature", "animals"},
+                "flowers": {"nature", "flowers"},
+                "origin": {"origin"},
+                "mythology": {"mythology"},
+                "style": {"style"},
+                "meaning": {"meaning"},
+                "religion": {"religion"},
+                "colors": {"colors"},
+                "seasons": {"seasons"},
+                "occupations": {"occupations"},
+                "celebrity_trends": {"celebrity_trends"},
+                "space_science": {"space_science"},
+                "literature_fantasy": {"literature_fantasy"},
+                "history_ancient": {"history_ancient"},
+                "countries_cities": {"countries_cities"},
+                "pronunciation_spelling": {"pronunciation_spelling"},
+                "family_relationships": {"family_relationships"},
+                "traits_qualities": {"traits_qualities"},
+            }
+            if top_cluster in related:
+                excluded |= related[top_cluster]
+        
+        return excluded
+
+    # ------------------------------------------------------------------
+    # Topic History (Rule 7: Store every generated topic forever)
+    # ------------------------------------------------------------------
+
+    def record_topic_history(self, keyword: str, top_level_cluster: str,
+                              leaf_cluster: str, source: str = "combinatorial") -> bool:
+        """Record a topic in the history table. Never regenerate it again."""
+        from keyword_discovery import _normalize, _keyword_hash
+        
+        normalized = _normalize(keyword)
+        fingerprint = _keyword_hash(keyword)
+        
+        try:
+            self.conn.execute(
+                """INSERT INTO topic_history 
+                   (topic, normalized_topic, top_level_cluster, leaf_cluster, 
+                    fingerprint, source, created_at)
+                   VALUES (?, ?, ?, ?, ?, ?, ?)""",
+                (keyword, normalized, top_level_cluster, leaf_cluster,
+                 fingerprint, source, datetime.now().isoformat()),
+            )
+            self.conn.commit()
+            return True
+        except sqlite3.IntegrityError:
+            return False  # Already recorded
+
+    def is_in_topic_history(self, keyword: str) -> bool:
+        """Check if a keyword has been generated before."""
+        from keyword_discovery import _normalize
+        
+        normalized = _normalize(keyword)
+        row = self.conn.execute(
+            "SELECT 1 FROM topic_history WHERE normalized_topic = ? LIMIT 1",
+            (normalized,),
+        ).fetchone()
+        return bool(row)
+
+    def get_all_published_keywords(self) -> set[str]:
+        """Get all keywords that have been published (from DB + topic_history)."""
+        keywords = set()
+        
+        # From published table
+        rows = self.conn.execute(
+            """SELECT p.title FROM published p 
+               UNION SELECT k.keyword FROM keywords k WHERE k.status = 'published'"""
+        ).fetchall()
+        for r in rows:
+            keywords.add(r[0].lower().strip())
+        
+        # From topic_history
+        rows = self.conn.execute(
+            "SELECT normalized_topic FROM topic_history"
+        ).fetchall()
+        for r in rows:
+            keywords.add(r[0])
+        
+        return keywords
+
+    def get_all_generated_keywords(self) -> set[str]:
+        """Get all keywords that have ever been generated (from topic_history)."""
+        keywords = set()
+        rows = self.conn.execute(
+            "SELECT normalized_topic FROM topic_history"
+        ).fetchall()
+        for r in rows:
+            keywords.add(r[0])
+        return keywords
 
     def close(self):
         """Close the database connection."""

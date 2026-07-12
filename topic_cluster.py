@@ -1,105 +1,76 @@
 #!/usr/bin/env python3
 """
-Topic Cluster Engine — Automated cluster builder and maintainer.
+Topic Cluster Engine — Hierarchical cluster builder for all 19 top-level clusters.
 
 Builds hierarchical topic clusters automatically:
-  Irish Baby Names (pillar)
-  ├─ Irish Boy Names
-  ├─ Irish Girl Names
-  ├─ Irish Middle Names
-  ├─ Irish Twin Names
-  ├─ Irish Names Starting With A
-  └─ Irish Names Ending With N
+  origin (top-level)
+  ├─ origin_irish (pillar)
+  │  ├─ origin_irish_boy_names
+  │  ├─ origin_irish_girl_names
+  │  └─ origin_irish_unisex_names
+  ├─ origin_japanese
+  └─ ...
 
 Each cluster auto-links to its siblings and parent.
+
+Covers all 19 top-level clusters:
+  origin, meaning, nature, animals, flowers, mythology, style, religion,
+  colors, seasons, occupations, celebrity_trends, space_science,
+  literature_fantasy, history_ancient, countries_cities,
+  pronunciation_spelling, family_relationships, traits_qualities
 """
 
 import logging
 from datetime import datetime
 
 from database.topic_queue import TopicQueue
+from keyword_discovery import TOP_LEVEL_CLUSTERS
 
 log = logging.getLogger(__name__)
 
-# Cluster definitions — pillar + sub-dimensions
-CLUSTER_DEFINITIONS = {
-    "origin": {
-        "pillars": [
-            "Irish", "Japanese", "Korean", "French", "Italian", "Spanish",
-            "German", "Arabic", "Greek", "Scandinavian", "Celtic", "Nordic",
-            "Russian", "Polish", "Dutch", "Hawaiian", "African", "Indian",
-            "Persian", "Chinese", "Hebrew", "Latin", "Slavic", "Portuguese",
-            "Turkish", "Egyptian", "Welsh", "Scottish", "English", "Finnish",
-        ],
-        "dimensions": [
-            "Boy", "Girl", "Unisex", "Middle Names", "Twin Names",
-            "Starting With", "Ending With", "Last Names", "Dog Names",
-            "Nicknames", "Baby Names",
-        ],
-    },
-    "meaning": {
-        "pillars": [
-            "Love", "Hope", "Light", "Peace", "Joy", "Strength", "Grace",
-            "Wisdom", "Miracle", "Blessing", "Dream", "Star", "Brave",
-            "Courage", "Faith", "Truth", "Honor", "Victory", "Freedom",
-            "Beauty", "Power", "Kindness", "Noble", "Pure", "Bright",
-        ],
-        "dimensions": [
-            "Boy", "Girl", "Unisex", "Baby Names", "Middle Names",
-        ],
-    },
-    "nature": {
-        "pillars": [
-            "Flower", "Tree", "Ocean", "Mountain", "River", "Lake",
-            "Forest", "Garden", "Meadow", "Beach", "Star", "Moon",
-            "Sun", "Sky", "Earth", "Fire", "Water", "Wind",
-            "Bird", "Animal", "Dragon", "Phoenix", "Diamond", "Pearl",
-        ],
-        "dimensions": [
-            "Boy", "Girl", "Baby Names", "Middle Names",
-        ],
-    },
-    "mythology": {
-        "pillars": [
-            "Greek", "Roman", "Norse", "Egyptian", "Celtic", "Hindu",
-            "Japanese", "Aztec", "Mayan", "Mesopotamian", "Persian",
-        ],
-        "dimensions": [
-            "Boy", "Girl", "God", "Goddess", "Warrior", "Baby Names",
-        ],
-    },
-    "style": {
-        "pillars": [
-            "Vintage", "Modern", "Unique", "Rare", "Classic", "Trending",
-            "Popular", "Contemporary", "Traditional", "Bohemian",
-        ],
-        "dimensions": [
-            "Boy", "Girl", "Baby Names", "Middle Names", "Twin Names",
-        ],
-    },
-}
+# Sub-dimensions applied to every pillar across all categories
+SUB_DIMENSIONS = [
+    "boy_names", "girl_names", "unisex_names",
+    "middle_names", "twin_names", "nickname_ideas",
+    "surname_ideas", "baby_names",
+]
 
 
 def build_clusters(queue: TopicQueue) -> dict:
-    """Build all cluster hierarchies from definitions.
+    """Build all cluster hierarchies from TOP_LEVEL_CLUSTERS definitions.
 
     Returns stats dict.
     """
     stats = {"clusters_created": 0, "keywords_added": 0}
 
-    for category, config in CLUSTER_DEFINITIONS.items():
-        for pillar in config["pillars"]:
-            pillar_name = f"{category}_{pillar.lower()}"
+    # Create top-level category roots
+    category_roots = {}
+    for cat_name in TOP_LEVEL_CLUSTERS:
+        root_id = queue.add_cluster(
+            name=f"cluster_{cat_name}",
+            parent=None,
+            pillar_keyword=f"{cat_name} baby names",
+            depth=0,
+        )
+        category_roots[cat_name] = root_id
+        stats["clusters_created"] += 1
+        log.info("Created top-level cluster: %s (id=%d)", cat_name, root_id)
+
+    # Create pillar nodes under each category
+    for cat_name, pillars in TOP_LEVEL_CLUSTERS.items():
+        for pillar in pillars:
+            pillar_name = f"{cat_name}_{pillar.lower()}"
             pillar_id = queue.add_cluster(
                 name=pillar_name,
-                parent=f"cluster_{category}",
+                parent=f"cluster_{cat_name}",
                 pillar_keyword=f"{pillar} baby names",
                 depth=1,
             )
             stats["clusters_created"] += 1
 
-            for dim in config["dimensions"]:
-                sub_name = f"{category}_{pillar.lower()}_{dim.lower()}"
+            # Create sub-clusters for each dimension
+            for dim in SUB_DIMENSIONS:
+                sub_name = f"{cat_name}_{pillar.lower()}_{dim}"
                 sub_id = queue.add_cluster(
                     name=sub_name,
                     parent=pillar_name,
@@ -108,10 +79,10 @@ def build_clusters(queue: TopicQueue) -> dict:
                 stats["clusters_created"] += 1
 
                 # Generate keywords for this sub-cluster
-                kws = _generate_cluster_keywords(pillar, dim, category)
+                kws = _generate_cluster_keywords(pillar, dim, cat_name)
                 stats["keywords_added"] += len(kws)
 
-    log.info("Cluster build complete: %d clusters, %d keywords",
+    log.info("Cluster build complete: %d clusters, ~%d keywords",
              stats["clusters_created"], stats["keywords_added"])
     return stats
 
@@ -121,20 +92,23 @@ def _generate_cluster_keywords(pillar: str, dimension: str,
     """Generate keywords for a specific cluster leaf."""
     keywords = []
     templates = [
-        f"{pillar} {dimension} baby names",
-        f"{dimension} {pillar} names",
-        f"unique {pillar} {dimension.lower()} names",
-        f"modern {pillar} {dimension.lower()} names",
+        f"{pillar} {dimension.replace('_', ' ')} baby names",
+        f"{dimension.replace('_', ' ')} {pillar} names",
+        f"unique {pillar} {dimension.replace('_', ' ')} names",
+        f"modern {pillar} {dimension.replace('_', ' ')} names",
     ]
-    if "starting" in dimension.lower():
+    keywords.extend(templates)
+
+    # Letter-specific templates
+    if "starting" in dimension or "letter" in dimension:
         for letter in "abcdefghij":
-            keywords.append(f"{pillar} {dimension.lower()} {letter}")
-    if "ending" in dimension.lower():
+            keywords.append(f"{pillar} {dimension.replace('_', ' ')} starting with {letter}")
+
+    # Ending-specific templates
+    if "ending" in dimension:
         endings = ["a", "ia", "ea", "o", "er", "ley", "ette"]
         for ending in endings:
             keywords.append(f"{pillar} names ending with {ending}")
-    else:
-        keywords.extend(templates)
 
     return keywords
 

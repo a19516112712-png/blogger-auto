@@ -3,13 +3,14 @@
 SQLite schema for the Blogger Auto SEO system.
 
 Tables:
-  keywords     — Master topic pool (unlimited combinatorial generation)
-  clusters     — Topic cluster definitions and hierarchy
-  generated    — Articles that have been generated (pending publish)
-  published    — Articles successfully published to Blogger
-  failed       — Articles that failed generation/publish
-  refresh_queue — Articles scheduled for content evolution
-  internal_links — Persisted internal link graph
+  keywords       — Master topic pool (unlimited combinatorial generation)
+  clusters       — Topic cluster definitions and hierarchy
+  generated      — Articles that have been generated (pending publish)
+  published      — Articles successfully published to Blogger
+  failed         — Articles that failed generation/publish
+  refresh_queue   — Articles scheduled for content evolution
+  internal_links  — Persisted internal link graph
+  topic_history   — Every generated topic stored forever (never regenerate)
 
 All topic state lives here. No more JSON files.
 """
@@ -165,6 +166,26 @@ CREATE TABLE IF NOT EXISTS quality_scores (
 
 CREATE INDEX IF NOT EXISTS idx_quality_overall ON quality_scores(overall);
 CREATE INDEX IF NOT EXISTS idx_quality_filename ON quality_scores(filename);
+
+-- Topic History: every generated topic stored forever.
+-- Never regenerated again. Enforces 100% uniqueness across all time.
+CREATE TABLE IF NOT EXISTS topic_history (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    topic           TEXT    NOT NULL,
+    normalized_topic TEXT   NOT NULL,
+    top_level_cluster TEXT NOT NULL,
+    leaf_cluster    TEXT    NOT NULL,
+    fingerprint     TEXT    NOT NULL,
+    source          TEXT    NOT NULL DEFAULT 'combinatorial',
+    created_at      TEXT    NOT NULL
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_topic_history_normalized
+    ON topic_history(normalized_topic);
+CREATE INDEX IF NOT EXISTS idx_topic_history_cluster
+    ON topic_history(top_level_cluster);
+CREATE INDEX IF NOT EXISTS idx_topic_history_fingerprint
+    ON topic_history(fingerprint);
 
 -- Indexes for performance at scale (100K+ topics)
 CREATE INDEX IF NOT EXISTS idx_keywords_status ON keywords(status);
