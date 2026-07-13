@@ -37,6 +37,7 @@ jobs:
 
       - name: Run Autonomous Content Engine
         env:
+          AGNES_API_KEY: ${{ secrets.AGNES_API_KEY }}
           ARTICLES_PER_RUN: ${{ github.event.inputs.articles_per_run || '3' }}
           BLOG_ID: ${{ secrets.BLOG_ID }}
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
@@ -46,6 +47,7 @@ jobs:
 
       - name: Publish to Blogger
         env:
+          AGNES_API_KEY: ${{ secrets.AGNES_API_KEY }}
           BLOG_ID: ${{ secrets.BLOG_ID }}
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
