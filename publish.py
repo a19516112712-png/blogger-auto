@@ -35,7 +35,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 # ── Shared helpers ──────────────────────────────────────────────────────
-from utils.helpers import slugify, sanitize_labels, sanitize_title, FORBIDDEN_LABELS
+from utils.helpers import slugify, sanitize_labels, sanitize_title, FORBIDDEN_LABELS, normalize_title_for_dedup
 from utils.yaml_parser import parse_frontmatter
 from database.topic_queue import TopicQueue
 
@@ -114,14 +114,14 @@ def md_to_html(md_text: str) -> str:
 # ---------------------------------------------------------------------------
 
 def get_existing_posts(service, blog_id: str) -> set:
-    """Fetch existing live post titles for dedup."""
+    """Fetch existing live post titles for dedup (normalized)."""
     existing = set()
     try:
         request = service.posts().list(blogId=blog_id, status="live", maxResults=500)
         while request is not None:
             response = request.execute()
             for post in response.get("items", []):
-                existing.add(post["title"].strip().lower())
+                existing.add(normalize_title_for_dedup(post["title"]))
             request = service.posts().list_next(request, response)
     except Exception as exc:
         log.warning("Could not fetch existing posts (proceeding anyway): %s", exc)
@@ -267,8 +267,11 @@ def main():
         log.info("Processing: %s", md_file.name)
         title = frontmatter["title"]
 
+        # Normalize title for dedup comparison (strips trailing numbers)
+        norm_title = normalize_title_for_dedup(title)
+        
         # Duplicate check (API + DB)
-        if title.strip().lower() in existing_titles:
+        if norm_title in existing_titles:
             log.info("Skipping '%s': already published (title match).", title)
             skipped_duplicate += 1
             continue
@@ -293,7 +296,7 @@ def main():
             url = update_post(service, blog_id, existing[0], title, html_body, labels)
             if url:
                 published_count += 1
-                existing_titles.add(title.strip().lower())
+                existing_titles.add(normalize_title_for_dedup(title))
             else:
                 publish_failed += 1
                 log.error("Failed to update '%s'.", title)
@@ -301,13 +304,13 @@ def main():
             url = publish_post(service, blog_id, title, html_body, labels, queue)
             if url:
                 published_count += 1
-                existing_titles.add(title.strip().lower())
+                existing_titles.add(normalize_title_for_dedup(title))
             else:
                 publish_failed += 1
                 log.error("Failed to publish '%s'.", title)
         if url:
             published_count += 1
-            existing_titles.add(title.strip().lower())
+            existing_titles.add(normalize_title_for_dedup(title))
         else:
             publish_failed += 1
             log.error("Failed to publish '%s'.", title)

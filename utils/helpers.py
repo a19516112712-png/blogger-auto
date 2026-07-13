@@ -148,6 +148,23 @@ def strip_fences(text: str) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Title Normalization
+# ---------------------------------------------------------------------------
+
+def normalize_title_for_dedup(title: str) -> str:
+    """Normalize a title for duplicate detection.
+    
+    Strips trailing numeric suffixes so "Foo 1" and "Foo" are treated as duplicates.
+    """
+    t = title.strip().lower()
+    # Remove trailing numbered suffixes: ' 1', ' 2', '-1', '(1)', etc.
+    t = re.sub(r'\s+[0-9]+\s*$', '', t)
+    t = re.sub(r'\s*-[0-9]+\s*$', '', t)
+    t = re.sub(r'\s*\([0-9]+\)\s*$', '', t)
+    return t.strip()
+
+
+# ---------------------------------------------------------------------------
 # Validation
 # ---------------------------------------------------------------------------
 
@@ -157,11 +174,20 @@ def count_words(text: str) -> int:
 
 
 def enforce_title_rules(title: str) -> str | None:
-    """Post-process title to ensure SEO rules. Returns None if invalid."""
+    """Post-process title to ensure SEO rules. Returns None if invalid.
+    
+    Strips trailing numeric suffixes (e.g., ' 1', '-1', '(1)') to prevent
+    duplicate articles that differ only by a number.
+    """
     title = title.strip()
     original = title
     if title.startswith("# "):
         title = title[2:].strip()
+
+    # Strip trailing numbered suffixes first
+    title = re.sub(r'\s+[0-9]+\s*$', '', title)
+    title = re.sub(r'\s*-[0-9]+\s*$', '', title)
+    title = re.sub(r'\s*\([0-9]+\)\s*$', '', title)
 
     title_lower = title.lower()
     for phrase in BANNED_PHRASES:

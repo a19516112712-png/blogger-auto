@@ -28,6 +28,7 @@ from pathlib import Path
 from typing import Optional
 
 from .schema import init_db, DB_PATH, get_connection
+from utils.helpers import normalize_title_for_dedup
 
 log = logging.getLogger(__name__)
 
@@ -188,16 +189,20 @@ class TopicQueue:
         return bool(row)
 
     def is_duplicate_title(self, title: str) -> bool:
-        """Check if title already exists."""
+        """Check if title already exists, using normalized comparison.
+        
+        Strips trailing numeric suffixes so "Foo 1" matches "Foo".
+        """
+        norm = normalize_title_for_dedup(title)
         row = self.conn.execute(
             "SELECT 1 FROM generated WHERE LOWER(title) = ? LIMIT 1",
-            (title.lower().strip(),),
+            (norm,),
         ).fetchone()
         if row:
             return True
         row = self.conn.execute(
             "SELECT 1 FROM published WHERE LOWER(title) = ? LIMIT 1",
-            (title.lower().strip(),),
+            (norm,),
         ).fetchone()
         return bool(row)
 
