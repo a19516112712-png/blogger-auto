@@ -7,19 +7,17 @@ labels:
 - Elegant Names
 - Charming Names
 - Feminine Names
-date: 2026-06-23
+date: '2026-06-23'
 slug: 100-beautiful-baby-girl-names-and-meanings
-meta_description: Discover 100 beautiful baby girl names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect beautiful baby girl n
+meta_description: Discover 100 beautiful baby girl names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect beautiful baby
+  girl n
 seo_title: 100 Beautiful Baby Girl Names and Meanings
 og_title: 100 Beautiful Baby Girl Names and Meanings
-og_description: Discover 100 beautiful baby girl names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect beautiful baby girl n
-word_count: 3064
-optimized: 2026-07-03T07:38:22.907934
+og_description: Discover 100 beautiful baby girl names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect beautiful baby
+  girl n
 ---
-
-
-
-
 
 # 100 Beautiful Baby Girl Names and Meanings
 

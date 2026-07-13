@@ -1,10 +1,17 @@
 ---
-title: title: Timeless Literary Baby Names from Classic Novels
+title: Timeless Literary Baby Names From Classic Novels 1
 labels:
 - Baby Names
-date: 2026-06-16
-word_count: 2113
-optimized: 2026-07-03T00:59:24.060831
+date: '2026-06-16'
+slug: timeless-literary-baby-names-from-classic-novels-1
+meta_description: Discover timeless literary baby names from classic novels 1, including
+  meanings, origins, pronunciation guides, and naming ideas. Find the perfect timeless
+  lite
+seo_title: Timeless Literary Baby Names From Classic Novels 1
+og_title: Timeless Literary Baby Names From Classic Novels 1
+og_description: Discover timeless literary baby names from classic novels 1, including
+  meanings, origins, pronunciation guides, and naming ideas. Find the perfect timeless
+  lite
 ---
 
 Naming your baby is one of the most exciting and profound decisions expectant parents face. It's a chance to bestow a legacy, a whisper of personality, and a connection to something truly special. For many, the answer lies not just in current trends or family traditions, but within the diverse collection of literature. Imagine giving your child a name that carries the weight of a powerful story, the wisdom of a beloved character, or the elegance of a timeless tale.

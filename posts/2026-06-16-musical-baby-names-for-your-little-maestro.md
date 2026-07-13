@@ -1,20 +1,21 @@
 ---
-
-
 title: 150 Musical Baby Names for Your Little Maestro (With Meanings & Origins)
 labels:
 - Baby Names
 - Musical Names
 - Creative Names
 - Arts Names
-date: 2026-06-16
-slug: 150-musical-baby-names-for-your-little-maestro
-meta_description: Discover 150 musical baby names inspired by instruments, composers, and songs. Find meanings, origins, and pronunciation guides for every name.
-seo_title: 150 Musical Baby Names (Meanings, Origins & Pronunciation)
-
-
+date: '2026-06-16'
+slug: 150-musical-baby-names-for-your-little-maestro-with-meanings-origins
+meta_description: Discover 150 musical baby names for your little maestro (with meanings
+  & origins), including meanings, origins, pronunciation guides, and naming ideas.
+  Find the
+seo_title: 150 Musical Baby Names for Your Little Maestro (With Meanings ...
+og_title: 150 Musical Baby Names for Your Little Maestro (With Meanings & Origins)
+og_description: Discover 150 musical baby names for your little maestro (with meanings
+  & origins), including meanings, origins, pronunciation guides, and naming ideas.
+  Find the
 ---
-
 
 <script type="application/ld+json">
 {

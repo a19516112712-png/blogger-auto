@@ -7,19 +7,17 @@ labels:
 - Elegant Names
 - Beautiful Names
 - Unique Names
-date: 2026-06-23
+date: '2026-06-23'
 slug: 100-unique-baby-girl-names-and-meanings
-meta_description: Discover 100 unique baby girl names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect unique baby girl names a
+meta_description: Discover 100 unique baby girl names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect unique baby girl
+  names a
 seo_title: 100 Unique Baby Girl Names and Meanings
 og_title: 100 Unique Baby Girl Names and Meanings
-og_description: Discover 100 unique baby girl names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect unique baby girl names a
-word_count: 2930
-optimized: 2026-07-03T07:38:22.918740
+og_description: Discover 100 unique baby girl names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect unique baby girl
+  names a
 ---
-
-
-
-
 
 # 100 Unique Baby Girl Names and Meanings
 

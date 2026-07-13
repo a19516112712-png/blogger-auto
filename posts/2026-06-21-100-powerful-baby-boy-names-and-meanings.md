@@ -7,19 +7,17 @@ labels:
 - Strong Names
 - Traditional Names
 - Meaningful Names
-date: 2026-06-21
+date: '2026-06-21'
 slug: 100-powerful-baby-boy-names-and-meanings
-meta_description: Discover 100 powerful baby boy names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect powerful baby boy names
+meta_description: Discover 100 powerful baby boy names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect powerful baby
+  boy names
 seo_title: 100 Powerful Baby Boy Names and Meanings
 og_title: 100 Powerful Baby Boy Names and Meanings
-og_description: Discover 100 powerful baby boy names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect powerful baby boy names
-word_count: 3106
-optimized: 2026-07-03T07:38:22.900680
+og_description: Discover 100 powerful baby boy names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect powerful baby
+  boy names
 ---
-
-
-
-
 
 # 100 Powerful Baby Boy Names and Meanings
 

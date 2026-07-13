@@ -6,19 +6,17 @@ labels:
 - Adventure Names
 - Bold Names
 - World Names
-date: 2026-06-21
+date: '2026-06-21'
 slug: 100-explorer-baby-names-inspired-by-adventure
-meta_description: Discover 100 explorer baby names inspired by adventure, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect explorer baby name
+meta_description: Discover 100 explorer baby names inspired by adventure, including
+  meanings, origins, pronunciation guides, and naming ideas. Find the perfect explorer
+  baby name
 seo_title: 100 Explorer Baby Names Inspired by Adventure
 og_title: 100 Explorer Baby Names Inspired by Adventure
-og_description: Discover 100 explorer baby names inspired by adventure, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect explorer baby name
-word_count: 2959
-optimized: 2026-07-03T07:38:22.898197
+og_description: Discover 100 explorer baby names inspired by adventure, including
+  meanings, origins, pronunciation guides, and naming ideas. Find the perfect explorer
+  baby name
 ---
-
-
-
-
 
 # 100 Explorer Baby Names Inspired by Adventure
 

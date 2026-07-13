@@ -6,19 +6,17 @@ labels:
 - European Names
 - Romantic Names
 - Melodic Names
-date: 2026-06-21
+date: '2026-06-21'
 slug: 100-italian-baby-names-and-meanings
-meta_description: Discover 100 italian baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect italian baby names and meani
+meta_description: Discover 100 italian baby names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect italian baby names
+  and meani
 seo_title: 100 Italian Baby Names and Meanings
 og_title: 100 Italian Baby Names and Meanings
-og_description: Discover 100 italian baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect italian baby names and meani
-word_count: 2983
-optimized: 2026-07-03T07:38:22.899441
+og_description: Discover 100 italian baby names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect italian baby names
+  and meani
 ---
-
-
-
-
 
 # 100 Italian Baby Names and Meanings
 

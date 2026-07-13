@@ -6,19 +6,16 @@ labels:
 - King Names
 - Regal Names
 - Strong Names
-date: 2026-06-23
+date: '2026-06-23'
 slug: 100-viking-baby-names-and-meanings
-meta_description: Discover 100 viking baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect viking baby names and meaning
+meta_description: Discover 100 viking baby names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect viking baby names
+  and meaning
 seo_title: 100 Viking Baby Names and Meanings
 og_title: 100 Viking Baby Names and Meanings
-og_description: Discover 100 viking baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect viking baby names and meaning
-word_count: 2910
-optimized: 2026-07-03T07:38:22.919913
+og_description: Discover 100 viking baby names and meanings, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect viking baby names and meaning
 ---
-
-
-
-
 
 # 100 Viking Baby Names and Meanings
 

@@ -6,19 +6,17 @@ labels:
 - Classic Names
 - Old-Fashioned Names
 - Timeless Names
-date: 2026-06-23
+date: '2026-06-23'
 slug: 100-vintage-baby-names-for-boys-and-girls
-meta_description: Discover 100 vintage baby names for boys and girls, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect vintage baby names for
+meta_description: Discover 100 vintage baby names for boys and girls, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect vintage baby names
+  for
 seo_title: 100 Vintage Baby Names for Boys and Girls
 og_title: 100 Vintage Baby Names for Boys and Girls
-og_description: Discover 100 vintage baby names for boys and girls, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect vintage baby names for
-word_count: 3121
-optimized: 2026-07-03T07:38:22.923694
+og_description: Discover 100 vintage baby names for boys and girls, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect vintage baby names
+  for
 ---
-
-
-
-
 
 # 100 Vintage Baby Names for Boys and Girls
 

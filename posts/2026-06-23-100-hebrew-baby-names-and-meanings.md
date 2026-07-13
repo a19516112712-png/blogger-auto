@@ -6,19 +6,16 @@ labels:
 - Biblical Names
 - Jewish Names
 - Traditional Names
-date: 2026-06-23
+date: '2026-06-23'
 slug: 100-hebrew-baby-names-and-meanings
-meta_description: Discover 100 hebrew baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect hebrew baby names and meaning
+meta_description: Discover 100 hebrew baby names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect hebrew baby names
+  and meaning
 seo_title: 100 Hebrew Baby Names and Meanings
 og_title: 100 Hebrew Baby Names and Meanings
-og_description: Discover 100 hebrew baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect hebrew baby names and meaning
-word_count: 2983
-optimized: 2026-07-03T07:38:22.914002
+og_description: Discover 100 hebrew baby names and meanings, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect hebrew baby names and meaning
 ---
-
-
-
-
 
 # 100 Hebrew Baby Names and Meanings
 

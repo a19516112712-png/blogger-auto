@@ -2,9 +2,16 @@
 title: Getting Started with Blogger Auto Publishing
 labels:
 - Baby Names
-date: 2026-06-16
-word_count: 810
-optimized: 2026-07-03T00:59:24.052236
+date: '2026-07-13'
+slug: getting-started-with-blogger-auto-publishing
+meta_description: Discover getting started with blogger auto publishing, including
+  meanings, origins, pronunciation guides, and naming ideas. Find the perfect getting
+  started wit
+seo_title: Getting Started with Blogger Auto Publishing
+og_title: Getting Started with Blogger Auto Publishing
+og_description: Discover getting started with blogger auto publishing, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect getting started
+  wit
 ---
 
 # Getting Started with Blogger Auto Publishing

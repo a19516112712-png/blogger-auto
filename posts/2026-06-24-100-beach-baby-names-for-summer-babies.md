@@ -7,19 +7,17 @@ labels:
 - Warm Names
 - Radiant Names
 - Beach Names
-date: 2026-06-24
+date: '2026-06-24'
 slug: 100-beach-baby-names-for-summer-babies
-meta_description: Discover 100 beach baby names for summer babies, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect beach baby names for summ
+meta_description: Discover 100 beach baby names for summer babies, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect beach baby names
+  for summ
 seo_title: 100 Beach Baby Names for Summer Babies
 og_title: 100 Beach Baby Names for Summer Babies
-og_description: Discover 100 beach baby names for summer babies, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect beach baby names for summ
-word_count: 2993
-optimized: 2026-07-03T07:38:22.928271
+og_description: Discover 100 beach baby names for summer babies, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect beach baby names
+  for summ
 ---
-
-
-
-
 
 # 100 Beach Baby Names for Summer Babies
 

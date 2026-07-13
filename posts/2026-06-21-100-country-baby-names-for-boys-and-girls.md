@@ -7,19 +7,17 @@ labels:
 - Strong Names
 - Traditional Names
 - Girl Names
-date: 2026-06-21
+date: '2026-06-21'
 slug: 100-country-baby-names-for-boys-and-girls
-meta_description: Discover 100 country baby names for boys and girls, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect country baby names for
+meta_description: Discover 100 country baby names for boys and girls, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect country baby names
+  for
 seo_title: 100 Country Baby Names for Boys and Girls
 og_title: 100 Country Baby Names for Boys and Girls
-og_description: Discover 100 country baby names for boys and girls, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect country baby names for
-word_count: 2973
-optimized: 2026-07-03T07:38:22.896844
+og_description: Discover 100 country baby names for boys and girls, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect country baby names
+  for
 ---
-
-
-
-
 
 # 100 Country Baby Names for Boys and Girls
 

@@ -6,19 +6,17 @@ labels:
 - King Names
 - Regal Names
 - Strong Names
-date: 2026-06-22
+date: '2026-06-22'
 slug: 100-old-fashioned-baby-names-making-a-comeback
-meta_description: Discover 100 old fashioned baby names making a comeback, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect old fashioned bab
+meta_description: Discover 100 old fashioned baby names making a comeback, including
+  meanings, origins, pronunciation guides, and naming ideas. Find the perfect old
+  fashioned bab
 seo_title: 100 Old Fashioned Baby Names Making a Comeback
 og_title: 100 Old Fashioned Baby Names Making a Comeback
-og_description: Discover 100 old fashioned baby names making a comeback, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect old fashioned bab
-word_count: 2890
-optimized: 2026-07-03T07:38:22.903096
+og_description: Discover 100 old fashioned baby names making a comeback, including
+  meanings, origins, pronunciation guides, and naming ideas. Find the perfect old
+  fashioned bab
 ---
-
-
-
-
 
 # 100 Old Fashioned Baby Names Making a Comeback
 

@@ -6,19 +6,17 @@ labels:
 - Romantic Names
 - Meaningful Names
 - Heartfelt Names
-date: 2026-06-18
+date: '2026-06-18'
 slug: 100-baby-names-that-mean-love
-meta_description: Discover 100 baby names that mean love, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect baby names that mean love for your
+meta_description: Discover 100 baby names that mean love, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect baby names that mean love
+  for your
 seo_title: 100 Baby Names That Mean Love
 og_title: 100 Baby Names That Mean Love
-og_description: Discover 100 baby names that mean love, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect baby names that mean love for your
-word_count: 2747
-optimized: 2026-07-03T07:38:22.880569
+og_description: Discover 100 baby names that mean love, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect baby names that mean love
+  for your
 ---
-
-
-
-
 
 # 100 Baby Names That Mean Love
 

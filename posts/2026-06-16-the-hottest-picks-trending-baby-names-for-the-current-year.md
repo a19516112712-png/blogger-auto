@@ -1,10 +1,17 @@
 ---
-title: The Hottest Picks: Trending Baby Names for the Current Year
+title: 'The Hottest Picks: Trending Baby Names for the Current Year'
 labels:
 - Baby Names
-date: 2026-06-16
-word_count: 2360
-optimized: 2026-07-03T00:59:24.070612
+date: '2026-06-16'
+slug: the-hottest-picks-trending-baby-names-for-the-current-year
+meta_description: 'Discover the hottest picks: trending baby names for the current
+  year, including meanings, origins, pronunciation guides, and naming ideas. Find
+  the perfect the '
+seo_title: 'The Hottest Picks: Trending Baby Names for the Current Year'
+og_title: 'The Hottest Picks: Trending Baby Names for the Current Year'
+og_description: 'Discover the hottest picks: trending baby names for the current year,
+  including meanings, origins, pronunciation guides, and naming ideas. Find the perfect
+  the '
 ---
 
 # The Hottest Picks: Trending Baby Names for the Current Year

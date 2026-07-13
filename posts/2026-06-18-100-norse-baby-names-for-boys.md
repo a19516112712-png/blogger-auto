@@ -7,19 +7,17 @@ labels:
 - Mythology Names
 - Warrior Names
 - Boy Names
-date: 2026-06-18
+date: '2026-06-18'
 slug: 100-norse-baby-names-for-boys
-meta_description: Discover 100 norse baby names for boys, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect norse baby names for boys for your
+meta_description: Discover 100 norse baby names for boys, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect norse baby names for boys
+  for your
 seo_title: 100 Norse Baby Names for Boys
 og_title: 100 Norse Baby Names for Boys
-og_description: Discover 100 norse baby names for boys, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect norse baby names for boys for your
-word_count: 2973
-optimized: 2026-07-03T07:38:22.882822
+og_description: Discover 100 norse baby names for boys, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect norse baby names for boys
+  for your
 ---
-
-
-
-
 
 # 100 Norse Baby Names for Boys
 

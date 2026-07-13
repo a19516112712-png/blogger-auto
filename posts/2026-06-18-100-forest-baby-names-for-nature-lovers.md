@@ -7,19 +7,17 @@ labels:
 - Organic Names
 - Earthy Names
 - Forest Names
-date: 2026-06-18
+date: '2026-06-18'
 slug: 100-forest-baby-names-for-nature-lovers
-meta_description: Discover 100 forest baby names for nature lovers, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect forest baby names for na
+meta_description: Discover 100 forest baby names for nature lovers, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect forest baby names
+  for na
 seo_title: 100 Forest Baby Names for Nature Lovers
 og_title: 100 Forest Baby Names for Nature Lovers
-og_description: Discover 100 forest baby names for nature lovers, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect forest baby names for na
-word_count: 3168
-optimized: 2026-07-03T07:38:22.881733
+og_description: Discover 100 forest baby names for nature lovers, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect forest baby names
+  for na
 ---
-
-
-
-
 
 # 100 Forest Baby Names for Nature Lovers
 

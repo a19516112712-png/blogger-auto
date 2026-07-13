@@ -7,19 +7,17 @@ labels:
 - Old-Fashioned Names
 - Timeless Names
 - Boy Names
-date: 2026-06-23
+date: '2026-06-23'
 slug: 100-vintage-baby-boy-names-and-meanings
-meta_description: Discover 100 vintage baby boy names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect vintage baby boy names a
+meta_description: Discover 100 vintage baby boy names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect vintage baby boy
+  names a
 seo_title: 100 Vintage Baby Boy Names and Meanings
 og_title: 100 Vintage Baby Boy Names and Meanings
-og_description: Discover 100 vintage baby boy names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect vintage baby boy names a
-word_count: 3261
-optimized: 2026-07-03T07:38:22.921308
+og_description: Discover 100 vintage baby boy names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect vintage baby boy
+  names a
 ---
-
-
-
-
 
 # 100 Vintage Baby Boy Names and Meanings
 

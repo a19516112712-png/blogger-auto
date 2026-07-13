@@ -6,19 +6,17 @@ labels:
 - Country Names
 - Charming Names
 - American Names
-date: 2026-06-18
+date: '2026-06-18'
 slug: 100-southern-baby-names-with-charm
-meta_description: Discover 100 southern baby names with charm, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect southern baby names with char
+meta_description: Discover 100 southern baby names with charm, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect southern baby
+  names with char
 seo_title: 100 Southern Baby Names with Charm
 og_title: 100 Southern Baby Names with Charm
-og_description: Discover 100 southern baby names with charm, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect southern baby names with char
-word_count: 2957
-optimized: 2026-07-03T07:38:22.883924
+og_description: Discover 100 southern baby names with charm, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect southern baby names with
+  char
 ---
-
-
-
-
 
 # 100 Southern Baby Names with Charm
 

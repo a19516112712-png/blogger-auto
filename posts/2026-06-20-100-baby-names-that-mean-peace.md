@@ -6,19 +6,17 @@ labels:
 - Calm Names
 - Serene Names
 - Meaningful Names
-date: 2026-06-20
+date: '2026-06-20'
 slug: 100-baby-names-that-mean-peace
-meta_description: Discover 100 baby names that mean peace, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect baby names that mean peace for yo
+meta_description: Discover 100 baby names that mean peace, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect baby names that mean peace
+  for yo
 seo_title: 100 Baby Names That Mean Peace
 og_title: 100 Baby Names That Mean Peace
-og_description: Discover 100 baby names that mean peace, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect baby names that mean peace for yo
-word_count: 2951
-optimized: 2026-07-03T07:38:22.891467
+og_description: Discover 100 baby names that mean peace, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect baby names that mean peace
+  for yo
 ---
-
-
-
-
 
 # 100 Baby Names That Mean Peace
 

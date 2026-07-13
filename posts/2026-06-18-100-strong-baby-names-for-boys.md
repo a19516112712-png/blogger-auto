@@ -7,19 +7,17 @@ labels:
 - Bold Names
 - Masculine Names
 - Boy Names
-date: 2026-06-18
+date: '2026-06-18'
 slug: 100-strong-baby-names-for-boys
-meta_description: Discover 100 strong baby names for boys, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect strong baby names for boys for yo
+meta_description: Discover 100 strong baby names for boys, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect strong baby names for boys
+  for yo
 seo_title: 100 Strong Baby Names for Boys
 og_title: 100 Strong Baby Names for Boys
-og_description: Discover 100 strong baby names for boys, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect strong baby names for boys for yo
-word_count: 3163
-optimized: 2026-07-03T07:38:22.885176
+og_description: Discover 100 strong baby names for boys, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect strong baby names for boys
+  for yo
 ---
-
-
-
-
 
 # 100 Strong Baby Names for Boys
 

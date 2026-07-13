@@ -1,14 +1,17 @@
 ---
-title: Rooted in Love: Wholesome Farmhouse Baby Names for a Nostalgic Touch
+title: 'Rooted in Love: Wholesome Farmhouse Baby Names for a Nostalgic Touch'
 labels:
 - Baby Names
-- Farmhouse Names
-- Rustic Names
-- Wholesome Names
-- Country Names
-date: 2026-06-17
-word_count: 1918
-optimized: 2026-07-03T00:59:24.057034
+date: '2026-06-17'
+slug: rooted-in-love-wholesome-farmhouse-baby-names-for-a-nostalgic-touch
+meta_description: 'Discover rooted in love: wholesome farmhouse baby names for a nostalgic
+  touch, including meanings, origins, pronunciation guides, and naming ideas. Find
+  the per'
+seo_title: 'Rooted in Love: Wholesome Farmhouse Baby Names for a Nostalgic...'
+og_title: 'Rooted in Love: Wholesome Farmhouse Baby Names for a Nostalgic Touch'
+og_description: 'Discover rooted in love: wholesome farmhouse baby names for a nostalgic
+  touch, including meanings, origins, pronunciation guides, and naming ideas. Find
+  the per'
 ---
 
 # Rooted in Love: Wholesome Farmhouse Baby Names for a Nostalgic Touch

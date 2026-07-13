@@ -1,13 +1,18 @@
 ---
-title: title: Vintage Baby Names Making a Comeback: Timeless Charm for Today
+title: Vintage Baby Names Making A Comeback Timeless Charm For Today
 labels:
 - Baby Names
-date: 2026-06-16
-word_count: 1846
-optimized: 2026-07-03T07:37:04.719724
+date: '2026-06-16'
+slug: vintage-baby-names-making-a-comeback-timeless-charm-for-today
+meta_description: Discover vintage baby names making a comeback timeless charm for
+  today, including meanings, origins, pronunciation guides, and naming ideas. Find
+  the perfect vi
+seo_title: Vintage Baby Names Making A Comeback Timeless Charm For Today
+og_title: Vintage Baby Names Making A Comeback Timeless Charm For Today
+og_description: Discover vintage baby names making a comeback timeless charm for today,
+  including meanings, origins, pronunciation guides, and naming ideas. Find the perfect
+  vi
 ---
-
-
 
 ```
 

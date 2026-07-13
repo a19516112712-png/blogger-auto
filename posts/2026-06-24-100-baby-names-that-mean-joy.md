@@ -6,19 +6,17 @@ labels:
 - Happy Names
 - Positive Names
 - Bright Names
-date: 2026-06-24
+date: '2026-06-24'
 slug: 100-baby-names-that-mean-joy
-meta_description: Discover 100 baby names that mean joy, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect baby names that mean joy for your b
+meta_description: Discover 100 baby names that mean joy, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect baby names that mean joy
+  for your b
 seo_title: 100 Baby Names That Mean Joy
 og_title: 100 Baby Names That Mean Joy
-og_description: Discover 100 baby names that mean joy, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect baby names that mean joy for your b
-word_count: 2999
-optimized: 2026-07-03T07:38:22.927088
+og_description: Discover 100 baby names that mean joy, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect baby names that mean joy
+  for your b
 ---
-
-
-
-
 
 # 100 Baby Names That Mean Joy
 

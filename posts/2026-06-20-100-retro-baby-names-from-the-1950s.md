@@ -6,19 +6,17 @@ labels:
 - Vintage Names
 - Nostalgic Names
 - Classic Names
-date: 2026-06-20
+date: '2026-06-20'
 slug: 100-retro-baby-names-from-the-1950s
-meta_description: Discover 100 retro baby names from the 1950s, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect retro baby names from the 19
+meta_description: Discover 100 retro baby names from the 1950s, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect retro baby names
+  from the 19
 seo_title: 100 Retro Baby Names From The 1950s
 og_title: 100 Retro Baby Names From The 1950s
-og_description: Discover 100 retro baby names from the 1950s, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect retro baby names from the 19
-word_count: 3157
-optimized: 2026-07-03T07:38:22.895480
+og_description: Discover 100 retro baby names from the 1950s, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect retro baby names
+  from the 19
 ---
-
-
-
-
 
 # 100 Retro Baby Names From The 1950s
 

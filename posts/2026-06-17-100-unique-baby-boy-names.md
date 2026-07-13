@@ -7,19 +7,16 @@ labels:
 - Strong Names
 - Traditional Names
 - Unique Names
-date: 2026-06-17
+date: '2026-06-17'
 slug: 100-unique-baby-boy-names
-meta_description: Discover 100 unique baby boy names, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect unique baby boy names for your baby.
+meta_description: Discover 100 unique baby boy names, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect unique baby boy names for
+  your baby.
 seo_title: 100 Unique Baby Boy Names
 og_title: 100 Unique Baby Boy Names
-og_description: Discover 100 unique baby boy names, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect unique baby boy names for your baby.
-word_count: 3065
-optimized: 2026-07-03T07:38:22.879466
+og_description: Discover 100 unique baby boy names, including meanings, origins, pronunciation
+  guides, and naming ideas. Find the perfect unique baby boy names for your baby.
 ---
-
-
-
-
 
 # 100 Unique Baby Boy Names
 

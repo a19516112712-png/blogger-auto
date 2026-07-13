@@ -6,9 +6,16 @@ labels:
 - Trending Names
 - Digital-Age Names
 - Unique Names
-date: 2026-06-17
-word_count: 2213
-optimized: 2026-07-03T00:59:24.059654
+date: '2026-06-17'
+slug: social-media-inspired-baby-names-for-the-digital-age
+meta_description: Discover social media-inspired baby names for the digital age, including
+  meanings, origins, pronunciation guides, and naming ideas. Find the perfect social
+  medi
+seo_title: Social Media-Inspired Baby Names for the Digital Age
+og_title: Social Media-Inspired Baby Names for the Digital Age
+og_description: Discover social media-inspired baby names for the digital age, including
+  meanings, origins, pronunciation guides, and naming ideas. Find the perfect social
+  medi
 ---
 
 # Social Media-Inspired Baby Names for the Digital Age

@@ -1,11 +1,17 @@
 ---
-title: Names with Powerful Meanings: Inspire Courage, Love, and Wisdom
+title: 'Names with Powerful Meanings: Inspire Courage, Love, and Wisdom'
 labels:
 - Baby Names
-- Meaningful Names
-date: 2026-06-16
-word_count: 2021
-optimized: 2026-07-03T00:59:24.055724
+date: '2026-06-16'
+slug: names-with-powerful-meanings-inspire-courage-love-and-wisdom
+meta_description: 'Discover names with powerful meanings: inspire courage, love, and
+  wisdom, including meanings, origins, pronunciation guides, and naming ideas. Find
+  the perfect '
+seo_title: 'Names with Powerful Meanings: Inspire Courage, Love, and Wisdom'
+og_title: 'Names with Powerful Meanings: Inspire Courage, Love, and Wisdom'
+og_description: 'Discover names with powerful meanings: inspire courage, love, and
+  wisdom, including meanings, origins, pronunciation guides, and naming ideas. Find
+  the perfect '
 ---
 
 # Names with Powerful Meanings: Inspire Courage, Love, and Wisdom

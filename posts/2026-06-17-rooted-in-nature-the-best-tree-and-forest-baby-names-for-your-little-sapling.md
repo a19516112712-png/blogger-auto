@@ -1,15 +1,17 @@
 ---
-title: Rooted in Nature: The Best Tree and Forest Baby Names for Your Little Sapling
+title: 'Rooted in Nature: The Best Tree and Forest Baby Names for Your Little Sapling'
 labels:
 - Baby Names
-- Nature Names
-- Outdoor Names
-- Organic Names
-- Earthy Names
-- Tree Names
-date: 2026-06-17
-word_count: 2102
-optimized: 2026-07-03T00:59:24.071976
+date: '2026-06-17'
+slug: rooted-in-nature-the-best-tree-and-forest-baby-names-for-your-little-sapling
+meta_description: 'Discover rooted in nature: the best tree and forest baby names
+  for your little sapling, including meanings, origins, pronunciation guides, and
+  naming ideas. Fin'
+seo_title: 'Rooted in Nature: The Best Tree and Forest Baby Names for Your...'
+og_title: 'Rooted in Nature: The Best Tree and Forest Baby Names for Your Little Sapling'
+og_description: 'Discover rooted in nature: the best tree and forest baby names for
+  your little sapling, including meanings, origins, pronunciation guides, and naming
+  ideas. Fin'
 ---
 
 # Rooted in Nature: The Best Tree and Forest Baby Names for Your Little Sapling

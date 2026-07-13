@@ -7,19 +7,17 @@ labels:
 - Elegant Names
 - Beautiful Names
 - Sophisticated Names
-date: 2026-06-19
+date: '2026-06-19'
 slug: 100-elegant-baby-girl-names
-meta_description: Discover 100 elegant baby girl names, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect elegant baby girl names for your bab
+meta_description: Discover 100 elegant baby girl names, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect elegant baby girl names
+  for your bab
 seo_title: 100 Elegant Baby Girl Names
 og_title: 100 Elegant Baby Girl Names
-og_description: Discover 100 elegant baby girl names, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect elegant baby girl names for your bab
-word_count: 3015
-optimized: 2026-07-03T07:38:22.890218
+og_description: Discover 100 elegant baby girl names, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect elegant baby girl names
+  for your bab
 ---
-
-
-
-
 
 # 100 Elegant Baby Girl Names
 

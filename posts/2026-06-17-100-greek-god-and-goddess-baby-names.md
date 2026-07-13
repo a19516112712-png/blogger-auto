@@ -6,14 +6,16 @@ labels:
 - Mythology Names
 - Ancient Names
 - Classical Names
-date: 2026-06-17
+date: '2026-06-17'
 slug: 100-greek-god-and-goddess-baby-names
-meta_description: Discover 100 greek god and goddess baby names, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect greek god and goddess baby 
+meta_description: 'Discover 100 greek god and goddess baby names, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect greek god and
+  goddess baby '
 seo_title: 100 Greek God and Goddess Baby Names
 og_title: 100 Greek God and Goddess Baby Names
-og_description: Discover 100 greek god and goddess baby names, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect greek god and goddess baby 
-word_count: 3145
-optimized: 2026-07-03T00:59:24.073668
+og_description: 'Discover 100 greek god and goddess baby names, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect greek god and
+  goddess baby '
 ---
 
 # 100 Greek God and Goddess Baby Names

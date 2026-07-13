@@ -7,19 +7,17 @@ labels:
 - Star Names
 - Cosmic Names
 - Shining Names
-date: 2026-06-23
+date: '2026-06-23'
 slug: 100-celestial-baby-names-inspired-by-stars
-meta_description: Discover 100 celestial baby names inspired by stars, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect celestial baby names
+meta_description: 'Discover 100 celestial baby names inspired by stars, including
+  meanings, origins, pronunciation guides, and naming ideas. Find the perfect celestial
+  baby names '
 seo_title: 100 Celestial Baby Names Inspired by Stars
 og_title: 100 Celestial Baby Names Inspired by Stars
-og_description: Discover 100 celestial baby names inspired by stars, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect celestial baby names
-word_count: 2918
-optimized: 2026-07-03T07:38:22.911520
+og_description: 'Discover 100 celestial baby names inspired by stars, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect celestial baby
+  names '
 ---
-
-
-
-
 
 # 100 Celestial Baby Names Inspired by Stars
 

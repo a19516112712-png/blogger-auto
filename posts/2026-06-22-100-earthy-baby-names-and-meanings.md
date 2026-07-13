@@ -7,19 +7,16 @@ labels:
 - Floral Names
 - Earthy Names
 - Artistic Names
-date: 2026-06-22
+date: '2026-06-22'
 slug: 100-earthy-baby-names-and-meanings
-meta_description: Discover 100 earthy baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect earthy baby names and meaning
+meta_description: Discover 100 earthy baby names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect earthy baby names
+  and meaning
 seo_title: 100 Earthy Baby Names and Meanings
 og_title: 100 Earthy Baby Names and Meanings
-og_description: Discover 100 earthy baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect earthy baby names and meaning
-word_count: 2932
-optimized: 2026-07-03T07:38:22.901900
+og_description: Discover 100 earthy baby names and meanings, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect earthy baby names and meaning
 ---
-
-
-
-
 
 # 100 Earthy Baby Names and Meanings
 

@@ -7,19 +7,17 @@ labels:
 - Bold Names
 - Masculine Names
 - Boy Names
-date: 2026-06-22
+date: '2026-06-22'
 slug: 100-strong-boy-names-that-mean-powerful
-meta_description: Discover 100 strong boy names that mean powerful, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect strong boy names that me
+meta_description: Discover 100 strong boy names that mean powerful, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect strong boy names
+  that me
 seo_title: 100 Strong Boy Names That Mean Powerful
 og_title: 100 Strong Boy Names That Mean Powerful
-og_description: Discover 100 strong boy names that mean powerful, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect strong boy names that me
-word_count: 3034
-optimized: 2026-07-03T07:38:22.905502
+og_description: Discover 100 strong boy names that mean powerful, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect strong boy names
+  that me
 ---
-
-
-
-
 
 # 100 Strong Boy Names That Mean Powerful
 

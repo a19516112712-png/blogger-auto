@@ -6,19 +6,16 @@ labels:
 - Irish Names
 - Mythology Names
 - Nature Names
-date: 2026-06-25
+date: '2026-06-25'
 slug: 100-celtic-baby-names-and-meanings
-meta_description: Discover 100 celtic baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect celtic baby names and meaning
+meta_description: Discover 100 celtic baby names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect celtic baby names
+  and meaning
 seo_title: 100 Celtic Baby Names and Meanings
 og_title: 100 Celtic Baby Names and Meanings
-og_description: Discover 100 celtic baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect celtic baby names and meaning
-word_count: 3021
-optimized: 2026-07-03T07:38:22.930611
+og_description: Discover 100 celtic baby names and meanings, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect celtic baby names and meaning
 ---
-
-
-
-
 
 # 100 Celtic Baby Names and Meanings
 

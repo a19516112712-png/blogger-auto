@@ -6,19 +6,16 @@ labels:
 - Hindu Names
 - Spiritual Names
 - Diverse Names
-date: 2026-06-23
+date: '2026-06-23'
 slug: 100-indian-baby-names-and-meanings
-meta_description: Discover 100 indian baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect indian baby names and meaning
+meta_description: Discover 100 indian baby names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect indian baby names
+  and meaning
 seo_title: 100 Indian Baby Names and Meanings
 og_title: 100 Indian Baby Names and Meanings
-og_description: Discover 100 indian baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect indian baby names and meaning
-word_count: 2853
-optimized: 2026-07-03T07:38:22.915208
+og_description: Discover 100 indian baby names and meanings, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect indian baby names and meaning
 ---
-
-
-
-
 
 # 100 Indian Baby Names and Meanings
 

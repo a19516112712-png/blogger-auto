@@ -1,15 +1,17 @@
 ---
-title: Timeless Elegance: Irish Baby Names Full of Celtic Charm
+title: 'Timeless Elegance: Irish Baby Names Full of Celtic Charm'
 labels:
 - Baby Names
-- Celtic Names
-- Irish Names
-- Mythology Names
-- Nature Names
-- Charming Names
-date: 2026-06-17
-word_count: 2072
-optimized: 2026-07-03T00:59:24.069540
+date: '2026-06-17'
+slug: timeless-elegance-irish-baby-names-full-of-celtic-charm
+meta_description: 'Discover timeless elegance: irish baby names full of celtic charm,
+  including meanings, origins, pronunciation guides, and naming ideas. Find the perfect
+  timeles'
+seo_title: 'Timeless Elegance: Irish Baby Names Full of Celtic Charm'
+og_title: 'Timeless Elegance: Irish Baby Names Full of Celtic Charm'
+og_description: 'Discover timeless elegance: irish baby names full of celtic charm,
+  including meanings, origins, pronunciation guides, and naming ideas. Find the perfect
+  timeles'
 ---
 
 # Timeless Elegance: Irish Baby Names Full of Celtic Charm

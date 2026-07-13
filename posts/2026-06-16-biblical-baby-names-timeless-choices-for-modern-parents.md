@@ -1,6 +1,4 @@
 ---
-
-
 title: 300 Biblical Baby Names (Meanings, Origins & Popular Choices)
 labels:
 - Baby Names
@@ -8,14 +6,17 @@ labels:
 - Religious Names
 - Classic Names
 - Timeless Names
-date: 2026-06-16
+date: '2026-06-16'
 slug: 300-biblical-baby-names-meanings-origins-popular-choices
-meta_description: Discover 300+ biblical baby names with meanings, origins, and popularity data. Find timeless faith-inspired names for your child.
-seo_title: 300 Biblical Baby Names (Complete Guide with Meanings & Origins)
-
-
+meta_description: Discover 300 biblical baby names (meanings, origins & popular choices),
+  including meanings, origins, pronunciation guides, and naming ideas. Find the perfect
+  bi
+seo_title: 300 Biblical Baby Names (Meanings, Origins & Popular Choices)
+og_title: 300 Biblical Baby Names (Meanings, Origins & Popular Choices)
+og_description: Discover 300 biblical baby names (meanings, origins & popular choices),
+  including meanings, origins, pronunciation guides, and naming ideas. Find the perfect
+  bi
 ---
-
 
 <script type="application/ld+json">
 {

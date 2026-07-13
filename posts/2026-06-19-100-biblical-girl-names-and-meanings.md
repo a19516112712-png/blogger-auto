@@ -7,19 +7,17 @@ labels:
 - Hebrew Names
 - Religious Names
 - Girl Names
-date: 2026-06-19
+date: '2026-06-19'
 slug: 100-biblical-girl-names-and-meanings
-meta_description: Discover 100 biblical girl names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect biblical girl names and mea
+meta_description: Discover 100 biblical girl names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect biblical girl
+  names and mea
 seo_title: 100 Biblical Girl Names and Meanings
 og_title: 100 Biblical Girl Names and Meanings
-og_description: Discover 100 biblical girl names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect biblical girl names and mea
-word_count: 2834
-optimized: 2026-07-03T07:38:22.887610
+og_description: Discover 100 biblical girl names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect biblical girl
+  names and mea
 ---
-
-
-
-
 
 # 100 Biblical Girl Names and Meanings
 

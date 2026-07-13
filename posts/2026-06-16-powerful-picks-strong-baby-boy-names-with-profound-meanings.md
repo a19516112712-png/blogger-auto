@@ -1,10 +1,17 @@
 ---
-title: Powerful Picks: Strong Baby Boy Names with Profound Meanings
+title: 'Powerful Picks: Strong Baby Boy Names with Profound Meanings'
 labels:
 - Baby Names
-date: 2026-06-16
-word_count: 2118
-optimized: 2026-07-03T00:59:24.062079
+date: '2026-06-16'
+slug: powerful-picks-strong-baby-boy-names-with-profound-meanings
+meta_description: 'Discover powerful picks: strong baby boy names with profound meanings,
+  including meanings, origins, pronunciation guides, and naming ideas. Find the perfect
+  pow'
+seo_title: 'Powerful Picks: Strong Baby Boy Names with Profound Meanings'
+og_title: 'Powerful Picks: Strong Baby Boy Names with Profound Meanings'
+og_description: 'Discover powerful picks: strong baby boy names with profound meanings,
+  including meanings, origins, pronunciation guides, and naming ideas. Find the perfect
+  pow'
 ---
 
 # Powerful Picks: Strong Baby Boy Names with Profound Meanings

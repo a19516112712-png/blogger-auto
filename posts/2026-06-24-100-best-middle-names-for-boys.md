@@ -6,19 +6,17 @@ labels:
 - Masculine Names
 - Strong Names
 - Traditional Names
-date: 2026-06-24
+date: '2026-06-24'
 slug: 100-best-middle-names-for-boys
-meta_description: Discover 100 best middle names for boys, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect best middle names for boys for yo
+meta_description: Discover 100 best middle names for boys, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect best middle names for boys
+  for yo
 seo_title: 100 Best Middle Names for Boys
 og_title: 100 Best Middle Names for Boys
-og_description: Discover 100 best middle names for boys, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect best middle names for boys for yo
-word_count: 3340
-optimized: 2026-07-03T07:38:22.929462
+og_description: Discover 100 best middle names for boys, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect best middle names for boys
+  for yo
 ---
-
-
-
-
 
 # 100 Best Middle Names for Boys
 

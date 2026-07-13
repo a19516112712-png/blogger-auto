@@ -6,19 +6,17 @@ labels:
 - Celestial Names
 - Lunar Names
 - Mystical Names
-date: 2026-06-23
+date: '2026-06-23'
 slug: 100-moon-baby-names-and-meanings
-meta_description: Discover 100 moon baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect moon baby names and meanings fo
+meta_description: Discover 100 moon baby names and meanings, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect moon baby names and meanings
+  fo
 seo_title: 100 Moon Baby Names and Meanings
 og_title: 100 Moon Baby Names and Meanings
-og_description: Discover 100 moon baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect moon baby names and meanings fo
-word_count: 2974
-optimized: 2026-07-03T07:38:22.917561
+og_description: Discover 100 moon baby names and meanings, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect moon baby names and meanings
+  fo
 ---
-
-
-
-
 
 # 100 Moon Baby Names and Meanings
 

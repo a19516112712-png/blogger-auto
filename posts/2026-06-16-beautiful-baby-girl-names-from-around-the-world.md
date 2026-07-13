@@ -1,6 +1,4 @@
 ---
-
-
 title: 200 Beautiful Baby Girl Names from Around the World (With Meanings)
 labels:
 - Baby Names
@@ -8,14 +6,17 @@ labels:
 - Global Names
 - Cultural Names
 - World Names
-date: 2026-06-16
-slug: 200-beautiful-baby-girl-names-from-around-the-world
-meta_description: Discover 200+ beautiful baby girl names from every continent. Find meanings, origins, and pronunciation guides for global name inspiration.
-seo_title: 200 Beautiful Baby Girl Names from Around the World (Complete Guide)
-
-
+date: '2026-06-16'
+slug: 200-beautiful-baby-girl-names-from-around-the-world-with-meanings
+meta_description: Discover 200 beautiful baby girl names from around the world (with
+  meanings), including meanings, origins, pronunciation guides, and naming ideas.
+  Find the perf
+seo_title: 200 Beautiful Baby Girl Names from Around the World (With Mean...
+og_title: 200 Beautiful Baby Girl Names from Around the World (With Meanings)
+og_description: Discover 200 beautiful baby girl names from around the world (with
+  meanings), including meanings, origins, pronunciation guides, and naming ideas.
+  Find the perf
 ---
-
 
 <script type="application/ld+json">
 {

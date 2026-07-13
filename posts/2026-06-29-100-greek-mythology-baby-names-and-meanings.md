@@ -7,7 +7,7 @@ labels:
 - Ancient Names
 - Heroic Names
 - Greek Names
-date: '2026-07-01'
+date: '2026-06-29'
 slug: 100-greek-mythology-baby-names-and-meanings
 meta_description: Discover 100 greek mythology baby names and meanings, including
   meanings, origins, pronunciation guides, and naming ideas. Find the perfect greek

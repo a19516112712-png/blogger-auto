@@ -6,19 +6,16 @@ labels:
 - Asian Names
 - Modern Names
 - Elegant Names
-date: 2026-06-25
+date: '2026-06-25'
 slug: 100-korean-baby-names-and-meanings
-meta_description: Discover 100 korean baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect korean baby names and meaning
+meta_description: Discover 100 korean baby names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect korean baby names
+  and meaning
 seo_title: 100 Korean Baby Names and Meanings
 og_title: 100 Korean Baby Names and Meanings
-og_description: Discover 100 korean baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect korean baby names and meaning
-word_count: 2909
-optimized: 2026-07-03T07:38:22.931762
+og_description: Discover 100 korean baby names and meanings, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect korean baby names and meaning
 ---
-
-
-
-
 
 # 100 Korean Baby Names and Meanings
 

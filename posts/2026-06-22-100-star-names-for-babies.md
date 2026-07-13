@@ -6,19 +6,16 @@ labels:
 - Celestial Names
 - Cosmic Names
 - Shining Names
-date: 2026-06-22
+date: '2026-06-22'
 slug: 100-star-names-for-babies
-meta_description: Discover 100 star names for babies, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect star names for babies for your baby.
+meta_description: Discover 100 star names for babies, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect star names for babies for
+  your baby.
 seo_title: 100 Star Names for Babies
 og_title: 100 Star Names for Babies
-og_description: Discover 100 star names for babies, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect star names for babies for your baby.
-word_count: 2802
-optimized: 2026-07-03T07:38:22.904275
+og_description: Discover 100 star names for babies, including meanings, origins, pronunciation
+  guides, and naming ideas. Find the perfect star names for babies for your baby.
 ---
-
-
-
-
 
 # 100 Star Names for Babies
 

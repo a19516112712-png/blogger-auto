@@ -6,19 +6,17 @@ labels:
 - Religious Names
 - Biblical Names
 - Faith Names
-date: 2026-06-23
+date: '2026-06-23'
 slug: 100-biblical-baby-names-and-meanings
-meta_description: Discover 100 biblical baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect biblical baby names and mea
+meta_description: Discover 100 biblical baby names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect biblical baby
+  names and mea
 seo_title: 100 Biblical Baby Names and Meanings
 og_title: 100 Biblical Baby Names and Meanings
-og_description: Discover 100 biblical baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect biblical baby names and mea
-word_count: 2883
-optimized: 2026-07-03T07:38:22.909129
+og_description: Discover 100 biblical baby names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect biblical baby
+  names and mea
 ---
-
-
-
-
 
 # 100 Biblical Baby Names and Meanings
 

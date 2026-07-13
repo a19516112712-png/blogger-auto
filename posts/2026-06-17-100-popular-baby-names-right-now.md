@@ -6,19 +6,17 @@ labels:
 - Popular Names
 - Modern Names
 - Hot Names
-date: 2026-06-17
+date: '2026-06-17'
 slug: 100-popular-baby-names-right-now
-meta_description: Discover 100 popular baby names right now, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect popular baby names right now fo
+meta_description: Discover 100 popular baby names right now, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect popular baby names right
+  now fo
 seo_title: 100 Popular Baby Names Right Now
 og_title: 100 Popular Baby Names Right Now
-og_description: Discover 100 popular baby names right now, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect popular baby names right now fo
-word_count: 3210
-optimized: 2026-07-03T07:38:22.876859
+og_description: Discover 100 popular baby names right now, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect popular baby names right
+  now fo
 ---
-
-
-
-
 
 # 100 Popular Baby Names Right Now
 

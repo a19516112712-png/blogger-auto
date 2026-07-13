@@ -6,19 +6,16 @@ labels:
 - Vibrant Names
 - Creative Names
 - Nature Names
-date: 2026-06-20
+date: '2026-06-20'
 slug: 100-color-baby-names-and-meanings
-meta_description: Discover 100 color baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect color baby names and meanings
+meta_description: 'Discover 100 color baby names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect color baby names
+  and meanings '
 seo_title: 100 Color Baby Names and Meanings
 og_title: 100 Color Baby Names and Meanings
-og_description: Discover 100 color baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect color baby names and meanings
-word_count: 3084
-optimized: 2026-07-03T07:38:22.893111
+og_description: 'Discover 100 color baby names and meanings, including meanings, origins,
+  pronunciation guides, and naming ideas. Find the perfect color baby names and meanings '
 ---
-
-
-
-
 
 # 100 Color Baby Names and Meanings
 

@@ -7,19 +7,17 @@ labels:
 - Old-Fashioned Names
 - Timeless Names
 - Girl Names
-date: 2026-06-23
+date: '2026-06-23'
 slug: 100-vintage-baby-girl-names-with-meanings
-meta_description: Discover 100 vintage baby girl names with meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect vintage baby girl name
+meta_description: Discover 100 vintage baby girl names with meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect vintage baby girl
+  name
 seo_title: 100 Vintage Baby Girl Names with Meanings
 og_title: 100 Vintage Baby Girl Names with Meanings
-og_description: Discover 100 vintage baby girl names with meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect vintage baby girl name
-word_count: 3032
-optimized: 2026-07-03T07:38:22.922509
+og_description: Discover 100 vintage baby girl names with meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect vintage baby girl
+  name
 ---
-
-
-
-
 
 # 100 Vintage Baby Girl Names with Meanings
 

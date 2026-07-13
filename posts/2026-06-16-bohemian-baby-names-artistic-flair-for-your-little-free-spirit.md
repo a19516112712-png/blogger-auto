@@ -1,21 +1,18 @@
 ---
-
-
-title: 200 Bohemian Baby Names: Creative, Free-Spirited Choices (With Meanings)
+title: Bohemian Baby Names Artistic Flair For Your Little Free Spirit
 labels:
 - Baby Names
-- Creative Names
-- Arts Names
-- Nature Names
-- Vintage Names
-date: 2026-06-16
-slug: 200-bohemian-baby-names-creative-free-spirited-choices
-meta_description: Discover 200+ bohemian baby names with creative meanings, origins, and pronunciation guides. Find free-spirited names for your artistic child.
-seo_title: 200 Bohemian Baby Names (Creative, Free-Spirited & Meaningful)
-
-
+date: '2026-06-16'
+slug: bohemian-baby-names-artistic-flair-for-your-little-free-spirit
+meta_description: Discover bohemian baby names artistic flair for your little free
+  spirit, including meanings, origins, pronunciation guides, and naming ideas. Find
+  the perfect b
+seo_title: Bohemian Baby Names Artistic Flair For Your Little Free Spirit
+og_title: Bohemian Baby Names Artistic Flair For Your Little Free Spirit
+og_description: Discover bohemian baby names artistic flair for your little free spirit,
+  including meanings, origins, pronunciation guides, and naming ideas. Find the perfect
+  b
 ---
-
 
 <script type="application/ld+json">
 {

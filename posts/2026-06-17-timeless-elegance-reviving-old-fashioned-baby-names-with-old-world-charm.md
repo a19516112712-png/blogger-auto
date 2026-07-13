@@ -1,17 +1,18 @@
 ---
-title: Timeless Elegance: Reviving Old-Fashioned Baby Names with Old-World Charm
+title: 'Timeless Elegance: Reviving Old-Fashioned Baby Names with Old-World Charm'
 labels:
 - Baby Names
-- Vintage Names
-- Old-Fashioned Names
-- Retro Names
-- Classic Names
-date: 2026-06-17
-word_count: 1881
-optimized: 2026-07-03T07:37:04.732577
+date: '2026-06-17'
+slug: timeless-elegance-reviving-old-fashioned-baby-names-with-old-world-charm
+meta_description: 'Discover timeless elegance: reviving old-fashioned baby names with
+  old-world charm, including meanings, origins, pronunciation guides, and naming ideas.
+  Find th'
+seo_title: 'Timeless Elegance: Reviving Old-Fashioned Baby Names with Old-...'
+og_title: 'Timeless Elegance: Reviving Old-Fashioned Baby Names with Old-World Charm'
+og_description: 'Discover timeless elegance: reviving old-fashioned baby names with
+  old-world charm, including meanings, origins, pronunciation guides, and naming ideas.
+  Find th'
 ---
-
-
 
 # Timeless Elegance: Reviving Old-Fashioned Baby Names with Old-World Charm
 

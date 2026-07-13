@@ -1,6 +1,4 @@
 ---
-
-
 title: 200 Mythological Baby Names (Gods, Heroes & Legends — With Meanings)
 labels:
 - Baby Names
@@ -8,14 +6,17 @@ labels:
 - Ancient Names
 - Legend Names
 - Cultural Names
-date: 2026-06-16
-slug: 200-mythological-baby-names-gods-heroes-legends
-meta_description: Discover 200+ mythological baby names from Greek, Roman, Norse, Egyptian, Celtic, Hindu, and Japanese mythology. Find meanings, origins & pronunciation.
-seo_title: 200 Mythological Baby Names (Gods, Heroes & Legends — Complete Guide)
-
-
+date: '2026-06-16'
+slug: 200-mythological-baby-names-gods-heroes-legends-with-meanings
+meta_description: Discover 200 mythological baby names (gods, heroes & legends — with
+  meanings), including meanings, origins, pronunciation guides, and naming ideas.
+  Find the per
+seo_title: 200 Mythological Baby Names (Gods, Heroes & Legends — With Mea...
+og_title: 200 Mythological Baby Names (Gods, Heroes & Legends — With Meanings)
+og_description: Discover 200 mythological baby names (gods, heroes & legends — with
+  meanings), including meanings, origins, pronunciation guides, and naming ideas.
+  Find the per
 ---
-
 
 <script type="application/ld+json">
 {

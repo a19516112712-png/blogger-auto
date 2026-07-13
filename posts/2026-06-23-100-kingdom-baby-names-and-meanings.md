@@ -6,19 +6,17 @@ labels:
 - King Names
 - Regal Names
 - Strong Names
-date: 2026-06-23
+date: '2026-06-23'
 slug: 100-kingdom-baby-names-and-meanings
-meta_description: Discover 100 kingdom baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect kingdom baby names and meani
+meta_description: Discover 100 kingdom baby names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect kingdom baby names
+  and meani
 seo_title: 100 Kingdom Baby Names and Meanings
 og_title: 100 Kingdom Baby Names and Meanings
-og_description: Discover 100 kingdom baby names and meanings, including meanings, origins, pronunciation guides, and naming ideas. Find the perfect kingdom baby names and meani
-word_count: 3141
-optimized: 2026-07-03T07:38:22.916395
+og_description: Discover 100 kingdom baby names and meanings, including meanings,
+  origins, pronunciation guides, and naming ideas. Find the perfect kingdom baby names
+  and meani
 ---
-
-
-
-
 
 # 100 Kingdom Baby Names and Meanings
 
