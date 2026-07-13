@@ -152,7 +152,15 @@ def publish_post(service, blog_id: str, title: str, html_body: str,
         queue.conn.execute(
             """INSERT INTO published (title, slug, url, publish_date,
                                        labels, content_hash, blogger_post_id, created_at)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+               ON CONFLICT(slug) DO UPDATE SET
+                   blogger_post_id=excluded.blogger_post_id,
+                   url=excluded.url,
+                   publish_date=excluded.publish_date,
+                   title=excluded.title,
+                   labels=excluded.labels,
+                   content_hash=excluded.content_hash,
+                   updated_at=CURRENT_TIMESTAMP""",
             (title, slug, post_url, datetime.now().strftime("%Y-%m-%d"),
              ",".join(labels), content_hash, blogger_post_id,
              datetime.now().isoformat()),
